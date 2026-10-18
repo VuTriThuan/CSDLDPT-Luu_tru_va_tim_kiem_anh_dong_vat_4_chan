@@ -40,7 +40,9 @@ sao lưu/khôi phục và các giới hạn nằm trong
 | [outputs/inventory/](outputs/inventory/) | Kiểm kê ảnh, danh sách ảnh đã xem, số liệu và môi trường mẫu GrabCut |
 | [outputs/segmentation/grabcut/](outputs/segmentation/grabcut/) | Mask, overlay, manifest, nhật ký và lịch sử chỉnh sửa |
 | [bo_tool_anh_576x384/](bo_tool_anh_576x384/) | Requirements và cache lịch sử; không còn môi trường đang dùng |
-| [outputs/backups/](outputs/backups/) | Bản sao lưu nguyên trạng đã xác minh |
+| [outputs/backups (GitHub Release)](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/releases/tag/outputs-backups-20261018) | Bản sao lưu tải riêng gồm 14 phần và `SHA256SUMS` |
+
+**Lưu ý về bản sao lưu:** `outputs/backups/` không nằm trong nhánh `main`, nên không có trong ZIP hoặc bản clone của repo. Tải 15 tệp từ [Release outputs-backups-20261018](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/releases/tag/outputs-backups-20261018). Đặt chúng cùng một thư mục, chạy `shasum -a 256 -c SHA256SUMS` tại đó, rồi ở thư mục gốc BTL chạy `cat <thư_mục_tải>/outputs-backups.tar.part-* | tar -xf -` để khôi phục đúng đường dẫn `outputs/backups/`.
 
 Ba thư mục ảnh đã dùng tên mới như bảng trên; tên và nội dung từng ảnh giữ nguyên.
 Kết quả GrabCut nằm ở `outputs/segmentation/grabcut/`; cấu hình chạy nằm trong bộ kết quả,

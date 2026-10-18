@@ -1,0 +1,5 @@
+historical_or_optional_path,planned_target,note
+reports/yeu_cau_2/mask_moi_can_sua,outputs/revised_masks,Absent from current filesystem; documentation/historical reference only
+reports/yeu_cau_2/grabcut_output/overlays/đạt,outputs/grabcut/overlays/accepted,Absent live directory; historical manual edit records
+reports/yeu_cau_2/grabcut_output/overlays/cần sửa,outputs/grabcut/overlays/needs_revision,Absent live directory; historical/manual tool protocol
+reports/yeu_cau_2/grabcut_output/overlays/làm lại,outputs/grabcut/overlays/redo,Absent live directory; review tool protocol

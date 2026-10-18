@@ -1,0 +1,9 @@
+# Recreate local Python environments from the pinned requirements.
+/.venv/
+/.venv-image-tools/
+
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+/outputs/

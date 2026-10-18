@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "full_snapshot_sha256": "2917b8e027a090fdb7564ac71336e4a82e7ce6e1dc9e038658a2c468e37bdbf7",
+  "source_backup": "/Users/trithuan/Desktop/CSDLDPT/BTL/docs/source_migration_audit/source_before.tar",
+  "source_backup_sha256": "64dafb5ee43e6c4ab3459c9701f35835778207a4e824619593469ddc6a67ee6a",
+  "protected_files": 20718,
+  "source_files_to_move": 13
+}

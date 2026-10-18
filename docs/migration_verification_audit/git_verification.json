@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "command": [
+    "git",
+    "fsck",
+    "--no-dangling",
+    "--no-progress"
+  ],
+  "exit_code": 0,
+  "log": "git_fsck.log"
+}

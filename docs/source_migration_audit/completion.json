@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "scope": "source_only",
+  "moved_python_files": 13,
+  "new_python_files": 9,
+  "tests_passed": 23,
+  "cli_help_checks": 22,
+  "protected_files_verified": 20716,
+  "real_data_processing": false,
+  "data_or_result_migration": false,
+  "environment_migration": false,
+  "remaining_data_migration_work": true,
+  "report": "docs/source_migration.md"
+}

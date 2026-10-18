@@ -1,0 +1,26 @@
+{
+  "complete": true,
+  "scope": "three_data_directory_renames",
+  "image_counts": {
+    "source_images": 1297,
+    "cropped_images_576x384": 812,
+    "rejected_crops": 485
+  },
+  "step_1_image_hashes_matched": 2594,
+  "image_names_and_bytes_unchanged": true,
+  "converted_state_files": 1,
+  "converted_state_fields": [
+    "source",
+    "source_relative"
+  ],
+  "historical_and_other_state_files_unchanged": 413,
+  "existing_state_discrepancies_preserved": 189,
+  "result_files_unchanged": 3257,
+  "tests_passed": 30,
+  "tests_used_temporary_copies": true,
+  "local_links_checked": 229,
+  "broken_local_links": 0,
+  "processing_results_moved": false,
+  "real_dataset_processed": false,
+  "remaining_limitation": "Legacy segmentation resume config/hash/version mismatch; historical 1300-record crop snapshot is not the current 1297-record state"
+}

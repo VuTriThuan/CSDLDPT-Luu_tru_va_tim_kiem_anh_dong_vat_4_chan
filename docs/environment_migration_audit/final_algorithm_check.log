@@ -1,0 +1,6 @@
+test_processing_functions_and_history_protocol_are_unchanged (tests.validation.test_source_migration.SourceMigrationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.317s
+
+OK

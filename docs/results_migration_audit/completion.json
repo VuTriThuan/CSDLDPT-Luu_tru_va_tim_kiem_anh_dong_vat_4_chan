@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "stage": "results_and_inventory_only",
+  "moved_files": 3248,
+  "left_at_old_paths": 9,
+  "data_images_match_step_1": 2594,
+  "manifest_changed": false,
+  "historical_configuration_or_hashes_rewritten": false,
+  "unique_tests_passed": 37,
+  "final_additional_checks_passed": 3,
+  "real_data_processed": false,
+  "legacy_resume_rejected": true,
+  "legacy_resume_exit_code": 2,
+  "new_run_resume_verified": true,
+  "restore_verified": true,
+  "links_verified": true,
+  "free_bytes_after": 37288402944,
+  "source_document_changes": 17,
+  "local_links_checked": 249,
+  "unique_images_decoded": 40
+}

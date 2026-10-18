@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "fixture": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334",
+  "copied_from": "data/source_images/Ailuropoda_melanoleuca_1211.jpg",
+  "original_sha256": "8195c7d2bd12c83970b9e9537ac3032c67fb39ce095d022855811091091be685",
+  "fixture_source": "Ailuropoda_melanoleuca_0001.jpg",
+  "crop": "Ailuropoda_melanoleuca_0001.jpg",
+  "crop_sha256": "52b79a562bc4fa5f80771b18d5b229e86662f6a02378fd135c08d349b4d1db9f",
+  "real_source_unchanged": true,
+  "model_sha256": "8d10d2f3bb75ae3b6d527c77944fc5e7dcd94b29809d47a739a7a728a912b491",
+  "checks": [
+    "actual_u2net_crop",
+    "crop_resume_without_rewrite",
+    "rename_preview_read_only",
+    "rename_apply_preserves_image_bytes",
+    "review_flip",
+    "resume_preserves_flip",
+    "review_delete",
+    "resume_preserves_delete",
+    "undo_delete_and_flip"
+  ]
+}

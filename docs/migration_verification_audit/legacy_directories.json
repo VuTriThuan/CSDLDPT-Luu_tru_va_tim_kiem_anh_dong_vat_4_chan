@@ -1,0 +1,103 @@
+[
+  {
+    "path": "bo_tool_anh_576x384",
+    "decision": "retain",
+    "reason": "Historical requirements/bytecode, including tests whose source is absent; not empty.",
+    "files": [
+      {
+        "path": "bo_tool_anh_576x384/.DS_Store",
+        "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+        "bytes": 6148
+      },
+      {
+        "path": "bo_tool_anh_576x384/__pycache__/cat_tu_dong.cpython-310.pyc",
+        "sha256": "afa4d5978c4c6ebf757a1afe8088f57ffd92f8fc3caaa2dd5050d8d785321898",
+        "bytes": 19891
+      },
+      {
+        "path": "bo_tool_anh_576x384/__pycache__/doi_ten_anh.cpython-310.pyc",
+        "sha256": "deab9a0b98c78d7eb2a2a2479272998c2385019fb27c8998329aa7f42b32c0bf",
+        "bytes": 7379
+      },
+      {
+        "path": "bo_tool_anh_576x384/__pycache__/duyet_anh.cpython-310.pyc",
+        "sha256": "11612590af689e6101864614b8bf108f34ab97b757b96ab00366e8dcad1ab528",
+        "bytes": 13290
+      },
+      {
+        "path": "bo_tool_anh_576x384/__pycache__/tool_1_cat_tu_dong.cpython-310.pyc",
+        "sha256": "ba5c7130e0e2b20c878ef6478e9fbe7a7426317b8735699d15c725f96bf0c06a",
+        "bytes": 18976
+      },
+      {
+        "path": "bo_tool_anh_576x384/__pycache__/tool_common.cpython-310.pyc",
+        "sha256": "7ea95840f59942acf33a54332c9c343601a73a0b163a6631c9d91cca2dbbc31e",
+        "bytes": 4197
+      },
+      {
+        "path": "bo_tool_anh_576x384/requirements.txt",
+        "sha256": "1c2a5768534bca7ec6fff86e61cdcb3caff6e77693bb02216dd49a1ce2858740",
+        "bytes": 226
+      },
+      {
+        "path": "bo_tool_anh_576x384/tests/__pycache__/test_compatibility.cpython-310.pyc",
+        "sha256": "7cbcd3d1b21fa75bf6f698f3157f7f79433b020943859fdb9f0ba7f388c5e410",
+        "bytes": 13416
+      }
+    ],
+    "contains_python_environment": false
+  },
+  {
+    "path": "reports",
+    "decision": "retain",
+    "reason": "Historical requirements/bytecode, including tests whose source is absent; not empty.",
+    "files": [
+      {
+        "path": "reports/.DS_Store",
+        "sha256": "3b6391862e0ae6f6ddea387b02a3c1549e25c1f3d68c818121d8ab32e433ec14",
+        "bytes": 6148
+      },
+      {
+        "path": "reports/yeu_cau_2/.DS_Store",
+        "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+        "bytes": 6148
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/check_grabcut.cpython-310.pyc",
+        "sha256": "7b558903870d68cce70712e211cd2e3508c013a3295ba4da068fc13819f617ae",
+        "bytes": 18689
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/chinh_mask.cpython-310.pyc",
+        "sha256": "05a610a4cdf29599128a01d1155bdd330a3f0fe09f6c4077a48b6586f14004fc",
+        "bytes": 29063
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/dong_bo_overlays.cpython-310.pyc",
+        "sha256": "a360a7f081e2a87ad46c532d75073dd3f2f1d0102f97609bc79829f9548f079b",
+        "bytes": 13195
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/tao_lai_mask_can_sua.cpython-310.pyc",
+        "sha256": "21aba27c5186783bab675015cbf1416824ccd826d8d895e33260b4ac29bcd0e0",
+        "bytes": 16462
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/test_check_grabcut.cpython-310.pyc",
+        "sha256": "9efcf7e2ca5954d640183ae22ae6398bcc2ccd08494ee1f19acb43c8dd5ccd35",
+        "bytes": 7991
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/test_chinh_mask.cpython-310.pyc",
+        "sha256": "54c1a3e1d369ab2f0885ff7829824416e349b0fc4a9afedd6790adb1fde2529d",
+        "bytes": 9860
+      },
+      {
+        "path": "reports/yeu_cau_2/__pycache__/test_dong_bo_overlays.cpython-310.pyc",
+        "sha256": "695ea0494f5e93317afcb43725760f2e00962ac397d4e8ec966b33285d0b2e85",
+        "bytes": 10324
+      }
+    ],
+    "contains_python_environment": false
+  }
+]

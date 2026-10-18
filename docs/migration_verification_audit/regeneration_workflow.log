@@ -1,0 +1,47 @@
+1/1 status=success reused=0 elapsed=2.5s Ailuropoda_melanoleuca_0001.jpg
+{
+  "selected": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "processed_this_run": 1,
+  "reused_this_run": 0,
+  "suspicious": 0,
+  "processing_sizes": [
+    "576x384"
+  ],
+  "elapsed_seconds": 2.6,
+  "interrupted": false,
+  "review_status_counts": {
+    "chua_duyet": 1
+  },
+  "review_result_counts": {
+    "chua_co_ket_luan": 1
+  },
+  "updated_at": "2026-10-17T04:18:09+00:00",
+  "note": "Candidate masks for manual review. Pixel fractions and change from old masks are inspection statistics, not segmentation accuracy. No feature vectors extracted."
+}
+1/1 status=success reused=1 elapsed=0.0s Ailuropoda_melanoleuca_0001.jpg
+{
+  "selected": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "processed_this_run": 0,
+  "reused_this_run": 1,
+  "suspicious": 0,
+  "processing_sizes": [
+    "576x384"
+  ],
+  "elapsed_seconds": 0.09,
+  "interrupted": false,
+  "review_status_counts": {
+    "chua_duyet": 1
+  },
+  "review_result_counts": {
+    "chua_co_ket_luan": 1
+  },
+  "updated_at": "2026-10-17T04:18:11+00:00",
+  "note": "Candidate masks for manual review. Pixel fractions and change from old masks are inspection statistics, not segmentation accuracy. No feature vectors extracted."
+}
+{"verified": true, "fixture": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334", "regenerated_images": 1, "resumed_without_processing": 1, "previous_results_and_source_unchanged": true, "manifest_artifact_paths_verified": true}

@@ -1,0 +1,12 @@
+usage: edit_masks.py [-h] [--output-dir OUTPUT_DIR] [--source-dir SOURCE_DIR]
+
+Chỉnh mask tương tác: tô giữ con vật / loại nền, GrabCut, lưu vào đạt.
+
+    .venv/bin/python tools/segmentation/edit_masks.py
+
+Ảnh cần sửa chỉ dùng để chọn hàng đợi. GrabCut luôn chạy trên ảnh gốc.
+
+options:
+  -h, --help            show this help message and exit
+  --output-dir OUTPUT_DIR
+  --source-dir SOURCE_DIR

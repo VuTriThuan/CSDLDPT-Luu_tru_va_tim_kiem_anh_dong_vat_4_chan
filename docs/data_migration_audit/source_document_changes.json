@@ -1,0 +1,107 @@
+[
+  {
+    "path": "README.md",
+    "sha256_before": "8529408637b1951b35bd322bf3722ab1683ee63a4023c2f7379dbce7e9ad871a",
+    "sha256_after": "f9a277a959e38b834873cd6d246ac83bc8e12c6005894e2b747658686f46b42c"
+  },
+  {
+    "path": "docs/data_migration.md",
+    "sha256_before": null,
+    "sha256_after": "77d74e00931f9af915f6a287ead3b54dda18e494c80f317e4e8ff613602bf59e"
+  },
+  {
+    "path": "docs/documentation_migration.md",
+    "sha256_before": "466eb916ca67cfb05e204f44cc1542a6c976e4861581948b8e6cf71deb902367",
+    "sha256_after": "6b3270e6466d65908200a776a1c4f21ca2073a9da0e50b750411a02ae2641718"
+  },
+  {
+    "path": "docs/guides/grabcut.md",
+    "sha256_before": "401c9582a468ff0e9c2ec918ce3197d3619593c1c9b28cb0b404e8050c302fe5",
+    "sha256_after": "e70c83bd8f9f9a535ac48248e2e0fbb48885ac772cb1dc39250da1abc3b02e2e"
+  },
+  {
+    "path": "docs/guides/image_tools.md",
+    "sha256_before": "faf33c9629cb1767ba4b12f9d43c5559c7b28b1b41b82bde6ba9f2e0b341f9b3",
+    "sha256_after": "e1815dd9684e615e67ac541479f5ccfdea6bd19cdd46a17db4748bf5e8f163f4"
+  },
+  {
+    "path": "docs/guides/mask_regeneration.md",
+    "sha256_before": "ca779f279d76892bede871383a6653385d1ecfa7f1dee04a17663ab33cc9fb65",
+    "sha256_after": "490b948eb5435f3f551333c94690cf67d8de396c9d64f397db008e1b02c80afd"
+  },
+  {
+    "path": "docs/migration_plan.md",
+    "sha256_before": "ffb6ab2ba0c982a68163362ce6d02b3db05808f39ead82859c129b727776edd2",
+    "sha256_after": "3a5c779c5e91e9649121ec60f89902450ecf67f70d916b976e60d3ebcdcf045e"
+  },
+  {
+    "path": "docs/reports/animal_comparison.md",
+    "sha256_before": "84e85efb77d1ba7b010320d03a82df6ad027866bdeafcdb426e034443ca92fb1",
+    "sha256_after": "127be209282feb2d9d7a7eb2eec4f4d96c4e5f3056d23a78ab7be65d3ba90256"
+  },
+  {
+    "path": "docs/reports/search_feature_design.md",
+    "sha256_before": "455b01dedf0e6b3d4c91197329ca5eb69215bb3565983bc00d1c01ddb97d402f",
+    "sha256_after": "326f9f0d34dedacc13419b9f8812925a9ff5ad67f29636bd725d96bb287bc710"
+  },
+  {
+    "path": "docs/source_migration.md",
+    "sha256_before": "4b71fd279479b90a6ded5877bcb2a5a50db059d91e74783df5514bbe2b6a0b46",
+    "sha256_after": "e31726584a4b35457c0c78a0da5d79075d9251d616a18d1965196a0864bf15ef"
+  },
+  {
+    "path": "tests/image_processing/test_compatibility.py",
+    "sha256_before": "58927d0dd8b21c91e8a08c719ce546c6439e9181f7aeabd04ce0e6828a67e4da",
+    "sha256_after": "da773eda2bfd87eabe4279ffe5c6e9c1765de0a7d8fa06b212df98f1cd03a50d"
+  },
+  {
+    "path": "tests/image_processing/test_data_migration.py",
+    "sha256_before": null,
+    "sha256_after": "092ebd4ba98c943fb32eb4e87efe47348978f7a90ae5afe888e0d18bcd7f6f50"
+  },
+  {
+    "path": "tests/validation/test_source_migration.py",
+    "sha256_before": "7cad8532704a6fd5adcd37f73d81d8fa90f030667af75c40c25031ed243c3918",
+    "sha256_after": "1a46a0d0ffcad893c8bcdd3710ee6e5035c47376df6035af7af707c60015ca06"
+  },
+  {
+    "path": "tools/image_processing/auto_crop.py",
+    "sha256_before": "af100278b9b46a577416dfb6da16cf62858c16bd11c009e65bc476cd9ecaeb8e",
+    "sha256_after": "a7d996ce785774e18f8c410371dcf7ca3c100118526ddcd99366cad38cf8f470"
+  },
+  {
+    "path": "tools/image_processing/rename_images.py",
+    "sha256_before": "a4b275c6f55256078936bf13cf502e899a65d636917f951243f36a127c810500",
+    "sha256_after": "0ed75c78cbc88ddfd77f65841f6fdb3aa1c9ab2d75afe4667c940ed15d9c2dff"
+  },
+  {
+    "path": "tools/image_processing/review_images.py",
+    "sha256_before": "9eb725bbeb5b8970bc4e24891fb468aa8b9717d48b4b1af4a92d6c9dec7a5aad",
+    "sha256_after": "931400f2bdd94fdf7a17ce7293e64b345af9dc30b079edb8f289195727f08723"
+  },
+  {
+    "path": "tools/project_paths.py",
+    "sha256_before": "7cf554837716c7d8a35700ea978a18ec524bb0fca54e608c88922d0bef617bf4",
+    "sha256_after": "688fbb34da693e7789303d5df9f0d252239f477805f27432dabf9a1dce355ab9"
+  },
+  {
+    "path": "tools/segmentation/regenerate_masks.py",
+    "sha256_before": "40eb341453c0bfb07e25c14cb81edae759d1f162df97b57167f4b8b71e085dbe",
+    "sha256_after": "4a6927a67f0bf62c261772eb141f6babd9a4db7b7a6825263510bd558c60d17f"
+  },
+  {
+    "path": "tools/segmentation/run_grabcut.py",
+    "sha256_before": "ad4ce114bc51be527316bcb14ad196d6c14eaad7731cbb6054cdf9d07fca48a0",
+    "sha256_after": "2b8b202af3886c4aeaad66547f44767e27c1c53f32cb16a118f067ef9a14a4d3"
+  },
+  {
+    "path": "tools/validation/audit_images.py",
+    "sha256_before": "ea321b649aecbc40d055e84083b09df9aae2fb8fc09eb580e37cd3f77585a035",
+    "sha256_after": "880b38c91b71adf2a200307bf5bf193756077f73ffee5728486ebe9876c6632e"
+  },
+  {
+    "path": "tools/validation/verify_regenerated_masks.py",
+    "sha256_before": "c4e2a0c0290b62d9e25f16eba98c001846349b7789dce65263d0f25a14f3a0b0",
+    "sha256_after": "1c2628a0b9c47820345d97f7beea74bd556d959257ca5bec2a8dcefb51fec7fc"
+  }
+]

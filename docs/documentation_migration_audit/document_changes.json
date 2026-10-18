@@ -1,0 +1,42 @@
+[
+  {
+    "old_path": "bao_cao_giong_khac_dong_vat.md",
+    "new_path": "docs/reports/animal_comparison.md",
+    "sha256": "84e85efb77d1ba7b010320d03a82df6ad027866bdeafcdb426e034443ca92fb1"
+  },
+  {
+    "old_path": "bao_cao_yeu_cau_2_thuoc_tinh.md",
+    "new_path": "docs/reports/search_feature_design.md",
+    "sha256": "455b01dedf0e6b3d4c91197329ca5eb69215bb3565983bc00d1c01ddb97d402f"
+  },
+  {
+    "old_path": "bo_tool_anh_576x384/HUONG_DAN.md",
+    "new_path": "docs/guides/image_tools.md",
+    "sha256": "faf33c9629cb1767ba4b12f9d43c5559c7b28b1b41b82bde6ba9f2e0b341f9b3"
+  },
+  {
+    "old_path": "reports/yeu_cau_2/README_GRABCUT.md",
+    "new_path": "docs/guides/grabcut.md",
+    "sha256": "401c9582a468ff0e9c2ec918ce3197d3619593c1c9b28cb0b404e8050c302fe5"
+  },
+  {
+    "old_path": "reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md",
+    "new_path": "docs/guides/mask_regeneration.md",
+    "sha256": "ca779f279d76892bede871383a6653385d1ecfa7f1dee04a17663ab33cc9fb65"
+  },
+  {
+    "old_path": "README.md",
+    "new_path": "README.md",
+    "sha256": "8529408637b1951b35bd322bf3722ab1683ee63a4023c2f7379dbce7e9ad871a"
+  },
+  {
+    "old_path": "docs/migration_plan.md",
+    "new_path": "docs/migration_plan.md",
+    "sha256": "ffb6ab2ba0c982a68163362ce6d02b3db05808f39ead82859c129b727776edd2"
+  },
+  {
+    "old_path": null,
+    "new_path": "docs/documentation_migration.md",
+    "sha256": "466eb916ca67cfb05e204f44cc1542a6c976e4861581948b8e6cf71deb902367"
+  }
+]

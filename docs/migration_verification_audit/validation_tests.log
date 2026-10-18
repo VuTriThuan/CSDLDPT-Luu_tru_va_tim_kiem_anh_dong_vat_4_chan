@@ -1,0 +1,19 @@
+test_all_english_categories_sync_and_undo (test_results_migration.ResultsMigrationTests) ... ok
+test_both_edit_record_generations_preserve_hash_requirement (test_results_migration.ResultsMigrationTests) ... ok
+test_old_config_is_rejected_without_changing_historical_bytes (test_results_migration.ResultsMigrationTests) ... ok
+test_regeneration_uses_separate_output_and_can_resume (test_results_migration.ResultsMigrationTests) ... ok
+test_resume_retains_classified_paths_and_review_decision (test_results_migration.ResultsMigrationTests) ... ok
+test_scoped_historical_reference_aliases (test_results_migration.ResultsMigrationTests) ... ok
+test_source_mask_overlay_hash_guards_and_unsafe_paths (test_results_migration.ResultsMigrationTests) ... ok
+test_all_entry_points_help_direct_and_as_modules (test_source_migration.SourceMigrationTests) ... ok
+test_auditor_writes_only_the_requested_temporary_output (test_source_migration.SourceMigrationTests) ... ok
+test_default_locations_keep_current_datasets (test_source_migration.SourceMigrationTests) ... ok
+test_edit_history_and_overlay_sync_keep_legacy_paths (test_source_migration.SourceMigrationTests) ... ok
+test_grabcut_resume_and_validation_on_temporary_image (test_source_migration.SourceMigrationTests) ... ok
+test_importing_auditor_does_not_inspect_or_write_datasets (test_source_migration.SourceMigrationTests) ... ok
+test_processing_functions_and_history_protocol_are_unchanged (test_source_migration.SourceMigrationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 17.219s
+
+OK

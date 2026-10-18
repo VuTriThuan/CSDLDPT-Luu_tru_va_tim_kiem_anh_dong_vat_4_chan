@@ -1,0 +1,2900 @@
+[
+  {
+    "path": "data/.DS_Store",
+    "sha256": "c3147428435ab4abb53db70dd961baed1446f9a5c5d0d19acad35af61ef81c87",
+    "size": 6148,
+    "mtime_ns": 1792077600853291225,
+    "mode": 33188
+  },
+  {
+    "path": "data/anh-da-cat-576x384/.tool_anh.lock",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1791901080779404470,
+    "mode": 33188
+  },
+  {
+    "path": "data/anh-da-cat-576x384/_cat_tu_dong.json",
+    "sha256": "2a191378c976aa4e974b19eb5982faec1b24eba4158cda1b0b3c208a636a958d",
+    "size": 962492,
+    "mtime_ns": 1792059682884315095,
+    "mode": 33152
+  },
+  {
+    "path": "data/anh-da-cat-576x384/_cat_tu_dong.truoc-cap-nhat.json",
+    "sha256": "1bbd6edc2bb176ba131d0795b61348eaccaf09eb18abbf482f9c3f403e8ef6ad",
+    "size": 843892,
+    "mtime_ns": 1792058225056708855,
+    "mode": 33188
+  },
+  {
+    "path": "data/anh-da-cat-576x384/bao_cao_cat.csv",
+    "sha256": "f9670c3b86956621f93b153b3730e9f345aacdce4244d5c2a46eae6526e74f89",
+    "size": 124512,
+    "mtime_ns": 1792059682898541129,
+    "mode": 33152
+  },
+  {
+    "path": "reports/.DS_Store",
+    "sha256": "3b6391862e0ae6f6ddea387b02a3c1549e25c1f3d68c818121d8ab32e433ec14",
+    "size": 6148,
+    "mtime_ns": 1792119848678239430,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/.DS_Store",
+    "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+    "size": 6148,
+    "mtime_ns": 1792144704318774375,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/check_grabcut.cpython-310.pyc",
+    "sha256": "7b558903870d68cce70712e211cd2e3508c013a3295ba4da068fc13819f617ae",
+    "size": 18689,
+    "mtime_ns": 1792170414419956025,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/chinh_mask.cpython-310.pyc",
+    "sha256": "05a610a4cdf29599128a01d1155bdd330a3f0fe09f6c4077a48b6586f14004fc",
+    "size": 29063,
+    "mtime_ns": 1792170414430995137,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/dong_bo_overlays.cpython-310.pyc",
+    "sha256": "a360a7f081e2a87ad46c532d75073dd3f2f1d0102f97609bc79829f9548f079b",
+    "size": 13195,
+    "mtime_ns": 1792170491766534703,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/tao_lai_mask_can_sua.cpython-310.pyc",
+    "sha256": "21aba27c5186783bab675015cbf1416824ccd826d8d895e33260b4ac29bcd0e0",
+    "size": 16462,
+    "mtime_ns": 1792170414439209477,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/test_check_grabcut.cpython-310.pyc",
+    "sha256": "9efcf7e2ca5954d640183ae22ae6398bcc2ccd08494ee1f19acb43c8dd5ccd35",
+    "size": 7991,
+    "mtime_ns": 1792170178030650908,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/test_chinh_mask.cpython-310.pyc",
+    "sha256": "54c1a3e1d369ab2f0885ff7829824416e349b0fc4a9afedd6790adb1fde2529d",
+    "size": 9860,
+    "mtime_ns": 1792170178031506619,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/__pycache__/test_dong_bo_overlays.cpython-310.pyc",
+    "sha256": "695ea0494f5e93317afcb43725760f2e00962ac397d4e8ec966b33285d0b2e85",
+    "size": 10324,
+    "mtime_ns": 1792170491104367103,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/anh_da_xem.csv",
+    "sha256": "9776e67de48b845bdf7ffd180429326cda06468dc09d4caecb38cea0aa1faae8",
+    "size": 4156,
+    "mtime_ns": 1792082554242602525,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_moi_truong.json",
+    "sha256": "3c0d78f4a514dad42832739ec64bbe0e3046b81b634edc58f68a5f4b8c44809e",
+    "size": 384,
+    "mtime_ns": 1792082658705893440,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/.DS_Store",
+    "sha256": "70188e7d9827e1f5e398c1b8d4f9ee164bc7c75b6641beb7d9ae416b6e6a7a71",
+    "size": 6148,
+    "mtime_ns": 1792144704320886890,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/.run.lock",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "mtime_ns": 1792112503162709238,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/errors.csv",
+    "sha256": "07795beb887adb229260485ca6193eeb6dc9f1e0e1b91ac549a3ce78279c2a38",
+    "size": 32,
+    "mtime_ns": 1792112503165695091,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/full_processing_summary.json",
+    "sha256": "a6df7fc562976658e06a5696496d2bfcc952144a0d3c948484fc33a4a126e43e",
+    "size": 786,
+    "mtime_ns": 1792118460373456356,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/full_run.log",
+    "sha256": "7d11197f73a3217f68b0f959590b17c13a88b4cbb2a8a8e38c487340d3fb8cb2",
+    "size": 66224,
+    "mtime_ns": 1792118394711411388,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manifest.csv",
+    "sha256": "efa7ab0214002502425acb50de383a7d0e61f99cb13f10964b2f607dfab06b67",
+    "size": 365226,
+    "mtime_ns": 1792172652611884530,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101513Z_82f1f13aeda5/record.json",
+    "sha256": "f4b661eaf0c835b2ba8347509e6a3c4242fa180cde5f126181c8afd459edec97",
+    "size": 2355,
+    "mtime_ns": 1792145713572205828,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101546Z_02a378b28a90/record.json",
+    "sha256": "e406d9948544ec3bb70ebbfb2613ca36fb0b3d08a2494376a17747d539d022c3",
+    "size": 2358,
+    "mtime_ns": 1792145746688249956,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101626Z_33e1ba375b55/record.json",
+    "sha256": "1644dbfc74c5af64e14ea17b59bb8178785806c89437a2e1cbf145b880b3efac",
+    "size": 2357,
+    "mtime_ns": 1792145786161484509,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101705Z_7f3c5a874a0d/record.json",
+    "sha256": "fdcefc4e05b4dd0cb2b22b603edcbd685c20df09ff6613fbaef49ea7b843b0d2",
+    "size": 2377,
+    "mtime_ns": 1792145825372338926,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101827Z_a9c39ce10a8e/record.json",
+    "sha256": "b61644aec812969910ee9c51b7856aa282adc3a5f0c97b9d26a7efcc4cf5cbe9",
+    "size": 2361,
+    "mtime_ns": 1792145907594492759,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102128Z_ad40712a09c5/record.json",
+    "sha256": "c128a58799a26b6236f9aab95d2adfc85716fbce828234903c505147d20ac6f4",
+    "size": 2426,
+    "mtime_ns": 1792146088461705739,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102254Z_63eb3412e773/record.json",
+    "sha256": "50636bf9e292f4c9165452df873e7fa258be3592bcd0d8cd377151e24b851a43",
+    "size": 2423,
+    "mtime_ns": 1792146174900541615,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102323Z_520ffa70f4db/record.json",
+    "sha256": "aa1b612248e7ace5577c1ccb8be34829cf765688f14e67d28ea23e8522b6c225",
+    "size": 2455,
+    "mtime_ns": 1792146203662215070,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102421Z_ac8a69e49146/record.json",
+    "sha256": "ea725a0b40a18deb7d992ed81014e39c0d3cdce5eeea1291c85a62445e8ffe73",
+    "size": 2440,
+    "mtime_ns": 1792146261100475018,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102502Z_2ea117c1d70a/record.json",
+    "sha256": "364af6ab6df4a20499e6b981e0a3ec0bc971b79571c767621f38e4601600861b",
+    "size": 2438,
+    "mtime_ns": 1792146302682373139,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102525Z_f9a157f06e18/record.json",
+    "sha256": "cbcb84a36fea0a16cfd6343ae7b1d152a0f3f4981b0af20bae736b18543b01ba",
+    "size": 2458,
+    "mtime_ns": 1792146325545543336,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102629Z_7d714df5e302/record.json",
+    "sha256": "dbdefd13a0c91cf811cbe410b6f56f917285d9a0e0cb9d8ec21414e5b39c62e8",
+    "size": 2458,
+    "mtime_ns": 1792146389372992360,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102653Z_7919982ad67f/record.json",
+    "sha256": "5a9a916220a85feb31e09a9b639dd66ec6ebeecffdcde8c4af3517a857d2ea34",
+    "size": 2475,
+    "mtime_ns": 1792146413192261553,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102732Z_492e049776a0/record.json",
+    "sha256": "b499000fa246f8aa44aa5f19c4841ca3978d4c96747644f6e8c402854b3a8dc0",
+    "size": 2438,
+    "mtime_ns": 1792146452850216691,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102748Z_d0ea682c1117/record.json",
+    "sha256": "ce25c9da5c1f46a3668c8ec95bcca856d088e388f8e20f0bda44bd0d1c76e963",
+    "size": 2456,
+    "mtime_ns": 1792146468666586467,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102801Z_a63680381505/record.json",
+    "sha256": "c5d62ae3a337097243cf9b2025541956883ba24db97650dfe30c59d2b381618b",
+    "size": 2440,
+    "mtime_ns": 1792146481368663786,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102840Z_99ee75185700/record.json",
+    "sha256": "8ddffee3e938bcbf4032e0ad31193549c4e492e46412b14995df05b1569e7931",
+    "size": 2455,
+    "mtime_ns": 1792146520988162533,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102913Z_6a7e7ea8e2a3/record.json",
+    "sha256": "7d5d7a23548016a5543c8946b3118bad704d7091f07c0191a86f8ace04409f80",
+    "size": 2456,
+    "mtime_ns": 1792146553674124867,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T102944Z_ce496c9c2d5f/record.json",
+    "sha256": "534eb4d51263af4f3aa3d007304388703f14d883bdfa2dd2be333703a7e42d92",
+    "size": 2438,
+    "mtime_ns": 1792146584269905070,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103009Z_cb9fe9557a9e/record.json",
+    "sha256": "2e8737d9f336b018824773ec42be50b900fb4f3b7477a0d61c47b4d98ec537df",
+    "size": 2451,
+    "mtime_ns": 1792146609061682964,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103059Z_fab2ca4fdb91/record.json",
+    "sha256": "0d0334b14e29e1fd47bad3415a72d032786ea14651a5cb3054cd7dd2b8a28c7e",
+    "size": 2466,
+    "mtime_ns": 1792146659870692960,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103122Z_c8f3971ccb59/record.json",
+    "sha256": "4debefb1f21a3ebd83014756fbcfa271393d5313dc79e6867abc155f2490ebca",
+    "size": 2485,
+    "mtime_ns": 1792146682210761967,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103151Z_bcd6549da536/record.json",
+    "sha256": "c16a1ac9cb422671621485ef535d94a660f6f790bcb78ec4d031cf06d5b090ef",
+    "size": 2467,
+    "mtime_ns": 1792146711452117391,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103226Z_e721039e26c9/record.json",
+    "sha256": "d2cb4b4c2fbb25f1507a46949b632baa82f29ccdc95a2e215b4a0aeeebd72559",
+    "size": 2467,
+    "mtime_ns": 1792146746028610707,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103259Z_59eb9e92234f/record.json",
+    "sha256": "e40da997313a2e3a0483fa0dfba0adaabd433aa8bd1012062d4baed185a0fb78",
+    "size": 2482,
+    "mtime_ns": 1792146779786516014,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103316Z_5790f7f39718/record.json",
+    "sha256": "cfa201347e2112cf241fa6d3446d397a58998c8db3a0073e4c0fd6ba263cbfa6",
+    "size": 2450,
+    "mtime_ns": 1792146796800305285,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103327Z_3887f139af5c/record.json",
+    "sha256": "2f3af1c18222b1ac2c4494c439e66925bf4675162db35cef71d3432ed994e673",
+    "size": 2447,
+    "mtime_ns": 1792146807404955251,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103355Z_f1fec9d6d8ab/record.json",
+    "sha256": "3cd1cc3e5d6b65ff92aca6735dc17e54caaaee6d20bc16194e1714fc1f864cce",
+    "size": 2450,
+    "mtime_ns": 1792146835723609428,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103426Z_9d6d7febde17/record.json",
+    "sha256": "74f30218f131f001a1b448c9b49622662f1cca4da157b88dbade2f122ff2febe",
+    "size": 2466,
+    "mtime_ns": 1792146866309287596,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103449Z_e0b737e712a8/record.json",
+    "sha256": "2394f3a7859249190adddc1bbfa0a9dc2414e9af9358a64d594f49491625b2c4",
+    "size": 2468,
+    "mtime_ns": 1792146890016029628,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103523Z_fedec21a3180/record.json",
+    "sha256": "2137fe221fcaa9dcab0dd6a4d97f9a6b08f22471b954505a0106131356ee621a",
+    "size": 2451,
+    "mtime_ns": 1792146923766106077,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103605Z_6910dc05f308/record.json",
+    "sha256": "802152aa7b806b9481364bc0dff2238bf850d18192d8a6fd0a0aef6283d90b31",
+    "size": 2512,
+    "mtime_ns": 1792146965912054521,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103644Z_2248406c676a/record.json",
+    "sha256": "e6fc2851f09abb395678216baaedb4838b1bff0e1484bc35efba95810a6dfa54",
+    "size": 2476,
+    "mtime_ns": 1792147004599006140,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103730Z_de7b25aa3068/record.json",
+    "sha256": "2f7d4274d1edcedc168b28838eaa250eb6f94a605aa142fc01b74b9c72dd125c",
+    "size": 2455,
+    "mtime_ns": 1792147050104006465,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T103827Z_ec4e09d15c44/record.json",
+    "sha256": "0dade69d2220ec47bd11512bd15e3707f6303287831facbbc2ac299902b8e54a",
+    "size": 2435,
+    "mtime_ns": 1792147107555292536,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104045Z_1712800668c8/record.json",
+    "sha256": "a4b8ec30653ceec5e5dacf7c6641925557aefbb232ad255911845958f7c3e041",
+    "size": 2454,
+    "mtime_ns": 1792147245942106406,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104113Z_cd54bc8afbd9/record.json",
+    "sha256": "c421b4c1a7a44dbf166c186ed93761d1b4764019dbe33d3108a2aebfec938af6",
+    "size": 2435,
+    "mtime_ns": 1792147273363955629,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104230Z_b7b4fa86ec4d/record.json",
+    "sha256": "abce2d73667eee08f19c048668fcfaf50707bf1afcbfc4e5786d8084467977a7",
+    "size": 2437,
+    "mtime_ns": 1792147350179520258,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104307Z_cdcf2a33154c/record.json",
+    "sha256": "df5024cff2965b7371dd6fb52b37829a278ff73bad1ca38508af625cabfb2a14",
+    "size": 2436,
+    "mtime_ns": 1792147387262737801,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104356Z_1140bb833e41/record.json",
+    "sha256": "44b4ebfa273ec2dda83d51c996715695cc41aa0178c63713b3ce9975388584d9",
+    "size": 2439,
+    "mtime_ns": 1792147436204134777,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104434Z_aba705f21a0a/record.json",
+    "sha256": "26e94aed19a3f0ccd48056c0f433e231fd5cf8457c96205688ea086014f2b604",
+    "size": 2435,
+    "mtime_ns": 1792147474406996411,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104449Z_4250edd2cc5d/record.json",
+    "sha256": "7feb0f1010f2b8bc4b8dce3da3539cabb800b251d2fc30a2af558daaee00bd9b",
+    "size": 2435,
+    "mtime_ns": 1792147489352542107,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104511Z_40e15a40de88/record.json",
+    "sha256": "1cde155a12fc4960241562e1a26ccd10b56a72450ccf2c8f7928c19969cd9d0d",
+    "size": 2369,
+    "mtime_ns": 1792147511485293748,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104523Z_7d7e3bb1386c/record.json",
+    "sha256": "e216c0234cabd243468249fbaeb2785eb0a2103332e4ed37398d7d51ea9d3482",
+    "size": 2389,
+    "mtime_ns": 1792147523964870434,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104554Z_221059164145/record.json",
+    "sha256": "cbe0ff31ebd28f91d182780893dd744a4f960ab7fd2284947521c68fe3740300",
+    "size": 2370,
+    "mtime_ns": 1792147554888657666,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104623Z_818955fdb080/record.json",
+    "sha256": "972f0fb680fc0f632751fb5ff423cfe9b93c3a70d410aa4591b4bb6c05203a39",
+    "size": 2559,
+    "mtime_ns": 1792147583478364515,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104652Z_356b5af172af/record.json",
+    "sha256": "00ee92b0b00023cf7e3a64d7689f4796e374070dd1c1336a12e100faaa6a3fda",
+    "size": 2555,
+    "mtime_ns": 1792147612395717933,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104739Z_58b8a6ac7ec1/record.json",
+    "sha256": "06211d2f9b83a2b698921a56f06edb66f29c15c2a654a48ce1f2b0cfb605d4e1",
+    "size": 2573,
+    "mtime_ns": 1792147659366485951,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104828Z_58e384089682/record.json",
+    "sha256": "defa4edbf1962c128e84cf3254e110267f23613a466d9cee33de263eb2ff4210",
+    "size": 2684,
+    "mtime_ns": 1792147708391069195,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104853Z_8a75cf693a81/record.json",
+    "sha256": "012bee8187e2a6234a133df75079941904dc28f84d49134b5e8b6a4c6305fba8",
+    "size": 2649,
+    "mtime_ns": 1792147733934253828,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104908Z_9d9d9957bbfb/record.json",
+    "sha256": "76c1b0ab315fa34721472d94488e33aeef04e713e3422f9d9104a3efd07616b4",
+    "size": 2629,
+    "mtime_ns": 1792147748043881971,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104931Z_7a07e7554e74/record.json",
+    "sha256": "045d71d0a508b73ba29d0ce246b0ccaeb05393f77b9a1d2012ba9e23f1949053",
+    "size": 2594,
+    "mtime_ns": 1792147771586230183,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T104947Z_0526f9235d51/record.json",
+    "sha256": "fbc3ab83d951a7ceee413134dc0dc5188961c1ad22caa5922725b9fc8ae709c1",
+    "size": 2375,
+    "mtime_ns": 1792147787297780818,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105013Z_44d8867f12e2/record.json",
+    "sha256": "e8890f921b32acdff484cf35a69f6f793fe05e010661ba7b5bde6a64bca686e1",
+    "size": 2412,
+    "mtime_ns": 1792147813900708057,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105031Z_a49722e89801/record.json",
+    "sha256": "175b5e3d0e047e9f9ecdb0a2bfbf16d893780c5b562861d2185385ba23044b34",
+    "size": 2339,
+    "mtime_ns": 1792147831965636841,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105146Z_3d222467005b/record.json",
+    "sha256": "1e7180e33aa36581b4118dd1b11deffd137436ec03c05b7cb6eb12447cc9c7d3",
+    "size": 2372,
+    "mtime_ns": 1792147906365976634,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105202Z_6276a8508ffc/record.json",
+    "sha256": "3dd48bfbf2267a182113e725c4a4686746ee7527f59bc667ba9f4ee407d04241",
+    "size": 2340,
+    "mtime_ns": 1792147922768378762,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105217Z_b8a31bc60780/record.json",
+    "sha256": "bd14dda307216868f95a49c0ced7699e8982ceca99f5313039c229f9b86ac8d5",
+    "size": 2334,
+    "mtime_ns": 1792147937543746301,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105401Z_20f9d8d0e116/record.json",
+    "sha256": "e6ca0668fb3510780ffc627872bbba546a1d3b55fdc673bb8ad22b7bce1f7f1c",
+    "size": 2356,
+    "mtime_ns": 1792148041831829157,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105427Z_c944cb0039d6/record.json",
+    "sha256": "30719caf4e70a0dbd2254f294822f521d782744653da085d266d5cc2667d5811",
+    "size": 2338,
+    "mtime_ns": 1792148067493987513,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105447Z_cdf709d97d18/record.json",
+    "sha256": "d8457f484d86e9ce2b83988df645d603fb51fc884c6bdf62a9a5dd73c5b582d4",
+    "size": 2358,
+    "mtime_ns": 1792148087849027570,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105508Z_bf07dddfbe0c/record.json",
+    "sha256": "908fcbbc8bdc5a46da1b624f8b8bca41a4d1d9247520009c98f5adb3d4f40b59",
+    "size": 2337,
+    "mtime_ns": 1792148108640848969,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105536Z_dacae4017db3/record.json",
+    "sha256": "357510184d8b75dc8800520f55e9d93f6302eac044ed26026671d6754e4019aa",
+    "size": 2380,
+    "mtime_ns": 1792148136022069831,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105552Z_a0554350403a/record.json",
+    "sha256": "41bed7867682b763566e55d986bfaaba493dc997ede2dc36718d6acb9849f2d2",
+    "size": 2379,
+    "mtime_ns": 1792148152238140580,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105656Z_416d9c467e89/record.json",
+    "sha256": "0c2774a6e6a32f4d8c780a832585955f5a78449795e09de041ddfd0bf2c5259a",
+    "size": 2379,
+    "mtime_ns": 1792148216325243146,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105717Z_f4feff463c11/record.json",
+    "sha256": "4dfaa75e7bf5dcc59847fd7a83d8a8d529851df28b39d0fc22efb151563c6916",
+    "size": 2378,
+    "mtime_ns": 1792148237555397722,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105732Z_9e5cd0111da9/record.json",
+    "sha256": "7b6bce000a33bd16fd047f0166d20f6e94c436939aada982d35b1ed042aba32e",
+    "size": 2379,
+    "mtime_ns": 1792148252931089456,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105745Z_fc0a7325627f/record.json",
+    "sha256": "9d1445e2ebba41a9b2575bd1dc4f81e021d6e746d9c082977bf84be214057a2e",
+    "size": 2378,
+    "mtime_ns": 1792148265051479507,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105801Z_7a711ba66cc7/record.json",
+    "sha256": "e56a585a84548b760af89e1e22cc59fae6140447061ab81fb61297a7b5aa3277",
+    "size": 2378,
+    "mtime_ns": 1792148281777649264,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105817Z_7c32f5c4dc05/record.json",
+    "sha256": "690a80871d2566aa55e0e59b3b7c0c81b178232afa53d7d5ab645c9951043dd9",
+    "size": 2379,
+    "mtime_ns": 1792148297213929377,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105826Z_b1f80565e9d0/record.json",
+    "sha256": "2e8bbd60b24c6d60fec32c1b540650bbcbe0f5fbcbd6da1f804c7f193f41342e",
+    "size": 2379,
+    "mtime_ns": 1792148306108873032,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105838Z_2cecb68c60f8/record.json",
+    "sha256": "b1c488e4948562c04193fa0976283936a85b63a0a2aee52ed0bb019ee314628c",
+    "size": 2394,
+    "mtime_ns": 1792148318414762851,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105850Z_09ce2de1c4df/record.json",
+    "sha256": "6f18842b2c59979570a759c4ccf39cf4d4ef47904e830a83038624c259a2755e",
+    "size": 2378,
+    "mtime_ns": 1792148330954580840,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105905Z_0ee99942c96f/record.json",
+    "sha256": "2957b358d2e7e6c7d986ed363a5345196dfd70a8df39408684c7194edaf71448",
+    "size": 2410,
+    "mtime_ns": 1792148345274413706,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105916Z_d062fa581d07/record.json",
+    "sha256": "00cee0d3972e185b77c8014ad85f5d81f06dfba767cc3dfa76e766a81a3771d9",
+    "size": 2379,
+    "mtime_ns": 1792148356163745741,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105933Z_001aecc86696/record.json",
+    "sha256": "4cc1e617344decfdfd9c1def6d24e07b6f8afd75247a3401d469b2962f10d935",
+    "size": 2395,
+    "mtime_ns": 1792148373672204138,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T105956Z_df2d17ac58cb/record.json",
+    "sha256": "d1a7c0ea5e4d9c139057aa7049874162fa1a435111c99b612bf49fc75926577b",
+    "size": 2380,
+    "mtime_ns": 1792148396228954921,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110016Z_8dd090c19f44/record.json",
+    "sha256": "a6898ceba94ce368c240a2fcfe3373bfc945d2403e44a428bd48a80ce0f27f8a",
+    "size": 2396,
+    "mtime_ns": 1792148416157459618,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110055Z_60138424f349/record.json",
+    "sha256": "22ed11be42f273b7a1d50411cfb2afdf231cdd445c5f219de07bf8783bd946d8",
+    "size": 2377,
+    "mtime_ns": 1792148455714109026,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110110Z_2ed81c72ce92/record.json",
+    "sha256": "95d33f4c93116429bb10862edc45c5b1a8497ee372a8acc8bd1c72ae2a67790c",
+    "size": 2379,
+    "mtime_ns": 1792148470706968160,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110125Z_84828084f17e/record.json",
+    "sha256": "aaab8671b52b309d12c60337f7c6d4512d991e60f427b19fc3437dc5da318cdf",
+    "size": 2374,
+    "mtime_ns": 1792148485309891817,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110140Z_2c8c5ea6a639/record.json",
+    "sha256": "3dd6f6fc421f1e6a68c6998c6ff276794eea07b18b8b4b136be0a6ee4ab15ee5",
+    "size": 2378,
+    "mtime_ns": 1792148500301424238,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110154Z_034fedc63703/record.json",
+    "sha256": "12a54314864b4f44fc2e8d7aeac309acd978b254e06f35039071e75411e32f05",
+    "size": 2377,
+    "mtime_ns": 1792148514560581270,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110211Z_4f0c645f3dd9/record.json",
+    "sha256": "152cb51a4d494eedbfe167283071a0164df28ddfce51ede24199b16a31975e41",
+    "size": 2379,
+    "mtime_ns": 1792148531629623981,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110224Z_494e8bdcde72/record.json",
+    "sha256": "dc9438f69aa93c043fdb36ade7b8fd77909b0dc4250534b820a8510ad10300d0",
+    "size": 2378,
+    "mtime_ns": 1792148544442450397,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110233Z_6530b858a848/record.json",
+    "sha256": "37e6451f061393ab360d7ac3b1ebeeb7315f819698255444b6806be77a93bcd1",
+    "size": 2376,
+    "mtime_ns": 1792148553634843369,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110244Z_e70cc939bceb/record.json",
+    "sha256": "1ca59398b8ae282f373499a353ef4d0b242dbecccef3a8866f0d20f71b0d2375",
+    "size": 2378,
+    "mtime_ns": 1792148564941357506,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110314Z_62bf6ba3dd74/record.json",
+    "sha256": "9a0ef43598d4a1755c98d655bb4c1dc555764e064d0aa6fa2e67380472042357",
+    "size": 2378,
+    "mtime_ns": 1792148594414863664,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110334Z_62bf5314d844/record.json",
+    "sha256": "911d495d8ab78f4bca7abb470422faa280679b70eb8982a244a178c9eff7aca1",
+    "size": 2377,
+    "mtime_ns": 1792148614514815399,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110408Z_de944dff2596/record.json",
+    "sha256": "0d0995847e1f65d545b3ad22a42f1cb1d1eae86efc2b35c10ec8ec9cd8a6f9da",
+    "size": 2399,
+    "mtime_ns": 1792148648966813839,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110422Z_5c55b1548ab3/record.json",
+    "sha256": "5c738d855a0dc8db8b6e1edb1ec2a9b8163856144206da7351bc5534e81e5c38",
+    "size": 2378,
+    "mtime_ns": 1792148662561263725,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110436Z_c7101846c181/record.json",
+    "sha256": "54bae6082ce30bbdcc1e2871f8ee72435a0a6aa2ea6caa3fa21a04a837af4a63",
+    "size": 2395,
+    "mtime_ns": 1792148676084266722,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110450Z_61bbc6506065/record.json",
+    "sha256": "1c6e31cadfc0c026ac79171286bd6bbeba561a85fb6293bc148cae8f8af1afda",
+    "size": 2378,
+    "mtime_ns": 1792148690146662485,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110512Z_947afb2b7e0c/record.json",
+    "sha256": "881231fb92cdfcc7b11d1adf820bc8e9bd8eac63e6590d2c76ff86b122c62188",
+    "size": 2411,
+    "mtime_ns": 1792148712306216362,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110540Z_f92ff878a0bc/record.json",
+    "sha256": "37070607495d181f0d07b55818c46b1ad538acc6dc829326c472e960098c681d",
+    "size": 2373,
+    "mtime_ns": 1792148740424828256,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110551Z_ffe7ad9848bd/record.json",
+    "sha256": "fcb5b10d7b9eb889f020a71ad7cf22154b1c03b4f5ec316e78a9944025c879d3",
+    "size": 2378,
+    "mtime_ns": 1792148751817296420,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110620Z_64d18d3f1326/record.json",
+    "sha256": "722a8052ddf55371241ac7073f670ec89fc04996ea728e75d4983ef933191fd5",
+    "size": 2380,
+    "mtime_ns": 1792148780726385099,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110645Z_897380640405/record.json",
+    "sha256": "179b44119eb102952063470860e04caaaad5cc61936dfed1c4ddd11fdb752e3e",
+    "size": 2377,
+    "mtime_ns": 1792148805480433632,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110700Z_7322de622f72/record.json",
+    "sha256": "dc01bf98109b5439e98b16d9ef65c370ea26921d7843067aa3dc7f703f8ae427",
+    "size": 2377,
+    "mtime_ns": 1792148820240413215,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110736Z_e1ed2e0f6659/record.json",
+    "sha256": "78ea7537b795492b32b7b0cdebf17ba62633ebc239c539f86cc1a9fbcc097801",
+    "size": 2379,
+    "mtime_ns": 1792148856490020277,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T110821Z_5f52e167545f/record.json",
+    "sha256": "45e26f1af6e22a27244c5d5d6bbf1519fd791a928087787558abbce40326889c",
+    "size": 2378,
+    "mtime_ns": 1792148901783609832,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T125857Z_1dd56773f125/record.json",
+    "sha256": "37e7d17058525339729973c10098ffa99f68511f347c18736bb1f5e11c5a21be",
+    "size": 2373,
+    "mtime_ns": 1792155537911620116,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T125913Z_5f468efaa3ac/record.json",
+    "sha256": "425efa8bbda3c05282cbcc51bcb4ab5a5688f89f09f4a7b52eb6cc382c6efc80",
+    "size": 2378,
+    "mtime_ns": 1792155553600050387,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T125944Z_2776ead32583/record.json",
+    "sha256": "0168b93ef172e3921a02829af91858d6c9c78737d9106abffc43ddb28d3e4871",
+    "size": 2379,
+    "mtime_ns": 1792155584039422003,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T125957Z_f1917673614f/record.json",
+    "sha256": "902a48c6ede92850dc8abf06e0be3a5eed8a6f39ebe9469a7a543a5931a9da5c",
+    "size": 2381,
+    "mtime_ns": 1792155597301591983,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130059Z_e905505dee42/record.json",
+    "sha256": "2b5963d9065101a833654c8ee875f960026c63c2b7ed7613b691965dd42f37c0",
+    "size": 2379,
+    "mtime_ns": 1792155659780288485,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130147Z_7fcc1c7927af/record.json",
+    "sha256": "b9addf380de8c6291c1d49c8095f4211798378b4f84d681ba830fdfcc1135029",
+    "size": 2395,
+    "mtime_ns": 1792155707939815443,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130209Z_6e8d587add5b/record.json",
+    "sha256": "1a631eb765683c66c1d342de3b7e00ad0789c9c964404d9a4d11fcd2f29ac40e",
+    "size": 2379,
+    "mtime_ns": 1792155729631054758,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130243Z_f67a035936b4/record.json",
+    "sha256": "07d1f6ca9b2bd1c9a175b47ad80a203349d266906dbed6a290db549f0c86a2d3",
+    "size": 2378,
+    "mtime_ns": 1792155763852404527,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130258Z_243bb8c89b2c/record.json",
+    "sha256": "3f06e990bccaa9a13c0b522acfb9ce4b33e5c0b9c5e92e983bd4e55dc80209b5",
+    "size": 2379,
+    "mtime_ns": 1792155778991528737,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130332Z_fa0d34ac0e51/record.json",
+    "sha256": "3f2da27d15ad6db1cd7d50730528b34825f2072a3c8be35271cfa0f70db61ac9",
+    "size": 2387,
+    "mtime_ns": 1792155812563495429,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130350Z_b7bf8451a078/record.json",
+    "sha256": "cdd7abe3dbdda98ec9b4703010bbc87fde488acb8974ba2a07f91370cac8137d",
+    "size": 2394,
+    "mtime_ns": 1792155830783213868,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130441Z_be068c43b1aa/record.json",
+    "sha256": "e67155fdf44a37497b12564863ba97df4aa1112475184e98650ffed403ff3b64",
+    "size": 2376,
+    "mtime_ns": 1792155881585166085,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130502Z_443445636e52/record.json",
+    "sha256": "6950c34d1bbb61a37bb9d70d31722dc25204d38acdb08e7fc49d8a925164fcc0",
+    "size": 2378,
+    "mtime_ns": 1792155902814358260,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130521Z_6f2a910e46ef/record.json",
+    "sha256": "677b793e9743087bb78350474e80dfe601e3fef7d53a1c8c094ac7db1a8e5448",
+    "size": 2398,
+    "mtime_ns": 1792155921873488227,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130540Z_e24b29905da1/record.json",
+    "sha256": "e0e9c1a04cdb149fb51db2717a19f04a998e0aa28d44b09cb124fec5bf86f540",
+    "size": 2378,
+    "mtime_ns": 1792155940374157416,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130614Z_7b69525a3376/record.json",
+    "sha256": "40b61340f46a9d6364ce11c615c07d342bb362850dc09f5024b9d995555a72ec",
+    "size": 2380,
+    "mtime_ns": 1792155974753243283,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130635Z_9d7ff802ce2e/record.json",
+    "sha256": "0b0746a68711142f717f233859c5b9a4e3766edf6029b755295096a2834c2974",
+    "size": 2380,
+    "mtime_ns": 1792155995367789939,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130656Z_354ef893eaa4/record.json",
+    "sha256": "a67b54be97abbcb2e0dadb85469ef9803e1f1c430b89f61e0a6ac7af62062443",
+    "size": 2377,
+    "mtime_ns": 1792156016215351426,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130717Z_45081ac3f42c/record.json",
+    "sha256": "fe3300a2592327319f96d2d97060e9ec89da120913bd49637401affeac239e0b",
+    "size": 2379,
+    "mtime_ns": 1792156038008725064,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130728Z_d3b4338dbf4d/record.json",
+    "sha256": "04b3650d5fba03d80ff82876ae866c64c272e7b5fe980482c558dcbbcc866f31",
+    "size": 2410,
+    "mtime_ns": 1792156048748326410,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130834Z_627242c13ef5/record.json",
+    "sha256": "16a689e93706bcb2b3c54dc0d43b79cfa53f416705981767df1f2f7516db4d47",
+    "size": 2377,
+    "mtime_ns": 1792156114063753784,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130855Z_dec8fe9e5552/record.json",
+    "sha256": "e91f3bb4ea1301019807627175bc4c942c0fcc9a0fcbff174b11deb12d6d4c7e",
+    "size": 2396,
+    "mtime_ns": 1792156135069982538,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130906Z_1509da7b6dc7/record.json",
+    "sha256": "3008d54aa964cdb1948d51e0312ccf567802f910c22568db560c3256d10ea9c5",
+    "size": 2410,
+    "mtime_ns": 1792156146151105651,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T130946Z_9fb4f69aef2f/record.json",
+    "sha256": "cf162f3955af4505f526b9a7a2c4c776c6162c45b3882470355e6ff2f174d654",
+    "size": 2380,
+    "mtime_ns": 1792156186179777844,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131026Z_3b5848465704/record.json",
+    "sha256": "25c680f94f65fcfd00ac71ca50c176870e92ee241723dc339172263329a11deb",
+    "size": 2409,
+    "mtime_ns": 1792156226544812420,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131045Z_e689c195d917/record.json",
+    "sha256": "4099d30c30890a85b280f15a5b0f62361e251b41771808eac5c7dfba286aca1d",
+    "size": 2379,
+    "mtime_ns": 1792156245394991323,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131121Z_ee37c23646dc/record.json",
+    "sha256": "642b83ded3c50d4b0e59a21ef3b75d0b2549d8d587917d1a6e1089a9d5873fb1",
+    "size": 2378,
+    "mtime_ns": 1792156281182790364,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131205Z_8032199f9a42/record.json",
+    "sha256": "a208c63d806f55585731f658ee2d8f452a956b1d71955a6b0b783ddde7a12fae",
+    "size": 2379,
+    "mtime_ns": 1792156325572052783,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131241Z_125e50781640/record.json",
+    "sha256": "fba15e35e2ed708c4b54a8f6aa8782f2a73ff33329c461f4a813c4fe8047df41",
+    "size": 2395,
+    "mtime_ns": 1792156361338459744,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131315Z_9439b9fc9b8f/record.json",
+    "sha256": "e8907b19231e6c038952055377651e710f1c5c59401a05b6aa7d47cb4847b037",
+    "size": 2380,
+    "mtime_ns": 1792156395612439204,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131338Z_2ea97a707ba9/record.json",
+    "sha256": "9621ea8b8c66a7c530064eca773df86fa46cf4831104a592adb2c1373ec56eb7",
+    "size": 2378,
+    "mtime_ns": 1792156418219963253,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131416Z_ba93a078b85b/record.json",
+    "sha256": "8d01753cf7bba38a57f572eddcad1e62fa9a02b4bcf4e5c04022272a9e6c9089",
+    "size": 2377,
+    "mtime_ns": 1792156456310689628,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131451Z_826fdac1250f/record.json",
+    "sha256": "c5d170569e7988fe96a5057bdbddc09610ef7c3f1dc7bebf452f2fd3aedff96b",
+    "size": 2392,
+    "mtime_ns": 1792156491599063408,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131537Z_39f2f6146e4e/record.json",
+    "sha256": "258a315cf6d58757e80d092b1b551e4bbc77dbe3dfb1e8a9e3136d8e0c15866a",
+    "size": 2393,
+    "mtime_ns": 1792156537811106812,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131558Z_b975836eb505/record.json",
+    "sha256": "ca6c354018ef0e0dd56213787969f86916850387edac97de2e287731bf104bc2",
+    "size": 2377,
+    "mtime_ns": 1792156558623918754,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131625Z_36933a4db761/record.json",
+    "sha256": "664f812c87e1de4a795425739c4094c6a77b51f42234d32b47953fbc1150c06e",
+    "size": 2379,
+    "mtime_ns": 1792156585881620158,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131642Z_8389347fd388/record.json",
+    "sha256": "02b6f718deabb8d5e6357fbe65c1408c3749175df2d1b659e1ef927717cfb672",
+    "size": 2379,
+    "mtime_ns": 1792156602614204882,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131906Z_6aa44dec5ec3/record.json",
+    "sha256": "0752103ff93dd65a9e7e19bf7acfc896073691fe399af6c1c45bc08387d55f4a",
+    "size": 2374,
+    "mtime_ns": 1792156746315185307,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131926Z_6cd6b7b3f0f4/record.json",
+    "sha256": "687667a1d217343ac32f33c459f344cab39bc2d663b64a6ce05ae0410efef17a",
+    "size": 2379,
+    "mtime_ns": 1792156766656534400,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T131958Z_4bdddf924ab0/record.json",
+    "sha256": "16eb6d89d54e947f82fe842abb401d128d370f7847fd72825964b686516294a1",
+    "size": 2379,
+    "mtime_ns": 1792156798783465201,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132051Z_dc499f3aa508/record.json",
+    "sha256": "032848d9d535d8467e6417789a73aebca1df3d3fd38d743a0d9d6c69fc960525",
+    "size": 2379,
+    "mtime_ns": 1792156851267239877,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132104Z_c226d3318a0c/record.json",
+    "sha256": "418d2ab263a3a0960ada59cbe68d6632fe8630221d0443f65ad49691cc6893e6",
+    "size": 2377,
+    "mtime_ns": 1792156864491882413,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132133Z_351c347cfc17/record.json",
+    "sha256": "ff7cc98a8c80518794ce823e5e0039b8a8a5180abe3eaba9722da6c1b0029d11",
+    "size": 2379,
+    "mtime_ns": 1792156893954411963,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132156Z_82f9e325d737/record.json",
+    "sha256": "e076ed5e8e5d5fb401f0fb915d3ad1387dec089e38aafd9d9019483b96a8166e",
+    "size": 2377,
+    "mtime_ns": 1792156916499390942,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132237Z_4124b4454b79/record.json",
+    "sha256": "b3d3e2d62251eb2832bf40381376d897d50cc4e97f4f7ced99c98eb49e25a886",
+    "size": 2378,
+    "mtime_ns": 1792156957217649198,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132245Z_bdf1ce7e304b/record.json",
+    "sha256": "363f2728928e0fe2f918101a6b12b2159c82de921fef35f5edfd575220a40415",
+    "size": 2378,
+    "mtime_ns": 1792156965160116763,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132319Z_83449f425457/record.json",
+    "sha256": "5e254f0cab17e4faae9bca86116ea6e043419f45eea2d76dcf2e5d34285593b8",
+    "size": 2405,
+    "mtime_ns": 1792156999715472314,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132341Z_8b878a132f4b/record.json",
+    "sha256": "33216f5dc38d212466ff430ed9da651d0f8385f4b986f06bcb68691fb0a95904",
+    "size": 2416,
+    "mtime_ns": 1792157021768039591,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132403Z_aff5d04c48d0/record.json",
+    "sha256": "6326377763bf30d1fcf2db92eb383e1332703fc3fc666b5fd795bf853e724144",
+    "size": 2395,
+    "mtime_ns": 1792157043136469799,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132414Z_1a74a0e12429/record.json",
+    "sha256": "129905ee79d0021413e9726b28822d66320a844bf1d6a5b711220a5d564acfbd",
+    "size": 2371,
+    "mtime_ns": 1792157054334181620,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132424Z_fb875137671b/record.json",
+    "sha256": "2a4c27ff9e7917547da241e360e2c63deaf3bec27535333f9a699695f08878c8",
+    "size": 2379,
+    "mtime_ns": 1792157064779972272,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132440Z_52d0f09ba126/record.json",
+    "sha256": "287cbc2b2f04342cb71d7af35bb9f6307c372388bd8f4f11c6e63d6a1e014a11",
+    "size": 2394,
+    "mtime_ns": 1792157080454687580,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132506Z_96208d43ab44/record.json",
+    "sha256": "5e6721224af2abda2fe546f98d03564491799c5752340426b46ff0793e0c0fc9",
+    "size": 2378,
+    "mtime_ns": 1792157106543327995,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132526Z_bd7f555f94b7/record.json",
+    "sha256": "9296f3d3d06bf5950a39fb982c3777cde4c193d49bbbd9d4f487440e016cc010",
+    "size": 2381,
+    "mtime_ns": 1792157126377459540,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132547Z_af28c3ffe5b5/record.json",
+    "sha256": "9046954750a590e530a2d6410f1b218d7fcf065d3635aaaa02f7c0533643bb13",
+    "size": 2380,
+    "mtime_ns": 1792157147605361751,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132601Z_1b4972062091/record.json",
+    "sha256": "e3333c5a4bbd3e229ee79952c9eef160a1707e031ab34312f22d482b7acf49b1",
+    "size": 2412,
+    "mtime_ns": 1792157161379985471,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132617Z_5e5d4ebfd137/record.json",
+    "sha256": "3b165ccee102858bac3304bebde23e326f85d909d2be95eb0f72c24385c61625",
+    "size": 2379,
+    "mtime_ns": 1792157177475407394,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132639Z_a4fbe6831f88/record.json",
+    "sha256": "b13c65667b969f3a49c02db68424b53a767f4ea07151683819297888dcee041d",
+    "size": 2376,
+    "mtime_ns": 1792157199581802985,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132702Z_b5460755f554/record.json",
+    "sha256": "33966c034a75515bd6bf22998898e8ab87c51837259b9bd39edd63f8d667a3a9",
+    "size": 2377,
+    "mtime_ns": 1792157222605972208,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132748Z_e43816127a8a/record.json",
+    "sha256": "2e6528084ff71d48f2acddd05bbe62f230ed0973e7fd7c7b27a78d005893c868",
+    "size": 2380,
+    "mtime_ns": 1792157268050276484,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132807Z_a57d5856b8c4/record.json",
+    "sha256": "e9844b92ea5aaa5972f4aec88a93e8dfed4952ff52653d1ed8b8792bd466cc1e",
+    "size": 2380,
+    "mtime_ns": 1792157287064999965,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132818Z_ce35a6aecd50/record.json",
+    "sha256": "4a3360c468d89b95536d8e514edc83e0341def2e11febf301912e176b78c1e1b",
+    "size": 2396,
+    "mtime_ns": 1792157298533512030,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132828Z_8e155ad30b8c/record.json",
+    "sha256": "f0b128dab40d96d0145bdeb4fdac4f7e1d3227e2c1d0298555f55e1bb566277a",
+    "size": 2394,
+    "mtime_ns": 1792157308678383970,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132906Z_3ac7836d2ec6/record.json",
+    "sha256": "223d0875701f3c3f26a15deb3908db67c0df463a16a0f93a63f77d46f8228d96",
+    "size": 2378,
+    "mtime_ns": 1792157346330681318,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132932Z_9fb56e57f880/record.json",
+    "sha256": "0e3b1e3551abc359455a1743b17ecda2f082600416013b7faa3d679022baecbf",
+    "size": 2380,
+    "mtime_ns": 1792157372442923052,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T132954Z_19b909158f10/record.json",
+    "sha256": "6d9c5b1a679d0240924d10a5c1c1e281e85b024bcf74303e2cac9b9c0ef5767f",
+    "size": 2379,
+    "mtime_ns": 1792157394142690375,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133052Z_edfe0defbbe9/record.json",
+    "sha256": "be718e51df3671b8a9c1388f919c471883597960dd44eb4e61049906b03d06dc",
+    "size": 2379,
+    "mtime_ns": 1792157452364648375,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133100Z_a4efed33180d/record.json",
+    "sha256": "a27f058d2a6d6695fcddf2452c41cdf008be999f8cda5f969d0461c1a351bdd4",
+    "size": 2380,
+    "mtime_ns": 1792157460652936815,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133116Z_405195a08e75/record.json",
+    "sha256": "37610048c05480ef70277b9c733459ece8982d41557ee5b8c11e09fa91dd390a",
+    "size": 2380,
+    "mtime_ns": 1792157476708812944,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133132Z_77b1d4213028/record.json",
+    "sha256": "5028123353e707641758b579c0ce88e2330abbc0bfc3292642675c8d4807acf1",
+    "size": 2413,
+    "mtime_ns": 1792157492801295276,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133159Z_82b0305490e1/record.json",
+    "sha256": "a8ac03c1551a3ba47b20fb6b3588347abe0de29a5ade2481e029817b8ff2314f",
+    "size": 2378,
+    "mtime_ns": 1792157519326225417,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133220Z_70254530299b/record.json",
+    "sha256": "c048287d46a751eccbf65e00d0228bf4eb9862ccf84a83c7b3c505f9a726bf7a",
+    "size": 2380,
+    "mtime_ns": 1792157540629420889,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133248Z_9ca14893eeaa/record.json",
+    "sha256": "5c5ea1674f9f4cb275314c7d086cabe29d7d9e6ddd690f7639831b892b4af7e0",
+    "size": 2379,
+    "mtime_ns": 1792157568574592977,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133338Z_a2bb93ed21ad/record.json",
+    "sha256": "25ca183be78ad9999f915626e25216d6196756fb029287d5dc1bc1f09a1f5296",
+    "size": 2395,
+    "mtime_ns": 1792157618708487651,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133353Z_ac2ecec21f90/record.json",
+    "sha256": "c4ec2d67437e5484986325a1e38048dd0802ef181e6cfbe55e88c2713f39b4dd",
+    "size": 2380,
+    "mtime_ns": 1792157633707859759,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133409Z_e28a19c874bc/record.json",
+    "sha256": "f1509594961ef6371151fc7d110cb4b94cfded07b41fe753c7ba726e31f2e2e9",
+    "size": 2395,
+    "mtime_ns": 1792157649117836135,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133428Z_bda3a9855ee3/record.json",
+    "sha256": "56bdd356ea9b6251b0a314d890af670db74130791208b1a45593e9a6b739394c",
+    "size": 2378,
+    "mtime_ns": 1792157668158711719,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133451Z_4d3d46663c2a/record.json",
+    "sha256": "f6ec7f76785a0b752125903057cadb0647d1d2b1aa584b7c4a86ee2de06c16c3",
+    "size": 2377,
+    "mtime_ns": 1792157691712888395,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133517Z_87b3e8c9d4c7/record.json",
+    "sha256": "b82532d05dddf9f2705d8139899b7ae9ca9608eb560528e2bd75766272e006d6",
+    "size": 2378,
+    "mtime_ns": 1792157717582343923,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133533Z_2c6884e75171/record.json",
+    "sha256": "1fb1a8a77d025c1161ba96e279c8133cd0670f58e2d37216b155f9f10acb0148",
+    "size": 2379,
+    "mtime_ns": 1792157733330705276,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133549Z_71b52ae8cb77/record.json",
+    "sha256": "7206618a09dbf25c8d467d3633d3ba14a5e9f6c7d3a7a834246f66a0a1caa8ef",
+    "size": 2379,
+    "mtime_ns": 1792157749391643327,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133612Z_0f115b634d5c/record.json",
+    "sha256": "b5d08604d19b0ec016cb69baba5b5f2b54223d2329ba663e81b48e56964c7991",
+    "size": 2378,
+    "mtime_ns": 1792157772821837139,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133648Z_ce2862890f52/record.json",
+    "sha256": "604e4cc0a1d227978ca7cbac2c299dcff39dd81142d4f41b7cc2a4c59c2cd228",
+    "size": 2413,
+    "mtime_ns": 1792157808823407814,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133709Z_be78868a6c2a/record.json",
+    "sha256": "efe66776590e0ab76d4a7d0e6e5888e59b6de13861f569d41ab47a849968557d",
+    "size": 2378,
+    "mtime_ns": 1792157829929574178,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133757Z_e1866c7032a4/record.json",
+    "sha256": "6360cb04b7fefa1d5b02cad9b12f9c839f8f88ae9eec37189b4427da55b11f01",
+    "size": 2378,
+    "mtime_ns": 1792157877293669090,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133818Z_b4d4a3acada6/record.json",
+    "sha256": "1010649325d6696ea68f89b51ac26d8c298e37472af9d3c9704d5e58e16fe4b6",
+    "size": 2380,
+    "mtime_ns": 1792157898539850159,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133833Z_a295d707dbe3/record.json",
+    "sha256": "ec5e143d9cb63ca42e8cd7ae7635ef1b98bd7930787380f458d6a14d61940ccf",
+    "size": 2395,
+    "mtime_ns": 1792157913976467640,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133845Z_31cf4fa17b18/record.json",
+    "sha256": "060be462581994c012c8e5340067d638be37910f79a0ec58dc9920b01a33121e",
+    "size": 2419,
+    "mtime_ns": 1792157925774509750,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T133900Z_9f1da75591de/record.json",
+    "sha256": "5f0975e1dff4a97d944edbb71793c69673b60d69ffb7b310e4f2e74dc17f7363",
+    "size": 2397,
+    "mtime_ns": 1792157940836743287,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134002Z_aa8d805fc5af/record.json",
+    "sha256": "e4cef45194187864d939adc54df49ea3af270b6c9bf2df9fe26253918c59c8e7",
+    "size": 2378,
+    "mtime_ns": 1792158002151469806,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134030Z_a089b14d478e/record.json",
+    "sha256": "284c08a0a988bc95f257b47577d106af4c14b69088e1727a87e20a252bce83fc",
+    "size": 2390,
+    "mtime_ns": 1792158030821225001,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134047Z_7d49d2351391/record.json",
+    "sha256": "fa6297684fbf922e974f8b1600a252ba582dd88cf2f4b4b2f26778541497121b",
+    "size": 2377,
+    "mtime_ns": 1792158047155445185,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134101Z_556331a30864/record.json",
+    "sha256": "5f9fc57444dafee3fdf78ebab1d93fb9fe24e6fcaca75b501942df24fca20944",
+    "size": 2380,
+    "mtime_ns": 1792158061816153718,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134118Z_ee39d7a5a525/record.json",
+    "sha256": "3066386e10bf2c3ed8d2c985f33cffed5005da67962fb56d51ca5db06b8f9138",
+    "size": 2399,
+    "mtime_ns": 1792158078714313101,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134157Z_df62302af19e/record.json",
+    "sha256": "ef3988da154dcc9a888a2fba81c9234fa88f904c22b0a0f17cb7646bdfa620e4",
+    "size": 2378,
+    "mtime_ns": 1792158117939498116,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134227Z_009470db7b7a/record.json",
+    "sha256": "0821b2420b666a3e587a191b3f1c6d9afd1d3c1b2bb52857861be607fb1e1cc9",
+    "size": 2379,
+    "mtime_ns": 1792158147921609501,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134251Z_b7afd17ff8d2/record.json",
+    "sha256": "78cfde8237242ea4daeaf0baa99734a9a80a53394dc1d2a8332b04521553c50d",
+    "size": 2377,
+    "mtime_ns": 1792158171682336145,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134309Z_de28e68cf092/record.json",
+    "sha256": "c5ffb5761bc33f3a97ce3c001fae43794f5a6150ce75b1cf0eca89a314e534e4",
+    "size": 2395,
+    "mtime_ns": 1792158189333718317,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134331Z_b0b69ae5913b/record.json",
+    "sha256": "d4d5e6173c8d178c0638bb9977e8db8cb5822db21bfcccc53f60d6e0f0c2f0b4",
+    "size": 2379,
+    "mtime_ns": 1792158211526778778,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134345Z_8ffefd483f56/record.json",
+    "sha256": "8d82bd5db7c3be62c0d0a5d2c9a218016f3b6305efaa44f5c7896c3956e9610e",
+    "size": 2379,
+    "mtime_ns": 1792158225946152443,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134357Z_2820ae05afa2/record.json",
+    "sha256": "fed18ebf1cc0044eba04d6b19b9c6fad0a6de9b4d72b881e07de66ce6cf25bd9",
+    "size": 2380,
+    "mtime_ns": 1792158237769884536,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134415Z_520271515492/record.json",
+    "sha256": "574ce1d55c248db2a2c9d281c6f38a44e10996ea2446856b03e15239c1366573",
+    "size": 2380,
+    "mtime_ns": 1792158255797981923,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134435Z_f12b798b4aa2/record.json",
+    "sha256": "40242f28bc85e8a9af7fe3deea6d14a2e33450deb017c5d844bc8598d1eb2c8d",
+    "size": 2392,
+    "mtime_ns": 1792158275829504639,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134500Z_ca8bb5741f83/record.json",
+    "sha256": "aa014e414517437e288b920be333aa7ad35d186bec79dd38d366cb0ab4e72d4f",
+    "size": 2378,
+    "mtime_ns": 1792158300514164420,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134525Z_e6f3f4a93369/record.json",
+    "sha256": "fc171b8407768fe6c548f50cc3b955a3bf643be6517757f49ba2d7e94f6051f1",
+    "size": 2404,
+    "mtime_ns": 1792158325669329972,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134537Z_11294e25bba5/record.json",
+    "sha256": "186d42e1c103db00e865a1b0fd335c3128de04147f1df3638bdf60ddc2f3a8a4",
+    "size": 2409,
+    "mtime_ns": 1792158337267900538,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134608Z_ed4bb156b919/record.json",
+    "sha256": "620f9e2ffa78f7c7ca83231f3e530267aa9694a56b567934576a423e1828a205",
+    "size": 2413,
+    "mtime_ns": 1792158368548484165,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134628Z_20aec5627998/record.json",
+    "sha256": "08a8b989b01b343ab248cf48b3bb768edf22e2750cc08c72fd74cd68b6723172",
+    "size": 2378,
+    "mtime_ns": 1792158388227261734,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134708Z_ef058c8f20d1/record.json",
+    "sha256": "98648222717ac2dc15ddb9d89aa79bcff6def5d90a0bffc29301efc74c4c32d5",
+    "size": 2376,
+    "mtime_ns": 1792158428870613858,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134725Z_22396101b5ee/record.json",
+    "sha256": "5d12074ff8eb98309dae4641477fd73d2ddc07a5ed61d234102c57411e2f7ff1",
+    "size": 2435,
+    "mtime_ns": 1792158445731530009,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134748Z_24fd64a312bf/record.json",
+    "sha256": "953b6ff3c83ecfe88e058f7040485e82ef8574d3a71fd6b0841bfd693b1e6090",
+    "size": 2450,
+    "mtime_ns": 1792158468959901197,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T134845Z_abd0f3a47ed9/record.json",
+    "sha256": "d7115f9c49821a36dfc688ae2218eb0dd310bb08467b654e871b5568ab0b9a24",
+    "size": 2508,
+    "mtime_ns": 1792158525272327793,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135011Z_a4b7ccf7172e/record.json",
+    "sha256": "bc0e56b03d2b65f6ffb9dfd3703c45246909af859bedb44e4309e93308783172",
+    "size": 2545,
+    "mtime_ns": 1792158611201989850,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135022Z_915a7da13006/record.json",
+    "sha256": "51a4cc674ac7b8e918a04e461831d4e8c338623777ae340d8248c707c43b9a86",
+    "size": 2509,
+    "mtime_ns": 1792158622820262572,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135035Z_06ac2ede6886/record.json",
+    "sha256": "e5674128b68cf1e00b0d9327ab7bb7012814d99d29d6c66041703d1a65f9d5d5",
+    "size": 2509,
+    "mtime_ns": 1792158635739969109,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135100Z_0ba0b84f0982/record.json",
+    "sha256": "698d9c6e6a382e135e750afc12095144eae680f75825982437bc5e9190a6fd24",
+    "size": 2507,
+    "mtime_ns": 1792158660041199434,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135145Z_34c2b54d3d99/record.json",
+    "sha256": "8a6cb0a300ef8ed3457b2e6f45f537ace064094b767c48b0f0cafb4470d30a5e",
+    "size": 2508,
+    "mtime_ns": 1792158705822372803,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135212Z_89910a525e18/record.json",
+    "sha256": "3704825414196d45e45b1b1a2b407aa2edb6b36449fac1d5d4b0eddf147f1dd2",
+    "size": 2509,
+    "mtime_ns": 1792158732409691656,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135223Z_3eb29d6aa55d/record.json",
+    "sha256": "fdd43a1d07663448e37ade038617fede48102949a9f04449907c889981487676",
+    "size": 2508,
+    "mtime_ns": 1792158743083385757,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135248Z_43376e0a236d/record.json",
+    "sha256": "1f8146276c23c94d98b9cd53c06f535a4051e2d8e94ff1246ff17bc3414a5c1d",
+    "size": 2507,
+    "mtime_ns": 1792158768872064051,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135310Z_5e54ccc8822b/record.json",
+    "sha256": "f27b2430ec7a38ad87eb796779d9c7c788aa1f8cbe52697ef8b627381cd46144",
+    "size": 2509,
+    "mtime_ns": 1792158790073216962,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135404Z_966a56a5854e/record.json",
+    "sha256": "9f71b552e6a72ad5b19d12aa4970c713e976388b075fee86da69df0a66d0193b",
+    "size": 2508,
+    "mtime_ns": 1792158844614870142,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135438Z_e84bedc82016/record.json",
+    "sha256": "2836ce114c5c09bb5e9cce97404ecf7cf0242dc1ff80966fa150268a7f8079c7",
+    "size": 2522,
+    "mtime_ns": 1792158878379470439,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135450Z_33eeb09d12d6/record.json",
+    "sha256": "75c46e20b33fc8dc4d92c32e3162bb13e7d696b1d1cbdd2660c05033329a1671",
+    "size": 2508,
+    "mtime_ns": 1792158890616310740,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135506Z_9b1fb2a9a453/record.json",
+    "sha256": "0089aea4af57b03605e7dc81de52bb8569ca6425e7842e58b729cb191d181de5",
+    "size": 2508,
+    "mtime_ns": 1792158906265520974,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135532Z_1fb189a1a94e/record.json",
+    "sha256": "6fdef8d35cf60e2fbb4176b9fb3e2fc609eb06d8fc0e9f5b083064e4c4cd5db5",
+    "size": 2508,
+    "mtime_ns": 1792158933003873598,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135654Z_5960cd4913a1/record.json",
+    "sha256": "60de2646385e0a3412f911ff1ff16090d65c502d817e117a9d52c20e6310b437",
+    "size": 2430,
+    "mtime_ns": 1792159014792598024,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135743Z_87bbf66ce460/record.json",
+    "sha256": "76d37655b993ff5df7646ccc267c84233ecf67751594d4ab0a44593a86dd880d",
+    "size": 2419,
+    "mtime_ns": 1792159063364287367,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135807Z_ba63192e5885/record.json",
+    "sha256": "bb05e79bc6922c3b53fa774caba0c8067e6faca750369cb97bebf8f4533acfe2",
+    "size": 2394,
+    "mtime_ns": 1792159087748918421,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135830Z_75fa405acbab/record.json",
+    "sha256": "c8d145ea0fda493927e068058bd7e93619bc5bc795c77efd8df7946e2315a03f",
+    "size": 2359,
+    "mtime_ns": 1792159110726266325,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135902Z_52ed6593bb48/record.json",
+    "sha256": "dd01706d957ced827c5f637e02fee74beb9759643428cdcf585b9ab4ca7ecc97",
+    "size": 2357,
+    "mtime_ns": 1792159142926066637,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135918Z_3cd5cc44781a/record.json",
+    "sha256": "ff6873b8bc287873c1c80e575fc72a2ffa029c858ecc5e992cc422ebc547ea6e",
+    "size": 2358,
+    "mtime_ns": 1792159158211161359,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135936Z_5eb57460f778/record.json",
+    "sha256": "82f81a3f6e1c20e735a341fb2ad53c407d2abcb1cea5d13ea2026bbf6781684a",
+    "size": 2390,
+    "mtime_ns": 1792159176248960654,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T135959Z_c79aa6790a1f/record.json",
+    "sha256": "0c7b04a9c61cfb784ef110884a61b7f44aac8b99dbfe4e3dd85ea3a29d27506b",
+    "size": 2357,
+    "mtime_ns": 1792159199444814428,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140010Z_e6199e807346/record.json",
+    "sha256": "61671270dc8980814abc45e3bb29fcc10502b15b7c64e4d707337a5a8aff00e6",
+    "size": 2360,
+    "mtime_ns": 1792159210314514924,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140024Z_94f3dcb0eb82/record.json",
+    "sha256": "39907457298046a8334453a32d00388b863a444ad233ca753917501fed277935",
+    "size": 2377,
+    "mtime_ns": 1792159224785693035,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140035Z_62881943e51d/record.json",
+    "sha256": "c8ee809f5f45cdcd97193a811240667ab7ddbc6456a076b81f20d8b445f5355a",
+    "size": 2394,
+    "mtime_ns": 1792159235184819220,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140110Z_1de808de77d9/record.json",
+    "sha256": "b390b4b9d8b9a0f0abda681d621b0e9af8a1dc7571eb302c54a8d38aa43b8fbb",
+    "size": 2378,
+    "mtime_ns": 1792159270231118393,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140129Z_d5ee10a1951c/record.json",
+    "sha256": "134c04d95f1478ce4364a949884bd3f673f1987881a405fd3be732ab6ff12602",
+    "size": 2358,
+    "mtime_ns": 1792159289742436917,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140200Z_9896f5c7f24e/record.json",
+    "sha256": "96dbd777eeb3de706607e7b5c593721e0d7c81793092a451d7fcb1bd65d80778",
+    "size": 2358,
+    "mtime_ns": 1792159320293878134,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140218Z_8e93e9d530dd/record.json",
+    "sha256": "7760f772d674acc2f08e7579d6864aa38d6e8d3d45810f72eafd0ffb310e2798",
+    "size": 2360,
+    "mtime_ns": 1792159338018078996,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140304Z_af0044a3697f/record.json",
+    "sha256": "1fc036cf39ed34e877f4bceb4f672f9f1498164c28f89f8d521cac437f43b956",
+    "size": 2376,
+    "mtime_ns": 1792159384108241905,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140338Z_47d3aae53496/record.json",
+    "sha256": "0e7a51b44811a7747ca2b8e8049fb22a660f61b3d4733bbfa351dd1571e7c303",
+    "size": 2377,
+    "mtime_ns": 1792159418769071659,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140400Z_6b53d5354e77/record.json",
+    "sha256": "e24bf8544289ebca6dbb1354b94c504fbe5147a313a4be2aec223102c5888db2",
+    "size": 2376,
+    "mtime_ns": 1792159440939936321,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140413Z_b3afafd18955/record.json",
+    "sha256": "982db3e5593967902fda1aaadb3d16a2d71fd39913fe3d8a1aa9593ca64b173d",
+    "size": 2378,
+    "mtime_ns": 1792159453916803398,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140447Z_f382fcc6869f/record.json",
+    "sha256": "591308cd672dd37b47847cd5eee8965e914fb7f1fa0664ca1e2084bf8b381728",
+    "size": 2359,
+    "mtime_ns": 1792159487277640896,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140502Z_a5e5d1fb5481/record.json",
+    "sha256": "8e52f9271bfaac8306e69e62b3ae05a9e6e94cdc5067bef128012418ca7952ef",
+    "size": 2358,
+    "mtime_ns": 1792159502125404616,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140541Z_bd397ea80455/record.json",
+    "sha256": "1535635d557899ad3ea9e7fad44304b8328be498e5734a8107fae4306af00a5a",
+    "size": 2429,
+    "mtime_ns": 1792159541233910124,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140600Z_0aa16bab7902/record.json",
+    "sha256": "857bbc051edc6c13cb06873b0644bf1f032c4f773ec373bc7707cbb5c6d43e98",
+    "size": 2407,
+    "mtime_ns": 1792159560321145341,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140613Z_d63d0e94ee33/record.json",
+    "sha256": "d15ea83b8be1cf6829b29c84de33076485bf5e67eae8fc149eba59c620620377",
+    "size": 2409,
+    "mtime_ns": 1792159573588611596,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140626Z_8b4693c241c6/record.json",
+    "sha256": "239a925efb52a965f080c6d623dafdd1b1c30620f558e20ece43d42e1c66ed77",
+    "size": 2408,
+    "mtime_ns": 1792159586976548902,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140646Z_a1464e00b4b9/record.json",
+    "sha256": "dbb5b7d179af6a47c7f9e7e27a8012bea655898b8bd03448bf393aefd0cee255",
+    "size": 2410,
+    "mtime_ns": 1792159606567297885,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140722Z_827ede48aad4/record.json",
+    "sha256": "b31084be5fe5b980d9e17c33ab14546fc18e6757eb09633a6449d43a6778a7e7",
+    "size": 2424,
+    "mtime_ns": 1792159643012613928,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140806Z_699332fd9156/record.json",
+    "sha256": "bb741e5df5054dbc7799457bc6c567df2077bd9dd5a46b984a3e4f8ce4cca686",
+    "size": 2423,
+    "mtime_ns": 1792159686052599990,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140844Z_80b5774b0a53/record.json",
+    "sha256": "f4ff33c8cd8cd27bfe1cfcc8cbc481cfb4f446c69963378cdb1fb8213edf7c05",
+    "size": 2409,
+    "mtime_ns": 1792159724499061160,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T140951Z_b597ad53b933/record.json",
+    "sha256": "1895ae2f4f1ee0f30bc010e4b74e88a1b70e9700e6e1962ff05ed2a2b360e166",
+    "size": 2441,
+    "mtime_ns": 1792159791503016446,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141028Z_4563c6e2fb8c/record.json",
+    "sha256": "474a0f19b07c61960779d1e218b8145cc0a4ae45be50154cd1f2099ff3b460df",
+    "size": 2441,
+    "mtime_ns": 1792159828484876696,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141116Z_7ae537c2742c/record.json",
+    "sha256": "e4cd151fcaa0ac1cb9f976b424e0ae1a46a5d26e474141a5e3e8016d16e04c6e",
+    "size": 2428,
+    "mtime_ns": 1792159876593045340,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141227Z_c71e99a44364/record.json",
+    "sha256": "69fa4b2b3e64704fae2ecc696d9babbae2afe090e177487650febafa69ef9d6c",
+    "size": 2408,
+    "mtime_ns": 1792159947065989121,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141249Z_4f257b7d9ac4/record.json",
+    "sha256": "8b29d85ba0ede6424a1c4c0349c8c9a562ec392e540c22215b80f7cf45a62664",
+    "size": 2427,
+    "mtime_ns": 1792159969405107986,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141453Z_b2cffcdcaaf7/record.json",
+    "sha256": "b902b9798a5ce831879955ad0f058dd533b39f155f75077e2012a7336a11df56",
+    "size": 2424,
+    "mtime_ns": 1792160093530827235,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141520Z_ee487d549766/record.json",
+    "sha256": "0173d417a6d6e5192a74b0cc0f216b111fbceee9d7a47dd3055fa9db7d84e4a3",
+    "size": 2407,
+    "mtime_ns": 1792160120405795360,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141555Z_46bfa47bba8a/record.json",
+    "sha256": "d32b0e4734f36445609560ec7fb3d51934917329bd08cc74527c3c4622349727",
+    "size": 2404,
+    "mtime_ns": 1792160155183872164,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141653Z_2e15dfd9409f/record.json",
+    "sha256": "70001baa0bb8e2762a33cf480c3b24cbd8d293c3c05b9f4d8e49676de123ebe0",
+    "size": 2406,
+    "mtime_ns": 1792160213969547230,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141712Z_d47e0bd81f6f/record.json",
+    "sha256": "313bdccc9e86e51517702ff9e9ced3b3a5148f1e99c453913bc0e8cb8daddd7b",
+    "size": 2409,
+    "mtime_ns": 1792160232046163258,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141726Z_34cc7e76aeeb/record.json",
+    "sha256": "d1db1324abc29eb1228819f264f1eecea493032fc12799f67c5b409fdcab0558",
+    "size": 2396,
+    "mtime_ns": 1792160246567926251,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141741Z_d148606cc876/record.json",
+    "sha256": "71c1b26c4ecb5ef67166ca34083a1bbad8bc4336646f138c1083e2ce172074d4",
+    "size": 2378,
+    "mtime_ns": 1792160261851802915,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141801Z_002c147e0ec2/record.json",
+    "sha256": "c65c6d9881f364f5eb03e0d1b0561f187b84439e2e0400039cf9a9d9ce8193bf",
+    "size": 2397,
+    "mtime_ns": 1792160281619777831,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141839Z_f33c57f411e3/record.json",
+    "sha256": "b756cce46bba2b74a7e2629b21c2232fb8b3c3b34128d5e874656ffcb469442a",
+    "size": 2423,
+    "mtime_ns": 1792160319806036564,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T141953Z_bc61c6d8d40b/record.json",
+    "sha256": "ae0144debb6a5b52aed1969b5d1d3ddb7e185af8aaebf200a19a3b4ee3a7c542",
+    "size": 2443,
+    "mtime_ns": 1792160393340217770,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142007Z_f695c95dc79a/record.json",
+    "sha256": "a9e3d13a95f0789ad98aa70844688519af112aac14df688a01d617641b80ada7",
+    "size": 2409,
+    "mtime_ns": 1792160407524171830,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142105Z_5d44202a8042/record.json",
+    "sha256": "1f2b89a5068ec43b0e3f08e93e9f09a7977e0d8332dddb760d7d174227b20724",
+    "size": 2389,
+    "mtime_ns": 1792160465840939166,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142124Z_59c798f8f37e/record.json",
+    "sha256": "4cd084d7500713d13ca2574dca4232dd916577bad1ad0f44974701e4bea22309",
+    "size": 2403,
+    "mtime_ns": 1792160484370836895,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142216Z_861c3ace52bc/record.json",
+    "sha256": "f8e938fc5681cdae1cbbafeb937f35fb33c48d356b93431b1199cda6bdacfd45",
+    "size": 2406,
+    "mtime_ns": 1792160536589298913,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142236Z_e9ae0c2a86f7/record.json",
+    "sha256": "22a7f4be1aae6dfa0e392f85f16325a4cedb54d048175dd15f22acba1b77ab40",
+    "size": 2388,
+    "mtime_ns": 1792160556978834992,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142258Z_c0dca82a50fb/record.json",
+    "sha256": "858553040610615ee65d836eea8549ebcfbd2207b5e0fbb66d16ed9e76cc5a6a",
+    "size": 2389,
+    "mtime_ns": 1792160578173915358,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142319Z_5a5c030d2a7a/record.json",
+    "sha256": "348e8e24876b51d489cd59e973d7ab79680af20de56a9f5ff3f829e84ae5738f",
+    "size": 2388,
+    "mtime_ns": 1792160599853571296,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142336Z_66185ee60bf4/record.json",
+    "sha256": "9e4d1f0b393eae9460e8a61a70f0229135fe8c9ceae7624a60c559d3047dbe2a",
+    "size": 2407,
+    "mtime_ns": 1792160616469555479,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142356Z_3131be485e55/record.json",
+    "sha256": "97d16b4b7eeb1c9b1e35c3a473ec3cb5d6871931ac9ea7f4251c2dd601bd5982",
+    "size": 2388,
+    "mtime_ns": 1792160636075681692,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142641Z_c6db3fbe5042/record.json",
+    "sha256": "7a312ae5ba9bc8693cbc529378462c7ed3266f748434c7a755f7f8aa296d2ec4",
+    "size": 2495,
+    "mtime_ns": 1792160801770379002,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142658Z_ab7b035469f3/record.json",
+    "sha256": "3c3ddc9a7f5f98faaab69a871a60194126dc8e66f37a96ad69077be7fabce61a",
+    "size": 2508,
+    "mtime_ns": 1792160818168706323,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142717Z_340a97c4e3c3/record.json",
+    "sha256": "a6bf3cf4aa562085a8fbd2925efa45f0cb98878eae80d8d44bbc5b6d28f6ed7f",
+    "size": 2510,
+    "mtime_ns": 1792160837391182871,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142725Z_e314230fb3d7/record.json",
+    "sha256": "4c7846c26741d71bf3958415793b82761a2a876f4c3be2dab165ba347d6e51ad",
+    "size": 2479,
+    "mtime_ns": 1792160845455679026,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142738Z_9dbf7a98a168/record.json",
+    "sha256": "d08daa00df0bf872f567b2fbb78f5fd902ba21e52da7dd9c23a03f660534629f",
+    "size": 2478,
+    "mtime_ns": 1792160858308980135,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142758Z_ce4e5c947636/record.json",
+    "sha256": "0e810f4cfe8485265c7df74192c95992f37ef9870ca6c76ced4c56aa650d1c58",
+    "size": 2475,
+    "mtime_ns": 1792160878422738260,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142824Z_6d28328b62fa/record.json",
+    "sha256": "2f991b3ba935282cbfdbe36553fa4297aec8881f2229ff0a66d4a53d232910bb",
+    "size": 2513,
+    "mtime_ns": 1792160904626410552,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T142843Z_af8dd9c1ad21/record.json",
+    "sha256": "a082236944f77bd36e42550e30a959185c944a014bab22c54f5224d9ca0e9414",
+    "size": 2497,
+    "mtime_ns": 1792160923586745786,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143007Z_e0c4eb2dbe9c/record.json",
+    "sha256": "6a8baac9a1846f3272b31a7eccc26c3fafef28f5c609be9c63c693ece0c26d32",
+    "size": 2477,
+    "mtime_ns": 1792161007851392463,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143042Z_b784ab647d47/record.json",
+    "sha256": "05c154ab39e2e1dad0478d56b73039a78dc14f6e1eaba36b95d888f5e743bd49",
+    "size": 2514,
+    "mtime_ns": 1792161042092357588,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143120Z_cc66f85fc682/record.json",
+    "sha256": "4202bf70a40c88bdaace760fa7ae37d6d29c13018b0baeedbed04db979b315d0",
+    "size": 2508,
+    "mtime_ns": 1792161080574443407,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143148Z_20137a9c62fe/record.json",
+    "sha256": "4a1d928b81a1d467c3612a154490b9a51ca20da94179ad8a2cc6b12640794db5",
+    "size": 2479,
+    "mtime_ns": 1792161108054915315,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143256Z_4aea282ebf7b/record.json",
+    "sha256": "6fb418817edf28a3f3c0fbed13909c2f2ab4d69152765a2ef5221ed30f4f2fb4",
+    "size": 2494,
+    "mtime_ns": 1792161176860932848,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143345Z_6ca06a196403/record.json",
+    "sha256": "a730e59602d53c22bb156ec4b90e8422e28deb73f8983d490125daf9bf2e99b6",
+    "size": 2479,
+    "mtime_ns": 1792161225213311382,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143413Z_1bd529f6bee7/record.json",
+    "sha256": "e80ca78155af669501938e104a9ebb19053ceed98f770b3432ba31ae15c8ac8b",
+    "size": 2374,
+    "mtime_ns": 1792161253400981663,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143439Z_77a62c097d0c/record.json",
+    "sha256": "4c617a688d4e0d91d3be6c9e59ab1ab8d811d135476814ab5be63008e899598e",
+    "size": 2359,
+    "mtime_ns": 1792161279560967268,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143517Z_214310e7a1fc/record.json",
+    "sha256": "5eca4397d959dcd5e86718e482711b0115aa38cd89e8972011c17df9c68ee8b2",
+    "size": 2358,
+    "mtime_ns": 1792161317519690352,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143559Z_d1c9ae1259be/record.json",
+    "sha256": "c4e4d4f5e1b260d6f1a73c51bb20321399fc66bf210fb1e8ab1203b967ea490f",
+    "size": 2374,
+    "mtime_ns": 1792161359576395808,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143641Z_716b5665f8b2/record.json",
+    "sha256": "021455f028b0148ee2be86b83ff0c1b696b20acc8d5b3b1441427182ba074cd4",
+    "size": 2373,
+    "mtime_ns": 1792161401177350917,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143719Z_bece5ff5c30d/record.json",
+    "sha256": "99375664394c1b4fc848e2b1bc7b17a7fa57e36f02a8cdf57abb79f2a144e9d6",
+    "size": 2374,
+    "mtime_ns": 1792161439657770019,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143803Z_3232816e8f94/record.json",
+    "sha256": "daa15cd34b797b8b3e2a0bfcc3364cabb00f8f5997370d42d806e598fd94f523",
+    "size": 2376,
+    "mtime_ns": 1792161483039571817,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143836Z_dd866084af7f/record.json",
+    "sha256": "7c70d2137873a932836b4e2102a93ee70136295f73c8c6d3de32ce0d87c2da9a",
+    "size": 2358,
+    "mtime_ns": 1792161516449727088,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143854Z_48463993c211/record.json",
+    "sha256": "e772bfe3432789cdb2071b880fe5e99dd7394319ba37847120bb8c3b55ebf640",
+    "size": 2349,
+    "mtime_ns": 1792161534465616341,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T143921Z_0fcb90f2517e/record.json",
+    "sha256": "7f8c6b54fa1389f3119a505835b85707861572e9e5cb69907a6bd92057a24af7",
+    "size": 2374,
+    "mtime_ns": 1792161561135793973,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144009Z_cc68f2337cea/record.json",
+    "sha256": "6f4d14cc8f6cd3090eecad64e10345e9dc2778f72e2010fc43e125e5ab7a529d",
+    "size": 2374,
+    "mtime_ns": 1792161609998999353,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144127Z_43b87015d84e/record.json",
+    "sha256": "f0936da1631ab7fd7dbda33aa00c0bb04272e9b58d39dea72e11bccb3f8669e0",
+    "size": 2375,
+    "mtime_ns": 1792161687973937593,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144218Z_42a4d69968fd/record.json",
+    "sha256": "06fb6424a2e8adf15cbac34ec1d46e51f7351592d6377df6017597ef1b97b3c0",
+    "size": 2358,
+    "mtime_ns": 1792161738134065859,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144234Z_445d702f5954/record.json",
+    "sha256": "ce6dda354d59c9ab8ca24a713aafeae54c7bf064a939111e3aeb74451cb682b9",
+    "size": 2375,
+    "mtime_ns": 1792161754482505513,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144250Z_c685a59062a5/record.json",
+    "sha256": "0b914ab80940c8a68cf7b9df6e68d3f7c30de36614215e49df5fb847c098cd18",
+    "size": 2359,
+    "mtime_ns": 1792161770767635917,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144332Z_c98c74838e5f/record.json",
+    "sha256": "d35c71c4d7d81003c5ca9b44f97634747d80a0bd2354e5c2079dea5d5bb1c27b",
+    "size": 2355,
+    "mtime_ns": 1792161812614389707,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144433Z_4338e2f4666b/record.json",
+    "sha256": "d3fb5e1d6d310d4445cc220b20a0bef912704237b3ccef8f7e6595f2dd25dadc",
+    "size": 2377,
+    "mtime_ns": 1792161873740126446,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144515Z_b7c1c2a74bc6/record.json",
+    "sha256": "79d01412242b410dfc3547b627d26cbc6122cd0f5dace490e64037214d09ca5e",
+    "size": 2374,
+    "mtime_ns": 1792161915977990239,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144602Z_4e7dfff8ddb0/record.json",
+    "sha256": "e30dc8a82a7f57acf051b69fcfe2115bbcfdf4f4b1457c28285749244fde2273",
+    "size": 2375,
+    "mtime_ns": 1792161962163537224,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144635Z_c3cee22b10db/record.json",
+    "sha256": "4f5d6e08303238e6fe62a99ad4baaa2ca404050a945380a38a2013d614709010",
+    "size": 2376,
+    "mtime_ns": 1792161995388203658,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144713Z_54a42a1bf432/record.json",
+    "sha256": "9b4970671822f132caa740e1c49144f50dfb37f9d70088ec11f4e0de7cac1b5a",
+    "size": 2357,
+    "mtime_ns": 1792162033558704689,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144750Z_94e924738052/record.json",
+    "sha256": "34627548de9b3f138f86ebcc3e5750ef751416512735d1f3747961efe8f0c583",
+    "size": 2359,
+    "mtime_ns": 1792162070721568872,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144817Z_f1e736a8f22d/record.json",
+    "sha256": "c9a00d3f07fe1f777cf4ce6322a261a19838ed88b75783e952770d6d05d4cd4a",
+    "size": 2376,
+    "mtime_ns": 1792162097581605985,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T144933Z_1df34b58a25d/record.json",
+    "sha256": "62f85acb92a18f40e437808efa70ec7cc521ced7525baf4e4116713be10343ea",
+    "size": 2380,
+    "mtime_ns": 1792162173945058240,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145013Z_59dd5e2d9543/record.json",
+    "sha256": "4f68c1ac3fde762604c54c8ecf6ac4e2dbb485d533af0ad9e5d8d37aacbc6e41",
+    "size": 2370,
+    "mtime_ns": 1792162213157073368,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145047Z_1b9bd694492d/record.json",
+    "sha256": "db321f2a134e21e718d720e7ae28e005485cfc90241890d0ad0f8b027cbe3d48",
+    "size": 2374,
+    "mtime_ns": 1792162247119703412,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145101Z_af9607b6978b/record.json",
+    "sha256": "aaacd5085195465ad76a3d8243846d5140aa2c40a702b8079ec48f39cfaef9d0",
+    "size": 2357,
+    "mtime_ns": 1792162261641927588,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145146Z_03390b3a62b1/record.json",
+    "sha256": "7a6198e7d2c3b277ac286276814f959e5ca81ead50ed96b9f3ea9f6c40042cc3",
+    "size": 2375,
+    "mtime_ns": 1792162306549581112,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145219Z_8efa3fc6fede/record.json",
+    "sha256": "516b5faa52681ab55a53d61c3a7038b95ba4b469c1c9c265b3f2c11940e353ec",
+    "size": 2475,
+    "mtime_ns": 1792162339617824603,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145320Z_72cbfac492ac/record.json",
+    "sha256": "7c8e7e9e8c27e79fb923e03cc8d01e201ebf5f7c91f2f969834a8afb6a0aab64",
+    "size": 2468,
+    "mtime_ns": 1792162400527655035,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145429Z_6b9ba8c40efc/record.json",
+    "sha256": "cbac2453307672123f13b661426407839c7abeeb1f832cfc599e5bcece64207b",
+    "size": 2456,
+    "mtime_ns": 1792162469779159595,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145530Z_e663ab65e8c2/record.json",
+    "sha256": "7644e1cd21b38c094b652fb658accd0a8a2b42a498984a1c94d5d6b7d0f9638a",
+    "size": 2473,
+    "mtime_ns": 1792162530425234713,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145545Z_60ad123168a3/record.json",
+    "sha256": "064ce0331ad0535765b30873c504b54108213697698a69cfee17747b69bcdb78",
+    "size": 2430,
+    "mtime_ns": 1792162545922169324,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145559Z_26c1705952ed/record.json",
+    "sha256": "6625ba044ffce8be214e890e5b077109033701637310aec28d53e7a098cd9e9f",
+    "size": 2455,
+    "mtime_ns": 1792162559771007186,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145713Z_3bff609a0347/record.json",
+    "sha256": "d5d941f41d16403a097d24eb7856ded2a11698f40742c81ed1b2c7f597dc6c17",
+    "size": 2474,
+    "mtime_ns": 1792162633276072811,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145812Z_00a2cd972b63/record.json",
+    "sha256": "04d100aa11cf68463f11ba5ac2f1f013636ad2efebcde5bcca3fc20d15edbb60",
+    "size": 2473,
+    "mtime_ns": 1792162692258121754,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145841Z_fff507e50502/record.json",
+    "sha256": "863ee727b2dca2b8e702dcd20b59bcca2cfb667098ebe9fe6ce59662ff3b70a6",
+    "size": 2473,
+    "mtime_ns": 1792162721996427328,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T145911Z_a81a6575ad03/record.json",
+    "sha256": "01fceaf4fbbe7989aab3e1a79f9648961ebd12bb4cbb1e2876dd197141ebcaa9",
+    "size": 2474,
+    "mtime_ns": 1792162751626666741,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150007Z_fd88bb819c5f/record.json",
+    "sha256": "47ba37a0ba38ac091d80ceb257ae2500bc479b4b5a3f4f769a26da56e09c53c0",
+    "size": 2454,
+    "mtime_ns": 1792162807340796920,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150043Z_4673c7955fa6/record.json",
+    "sha256": "10ac4aa50a71b692fc91bc8e60262985f92f84933963c7dc30a02cbe851a4efe",
+    "size": 2456,
+    "mtime_ns": 1792162843379887103,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150138Z_8b80af79d8ad/record.json",
+    "sha256": "f0cc43d728708fd6a8d3734a4ce242d89c06213baf0069cd14b7bdd9d13c6425",
+    "size": 2456,
+    "mtime_ns": 1792162898237510931,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150224Z_ae97bcbc89c4/record.json",
+    "sha256": "942bd4b038b2868545e30ddea6b3da0b4e1a9800e82b827dc4bdac0b642caf8f",
+    "size": 2454,
+    "mtime_ns": 1792162944777808554,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150347Z_b52caa2e8a39/record.json",
+    "sha256": "8e8931632ed0a26d2e8601db65c432955caef055edd2111e9247cfde7a0ba544",
+    "size": 2438,
+    "mtime_ns": 1792163027105020032,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150453Z_e2d375bec97c/record.json",
+    "sha256": "4a61a430f9a2d01f6cd1c21123664e6549f4adbbd52a523158c8f248f3883b1c",
+    "size": 2456,
+    "mtime_ns": 1792163093022247879,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150546Z_d42fed674b95/record.json",
+    "sha256": "5afcc0822e4e54d2b5bab2f186a8f6ad7d15f212035d57e6a6a6814f50193ebd",
+    "size": 2477,
+    "mtime_ns": 1792163146871644121,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150640Z_e0f4acd923aa/record.json",
+    "sha256": "b99a2cb6049efd075e31d13fa14a366ba09da6ab9355481ba6098315796138c6",
+    "size": 2480,
+    "mtime_ns": 1792163200549250556,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150723Z_b30214bd92fa/record.json",
+    "sha256": "b4468741aa718f51e7509c22cbd2890082d651da9d10146e490f1191ff0152b7",
+    "size": 2494,
+    "mtime_ns": 1792163243660596682,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150746Z_bb7f7ed3f3df/record.json",
+    "sha256": "e3ff722503a7ebf5651aaaf6c26cd1535bd3ad33259ee8e529ded904fcbba659",
+    "size": 2474,
+    "mtime_ns": 1792163266523221009,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150844Z_548fc47228c7/record.json",
+    "sha256": "e762f665da5f2318895dc08530e1f6ae648a140ac1ed67858f50f6c408950ff1",
+    "size": 2476,
+    "mtime_ns": 1792163324532767404,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T150937Z_ee4d37073ce4/record.json",
+    "sha256": "4970fc993128e3e2a0fb0e1eede99fa887439cbdfb19dcdada1eb62755093724",
+    "size": 2474,
+    "mtime_ns": 1792163377631268854,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153117Z_fca66ff5ff80/record.json",
+    "sha256": "7a92f01b9b305ee87de377a4fe50adfc2e2887a98624387274f773054f4cd0c7",
+    "size": 2479,
+    "mtime_ns": 1792164677756168921,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153206Z_48e9ee5a0fab/record.json",
+    "sha256": "f9493e8d7b55915345fed9f494b9e8711192776eb42527388c7cf072155d6dca",
+    "size": 2434,
+    "mtime_ns": 1792164726612733424,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153312Z_ccdd802f950d/record.json",
+    "sha256": "98293f8a2ac8ee21e77a92fe467ebff76e8dbdcea9c488c2164826d6991166d9",
+    "size": 2453,
+    "mtime_ns": 1792164792818628726,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153354Z_d95267ac148e/record.json",
+    "sha256": "d1d64cf093bb890ddd293719345f8f201f273bd5c1aca3227c6b21871221df08",
+    "size": 2456,
+    "mtime_ns": 1792164834427491188,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153507Z_2592e85955d9/record.json",
+    "sha256": "32260b6e95dc9aa82e863eb48f35cc3b74f33b5aa0629892e7da8e720ab9f51b",
+    "size": 2458,
+    "mtime_ns": 1792164907142756923,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153609Z_345fbcfb2061/record.json",
+    "sha256": "6bdff4c3277900a3ce8be0821ee06d934eb16147765c483b43716e73392ca184",
+    "size": 2454,
+    "mtime_ns": 1792164969665452954,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153710Z_3b9e775a338a/record.json",
+    "sha256": "1f1f18f9cb6013cdc13e4fceb7cd260e4b33b043616c9b423a10567951b87dbc",
+    "size": 2455,
+    "mtime_ns": 1792165030708234761,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153820Z_b1217f5da18c/record.json",
+    "sha256": "3ae84c93c38d0744c10aaf8717685e809320e3b18322a3b035944953d272a453",
+    "size": 2471,
+    "mtime_ns": 1792165100479096339,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T153915Z_1f3a7d13407f/record.json",
+    "sha256": "6a2855da973767fee41672df60d0f7dcea48bcf055a7c6adc035f900f07fb1f6",
+    "size": 2436,
+    "mtime_ns": 1792165155249321107,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154046Z_e60677aff0e9/record.json",
+    "sha256": "97d4d1afb4bfe510b39a1e381abf47c7a475cfc02f864b34b47c86402975b62d",
+    "size": 2457,
+    "mtime_ns": 1792165246453242675,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154109Z_370ca66f9906/record.json",
+    "sha256": "4044f78c8edc85309d948b93e4540f331f9dd3cd9c67c3ab7f1d5131c42e6e3f",
+    "size": 2474,
+    "mtime_ns": 1792165269250807740,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154146Z_ad1c32c49948/record.json",
+    "sha256": "f51f86dbe9427ba7fa7c2e81bf770122d210904262ce12d864dc87c2063d976c",
+    "size": 2456,
+    "mtime_ns": 1792165306136249640,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154220Z_6b9954e511be/record.json",
+    "sha256": "88e8277d7be355e4a67dd18e0b922c35927944cfd52f2d3d568d7de1fa1ec617",
+    "size": 2438,
+    "mtime_ns": 1792165340970307909,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154344Z_9aa40cc27cb8/record.json",
+    "sha256": "e9bc309a19f3c49930baf58788669a095fbca3f897a343500b2f86e9304df0f3",
+    "size": 2473,
+    "mtime_ns": 1792165424796420677,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154450Z_971500939036/record.json",
+    "sha256": "d82b0f7f62558e508287b4c515ac2bf238811e21f377b843967587ac2c59327b",
+    "size": 2439,
+    "mtime_ns": 1792165490513874316,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154625Z_da4b651ab59f/record.json",
+    "sha256": "e880b2abdb9b1bfb32bc69c07299ce7945d204d05f6d6d9dca499569438c2887",
+    "size": 2477,
+    "mtime_ns": 1792165585769579597,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T154658Z_6843ceece6e2/record.json",
+    "sha256": "416bb16bd072de95cf4ea76b5b47cd4bc136daeeff5ca9083b43137600fce7c8",
+    "size": 2471,
+    "mtime_ns": 1792165618602909166,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T155812Z_e1c3bfe71dc2/record.json",
+    "sha256": "59c3687cadadb770bfd03857129783b3f461b6c4e0b5afefd45f87f417b2522b",
+    "size": 2454,
+    "mtime_ns": 1792166292695947001,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T155903Z_52f2877493de/record.json",
+    "sha256": "255dd37f6921d93b093fa382ad4d3843262de3f25c60f921fb4f50da5a0ab7a8",
+    "size": 2456,
+    "mtime_ns": 1792166343404177346,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T160220Z_d157cf72d0f5/record.json",
+    "sha256": "8aa116223ef512e8a3443a2c6c959a346a2f8994efaa2e1527e6a6bf75fbe869",
+    "size": 2449,
+    "mtime_ns": 1792166540937396219,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T160315Z_0236dbc619af/record.json",
+    "sha256": "5050a315b7bf71759098e8da37f8eec68f760ee250ce0b857c33c508a5f06d16",
+    "size": 2451,
+    "mtime_ns": 1792166595747148801,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T160455Z_1df4f4ea1ffe/record.json",
+    "sha256": "3fa715759aaa02fc8fdda4dd426175b10dc8e6ea84002a037ad06fdebc700d82",
+    "size": 2357,
+    "mtime_ns": 1792166695388132498,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T160642Z_e91fac0a0b57/record.json",
+    "sha256": "06ddcc89589ab47d75e25e5fdd6da877819c268a5c29e7f9d33e46ec97864bf5",
+    "size": 2355,
+    "mtime_ns": 1792166802267800881,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T160715Z_da1a3d1d6b69/record.json",
+    "sha256": "af6ca2a2178cdba89dd8ced8ab2e6e3036c2758cc23b80e3d70af625e1c1925e",
+    "size": 2355,
+    "mtime_ns": 1792166835643469297,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T161016Z_0d7b7c10133b/record.json",
+    "sha256": "b4de0fdc501a06c329d05fa10c1fd9945a815091f8c23dd707f526fdb2a44177",
+    "size": 2391,
+    "mtime_ns": 1792167016287634576,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T161057Z_18a49ac32512/record.json",
+    "sha256": "7f80e844997ea97d30906cc00ba1c5c067ef72a97d97e857202cfba6057a3a4b",
+    "size": 2413,
+    "mtime_ns": 1792167057669278481,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T161137Z_bfcbe57daac5/record.json",
+    "sha256": "86d5907b69d4b5384d1f6ccd23f3b515eeadc48b8d93e4eeb1fd6ef933491711",
+    "size": 2414,
+    "mtime_ns": 1792167097122934381,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T161329Z_228f61d7b942/record.json",
+    "sha256": "774459272f821095098653b727a25c9067574c90b1a2124ecd092b608f8d66b1",
+    "size": 2413,
+    "mtime_ns": 1792167209505891977,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T161457Z_7a77ef9d6dea/record.json",
+    "sha256": "1a4d1f039798a2df10242225d20d700d3f7db4e132a4c2030c4ae25e50443f0a",
+    "size": 2421,
+    "mtime_ns": 1792167297855498166,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T161522Z_80dc5482be4d/record.json",
+    "sha256": "d2eae6803f807cde736609935fec8b384939b6bd423215e960c574235b739982",
+    "size": 2388,
+    "mtime_ns": 1792167322879648084,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/manual_visual_review.json",
+    "sha256": "2f2913eaf587a9b4088c9749c740ee3bf502ce4d895d5e08bc05c3117ed2df4c",
+    "size": 761,
+    "mtime_ns": 1792118460438346950,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/overlay_sync_backups/2026-10-16T16-28-56+00-00_1afa7549.zip",
+    "sha256": "1627f9278efa6a5d29efa10361582e26c77638f5e252e3b47869f341fd8b14c9",
+    "size": 28626544,
+    "mtime_ns": 1792168138396450584,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/overlay_sync_backups/2026-10-16T16-46-15+00-00_7b5d36f2.zip",
+    "sha256": "3593a4f9e54cee16604ee487080cf950152f2823551d221058f96ebbddea0ed5",
+    "size": 27714680,
+    "mtime_ns": 1792169176282244043,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/overlay_sync_backups/2026-10-16T17-04-39+00-00_6cfdda91.zip",
+    "sha256": "afd03891d427fb1514ff0aec08641c3fb026d2c3bdfe3d7bf59556b97b886346",
+    "size": 138852,
+    "mtime_ns": 1792170279492164732,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/overlay_sync_backups/2026-10-16T17-09-52+00-00_591bbe86.zip",
+    "sha256": "c1851f41d69b13a146fc6e26540c24823ea09d7146cbfd65b32fbcca66dd436c",
+    "size": 139294,
+    "mtime_ns": 1792170592425394628,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/overlay_sync_report.json",
+    "sha256": "e3f850fb67590fcdb169bbf6668333f38c605cef7906cbf16af1ee8a1ba9d77a",
+    "size": 813,
+    "mtime_ns": 1792170592431463604,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/overlay_sync_verification.json",
+    "sha256": "19f6378a3d13cb14744ba26da1e8dc4dc7dc86011f2fa6f909bc0325552f7df7",
+    "size": 838,
+    "mtime_ns": 1792170693635069973,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/resume_verification.json",
+    "sha256": "504fcbcd8df0eebd497b07c0becedf89b94045a0d87ea6b6cd9cda5954aab0c6",
+    "size": 164,
+    "mtime_ns": 1792118662389732511,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/resume_verification.log",
+    "sha256": "3aa3f63325d4a68bda1735f6e23a40dfd269b3a716981e053a68505e41d6eaad",
+    "size": 66172,
+    "mtime_ns": 1792118662246555565,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/review_priority.csv",
+    "sha256": "eaedf5769e4a4afece8a5783c2385193ba535f8f18724194cf7aefca6529df45",
+    "size": 2217,
+    "mtime_ns": 1792170592428639571,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/run_config.json",
+    "sha256": "5f7726ac9952a7cf7fbb3d7288d0fc7ced7e9765ad50bb9cfc440faa3ac47f66",
+    "size": 683,
+    "mtime_ns": 1792118559590374516,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/summary.json",
+    "sha256": "a04d6fe47507accb448fbc529ed5c3442b84d3b6eaf9a1c90335530fcb6fa4a8",
+    "size": 938,
+    "mtime_ns": 1792170592430242389,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/verification.json",
+    "sha256": "a15e7f28e08ccfa4de1dbd1bc2f2df9aaf2976d405c5bfffd9d86d39827e1e3f",
+    "size": 569,
+    "mtime_ns": 1792118516257490087,
+    "mode": 33152
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_output/visual_review_notes.csv",
+    "sha256": "0991cd34fcf4d657e1ddca3351ad3474e6dbf589dc22297e52ca3d2c41f1d88b",
+    "size": 1944,
+    "mtime_ns": 1792114420322025452,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_so_do.csv",
+    "sha256": "e785b412daa74c00bd8fe8d4bd85ecdfbadbbd30392aee81ff716876c699132e",
+    "size": 524,
+    "mtime_ns": 1792082658705452072,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/grabcut_source_before.json",
+    "sha256": "d232753d5baea139f08bd67d634bf4f535841a7afa316f7a8d3fb06b9bf3ea84",
+    "size": 142631,
+    "mtime_ns": 1792112502591849013,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/kiem_ke.json",
+    "sha256": "e46b35e1aa215db88c5548bc2d94d3268964e1e699579926a496cba17ae503db",
+    "size": 759,
+    "mtime_ns": 1792082554242046652,
+    "mode": 33188
+  },
+  {
+    "path": "reports/yeu_cau_2/mask_moi_can_sua_truoc_khi_chay.json",
+    "sha256": "46c8962f702061d46d5f9eddc8ac911f77bdd8d39e902990f9a79238ed81055a",
+    "size": 877978,
+    "mtime_ns": 1792163736612694900,
+    "mode": 33188
+  }
+]

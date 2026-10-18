@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "archive_sha256": "931073a20bb94d476197b522a789b4952db2c86e5e81e2c2b71a6a8715c7b02e",
+  "restored_entries": 8175,
+  "restored_packages": {
+    "prefix": "/private/var/folders/vh/hfsbj7h50zvcqb3jf87_bz0r0000gn/T/btl_restore_legacy_venv_mfd3rkk5/bo_tool_anh_576x384/.venv",
+    "numpy": "2.2.6",
+    "pillow": "11.3.0",
+    "onnxruntime": "1.23.2",
+    "certifi": "2026.07.22",
+    "numpy_file": "/private/var/folders/vh/hfsbj7h50zvcqb3jf87_bz0r0000gn/T/btl_restore_legacy_venv_mfd3rkk5/bo_tool_anh_576x384/.venv/lib/python3.10/site-packages/numpy/__init__.py",
+    "onnxruntime_file": "/private/var/folders/vh/hfsbj7h50zvcqb3jf87_bz0r0000gn/T/btl_restore_legacy_venv_mfd3rkk5/bo_tool_anh_576x384/.venv/lib/python3.10/site-packages/onnxruntime/__init__.py"
+  },
+  "temporary_tree_removed_on_exit": true,
+  "note": "Restored interpreter executed directly; original pip/activation absolute paths are historical. Recreate environments at final paths."
+}

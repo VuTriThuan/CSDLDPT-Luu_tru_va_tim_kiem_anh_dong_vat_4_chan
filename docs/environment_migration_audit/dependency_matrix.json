@@ -1,0 +1,235 @@
+[
+  {
+    "tool": "tools/image_processing/auto_crop.py",
+    "environment": ".venv-image-tools",
+    "external_imports": [
+      "PIL",
+      "certifi",
+      "numpy",
+      "onnxruntime"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "collections",
+      "csv",
+      "hashlib",
+      "json",
+      "math",
+      "os",
+      "pathlib",
+      "ssl",
+      "sys",
+      "tempfile",
+      "time",
+      "urllib"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/image_processing/rename_images.py",
+    "environment": ".venv",
+    "external_imports": [],
+    "stdlib_imports": [
+      "argparse",
+      "csv",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "re",
+      "sys",
+      "tempfile",
+      "uuid"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/image_processing/review_images.py",
+    "environment": ".venv-image-tools",
+    "external_imports": [
+      "PIL"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "csv",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "sys",
+      "tempfile",
+      "time",
+      "tkinter"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/segmentation/run_grabcut.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL",
+      "cv2",
+      "numpy"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "csv",
+      "datetime",
+      "fcntl",
+      "hashlib",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "sys",
+      "tempfile",
+      "time"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/segmentation/review_overlays.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "pathlib",
+      "sys",
+      "time",
+      "tkinter"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/segmentation/edit_masks.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL",
+      "cv2",
+      "numpy"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "concurrent",
+      "contextlib",
+      "csv",
+      "datetime",
+      "fcntl",
+      "hashlib",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "sys",
+      "tempfile",
+      "tkinter",
+      "uuid"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/segmentation/sync_overlays.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL",
+      "numpy"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "collections",
+      "csv",
+      "fcntl",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "sys",
+      "tempfile",
+      "uuid",
+      "zipfile"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/segmentation/regenerate_masks.py",
+    "environment": ".venv-image-tools",
+    "external_imports": [
+      "PIL",
+      "numpy",
+      "onnxruntime"
+    ],
+    "stdlib_imports": [
+      "__future__",
+      "argparse",
+      "csv",
+      "datetime",
+      "fcntl",
+      "hashlib",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "sys",
+      "tempfile",
+      "time"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/validation/audit_images.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL"
+    ],
+    "stdlib_imports": [
+      "argparse",
+      "collections",
+      "csv",
+      "json",
+      "pathlib",
+      "re",
+      "sys"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/validation/verify_grabcut_results.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL",
+      "numpy"
+    ],
+    "stdlib_imports": [
+      "argparse",
+      "csv",
+      "json",
+      "pathlib",
+      "sys"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  },
+  {
+    "tool": "tools/validation/verify_regenerated_masks.py",
+    "environment": ".venv",
+    "external_imports": [
+      "PIL",
+      "numpy"
+    ],
+    "stdlib_imports": [
+      "argparse",
+      "csv",
+      "json",
+      "pathlib",
+      "sys"
+    ],
+    "note": "Includes imports inside functions; imported project modules can add transitive runtime dependencies."
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "verified": true,
+  "checks": [
+    {
+      "command": "python3 tools/image_processing/auto_crop.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": "python3 tools/image_processing/rename_images.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": "python3 tools/image_processing/review_images.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/segmentation/run_grabcut.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/segmentation/review_overlays.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/segmentation/edit_masks.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/segmentation/sync_overlays.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": "bo_tool_anh_576x384/.venv/bin/python tools/segmentation/regenerate_masks.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/validation/audit_images.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/validation/verify_grabcut_results.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    },
+    {
+      "command": ".venv/bin/python tools/validation/verify_regenerated_masks.py --help",
+      "exit_code": 0,
+      "help_displayed": true,
+      "stderr": ""
+    }
+  ],
+  "real_data_processing": false
+}

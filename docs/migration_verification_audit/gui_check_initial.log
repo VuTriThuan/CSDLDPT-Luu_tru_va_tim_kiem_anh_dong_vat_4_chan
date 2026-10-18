@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/trithuan/Desktop/CSDLDPT/BTL/docs/migration_verification_audit/check_gui.py", line 167, in <module>
+    image_review()
+  File "/Users/trithuan/Desktop/CSDLDPT/BTL/docs/migration_verification_audit/check_gui.py", line 71, in image_review
+    assert path.read_bytes()==before and not errors,errors
+AssertionError: []
+Traceback (most recent call last):
+  File "/Users/trithuan/Desktop/CSDLDPT/BTL/docs/migration_verification_audit/check_gui.py", line 173, in <module>
+    assert child.returncode==0
+AssertionError

@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "path": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/backups/pre_environment_migration_20261017_105624/wheels",
+  "wheels": 14,
+  "runtime_locks": [
+    "shared_macos_cp310.lock",
+    "image_tools_macos_cp310.lock"
+  ]
+}

@@ -1,0 +1,124 @@
+[
+  {
+    "prefix": "/Users/trithuan/Desktop/CSDLDPT/BTL/.venv",
+    "base_prefix": "/Library/Frameworks/Python.framework/Versions/3.10",
+    "version": "3.10.11 (v3.10.11:7d4cc5aa85, Apr  4 2023, 19:05:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": [
+      [
+        "coloredlogs",
+        "15.0.1"
+      ],
+      [
+        "flatbuffers",
+        "25.12.19"
+      ],
+      [
+        "humanfriendly",
+        "10.0"
+      ],
+      [
+        "mpmath",
+        "1.3.0"
+      ],
+      [
+        "numpy",
+        "1.26.4"
+      ],
+      [
+        "onnxruntime",
+        "1.23.2"
+      ],
+      [
+        "opencv-python-headless",
+        "4.11.0.86"
+      ],
+      [
+        "packaging",
+        "26.3"
+      ],
+      [
+        "pillow",
+        "12.3.0"
+      ],
+      [
+        "pip",
+        "23.0.1"
+      ],
+      [
+        "protobuf",
+        "7.36.2"
+      ],
+      [
+        "setuptools",
+        "65.5.0"
+      ],
+      [
+        "sympy",
+        "1.14.0"
+      ]
+    ],
+    "path": ".venv",
+    "pyvenv_cfg": "home = /Library/Frameworks/Python.framework/Versions/3.10/bin\ninclude-system-site-packages = false\nversion = 3.10.11\n"
+  },
+  {
+    "prefix": "/Users/trithuan/Desktop/CSDLDPT/BTL/bo_tool_anh_576x384/.venv",
+    "base_prefix": "/Library/Frameworks/Python.framework/Versions/3.10",
+    "version": "3.10.11 (v3.10.11:7d4cc5aa85, Apr  4 2023, 19:05:19) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "packages": [
+      [
+        "certifi",
+        "2026.7.22"
+      ],
+      [
+        "coloredlogs",
+        "15.0.1"
+      ],
+      [
+        "flatbuffers",
+        "25.12.19"
+      ],
+      [
+        "humanfriendly",
+        "10.0"
+      ],
+      [
+        "mpmath",
+        "1.3.0"
+      ],
+      [
+        "numpy",
+        "2.2.6"
+      ],
+      [
+        "onnxruntime",
+        "1.23.2"
+      ],
+      [
+        "packaging",
+        "26.3"
+      ],
+      [
+        "pillow",
+        "11.3.0"
+      ],
+      [
+        "pip",
+        "23.0.1"
+      ],
+      [
+        "protobuf",
+        "7.36.2"
+      ],
+      [
+        "setuptools",
+        "65.5.0"
+      ],
+      [
+        "sympy",
+        "1.14.0"
+      ]
+    ],
+    "path": "bo_tool_anh_576x384/.venv",
+    "pyvenv_cfg": "home = /Users/trithuan/Desktop/CSDLDPT/BTL/.venv/bin\ninclude-system-site-packages = false\nversion = 3.10.11\n"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "staging": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/backups/pre_results_migration_20261017_104419/restore_check",
+  "entries": 3779,
+  "active_project_replaced": false,
+  "original_extended_attributes_verified": true,
+  "os_generated_attributes": [
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/.DS_Store",
+      "attributes": [
+        "com.apple.provenance"
+      ]
+    },
+    {
+      "path": "reports/yeu_cau_2/.DS_Store",
+      "attributes": [
+        "com.apple.provenance"
+      ]
+    },
+    {
+      "path": "reports/.DS_Store",
+      "attributes": [
+        "com.apple.provenance"
+      ]
+    }
+  ]
+}

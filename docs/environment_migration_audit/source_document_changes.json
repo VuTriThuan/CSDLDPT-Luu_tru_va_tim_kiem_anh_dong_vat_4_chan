@@ -1,0 +1,98 @@
+[
+  {
+    "path": ".python-version",
+    "action": "created",
+    "before_sha256": null,
+    "after_sha256": "c5ce36ba2f12a47dddca217aa651cf7325b9ab82dbe2d1f9cbcf5427af6fa1a4"
+  },
+  {
+    "path": ".gitignore",
+    "action": "created",
+    "before_sha256": null,
+    "after_sha256": "081fea84f176207c99be34cfe9a8fd3338c9f5541e7bba987480accdf5cfea85"
+  },
+  {
+    "path": "requirements.txt",
+    "action": "created",
+    "before_sha256": null,
+    "after_sha256": "f0ceebffb622c44d83207863d6f5233b868f6ce406ba1795b66cbecd147da3fe"
+  },
+  {
+    "path": "requirements_image_tools.txt",
+    "action": "created",
+    "before_sha256": null,
+    "after_sha256": "6fc8c2eac652119a983a2e338d29c08fee714495a929832659931b5761ee9837"
+  },
+  {
+    "path": "README.md",
+    "action": "updated",
+    "before_sha256": "81036c0ee3b13eddff5f9b570ad6b5fb48e9995659aa3149a15c011986fcf757",
+    "after_sha256": "2d0b9112e772387c4a3e57c959fab24add6c4143bc238532e1862ddbd4ab5aa2"
+  },
+  {
+    "path": "docs/migration_plan.md",
+    "action": "updated",
+    "before_sha256": "c4fedcc3c0e6092bbd32c8e21f6bdae13e6b5d0ac92370157254d70795d678f0",
+    "after_sha256": "e1a0ddfa0a7d3308ccef3e62adf99c919afd3e0d8b67b0527e0d4aa36a9a611d"
+  },
+  {
+    "path": "docs/python_environments.md",
+    "action": "created",
+    "before_sha256": null,
+    "after_sha256": "cda4091d3d3b580e174de4df646f73d41ba50d8f86d0df34173c52f35d484a3d"
+  },
+  {
+    "path": "tools/image_processing/auto_crop.py",
+    "action": "updated",
+    "before_sha256": "a7d996ce785774e18f8c410371dcf7ca3c100118526ddcd99366cad38cf8f470",
+    "after_sha256": "7f6258e0fd9b18589fb914805c4c111ca86903792cbc0406a70bc6237df23812"
+  },
+  {
+    "path": "tools/image_processing/tool_common.py",
+    "action": "updated",
+    "before_sha256": "a9563fd7dfaad8170319e6a9f6cdce229d3b5c78beb02e1a374186fdd169d079",
+    "after_sha256": "2031a12c17afbcdc20a269ccd49657182a01cc3ff6a6431bb00a389e3a568ffa"
+  },
+  {
+    "path": "tools/segmentation/edit_masks.py",
+    "action": "updated",
+    "before_sha256": "2ea702ecaf525bbac9dcb19f436008047d2b39dc665fd74af347f0ba12cb8165",
+    "after_sha256": "0459ac50ca3216ea988f5d40813b5a346311141890da8b2e5e0d41d3a36ee10e"
+  },
+  {
+    "path": "tools/segmentation/regenerate_masks.py",
+    "action": "updated",
+    "before_sha256": "ce41f4c2f1aa8d0dae55639e422e8531fc241e12cfad9e10608eecee75424c27",
+    "after_sha256": "5063a3a577b1b4cc8d33d8924bb32111eee681752ad46b43b27fd07279d704e8"
+  },
+  {
+    "path": "tests/image_processing/test_compatibility.py",
+    "action": "updated",
+    "before_sha256": "da773eda2bfd87eabe4279ffe5c6e9c1765de0a7d8fa06b212df98f1cd03a50d",
+    "after_sha256": "9387dd34abacaf29fac19c91379dad6fb911324f33568f1ff60d3da283e97e24"
+  },
+  {
+    "path": "tests/validation/test_source_migration.py",
+    "action": "updated",
+    "before_sha256": "941ce98341e12159e81eb8ffd5bde304518d80f9ea3badfa0ccd12e19ea4063d",
+    "after_sha256": "bbad5d0a1bf5fba369adfdb99bf543dad7c807f0def07c39bafe8f1d5c5b618a"
+  },
+  {
+    "path": "docs/guides/grabcut.md",
+    "action": "updated",
+    "before_sha256": "4765d38e7a76520551cb135b8262a193ef149e3b4b764c8377124c39a0a73514",
+    "after_sha256": "7ee89e22d0744120793da5e8cdf70b1c9b413cca8a9b31d3ee997caebb9da9a2"
+  },
+  {
+    "path": "docs/guides/image_tools.md",
+    "action": "updated",
+    "before_sha256": "e1815dd9684e615e67ac541479f5ccfdea6bd19cdd46a17db4748bf5e8f163f4",
+    "after_sha256": "530e729400be661f7b9c70d7f4ba843b01a4076b72910bacf2edcb2676c52433"
+  },
+  {
+    "path": "docs/guides/mask_regeneration.md",
+    "action": "updated",
+    "before_sha256": "4f6688827287797b69efdab8ce21c734cefd5784cd95095e9528693b3717339b",
+    "after_sha256": "7894df3fa4ffa9110ddf3bd68b842947690878bd5a95fe0a3f092f9d5e0396fc"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "interpreter": "/Users/trithuan/Desktop/CSDLDPT/BTL/.venv-image-tools/bin/python",
+  "model_sha256": "8d10d2f3bb75ae3b6d527c77944fc5e7dcd94b29809d47a739a7a728a912b491",
+  "temporary_images_processed": 1,
+  "new_run_resume_reused": 1,
+  "real_data_written": false,
+  "numpy": "2.2.6",
+  "pillow": "11.3.0",
+  "onnxruntime": "1.23.2"
+}

@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "shared_environment_entries_unchanged": 8279,
+  "protected_data_result_and_state_files_unchanged": 5848,
+  "requirements": [
+    {
+      "environment": ".venv",
+      "requirements": "requirements.txt",
+      "runtime_pins_verified": 11
+    },
+    {
+      "environment": ".venv-image-tools",
+      "requirements": "requirements_image_tools.txt",
+      "runtime_pins_verified": 11
+    }
+  ],
+  "older_audit_seals_verified": {
+    "source_migration_audit": 10,
+    "documentation_migration_audit": 21,
+    "data_migration_audit": 19,
+    "results_migration_audit": 30
+  },
+  "analysis_reports_unchanged": true,
+  "legacy_environment_removed": true,
+  "new_environment_entries": 8182,
+  "real_data_processed": false
+}

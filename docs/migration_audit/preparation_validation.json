@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "backup_verified": true,
+  "mapping_rows": 26551,
+  "target_collisions": 0,
+  "plan_links_missing": [],
+  "original_git_status_unchanged": true,
+  "original_file_content_and_metadata_unchanged": true,
+  "restored_samples": 30,
+  "complete_edit_sessions_restored": 2,
+  "archive_xattrs_verified": {
+    "verified": true,
+    "extended_attributes_checked": 27739,
+    "mismatches": []
+  },
+  "migration_started": false
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "original": "/Users/trithuan/Downloads/feature_extractors.py",
+    "local_backup": "outputs/backups/pre_migration_20261017_100229/external_dependencies/feature_extractors.py",
+    "sha256": "3c5d1b0a5f74016f66e1d785c1a56786904caff2126506b465fbade5fb47512c",
+    "identical": true
+  },
+  {
+    "original": "/Users/trithuan/Downloads/README.md",
+    "local_backup": "outputs/backups/pre_migration_20261017_100229/external_dependencies/reference_readme.md",
+    "sha256": "f79e69ec40f1d5e54b6d9b2671d47ad8e74af0465002e513a7279cc44d097947",
+    "identical": true
+  }
+]

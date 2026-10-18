@@ -1,0 +1,140 @@
+{
+  "verified": true,
+  "checkpoints": [
+    {
+      "path": "outputs/backups/pre_migration_20261017_100229/project_snapshot.tar",
+      "bytes": 4471776768,
+      "sha256": "2917b8e027a090fdb7564ac71336e4a82e7ce6e1dc9e038658a2c468e37bdbf7",
+      "verified": true
+    },
+    {
+      "path": "outputs/backups/pre_data_migration_20261017_103325/before_data_migration.tar",
+      "bytes": 129361920,
+      "sha256": "1ce1d4b0e34dc3a5d5eff5e6d79fc68a9c0aaa4788158606d71ca651234cc8ed",
+      "verified": true
+    },
+    {
+      "path": "outputs/backups/pre_results_migration_20261017_104419/before_results_migration.tar",
+      "bytes": 583116800,
+      "sha256": "580a45d1daaa1ae603e8a6098f3802ad963c43d9410dc2097681c23ef17ae2bf",
+      "verified": true
+    },
+    {
+      "path": "outputs/backups/pre_environment_migration_20261017_105624/before_environment_migration.tar",
+      "bytes": 814602240,
+      "sha256": "931073a20bb94d476197b522a789b4952db2c86e5e81e2c2b71a6a8715c7b02e",
+      "verified": true
+    },
+    {
+      "path": "outputs/backups/pre_verification_20261017_111334/project_controls_before.tar",
+      "bytes": 808960,
+      "sha256": "d9cf5efa7481c1a58ba0a6d04aee5cb94ab302c958638cadce24983c51ed346b",
+      "verified": true
+    },
+    {
+      "path": "docs/source_migration_audit/source_before.tar",
+      "bytes": 324608,
+      "sha256": "64dafb5ee43e6c4ab3459c9701f35835778207a4e824619593469ddc6a67ee6a",
+      "verified": true
+    },
+    {
+      "path": "docs/documentation_migration_audit/documents_before.tar",
+      "bytes": 205312,
+      "sha256": "fb0707220706b8fa9939d86fbd1337280b0a45003f8c6254359d28a6dec438e2",
+      "verified": true
+    }
+  ],
+  "restored_samples": [
+    {
+      "path": "data/anh-chua-loc/Ailuropoda_melanoleuca_1211.jpg",
+      "sha256": "8195c7d2bd12c83970b9e9537ac3032c67fb39ce095d022855811091091be685",
+      "bytes": 115846
+    },
+    {
+      "path": "data/anh-da-cat-576x384/.tool_anh.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "data/anh-da-cat-576x384-da-xoa/Ailuropoda_melanoleuca_1212.jpg",
+      "sha256": "320f44db2d9de335945067fa31dd8ca301b756db692a54bae4868fd881ebaeaf",
+      "bytes": 83785
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/masks/Ailuropoda_melanoleuca_1211.jpg.png",
+      "sha256": "fcd22ef3c55ac206095c04b4ac88262146fde3898a94dd50f5722787a5c44db0",
+      "bytes": 2121
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/overlays/Ailuropoda_melanoleuca_1211.jpg.png",
+      "sha256": "311cba7366848f5783f5abab4228125474c02d72df34354d72c205f0310119df",
+      "bytes": 362892
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/quicklooks/batch_001.jpg",
+      "sha256": "a7d5208dfa5050639b477d201854d5a0e24c7b95315d5a5a9dcf78d63156f8b5",
+      "bytes": 269243
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101513Z_82f1f13aeda5/mask_before.png",
+      "sha256": "51ce8811599b48d1572d749290f8e42f1da7ab12e07097b810c1800ae8a6bdcd",
+      "bytes": 1926
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101513Z_82f1f13aeda5/overlay_before.png",
+      "sha256": "b721b52d9c8ebf9302356ded64389e6d5cfe5778ffca80c24bda85737da7ac56",
+      "bytes": 298003
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101513Z_82f1f13aeda5/record.json",
+      "sha256": "f4b661eaf0c835b2ba8347509e6a3c4242fa180cde5f126181c8afd459edec97",
+      "bytes": 2355
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/manual_edits/20261016T101513Z_82f1f13aeda5/scribbles.png",
+      "sha256": "9881b2f6cfce46d4e4e4801a565f2aa06404c54899d1a2c7975c2d61e60d5501",
+      "bytes": 1595
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/manifest.csv",
+      "sha256": "efa7ab0214002502425acb50de383a7d0e61f99cb13f10964b2f607dfab06b67",
+      "bytes": 365226
+    },
+    {
+      "path": "reports/yeu_cau_2/grabcut_output/run_config.json",
+      "sha256": "5f7726ac9952a7cf7fbb3d7288d0fc7ced7e9765ad50bb9cfc440faa3ac47f66",
+      "bytes": 683
+    },
+    {
+      "path": "data/anh-da-cat-576x384/_cat_tu_dong.json",
+      "sha256": "2a191378c976aa4e974b19eb5982faec1b24eba4158cda1b0b3c208a636a958d",
+      "bytes": 962492
+    }
+  ],
+  "temporary_restore_removed": true,
+  "previous_audit_seals": {
+    "source_migration_audit": 10,
+    "documentation_migration_audit": 21,
+    "data_migration_audit": 19,
+    "results_migration_audit": 30,
+    "environment_migration_audit": 44
+  },
+  "supplemental_assets": [
+    {
+      "path": "outputs/backups/pre_migration_20261017_100229/external_dependencies/feature_extractors.py",
+      "sha256": "3c5d1b0a5f74016f66e1d785c1a56786904caff2126506b465fbade5fb47512c",
+      "verified": true
+    },
+    {
+      "path": "outputs/backups/pre_migration_20261017_100229/external_dependencies/reference_readme.md",
+      "sha256": "f79e69ec40f1d5e54b6d9b2671d47ad8e74af0465002e513a7279cc44d097947",
+      "verified": true
+    },
+    {
+      "path": "outputs/backups/pre_migration_20261017_100229/external_dependencies/u2net.onnx",
+      "sha256": "8d10d2f3bb75ae3b6d527c77944fc5e7dcd94b29809d47a739a7a728a912b491",
+      "verified": true
+    }
+  ],
+  "dependency_wheels_verified": 14
+}

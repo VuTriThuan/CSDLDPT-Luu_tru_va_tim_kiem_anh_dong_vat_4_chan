@@ -1,0 +1,13 @@
+Looking in links: outputs/backups/pre_environment_migration_20261017_105624/wheels
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/numpy-1.26.4-cp310-cp310-macosx_10_9_x86_64.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/pillow-12.3.0-cp310-cp310-macosx_10_10_x86_64.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/opencv_python_headless-4.11.0.86-cp37-abi3-macosx_13_0_x86_64.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/onnxruntime-1.23.2-cp310-cp310-macosx_13_0_x86_64.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/coloredlogs-15.0.1-py3-none-any.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/flatbuffers-25.12.19-py3-none-any.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/humanfriendly-10.0-py3-none-any.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/mpmath-1.3.0-py3-none-any.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/packaging-26.3-py3-none-any.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/protobuf-7.36.2-cp310-abi3-macosx_10_9_universal2.whl
+Processing ./outputs/backups/pre_environment_migration_20261017_105624/wheels/sympy-1.14.0-py3-none-any.whl
+Would install coloredlogs-15.0.1 flatbuffers-25.12.19 humanfriendly-10.0 mpmath-1.3.0 numpy-1.26.4 onnxruntime-1.23.2 opencv-python-headless-4.11.0.86 packaging-26.3 pillow-12.3.0 protobuf-7.36.2 sympy-1.14.0

@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "protected_files_verified": 20716,
+  "groups": {
+    "data": 2599,
+    "reports_and_results": 3257,
+    "environments": 14860
+  },
+  "allowed_documentation_edits": [
+    "reports/yeu_cau_2/README_GRABCUT.md",
+    "reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md"
+  ],
+  "file_set_unchanged": true,
+  "problems": [],
+  "data_and_results_moved": false,
+  "environment_changes": false,
+  "real_batch_processing": false
+}

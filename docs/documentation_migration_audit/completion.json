@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "scope": "documentation_only",
+  "documents_moved": 5,
+  "active_documents_checked": 9,
+  "local_links_checked": 209,
+  "broken_local_links": 0,
+  "linked_images_decoded": 40,
+  "readme_help_commands_passed": 11,
+  "protected_files_unchanged": 20746,
+  "reports_analysis_unchanged": true,
+  "data_or_results_moved": false,
+  "source_code_changed": false,
+  "real_processing": false,
+  "historical_missing_literal_path": "data/anh-da-cat-576x384/thong_ke_loai_dong_vat.csv"
+}

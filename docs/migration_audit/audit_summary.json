@@ -1,0 +1,47 @@
+{
+  "regular_files": 24264,
+  "directories": 2281,
+  "symlinks": 6,
+  "bytes": 4371659726,
+  "file_categories": {
+    "state_or_other": 26,
+    "git_metadata": 3526,
+    "python_environment": 14854,
+    "documentation": 7,
+    "python_cache": 13,
+    "code": 13,
+    "source_image": 1297,
+    "crop_state": 4,
+    "cropped_image": 812,
+    "deleted_crop": 485,
+    "manifest": 1,
+    "edit_history": 1496,
+    "mask": 812,
+    "overlay_sync_backup": 4,
+    "overlay": 812,
+    "quicklook": 102
+  },
+  "manifest_rows": 812,
+  "manifest_hash_mismatches": [],
+  "review_status_counts": {
+    "da_duyet": 812
+  },
+  "review_result_counts": {
+    "dat": 812
+  },
+  "edit_records": 374,
+  "edit_states": {
+    "saved": 374
+  },
+  "crop_state_records": 1297,
+  "crop_physical_states": {
+    "('deleted', False, True)": 464,
+    "('saved', True, False)": 644,
+    "('deleted', True, False)": 168,
+    "('saved', False, True)": 21
+  },
+  "crop_state_discrepancies": 189,
+  "zip_members_verified": 508,
+  "current_grabcut_script_sha256": "8236ca57acaffc98516de4e0ae77a778f9cfaec0286239dc834bbf1bc21365b6",
+  "recorded_grabcut_script_sha256": "711d4380c4fd19946fcec6f4a90a8e3add312b22e6e8b0ea986e95edd1da1e51"
+}

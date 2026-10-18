@@ -1,0 +1,113 @@
+[#########################] 1/1 success=1 failed=0 resumed=0 elapsed=3s
+[#########################] 1/1 success=1 failed=0 resumed=1 elapsed=0s
+[#########################] 1/1 success=1 failed=0 resumed=0 elapsed=3s
+[#########################] 1/1 success=1 failed=0 resumed=1 elapsed=0s
+{
+  "selected": 1,
+  "discovered": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "attempted_this_run": 1,
+  "succeeded_this_run": 1,
+  "failed_this_run": 0,
+  "resumed_this_run": 0,
+  "quicklook_failed_this_run": 0,
+  "suspicious": 0,
+  "review_status_counts": {
+    "chua_duyet": 1
+  },
+  "review_result_counts": {
+    "chua_co_ket_luan": 1
+  },
+  "processing_sizes": [
+    "576x384"
+  ],
+  "interrupted": false,
+  "elapsed_seconds": 2.99,
+  "output_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/grabcut",
+  "updated_at": "2026-10-17T04:16:19+00:00",
+  "note": "Candidate masks require human review. mask_ratio is foreground pixel fraction, not segmentation accuracy. No ground truth evaluation or 400-dimensional feature extraction is performed (feature implementation belongs to requirement 3)."
+}
+{
+  "selected": 1,
+  "discovered": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "attempted_this_run": 0,
+  "succeeded_this_run": 0,
+  "failed_this_run": 0,
+  "resumed_this_run": 1,
+  "quicklook_failed_this_run": 0,
+  "suspicious": 0,
+  "review_status_counts": {
+    "chua_duyet": 1
+  },
+  "review_result_counts": {
+    "chua_co_ket_luan": 1
+  },
+  "processing_sizes": [
+    "576x384"
+  ],
+  "interrupted": false,
+  "elapsed_seconds": 0.05,
+  "output_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/grabcut",
+  "updated_at": "2026-10-17T04:16:19+00:00",
+  "note": "Candidate masks require human review. mask_ratio is foreground pixel fraction, not segmentation accuracy. No ground truth evaluation or 400-dimensional feature extraction is performed (feature implementation belongs to requirement 3)."
+}
+{
+  "selected": 1,
+  "discovered": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "attempted_this_run": 1,
+  "succeeded_this_run": 1,
+  "failed_this_run": 0,
+  "resumed_this_run": 0,
+  "quicklook_failed_this_run": 0,
+  "suspicious": 0,
+  "review_status_counts": {
+    "chua_duyet": 1
+  },
+  "review_result_counts": {
+    "chua_co_ket_luan": 1
+  },
+  "processing_sizes": [
+    "576x384"
+  ],
+  "interrupted": false,
+  "elapsed_seconds": 2.83,
+  "output_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/corrupt_flat_resume_case",
+  "updated_at": "2026-10-17T04:16:22+00:00",
+  "note": "Candidate masks require human review. mask_ratio is foreground pixel fraction, not segmentation accuracy. No ground truth evaluation or 400-dimensional feature extraction is performed (feature implementation belongs to requirement 3)."
+}
+{
+  "selected": 1,
+  "discovered": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "attempted_this_run": 0,
+  "succeeded_this_run": 0,
+  "failed_this_run": 0,
+  "resumed_this_run": 1,
+  "quicklook_failed_this_run": 0,
+  "suspicious": 0,
+  "review_status_counts": {
+    "da_duyet": 1
+  },
+  "review_result_counts": {
+    "dat": 1
+  },
+  "processing_sizes": [
+    "576x384"
+  ],
+  "interrupted": false,
+  "elapsed_seconds": 0.06,
+  "output_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/grabcut",
+  "updated_at": "2026-10-17T04:16:23+00:00",
+  "note": "Candidate masks require human review. mask_ratio is foreground pixel fraction, not segmentation accuracy. No ground truth evaluation or 400-dimensional feature extraction is performed (feature implementation belongs to requirement 3)."
+}
+{"verified": true, "fixture": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334", "changed_mask_pixels": 708, "history_states": {"saved": 1, "rolled_back": 1}, "source_sha256": "52b79a562bc4fa5f80771b18d5b229e86662f6a02378fd135c08d349b4d1db9f", "mask_sha256": "eb41b7632be21da678c0f33547b2513760918fa30e18ae2658fecb9f4875675e", "overlay_sha256": "85aeffc0602b10b27907cac58cc021aeda1cb5217535e8e472dae8d81380d26d", "readonly_sync_verified": true, "checks": ["grabcut_create", "grabcut_resume", "corrupt_flat_mask_retry", "classify_and_undo", "manifest_sync", "mask_open", "paint_keep_remove", "real_grabcut_refinement", "undo_refinement", "atomic_save_failure_rollback", "mask_save_with_history", "overlay_sync_and_quicklook_verify", "resume_retains_edited_classified_mask", "manifest_artifact_paths"]}

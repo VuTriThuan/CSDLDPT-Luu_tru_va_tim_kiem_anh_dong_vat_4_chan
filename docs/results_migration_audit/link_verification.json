@@ -1,0 +1,15 @@
+{
+  "verified": true,
+  "documents_checked": 11,
+  "local_links_checked": 249,
+  "categories": {
+    "document_or_artifact": 115,
+    "directory": 17,
+    "image": 111,
+    "code": 6
+  },
+  "unique_images_decoded": 40,
+  "command_script_references_checked": 53,
+  "external_http_links_not_fetched": 5,
+  "errors": []
+}

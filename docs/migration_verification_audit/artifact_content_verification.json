@@ -1,0 +1,15 @@
+{
+  "verified": true,
+  "mask_overlay_pairs_checked": 812,
+  "quicklook_and_history_images_decoded": 1224,
+  "source_mask_overlay_pixel_tolerance": 1,
+  "overlay_nonexact_pixels": [
+    {
+      "filename": "Equus_quagga_1056.jpg",
+      "nonexact_pixels": 5,
+      "max_channel_difference": 1
+    }
+  ],
+  "quicklook_batch_indices_and_dimensions_verified": true,
+  "annotation_quality_or_segmentation_accuracy_evaluated": false
+}

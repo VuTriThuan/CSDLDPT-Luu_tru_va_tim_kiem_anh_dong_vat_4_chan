@@ -1,0 +1,16 @@
+{
+  "parsed_files": {
+    ".md": 6,
+    ".py": 13,
+    ".txt": 1,
+    ".json": 388,
+    ".csv": 7
+  },
+  "references": 21580,
+  "reference_resolution": {
+    "exists": 16349,
+    "historical_external_dynamic_or_missing": 5231
+  },
+  "parse_errors": [],
+  "note": "Static evidence, not proof every dynamic path resolves; full matching lines and AST/JSON keys/CSV cells retained. Historical missing paths deliberately retained."
+}

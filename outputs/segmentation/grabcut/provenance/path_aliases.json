@@ -1,0 +1,21 @@
+{
+  "description": "Read-only location aliases for immutable historical evidence; these are not resume configuration overrides.",
+  "project_paths": {
+    "reports/yeu_cau_2/grabcut_output": "outputs/segmentation/grabcut",
+    "reports/yeu_cau_2/mask_moi_can_sua": "outputs/segmentation/mask_regeneration",
+    "reports/yeu_cau_2/grabcut_source_before.json": "outputs/segmentation/grabcut/provenance/source_before.json",
+    "reports/yeu_cau_2/mask_moi_can_sua_truoc_khi_chay.json": "outputs/segmentation/mask_regeneration_source_before.json",
+    "reports/yeu_cau_2/kiem_ke.json": "outputs/inventory/image_inventory.json",
+    "reports/yeu_cau_2/anh_da_xem.csv": "outputs/inventory/viewed_images.csv",
+    "reports/yeu_cau_2/grabcut_so_do.csv": "outputs/inventory/grabcut_sample_statistics.csv",
+    "reports/yeu_cau_2/grabcut_moi_truong.json": "outputs/inventory/grabcut_sample_environment.json"
+  },
+  "overlay_categories": {
+    "đạt": "accepted",
+    "cần sửa": "needs_revision",
+    "làm lại": "redo"
+  },
+  "historical_run_config_preserved": true,
+  "legacy_run_can_resume_with_current_code": false,
+  "regenerated_result_set_present": false
+}

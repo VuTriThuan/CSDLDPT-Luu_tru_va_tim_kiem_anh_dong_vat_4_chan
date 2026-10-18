@@ -1,0 +1,28 @@
+{
+  "selected": 1,
+  "discovered": 1,
+  "success": 1,
+  "failed": 0,
+  "pending": 0,
+  "attempted_this_run": 0,
+  "succeeded_this_run": 0,
+  "failed_this_run": 0,
+  "resumed_this_run": 1,
+  "quicklook_failed_this_run": 0,
+  "suspicious": 0,
+  "review_status_counts": {
+    "da_duyet": 1
+  },
+  "review_result_counts": {
+    "dat": 1
+  },
+  "processing_sizes": [
+    "576x384"
+  ],
+  "interrupted": false,
+  "elapsed_seconds": 0.06,
+  "output_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/grabcut",
+  "updated_at": "2026-10-17T04:37:33+00:00",
+  "note": "Candidate masks require human review. mask_ratio is foreground pixel fraction, not segmentation accuracy. No ground truth evaluation or 400-dimensional feature extraction is performed (feature implementation belongs to requirement 3). Historical run counters describe the original GrabCut run.",
+  "latest_operation": "sync_from_edited_overlays"
+}

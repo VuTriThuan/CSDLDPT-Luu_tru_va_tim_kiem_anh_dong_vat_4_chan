@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "source": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/gui_images/data/source_images",
+  "images": {
+    "Ailuropoda_melanoleuca_0001.jpg": {
+      "signature": [
+        115846,
+        1791769962000000000
+      ],
+      "source_sha256": "8195c7d2bd12c83970b9e9537ac3032c67fb39ce095d022855811091091be685",
+      "config": {
+        "size": [
+          576,
+          384
+        ],
+        "fill": 0.85,
+        "threshold": 0.25,
+        "model": "u2net"
+      },
+      "status": "saved",
+      "warnings": [],
+      "output": "Ailuropoda_melanoleuca_0001.jpg",
+      "bbox": [
+        147,
+        58,
+        567,
+        384
+      ],
+      "crop_box": [
+        36,
+        24,
+        612,
+        408
+      ],
+      "crop_mode": "inside-source",
+      "review_flip_count": 0
+    }
+  },
+  "source_relative": "../source_images"
+}

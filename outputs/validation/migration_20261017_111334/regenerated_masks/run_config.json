@@ -1,0 +1,20 @@
+{
+  "model": "/Users/trithuan/.cache/animal-crop/u2net.onnx",
+  "model_sha256": "8d10d2f3bb75ae3b6d527c77944fc5e7dcd94b29809d47a739a7a728a912b491",
+  "script_sha256": "5063a3a577b1b4cc8d33d8924bb32111eee681752ad46b43b27fd07279d704e8",
+  "input_size": [
+    320,
+    320
+  ],
+  "geometry": "aspect_preserving_resize_then_padding; unpad; restore_native_size",
+  "threshold": 0.5,
+  "threads": 1,
+  "queue_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/regeneration_previous/overlays/needs_revision",
+  "source_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/data/cropped_images_576x384",
+  "previous_dir": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/validation/migration_20261017_111334/regeneration_previous",
+  "method": "u2net_onnx_cpu",
+  "numpy": "2.2.6",
+  "onnxruntime": "1.23.2",
+  "pillow": "11.3.0",
+  "note": "Candidate masks for manual review. Pixel fractions and change from old masks are inspection statistics, not segmentation accuracy. No feature vectors extracted."
+}

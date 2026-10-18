@@ -1,0 +1,20 @@
+{
+  "images": 1,
+  "masks_changed": 0,
+  "overlay_paths_changed": 0,
+  "source_hashes_changed": 0,
+  "metadata_rows_changed": 0,
+  "review_statuses_changed": 0,
+  "review_results_changed": 0,
+  "approximate_pixels": 0,
+  "approximate_images": [],
+  "external_overlays": [],
+  "errors": [],
+  "quicklooks": 1,
+  "quicklooks_changed": 1,
+  "synced_at": "2026-10-17T04:16:23+00:00",
+  "pixel_tolerance": 0,
+  "overlays_modified": 0,
+  "sources_modified": 0,
+  "note": "Masks recovered from existing overlays; no GrabCut or automatic review approval."
+}

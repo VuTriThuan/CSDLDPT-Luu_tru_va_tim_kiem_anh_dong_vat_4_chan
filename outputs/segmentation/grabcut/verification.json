@@ -1,0 +1,13 @@
+{
+  "images_verified": 812,
+  "masks_verified": 812,
+  "overlays_verified": 812,
+  "quicklooks_verified": 102,
+  "source_files_unchanged": 816,
+  "source_image_files_unchanged": 812,
+  "logged_errors": 0,
+  "all_review_status": "chua_duyet",
+  "processing_size": "576x384",
+  "verified_at": "2026-10-16T02:41:56+00:00",
+  "note": "Candidate masks require human review. mask_ratio is foreground pixel fraction, not segmentation accuracy. No ground truth evaluation or 400-dimensional feature extraction is performed (feature implementation belongs to requirement 3)."
+}

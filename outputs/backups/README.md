@@ -1,9 +1,11 @@
 # Bản sao lưu của dự án
 
-Thư mục này có thể duyệt trực tiếp trong tab **Code** trên GitHub.
-Các bản sao lưu gốc giữ nguyên nội dung theo thời điểm tạo.
+Toàn bộ dữ liệu của **3,469 tệp gốc** đã được đưa lên nhánh `main` và
+có thể duyệt trong tab **Code**. Có **3,464 tệp** lưu nguyên dạng;
+**5 tệp lớn** được chia thành **125 phần**, mỗi phần tối đa **48 MiB**.
+Nội dung các bản sao lưu gốc được giữ nguyên.
 
-## Nội dung trên nhánh main
+## Các thư mục
 
 - [pre_data_migration_20261017_103325/](pre_data_migration_20261017_103325/)
 - [pre_environment_migration_20261017_105624/](pre_environment_migration_20261017_105624/)
@@ -11,44 +13,46 @@ Các bản sao lưu gốc giữ nguyên nội dung theo thời điểm tạo.
 - [pre_results_migration_20261017_104419/](pre_results_migration_20261017_104419/)
 - [pre_verification_20261017_111334/](pre_verification_20261017_111334/)
 
-Nhánh `main` chứa **3,453 tệp gốc** không vượt 100 MiB, gồm tài liệu,
-kiểm kê, checksum, wheel cài đặt và dữ liệu khôi phục thử.
-[inventory.csv](inventory.csv) ghi đường dẫn, kích thước, SHA-256 và nơi lưu
-của toàn bộ **3,458 tệp gốc** được công bố. Cache Python và `.DS_Store`
-không được đưa vào Git; bản đóng gói trên Release vẫn giữ bản sao lưu đầy đủ.
+[inventory.csv](inventory.csv) ghi đường dẫn, kích thước, SHA-256 và cách lưu
+của toàn bộ tệp gốc. `git` là tệp nguyên dạng; `git-parts` là tệp cần ghép.
+Các tệp cache và metadata nằm trong snapshot cũng được giữ nguyên.
 
-## Năm tệp lớn tải từ Release
+## Các tệp được chia phần
 
-GitHub chặn tệp lớn hơn 100 MiB trong Git thông thường. Các tệp dưới đây nằm
-trong [Release outputs-backups-20261018](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/releases/tag/outputs-backups-20261018),
-không nằm trong bản clone hoặc ZIP của nhánh `main`.
+| Tệp gốc | Thư mục chứa các phần | Số phần |
+|---|---|---:|
+| `pre_data_migration_20261017_103325/before_data_migration.tar` | [before_data_migration.tar.parts/](pre_data_migration_20261017_103325/before_data_migration.tar.parts/) | 3 |
+| `pre_environment_migration_20261017_105624/before_environment_migration.tar` | [before_environment_migration.tar.parts/](pre_environment_migration_20261017_105624/before_environment_migration.tar.parts/) | 17 |
+| `pre_migration_20261017_100229/external_dependencies/u2net.onnx` | [u2net.onnx.parts/](pre_migration_20261017_100229/external_dependencies/u2net.onnx.parts/) | 4 |
+| `pre_migration_20261017_100229/project_snapshot.tar` | [project_snapshot.tar.parts/](pre_migration_20261017_100229/project_snapshot.tar.parts/) | 89 |
+| `pre_results_migration_20261017_104419/before_results_migration.tar` | [before_results_migration.tar.parts/](pre_results_migration_20261017_104419/before_results_migration.tar.parts/) | 12 |
 
-| Đường dẫn tương đối trong outputs/backups/ | Kích thước (MiB) |
-|---|---:|
-| `pre_data_migration_20261017_103325/before_data_migration.tar` | 123.37 |
-| `pre_environment_migration_20261017_105624/before_environment_migration.tar` | 776.87 |
-| `pre_migration_20261017_100229/external_dependencies/u2net.onnx` | 167.84 |
-| `pre_migration_20261017_100229/project_snapshot.tar` | 4,264.62 |
-| `pre_results_migration_20261017_104419/before_results_migration.tar` | 556.10 |
+## Khôi phục sau khi clone hoặc tải ZIP
 
-## Tải và khôi phục đầy đủ
-
-1. Mở [Release](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/releases/tag/outputs-backups-20261018), mở **Assets** và tải đủ
-   14 phần `outputs-backups.tar.part-aa` đến `outputs-backups.tar.part-an`,
-   cùng tệp `SHA256SUMS`, vào một thư mục.
-2. Mở Terminal tại thư mục gốc dự án, thay đường dẫn tải xuống trong lệnh sau:
+Mở Terminal tại thư mục gốc dự án:
 
 ```sh
-BACKUP_DOWNLOADS="/duong/dan/thu_muc_da_tai"
-(cd "$BACKUP_DOWNLOADS" && shasum -a 256 -c SHA256SUMS)
+python3 outputs/backups/restore_large_files.py
 ```
 
-3. Khi cả 14 phần đều báo `OK`, ghép và giải nén để khôi phục đúng đường dẫn:
+Cần Python 3.10 trở lên, chỉ dùng thư viện chuẩn. Công cụ đọc
+[parts-manifest.json](parts-manifest.json), kiểm tra SHA-256 từng phần và
+từng tệp hoàn chỉnh, rồi tạo lại 5 tệp lớn tại đúng đường dẫn gốc. Cần thêm
+khoảng **5,8 GiB** dung lượng trống để ghép đầy đủ. Các phần gốc vẫn được giữ lại.
+
+Nếu tệp đích đã tồn tại và đúng SHA-256, công cụ bỏ qua. Nếu khác nội dung,
+công cụ báo lỗi và giữ nguyên tệp đang có. Chỉ kiểm tra các phần mà không ghi
+tệp khôi phục:
 
 ```sh
-cat "$BACKUP_DOWNLOADS"/outputs-backups.tar.part-* | tar -xf -
+python3 outputs/backups/restore_large_files.py --verify-only
 ```
 
-Lệnh giải nén ghi các tệp vào `outputs/backups/` trong dự án hiện tại và
-có thể ghi đè tệp cùng đường dẫn. Sau đó có thể dùng các hướng dẫn khôi phục
-trong [migration_verification.md](../../docs/migration_verification.md).
+Sau khi ghép xong, dùng các hướng dẫn khôi phục snapshot trong
+[migration_verification.md](../../docs/migration_verification.md).
+
+## Bản đóng gói trên Release
+
+[Release outputs-backups-20261018](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/releases/tag/outputs-backups-20261018) vẫn có bản đóng gói
+14 phần và `SHA256SUMS` để tải riêng. Đây là lựa chọn bổ sung; dữ liệu cũng đã
+có đầy đủ trong nhánh `main` theo cấu trúc nêu trên.

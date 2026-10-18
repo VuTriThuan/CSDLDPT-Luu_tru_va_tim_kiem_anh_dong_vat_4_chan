@@ -1,0 +1,16 @@
+filename,review_flags,observation,quicklook_path
+Equus_asinus_0587.jpg,visual_background_leak,Giữ đất giữa và dưới các chân,quicklooks/batch_001.jpg
+equus-quagga_0779.jpg,visual_missing_legs,Mất phần đáng kể của các chân,quicklooks/batch_001.jpg
+cervidae_0568.jpg,visual_background_leak,Giữ cây và một phần xe phía sau,quicklooks/batch_001.jpg
+Canis_familiaris_0052.jpg,visual_background_leak,Giữ dải cỏ và xe sau lưng và đuôi,quicklooks/batch_001.jpg
+Canis_lupus_familiaris_doberman_0953.jpg,visual_background_leak,Giữ cây và cỏ sau lưng cùng nền sát chân,quicklooks/batch_001.jpg
+Camelus_bactrianus_0303.jpg,visual_background_leak,Giữ cây và nền ở các khoảng trống quanh thân và chân,quicklooks/batch_001.jpg
+Camelus_bactrianus_0211.jpg,visual_background_leak,Giữ mảng lớn nền và hàng rào phía sau cùng đất quanh chân,quicklooks/batch_012.jpg
+Camelus_bactrianus_0218.jpg,visual_background_leak,Giữ cột và hàng rào nối vào phía đầu,quicklooks/batch_012.jpg
+Camelus_bactrianus_0225.jpg,visual_background_leak,Giữ mảng nền và đất lớn quanh dưới thân,quicklooks/batch_012.jpg
+Camelus_bactrianus_0232.jpg,visual_missing_legs,Mất nhiều phần chân phía trước,quicklooks/batch_012.jpg
+Camelus_bactrianus_0239.jpg,visual_missing_legs,Mất hầu hết phần chân dưới thân,quicklooks/batch_012.jpg
+Camelus_bactrianus_0246.jpg,visual_missing_legs,Mất nhiều phần chân trước dưới cổ và thân,quicklooks/batch_012.jpg
+Camelus_bactrianus_0253.jpg,visual_missing_legs,Mất chân trước và một phần chân sau,quicklooks/batch_012.jpg
+Camelus_bactrianus_0260.jpg,visual_background_leak,Giữ mảng hàng rào lớn phía sau thân,quicklooks/batch_012.jpg
+Canis_familiaris_0395.jpg,visual_missing_body,Mask bỏ gần hết cơ thể chó và giữ mảng sáng của bệ,quicklooks/batch_028.jpg

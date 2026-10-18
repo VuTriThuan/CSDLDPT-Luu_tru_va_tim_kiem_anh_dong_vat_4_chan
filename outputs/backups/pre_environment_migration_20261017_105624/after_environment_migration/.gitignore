@@ -1,0 +1,3 @@
+# Recreate local Python environments from the pinned requirements.
+/.venv/
+/.venv-image-tools/

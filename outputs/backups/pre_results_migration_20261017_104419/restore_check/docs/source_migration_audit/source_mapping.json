@@ -1,0 +1,15 @@
+{
+  "bo_tool_anh_576x384/cat_tu_dong.py": "tools/image_processing/auto_crop.py",
+  "bo_tool_anh_576x384/doi_ten_anh.py": "tools/image_processing/rename_images.py",
+  "bo_tool_anh_576x384/duyet_anh.py": "tools/image_processing/review_images.py",
+  "bo_tool_anh_576x384/tool_common.py": "tools/image_processing/tool_common.py",
+  "bo_tool_anh_576x384/tests/test_compatibility.py": "tests/image_processing/test_compatibility.py",
+  "reports/yeu_cau_2/check_grabcut.py": "tools/segmentation/run_grabcut.py",
+  "reports/yeu_cau_2/chinh_mask.py": "tools/segmentation/edit_masks.py",
+  "reports/yeu_cau_2/dong_bo_overlays.py": "tools/segmentation/sync_overlays.py",
+  "reports/yeu_cau_2/duyet_overlays.py": "tools/segmentation/review_overlays.py",
+  "reports/yeu_cau_2/tao_lai_mask_can_sua.py": "tools/segmentation/regenerate_masks.py",
+  "reports/yeu_cau_2/audit_images.py": "tools/validation/audit_images.py",
+  "reports/yeu_cau_2/verify_grabcut_results.py": "tools/validation/verify_grabcut_results.py",
+  "reports/yeu_cau_2/verify_mask_moi_can_sua.py": "tools/validation/verify_regenerated_masks.py"
+}

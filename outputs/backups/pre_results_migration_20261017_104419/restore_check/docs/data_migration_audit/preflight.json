@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "backup": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/backups/pre_data_migration_20261017_103325/before_data_migration.tar",
+  "backup_sha256": "1ce1d4b0e34dc3a5d5eff5e6d79fc68a9c0aaa4788158606d71ca651234cc8ed",
+  "full_backup": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/backups/pre_migration_20261017_100229/project_snapshot.tar",
+  "full_backup_sha256": "2917b8e027a090fdb7564ac71336e4a82e7ce6e1dc9e038658a2c468e37bdbf7",
+  "images_verified": 2594,
+  "state_files_backed_up": 414,
+  "free_bytes": 38791856128
+}

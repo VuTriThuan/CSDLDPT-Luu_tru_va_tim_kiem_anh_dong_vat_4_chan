@@ -1,0 +1,5 @@
+{
+  "data/anh-chua-loc": "data/source_images",
+  "data/anh-da-cat-576x384": "data/cropped_images_576x384",
+  "data/anh-da-cat-576x384-da-xoa": "data/rejected_crops"
+}

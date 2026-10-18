@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "path": "mask_before.png",
+      "kind": "file",
+      "size": 1926,
+      "mode": 384,
+      "uid": 501,
+      "gid": 20,
+      "mtime_ns": 1792145713556631618,
+      "category": "edit_history",
+      "sha256": "51ce8811599b48d1572d749290f8e42f1da7ab12e07097b810c1800ae8a6bdcd",
+      "xattr_sha256": {
+        "com.apple.provenance": "863cb71efa909b60800efcc1c81c52b3d4e5a620502abfa2c696e72c291919a9"
+      }
+    },
+    {
+      "path": "overlay_before.png",
+      "kind": "file",
+      "size": 298003,
+      "mode": 384,
+      "uid": 501,
+      "gid": 20,
+      "mtime_ns": 1792145713558010583,
+      "category": "edit_history",
+      "sha256": "b721b52d9c8ebf9302356ded64389e6d5cfe5778ffca80c24bda85737da7ac56",
+      "xattr_sha256": {
+        "com.apple.provenance": "863cb71efa909b60800efcc1c81c52b3d4e5a620502abfa2c696e72c291919a9"
+      }
+    },
+    {
+      "path": "record.json",
+      "kind": "file",
+      "size": 2355,
+      "mode": 384,
+      "uid": 501,
+      "gid": 20,
+      "mtime_ns": 1792145713572205828,
+      "category": "edit_history",
+      "sha256": "f4b661eaf0c835b2ba8347509e6a3c4242fa180cde5f126181c8afd459edec97",
+      "xattr_sha256": {
+        "com.apple.provenance": "863cb71efa909b60800efcc1c81c52b3d4e5a620502abfa2c696e72c291919a9"
+      }
+    },
+    {
+      "path": "scribbles.png",
+      "kind": "file",
+      "size": 1595,
+      "mode": 384,
+      "uid": 501,
+      "gid": 20,
+      "mtime_ns": 1792145713560882605,
+      "category": "edit_history",
+      "sha256": "9881b2f6cfce46d4e4e4801a565f2aa06404c54899d1a2c7975c2d61e60d5501",
+      "xattr_sha256": {
+        "com.apple.provenance": "863cb71efa909b60800efcc1c81c52b3d4e5a620502abfa2c696e72c291919a9"
+      }
+    }
+  ]
+}

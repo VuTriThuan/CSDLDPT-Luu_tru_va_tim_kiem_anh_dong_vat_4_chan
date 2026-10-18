@@ -1,0 +1,751 @@
+file,line,text
+bao_cao_giong_khac_dong_vat.md,5,"Bộ ảnh được chọn là các tệp ảnh **hiện còn trong** `data/anh-da-cat-576x384/`. Theo hướng dẫn của dự án, công cụ cắt ghi ảnh vào thư mục này; công cụ duyệt chuyển ảnh bị loại sang `data/anh-da-cat-576x384-da-xoa/`. Thư mục `data/anh-chua-loc/` chứa ảnh nguồn chưa lọc. Tại thời điểm kiểm kê, ba thư mục lần lượt có **812 ảnh**, **485 ảnh đã chuyển ra**, và **1.297 ảnh nguồn** (1.295 JPEG, 2 PNG). Không gộp ba tập này. Trong thư mục được chọn còn có 2 CSV, 2 JSON và 1 tệp khóa; chúng không được tính là ảnh."
+bao_cao_giong_khac_dong_vat.md,7,"Kiểm kê trực tiếp toàn bộ 812 tệp ảnh bằng cách đọc và giải mã ảnh cho thấy: **812/812 tệp mở được; 812/812 là JPEG, 576 × 384 pixel, tỉ lệ khung 3:2; không phát hiện tệp ảnh lỗi**. Đây là kích thước *ảnh số*, không cho biết kích thước thật của con vật. Tên tệp được quy về 22 **nhóm nhãn** theo bảng dưới đây; các biến thể chữ hoa, gạch nối và tên giống chó/mèo được cộng đúng vào nhãn tương ứng. Nhãn “Hươu, nai (họ Cervidae)” gộp nhiều dạng động vật trong cùng một họ. Vì vậy, 22 nhóm nhãn **không đồng nghĩa với 22 loài riêng biệt**. Mọi số đếm thực tế khớp cột `so_anh` của `data/anh-da-cat-576x384/thong_ke_loai_dong_vat.csv` (chênh lệch 0 ở cả 22 dòng)."
+bao_cao_giong_khac_dong_vat.md,24,"**Cách quan sát.** Đã duyệt bảng ảnh thu nhỏ của **cả 812 ảnh** để sàng lọc khác biệt rõ ràng; chọn **104 ảnh** rải theo thứ tự tên tệp trong từng nhóm để xem thu nhỏ cỡ lớn hơn (5 ảnh/nhóm có ít nhất 5 ảnh; toàn bộ 2 ảnh ở mỗi nhóm lợn đất và báo hoa mai); và mở **24 tệp ở độ phân giải đầy đủ** để kiểm tra chi tiết, gồm các trường hợp nghi vấn. Danh sách chính xác của 104 ảnh mẫu ở phụ lục. Nhận xét thị giác bên dưới dựa trên mẫu này và các ảnh được dẫn cụ thể; việc duyệt 812 thumbnail không thay thế kiểm tra từng ảnh ở độ phân giải đầy đủ."
+bao_cao_giong_khac_dong_vat.md,30,"| Đang đứng, chụp ngang | **Quan sát thị giác:** nhiều ảnh thể hiện thân nhìn nghiêng và con vật đứng. Có ảnh đầu hướng về máy hoặc cúi xuống, ảnh dáng đi/chân nhấc; do đó không thể khẳng định cả 812 ảnh đồng nhất tư thế và góc nhìn. |"
+bao_cao_giong_khac_dong_vat.md,31,"| Gần giữa ảnh, hướng đầu/đuôi tương đối thống nhất, mức chiếm khung và tỉ lệ cơ thể tương đồng | **Quan sát thị giác:** ảnh đã được cắt cùng khung, chủ thể thường nổi bật gần giữa; nhưng vị trí, hướng đầu, diện tích chủ thể và tỉ lệ thân/chân nhìn thấy còn thay đổi. Chưa phân đoạn và đo khung bao từng con vật trên cả 812 ảnh nên không có ngưỡng số hoặc tỉ lệ đạt cho các tiêu chí này. |"
+bao_cao_giong_khac_dong_vat.md,35,"- **Nghi nhãn lạc đà một bướu:** [0892](data/anh-da-cat-576x384/Camelus_dromedarius_0892.jpg), [0894](data/anh-da-cat-576x384/Camelus_dromedarius_0894.jpg), [0910](data/anh-da-cat-576x384/Camelus_dromedarius_0910.jpg), [0912](data/anh-da-cat-576x384/Camelus_dromedarius_0912.jpg). Cả bốn tệp khi mở ở kích thước đầy đủ đều cho thấy **hai bướu tách biệt trên đường lưng**, trái với tên nhãn trong tệp. Đây là nhận xét về nội dung ảnh, chưa tự sửa nhãn hoặc chuyển tệp."
+bao_cao_giong_khac_dong_vat.md,36,"- **Góc nhìn/hướng đầu:** [sói 0927](data/anh-da-cat-576x384/Canis_lupus_0927.jpg), [hươu nai 0623](data/anh-da-cat-576x384/cervidae_0623.jpg), [gấu đen 0649](data/anh-da-cat-576x384/ursus-americanus_0649.jpg), [bò 1254](data/anh-da-cat-576x384/Bos_taurus_1254.jpg), [hổ 0337](data/anh-da-cat-576x384/Panthera_tigris_0337.jpg): phần đầu quay gần về phía máy hơn so với ảnh ngang thuần túy. Đây là ứng viên rà soát mức “chụp ngang”, không mặc nhiên là ảnh sai."
+bao_cao_giong_khac_dong_vat.md,37,"- **Tư thế và đường bao thay đổi:** [ngựa vằn 0881](data/anh-da-cat-576x384/equus-quagga_0881.jpg), [cừu 0885](data/anh-da-cat-576x384/ovis-aries_0885.jpg), [dê 1005](data/anh-da-cat-576x384/Capra_hircus_1005.jpg), [bò 1277](data/anh-da-cat-576x384/Bos_taurus_1277.jpg) cúi đầu ăn; tư thế vẫn có thể là đứng nhưng đường bao đầu–cổ khác ảnh ngẩng đầu. [Cáo 0175](data/anh-da-cat-576x384/Vulpes_vulpes_0175.jpg) và [hươu nai 0623](data/anh-da-cat-576x384/cervidae_0623.jpg) có chủ thể trông nhỏ hơn tương đối trong khung so với một số ảnh cùng tập; cần đo khung bao nếu muốn kết luận định lượng."
+bao_cao_giong_khac_dong_vat.md,38,"- **Màu không đại diện cho nhóm:** [chó 0052](data/anh-da-cat-576x384/Canis_familiaris_0052.jpg) có lông nhuộm hồng. Đây không phải vi phạm điều kiện một con vật đang đứng, nhưng phải tránh dùng màu hồng như dấu hiệu tự nhiên của nhãn chó."
+bao_cao_giong_khac_dong_vat.md,46,"**Tương đồng thị giác cụ thể.** [Ngựa](data/anh-da-cat-576x384/Equus_caballus_1014.jpg), [lừa](data/anh-da-cat-576x384/Equus_asinus_0587.jpg) và [ngựa vằn](data/anh-da-cat-576x384/equus-quagga_0779.jpg) cùng có thân dài, bốn chân tương đối mảnh, cổ nhô khỏi thân, đầu và mõm kéo dài. [Chó dáng sói](data/anh-da-cat-576x384/Canis_familiaris_0410.jpg), [sói](data/anh-da-cat-576x384/Canis_lupus_0922.jpg) và [cáo](data/anh-da-cat-576x384/Vulpes_vulpes_0314.jpg) cùng có mõm nhọn và đuôi có lông; sắc nâu/xám ở một số ảnh dễ chồng lấn. [Hổ](data/anh-da-cat-576x384/panthera-tigris_0250.jpg) và [báo hoa mai](data/anh-da-cat-576x384/Panthera_pardus_0611.jpg) đều là ảnh thân mèo lớn, nền lông vàng/nâu với dấu đen. [Bò đen](data/anh-da-cat-576x384/Bos_taurus_1287.jpg) và [trâu](data/anh-da-cat-576x384/bubalus-bubalis_0639.jpg) đều có thân nặng, chân tương đối ngắn so với thân và mảng màu tối. [Gấu đen](data/anh-da-cat-576x384/ursus-americanus_0649.jpg) và một số [gấu nâu sẫm](data/anh-da-cat-576x384/Ursus_arctos_1206.jpg) cùng có đường bao thân tròn và lông sẫm. Các nét giống này là theo **cặp ảnh đã quan sát**, không phải quy luật đúng cho mọi tệp thuộc nhãn đó."
+bao_cao_giong_khac_dong_vat.md,50,"**Giữa các nhóm.** Màu và sự phân bố màu tạo tín hiệu rõ khi nhìn thấy toàn thân: ngựa vằn có các sọc đen–trắng chạy qua thân và chân; hổ có sọc tối trên nền vàng/cam, bụng sáng; báo hoa mai có các đốm/hoa văn đen trên nền vàng. Sọc của hổ và ngựa vằn đều có tính lặp, nhưng khác màu nền, bề dày và vùng phân bố. Bò trong mẫu thường có mảng đen–trắng lớn hoặc nâu sẫm; trâu mẫu thiên xám/đen khá liền mảng; gấu trúc có mảng đen quanh mắt, tai, vai và chân trên nền trắng. Chỉ so màu trung bình của cả ảnh sẽ bỏ qua vị trí các mảng và dễ bị màu cỏ, đất, tuyết hoặc ánh sáng chi phối."
+bao_cao_giong_khac_dong_vat.md,52,"Về hình dạng, ngựa–lừa–ngựa vằn chia sẻ đường thân nhưng ảnh [lừa 0587](data/anh-da-cat-576x384/Equus_asinus_0587.jpg) lộ tai dài hơn ảnh [ngựa 1014](data/anh-da-cat-576x384/Equus_caballus_1014.jpg); sọc thân và chân là dấu hiệu mạnh của ảnh [ngựa vằn 0779](data/anh-da-cat-576x384/equus-quagga_0779.jpg). Ảnh [cáo 0314](data/anh-da-cat-576x384/Vulpes_vulpes_0314.jpg) có thân thon, chân nhỏ, đuôi xù và mõm nhọn; ảnh [sói 0922](data/anh-da-cat-576x384/Canis_lupus_0922.jpg) có thân và đầu trông nặng hơn, nhưng chó nhà biến thiên mạnh nên chỉ hình dáng không luôn tách được ba nhãn. Ảnh lạc đà [hai bướu 0303](data/anh-da-cat-576x384/Camelus_bactrianus_0303.jpg) và [một bướu 0434](data/anh-da-cat-576x384/Camelus_dromedarius_0434.jpg) có cổ dài, chân dài, nhưng khác ở số đỉnh bướu nhìn thấy trên đường lưng. Dấu hiệu này cũng giúp phát hiện bốn tệp dromedarius nghi sai nhãn ở mục 1."
+bao_cao_giong_khac_dong_vat.md,54,"Các cấu trúc nhỏ cần được đọc theo ảnh: sừng cong nổi bật ở [trâu 0639](data/anh-da-cat-576x384/bubalus-bubalis_0639.jpg); sừng ở [dê 1011](data/anh-da-cat-576x384/Capra_hircus_1011.jpg); gạc phân nhánh ở [hươu nai 0568](data/anh-da-cat-576x384/cervidae_0568.jpg); bờm ở [sư tử đực 1155](data/anh-da-cat-576x384/Panthera_leo_1155.jpg), nhưng không hiện diện ở [ảnh sư tử 1157](data/anh-da-cat-576x384/Panthera_leo_1157.jpg). Lông trong ảnh [cừu 0187](data/anh-da-cat-576x384/ovis-aries_0187.jpg) có bề mặt xù/cuộn rõ, khác bề mặt lông trơn hơn ở [dê 1005](data/anh-da-cat-576x384/Capra_hircus_1005.jpg). Lông gấu nâu trong [1177](data/anh-da-cat-576x384/Ursus_arctos_1177.jpg) trông dài/xù hơn lông đen tương đối mịn trong [gấu đen 0649](data/anh-da-cat-576x384/ursus-americanus_0649.jpg), song màu và độ xù đều đổi theo cá thể, cảnh và ánh sáng."
+bao_cao_giong_khac_dong_vat.md,56,"**Trong cùng nhóm.** Chó [0052](data/anh-da-cat-576x384/Canis_familiaris_0052.jpg) màu hồng, lông xù và dáng poodle; chó [Doberman 0953](data/anh-da-cat-576x384/Canis_lupus_familiaris_doberman_0953.jpg) đen–nâu, lông ngắn, thân thon. Bò [1254](data/anh-da-cat-576x384/Bos_taurus_1254.jpg) nhiều mảng đen–trắng trong khi [1287](data/anh-da-cat-576x384/Bos_taurus_1287.jpg) gần như nâu sẫm. Nhóm Cervidae chứa [0568](data/anh-da-cat-576x384/cervidae_0568.jpg) có gạc lớn, nền xám và [0633](data/anh-da-cat-576x384/cervidae_0633.jpg) thân nâu có đốm trắng, không thấy gạc trong ảnh. Ngựa [1024](data/anh-da-cat-576x384/Equus_caballus_1024.jpg) có mảng lông trắng–nâu lớn, có thể gây nhầm về màu với bò dù đường đầu, bờm, chân và móng khác. Tư thế cúi đầu, bước đi, độ che khuất chân, ánh sáng gắt/yếu, và nền tuyết/cỏ/đất hoặc bối cảnh chuồng trại cũng gây biến thiên ngay trong cùng nhóm. Những khác biệt này là đặc điểm **của ảnh**, không được diễn giải thành kích thước thực hay thuộc tính cố định của toàn nhóm."
+bao_cao_giong_khac_dong_vat.md,60,Mỗi tệp dưới đây thuộc `data/anh-da-cat-576x384/`; các đường dẫn liên kết trỏ đến **ảnh thực tế**. Dòng nhiều ảnh là so sánh trực tiếp nhiều nhóm.
+bao_cao_giong_khac_dong_vat.md,64,"| [Ngựa 1014](data/anh-da-cat-576x384/Equus_caballus_1014.jpg), [lừa 0587](data/anh-da-cat-576x384/Equus_asinus_0587.jpg), [ngựa vằn 0779](data/anh-da-cat-576x384/equus-quagga_0779.jpg) | Thân dài, chân mảnh, đầu kéo dài. | Tai lừa lộ dài; ngựa có bờm/đuôi lông; ngựa vằn có sọc dọc thân và chân. | Ngựa nâu và lừa nâu giống màu/dáng; ngựa vằn khi ảnh nhỏ còn chủ yếu là đường bao ngựa. | Kết hợp đường bao tai–đầu–chân với họa tiết sọc theo vùng thân/chân. |"
+bao_cao_giong_khac_dong_vat.md,65,"| [Chó 0410](data/anh-da-cat-576x384/Canis_familiaris_0410.jpg), [sói 0922](data/anh-da-cat-576x384/Canis_lupus_0922.jpg), [cáo 0314](data/anh-da-cat-576x384/Vulpes_vulpes_0314.jpg) | Mõm nhọn, tai dựng, đuôi có lông, tông nâu/xám. | Trong ba ảnh này, cáo thon và đuôi xù dài; sói trông thân/đầu nặng hơn; chó có mảng lông đen–vàng đặc trưng ảnh. | Chó dáng sói có thể gần sói; màu nâu/xám không đủ để tách. | Tỉ lệ đầu–thân, hình đuôi và phân bố màu vùng lưng/mõm. |"
+bao_cao_giong_khac_dong_vat.md,66,"| [Hổ 0250](data/anh-da-cat-576x384/panthera-tigris_0250.jpg), [báo 0611](data/anh-da-cat-576x384/Panthera_pardus_0611.jpg) | Thân mèo lớn, lông vàng/nâu với vệt đen. | Hổ có sọc dài; báo có đốm/hoa văn dạng cụm rải trên thân. | Màu vàng và kết cấu đen ở kích thước nhỏ gần nhau. | Hướng, kích thước và cách lặp của vệt đen; phân bố trên thân. |"
+bao_cao_giong_khac_dong_vat.md,67,"| [Gấu đen 0649](data/anh-da-cat-576x384/ursus-americanus_0649.jpg), [gấu nâu 1177](data/anh-da-cat-576x384/Ursus_arctos_1177.jpg), [gấu nâu 1206](data/anh-da-cat-576x384/Ursus_arctos_1206.jpg), [gấu trúc 1218](data/anh-da-cat-576x384/Ailuropoda_melanoleuca_1218.jpg) | Thân tròn, chân chắc, tai tròn, lông dày. | 0649 rất tối; 1177 nâu và xù; 1206 nâu sẫm; gấu trúc có các mảng đen–trắng rõ quanh vai, chân và đầu. | 1206 và gấu đen dễ lẫn nếu chỉ dùng độ tối; gấu trúc khác màu nhưng cùng dạng thân gấu. | Kết hợp màu theo vùng với kết cấu lông và đường bao đầu–vai. |"
+bao_cao_giong_khac_dong_vat.md,68,"| [Lạc đà hai bướu 0303](data/anh-da-cat-576x384/Camelus_bactrianus_0303.jpg), [lạc đà một bướu 0434](data/anh-da-cat-576x384/Camelus_dromedarius_0434.jpg) | Cổ và chân dài, thân màu nâu/vàng. | Đường lưng 0303 có hai đỉnh bướu, 0434 có một đỉnh. | Màu lông và nền tương tự; bướu có thể bị góc nhìn che. | Đường bao lưng và số đỉnh bướu khi nhìn thấy. |"
+bao_cao_giong_khac_dong_vat.md,69,"| [Bò 1287](data/anh-da-cat-576x384/Bos_taurus_1287.jpg), [trâu 0639](data/anh-da-cat-576x384/bubalus-bubalis_0639.jpg), [dê 1011](data/anh-da-cat-576x384/Capra_hircus_1011.jpg), [cừu 0909](data/anh-da-cat-576x384/ovis-aries_0909.jpg), [hươu nai 0568](data/anh-da-cat-576x384/cervidae_0568.jpg) | Bốn chân, thân ngang; một số ảnh cùng tông nâu/xám. | Trâu có sừng cong rộng; dê có sừng nhỏ hơn và dáng gọn; cừu có lông cuộn; hươu nai 0568 có gạc phân nhánh; bò 1287 có thân nặng và sừng ngắn trong ảnh. | Màu nâu/xám, nền cỏ/đất và dáng nghiêng có thể gần nhau. | Hình sừng/gạc, kết cấu lông, tỉ lệ cổ–chân–thân và đường bao đầu. |"
+bao_cao_giong_khac_dong_vat.md,70,"| **Cùng nhãn chó:** [0052](data/anh-da-cat-576x384/Canis_familiaris_0052.jpg), [Doberman 0953](data/anh-da-cat-576x384/Canis_lupus_familiaris_doberman_0953.jpg) | Đều là một con chó đứng. | Lông nhuộm hồng/xù so với lông ngắn đen–nâu; đường thân và đuôi khác. | Khoảng cách màu lớn dù cùng nhãn. | Cần đặc trưng hình dạng bổ sung cho màu; không coi màu hồng là dấu hiệu nhãn. |"
+bao_cao_giong_khac_dong_vat.md,71,"| **Cùng nhãn Cervidae:** [0568](data/anh-da-cat-576x384/cervidae_0568.jpg), [0633](data/anh-da-cat-576x384/cervidae_0633.jpg) | Chân mảnh, thân động vật móng guốc. | 0568 lớn trong khung, xám và có gạc; 0633 nâu có đốm trắng, không thấy gạc. | Biến thiên nội nhóm lớn vì nhãn ở cấp họ và góc/cá thể khác nhau. | Đặc trưng có/không thấy gạc, đốm và hình đầu; tránh ép cả nhóm về một màu. |"
+bao_cao_giong_khac_dong_vat.md,72,"| **Cùng nhãn bò:** [1254](data/anh-da-cat-576x384/Bos_taurus_1254.jpg), [1287](data/anh-da-cat-576x384/Bos_taurus_1287.jpg); [ngựa 1024](data/anh-da-cat-576x384/Equus_caballus_1024.jpg) | 1254 và 1024 đều có mảng đen–trắng; hai ảnh bò cùng dáng thân nặng. | 1287 nâu sẫm; ngựa 1024 có đầu dài, bờm, chân/đuôi khác bò. | Màu mảng làm hai nhóm khác nhau trông giống; hai bò cùng nhãn lại khác màu. | Đặt hình dạng và vị trí mảng màu cùng nhau. |"
+bao_cao_giong_khac_dong_vat.md,76,"Ảnh đã cùng kích thước nên có thể so sánh đặc trưng trên lưới không gian thống nhất, nhưng nền, tư thế và mức chiếm khung vẫn gây nhiễu. **Màu sắc** nên được mô tả theo các vùng cơ thể hoặc lưới không gian thay vì chỉ một màu trung bình; cần xét trường hợp cùng nhãn khác màu (chó, bò, Cervidae) và khác nhãn cùng tông (bò–trâu, chó–sói). **Kết cấu** giúp tách sọc dài của hổ/ngựa vằn, đốm của báo/hươu non và lông cuộn của cừu, nhưng phải xét hướng, độ nét, ánh sáng và kích thước hiển thị. **Hình dạng** và đường bao hỗ trợ tai lừa, đuôi cáo, sừng/gạc, bờm và số bướu; tính hữu ích giảm khi đầu cúi, chi bị che hoặc góc chụp đổi. **Phân bố không gian** của mảng màu/họa tiết (sọc trên thân và chân, mảng gấu trúc, đốm trên lưng) giúp tránh nhầm do nền tương tự. Bốn ảnh lạc đà nghi sai nhãn cần được người làm dữ liệu rà trước khi dùng làm mẫu đại diện hoặc đánh giá hệ thống. Phần này chỉ phân tích ảnh và định hướng đặc trưng; không đưa kết quả tìm kiếm, độ chính xác hay giá trị vector giả định."
+bao_cao_giong_khac_dong_vat.md,80,Mọi tên tệp dưới đây nằm trong `data/anh-da-cat-576x384/`. Mẫu được chọn theo các vị trí trải đều trong danh sách tên tệp của từng nhãn; hai nhãn có 2 ảnh được lấy đủ 2.
+bao_cao_yeu_cau_2_thuoc_tinh.md,9,- **Đã kiểm tra/quan sát:** kiểm kê ảnh bằng chương trình; xem 84 ảnh mẫu; mở thêm 8 ảnh gốc; chạy riêng bước tạo mặt nạ của mã tham khảo trên 8 ảnh thật.
+bao_cao_yeu_cau_2_thuoc_tinh.md,10,"- **Suy luận từ mã:** số chiều, phép tính, các nguồn nhiễu trong `feature_extractors.py`. Không chạy toàn bộ bộ trích xuất của bài chim."
+bao_cao_yeu_cau_2_thuoc_tinh.md,17,| [Bộ ảnh thật](data/anh-da-cat-576x384/) | Đối tượng phân tích của nhóm; chỉ tính ảnh đang ở thư mục này. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,19,| [feature_extractors.py](/Users/trithuan/Downloads/feature_extractors.py) | Mã tham khảo **tìm kiếm ảnh chim**; phân tích trực tiếp các hàm và hằng số. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,20,"| [README tham khảo](/Users/trithuan/Downloads/README.md) | Mô tả hệ thống chim. Các câu hướng dẫn bảo vệ, chạy hệ thống, dữ liệu 1.239 ảnh chim, PCA 512 chiều và kết quả đánh giá của tài liệu này không phải yêu cầu thực thi hoặc kết quả của nhóm động vật. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,22,Không tìm thấy tệp riêng tên `Văn bản đã dán (1).txt` trong thư mục làm việc hoặc Downloads; đã đọc trực tiếp tệp `feature_extractors.py` người dùng cung cấp. Báo cáo không giả định đã đọc một bản đính kèm khác chưa truy cập được.
+bao_cao_yeu_cau_2_thuoc_tinh.md,26,"Đọc và giải mã toàn bộ ảnh trong `data/anh-da-cat-576x384/`: **812/812 ảnh mở được, đều JPEG, đều 576 × 384 pixel, tỉ lệ 3:2**. Không gộp ảnh nguồn hoặc ảnh đã loại. Kết quả tái lập ở [kiem_ke.json](reports/yeu_cau_2/kiem_ke.json), chương trình ở [audit_images.py](reports/yeu_cau_2/audit_images.py)."
+bao_cao_yeu_cau_2_thuoc_tinh.md,28,"Nhãn được đọc từ tiền tố tên tệp, gộp chữ hoa/thường, gạch nối/gạch dưới, các biến thể tên chó và tên giống mèo. Đây là **nhãn đang gán theo tên tệp**, chưa phải xác nhận phân loại sinh học cho từng ảnh."
+bao_cao_yeu_cau_2_thuoc_tinh.md,45,"Số đếm khớp báo cáo giống–khác, nhưng tệp `thong_ke_loai_dong_vat.csv` được báo cáo đó dẫn hiện **không có** tại đường dẫn đã nêu. Bảng trên được tính lại từ ảnh, không lấy từ CSV đó. Cervidae là nhãn **cấp họ**, không gọi 22 nhóm này là 22 loài."
+bao_cao_yeu_cau_2_thuoc_tinh.md,49,"Trong mỗi nhãn, chọn ảnh đầu, giữa và cuối theo thứ tự tên tệp; thêm các ảnh phục vụ cặp so sánh, loại trùng, được **84 ảnh**. Đã xem cả 84 trên sáu bảng ảnh ở kích thước 288 × 192 mỗi ảnh. Các bảng ảnh thu nhỏ đã được lược bỏ khi dọn dự án; danh sách tên ảnh chính xác vẫn được giữ tại [anh_da_xem.csv](reports/yeu_cau_2/anh_da_xem.csv). Có thể tạo lại các bảng bằng [audit_images.py](reports/yeu_cau_2/audit_images.py) từ bộ dữ liệu hiện tại."
+bao_cao_yeu_cau_2_thuoc_tinh.md,55,"- Cả bốn ảnh mang tiền tố `Camelus_dromedarius` ở trên đều cho thấy **hai đỉnh bướu tách biệt** khi mở ảnh gốc: [0892](data/anh-da-cat-576x384/Camelus_dromedarius_0892.jpg), [0894](data/anh-da-cat-576x384/Camelus_dromedarius_0894.jpg), [0910](data/anh-da-cat-576x384/Camelus_dromedarius_0910.jpg), [0912](data/anh-da-cat-576x384/Camelus_dromedarius_0912.jpg). Đây là nghi vấn nhãn có bằng chứng thị giác; cần đối chiếu nguồn và duyệt nhãn, chưa tự đổi tên hoặc khẳng định đã sửa dữ liệu."
+bao_cao_yeu_cau_2_thuoc_tinh.md,56,"- [Bò 1287](data/anh-da-cat-576x384/Bos_taurus_1287.jpg) có **thân rất sẫm, mặt trắng, các vùng chân/bụng sáng**, không phải một khối tối đồng nhất. [Ngựa 1024](data/anh-da-cat-576x384/Equus_caballus_1024.jpg) có mảng trắng–nâu sẫm. Cần giữ chi tiết này khi dùng ví dụ từ báo cáo cũ."
+bao_cao_yeu_cau_2_thuoc_tinh.md,57,"- [Panthera_leo_1164.jpg](data/anh-da-cat-576x384/Panthera_leo_1164.jpg) có hình đầu, thân và đuôi khác rõ hai ảnh sư tử 1155/1157 trong mẫu; nên đối chiếu nguồn ảnh trước đánh giá. Chưa xác nhận lại danh tính; riêng việc không có bờm không đủ kết luận sai nhãn vì ảnh sư tử cái cũng không có bờm."
+bao_cao_yeu_cau_2_thuoc_tinh.md,58,"- Việc gộp tên giống chó/mèo chỉ chuẩn hóa **nhãn đánh giá**, không tạo một giá trị số về giống trong vector."
+bao_cao_yeu_cau_2_thuoc_tinh.md,66,"| [Ngựa 1014](data/anh-da-cat-576x384/Equus_caballus_1014.jpg), [lừa 0587](data/anh-da-cat-576x384/Equus_asinus_0587.jpg), [ngựa vằn 0779](data/anh-da-cat-576x384/equus-quagga_0779.jpg) | Cùng thân ngang và chân dài; tai lừa lộ dài; ngựa vằn có sọc phủ thân. | Tỉ lệ tai/đầu bổ sung cho dáng chung; Gabor theo hướng và vùng giúp phân biệt sọc với lông ít hoa văn. | Lừa gần hướng ba phần tư, tai sát mép trên; không suy chiều dài thật từ pixel. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,67,"| [Chó 0410](data/anh-da-cat-576x384/Canis_familiaris_0410.jpg), [sói 0922](data/anh-da-cat-576x384/Canis_lupus_0922.jpg), [cáo 0314](data/anh-da-cat-576x384/Vulpes_vulpes_0314.jpg) | Chó dáng sói và sói cùng tông xám/nâu, mõm dài; cáo có đuôi xù, chân sẫm và đầu đuôi sáng. | Tỉ lệ mõm, đuôi; màu theo vùng. Histogram toàn thân khó giữ vị trí chân sẫm/đầu đuôi sáng. | Chó nhiều giống; cáo trong mẫu có thân/góc nhìn khác, không thể gán ngưỡng tách loài. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,68,"| [Hổ 0250](data/anh-da-cat-576x384/panthera-tigris_0250.jpg), [báo 0611](data/anh-da-cat-576x384/Panthera_pardus_0611.jpg) | Nền lông vàng với dấu đen; hổ có vệt dài, báo có đốm/hoa văn cụm. | Năng lượng Gabor theo hướng và tần số; độ kéo dài của thành phần tối. Giữ được khác biệt “vệt dài” và “cụm tròn”. | Cỏ che chân báo; lá/đất có kết cấu; kích thước họa tiết phụ thuộc tỉ lệ chủ thể. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,69,"| [Bò 1287](data/anh-da-cat-576x384/Bos_taurus_1287.jpg), [trâu 0639](data/anh-da-cat-576x384/bubalus-bubalis_0639.jpg) | Thân nặng, màu sẫm ở cả hai; bò mặt trắng, trâu có cặp sừng cong nổi bật. | Màu vùng đầu; độ rộng và độ cong sừng. Màu sẫm toàn cục có thể làm hai ảnh gần nhau. | Tên tệp trâu chưa thay thế xác minh phân loại; đầu quay về máy làm thay đổi hình sừng. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,70,"| [Hai bướu 0303](data/anh-da-cat-576x384/Camelus_bactrianus_0303.jpg), [một bướu 0434](data/anh-da-cat-576x384/Camelus_dromedarius_0434.jpg) | Cùng thân vàng/nâu, chân/cổ dài; đường lưng có hai đỉnh so với một đỉnh. | Biên trên **vùng thân**, số đỉnh có độ nổi đủ lớn và khoảng cách hai đỉnh. Histogram màu khó tách cặp này. | Cổ/đầu không được tính thành bướu; lông xù và góc xiên làm đổi đường lưng. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,71,"| [Gấu đen 0649](data/anh-da-cat-576x384/ursus-americanus_0649.jpg), [gấu nâu 1177](data/anh-da-cat-576x384/Ursus_arctos_1177.jpg), [1206](data/anh-da-cat-576x384/Ursus_arctos_1206.jpg) | 0649 sẫm, 1177 nâu/xù; 1206 cũng khá sẫm và đang cúi đầu. | Màu + kết cấu lông + đường vai/lưng; không chỉ dùng độ tối. | Ánh sáng và tư thế có thể lấn át khác biệt giữa hai nhãn. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,72,"| **Cùng nhãn chó:** [0052](data/anh-da-cat-576x384/Canis_familiaris_0052.jpg), [Doberman 0953](data/anh-da-cat-576x384/Canis_lupus_familiaris_doberman_0953.jpg) | Poodle lông hồng, xù và tạo khối tròn; Doberman lông ngắn đen–nâu, thân thon. | Kết hợp nhiều nhóm; cả màu lẫn đường bao đều có thể xa nhau dù cùng nhãn. | Không có bảo đảm đặc trưng cổ điển sẽ gom mọi giống chó; hồng là đặc điểm ảnh này, không phải dấu hiệu nhãn. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,73,"| **Cùng nhãn bò:** [1254](data/anh-da-cat-576x384/Bos_taurus_1254.jpg), [1287](data/anh-da-cat-576x384/Bos_taurus_1287.jpg), thêm [1277](data/anh-da-cat-576x384/Bos_taurus_1277.jpg) | 1254 có nhiều mảng đen–trắng; 1287 chủ yếu thân sẫm/mặt trắng; 1277 cúi đầu. | Hình thân hỗ trợ khi màu khác nhau; màu theo vùng giữ mặt trắng; dùng đường đầu–cổ thận trọng với 1277. | Cùng nhãn nhưng màu, vùng mảng và đường bao đổi mạnh. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,74,"| **Cùng họ Cervidae:** [0568](data/anh-da-cat-576x384/cervidae_0568.jpg), [0633](data/anh-da-cat-576x384/cervidae_0633.jpg) | Một ảnh xám, gạc phân nhánh lớn; một ảnh nâu có đốm trắng và không thấy gạc. | Kết cấu đốm, cấu trúc gạc khi quan sát được; giữ mô tả chung thân/chân. | Nhãn cấp họ có biến thiên tự nhiên lớn; “không thấy” không đồng nghĩa “không có”. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,75,"| [Cừu 0187](data/anh-da-cat-576x384/ovis-aries_0187.jpg), [dê 1005](data/anh-da-cat-576x384/Capra_hircus_1005.jpg) | Cừu có lông cuộn/xù; dê lông phẳng hơn và cúi đầu ăn. | LBP nhiều bán kính, GLCM và Gabor mô tả bề mặt; hình dạng đầu bị tư thế ảnh hưởng. | Độ nét và cỏ nền cũng tạo kết cấu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,76,"| [Gấu trúc 1218](data/anh-da-cat-576x384/Ailuropoda_melanoleuca_1218.jpg), [sư tử 1155](data/anh-da-cat-576x384/Panthera_leo_1155.jpg), [1157](data/anh-da-cat-576x384/Panthera_leo_1157.jpg) | Gấu trúc có khối đen ở tai/vai/chân; sư tử 1155 có bờm, 1157 không có bờm. | Bố cục màu giữ vị trí mảng; kết cấu và biên đầu ghi nhận bờm khi thấy. | Lưới ảnh chỉ xấp xỉ vùng cơ thể; bờm không phải thuộc tính luôn có của nhãn sư tử. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,80,"Các số chiều dưới đây được xác định từ phép nối mảng trong mã, không lấy tổng 1.460 làm giả thiết. Dòng mã tham chiếu theo bản `feature_extractors.py` đã đọc."
+bao_cao_yeu_cau_2_thuoc_tinh.md,82,"| Nhóm / thành phần | Định nghĩa, cách tính thực tế trong mã | Số chiều | Khả năng dùng cho động vật bốn chân |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,84,"| **Màu — HSV histogram** | Mỗi kênh H/S/V có 32 bin, chỉ đếm pixel mask > 0, mỗi histogram chia tổng; H trong [0,180), S/V trong [0,256). | 3 × 32 = **96** | Hữu ích cho lông đen–trắng, vàng/cam; chưa giữ vị trí mảng và chưa mô tả phân bố màu đồng thời. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,86,"| Màu — moments HSV và Lab | Mean, std, skewness trên pixel tiền cảnh, cho 6 kênh. Không chuẩn hóa thang đo từng giá trị trước nối. | 6 × 3 = **18** | Nén gọn phân bố; mean hue tuyến tính không xử lý tính vòng của màu; mean/std có thể lớn hơn nhiều histogram. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,88,"| **Kết cấu — LBP** | LBP uniform P=8, R=1; histogram 10 bin trên các tâm thuộc mask; chia tổng. Lân cận của tâm vẫn có thể đi ra nền. | **10** | Hữu ích cho lông/cuộn/đốm nhỏ, nhưng một bán kính chưa đủ nhiều cỡ họa tiết. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,89,"| Kết cấu — EOH | Sobel x/y trên ảnh xám đầy đủ; histogram 9 hướng [0,180), trọng số độ lớn gradient, lấy các tâm trong mask. | **9** | Gợi hướng sọc; cũng nhận biên vật–nền và cấu trúc khác, không giữ vị trí. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,90,"| Kết cấu — GLCM | Xám lượng tử 64 mức; **đặt nền bằng 0 rồi tính trên cả ảnh**; d=1, bốn góc 0/45/90/135°, đối xứng và chuẩn hóa; energy, contrast, homogeneity, correlation. | 1 × 4 × 4 = **16** | Có ích cho bề mặt, nhưng cách xử lý nền phải sửa. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,91,"| Kết cấu — Gabor | 5 tần số {0,05; 0,10; 0,15; 0,20; 0,25}, 8 hướng iπ/8; lọc xám/255; tính mean/std biên độ phức tại tâm trong mask. | 5 × 8 × 2 = **80** | Hữu ích cho sọc/đốm/lông; cửa sổ lọc vẫn có thể nhận nền; cần ổn định tỉ lệ và giữ vùng. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,92,"| Kết cấu — FFT radial | Đặt nền 0; FFT2 → fftshift → log(1+biên độ); trung bình các vòng tròn, lấy mẫu 64 bán kính và chia giá trị lớn nhất. | **64** | Giữ mức tần số không gian theo bán kính; mất hướng và vị trí, còn nhiễu biên mặt nạ/DC. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,93,"| **Tổng kết cấu** | `get_texture_features`, dòng 309–330. | 10 + 9 + 16 + 80 + 64 = **179** | Nên giữ LBP/Gabor, sửa GLCM; không cần mặc định giữ FFT radial và EOH trùng thông tin. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,94,"| **Hình dạng — Hu + 4 scalar** | 7 Hu biến đổi signed-log; A/(HW); P/[2(H+W)]; P²/(4πAc); 4πAc/P². A đếm mọi pixel mask; P, Ac lấy contour ngoài lớn nhất. | 7 + 4 = **11** | Hữu ích cho khối thân; hai chỉ số cuối nghịch đảo khi khác 0, dư thừa. A và Ac không cùng quy ước nếu mask nhiều mảnh/lỗ. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,95,"| Hình dạng — grid mask | Chia toàn mask 224 × 224 thành lưới 8 × 8; tỉ lệ tiền cảnh trong mỗi ô. | **64** | Giữ vị trí thân/chân, nhưng nhạy dịch chuyển, hướng đầu và kích thước chủ thể trong khung. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,98,"| Hình dạng — radius signature | Khoảng cách trọng tâm đến các điểm contour lớn nhất, sắp theo góc và nội suy 64 góc; chia max. | **64** | Thô về phần nhô ra; với đường bao lõm/nhiều giao điểm theo một góc, nội suy này không tương đương phép bắn tia lấy biên duy nhất. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,101,"| **Không gian — HSV + LBP từng ô** | Toàn ảnh 224 × 224, lưới 4 × 4; mỗi ô 56 × 56, HSV 8 bin/kênh và LBP 10 bin; ô có <10 pixel tiền cảnh trả toàn 0. LBP tính riêng trong từng ô. | 16 × (3 × 8 + 10) = **544** | Giữ bố cục gần đúng; ô không tự tương ứng đầu/chân. Nhạy hướng đầu, dịch chuyển, biên ô và lỗi mask. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,105,\[
+bao_cao_yeu_cau_2_thuoc_tinh.md,106,\underbrace{96+96+18}_{210}
+bao_cao_yeu_cau_2_thuoc_tinh.md,107,+\underbrace{10+9+16+80+64}_{179}
+bao_cao_yeu_cau_2_thuoc_tinh.md,108,+\underbrace{11+64+32+32+64+324}_{527}
+bao_cao_yeu_cau_2_thuoc_tinh.md,109,+\underbrace{16(24+10)}_{544}
+bao_cao_yeu_cau_2_thuoc_tinh.md,110,=\boxed{1460}.
+bao_cao_yeu_cau_2_thuoc_tinh.md,111,\]
+bao_cao_yeu_cau_2_thuoc_tinh.md,113,"`extract_raw_features` (dòng 551–593) thực hiện: đọc ảnh → ép 224 × 224 → tạo mask → nối bốn nhóm → thay NaN/Inf bằng 0 → **L2 toàn vector một lần**. Hàm trả 1.460 chiều đã L2, dù tên có chữ `raw`. **PCA không nằm trong tệp này**; PCA 512 chiều là bước được README mô tả, chưa được kiểm chứng bằng các tệp chương trình offline/online khác và không phải kết quả của nhóm."
+bao_cao_yeu_cau_2_thuoc_tinh.md,117,"Hệ số co ngang sₓ=224/576=7/18; hệ số co dọc sᵧ=224/384=7/12. Vì sᵧ/sₓ=1,5, con vật bị **hẹp ngang tương đối**: tỉ số rộng/cao mới bằng **2/3** tỉ số ban đầu. Đây là phép tính từ kích thước ảnh, không phải số đo cơ thể."
+bao_cao_yeu_cau_2_thuoc_tinh.md,119,"Thân trông ngắn/cao hơn tương đối, chân và tai theo phương đứng trông dài hơn so với chiều dài thân; hai bướu sát nhau theo chiều ngang và sườn bướu dốc hơn; góc cạnh/sọc và tần số họa tiết đổi theo hướng. Số bướu không nhất thiết đổi do biến đổi hình học liên tục, nhưng thu nhỏ/nội suy có thể làm đỉnh thấp khó tách. Hu không bất biến với co giãn khác nhau theo hai trục. HOG trong mã còn ép bbox thành vuông thêm một lần, tiếp tục thay đổi tỉ lệ ROI."
+bao_cao_yeu_cau_2_thuoc_tinh.md,121,"**Thiết kế thay thế:** giữ ảnh 576 × 384 để phân đoạn/kiểm tra chi tiết; chuẩn hóa crop bằng **một hệ số co chung**, thêm đệm vào canvas 288 × 192. Pixel đệm luôn có mask 0 và không được đếm vào màu/kết cấu. Các tỉ lệ cơ thể tính trước đệm từ tọa độ gốc hoặc tọa độ co đẳng hướng. Không cắt mất tai, sừng, chân hoặc bướu để vừa khung."
+bao_cao_yeu_cau_2_thuoc_tinh.md,127,"Chạy đúng hàm `create_foreground_mask` và phép resize của mã trên 8 ảnh thật, cố định seed OpenCV=0 cho từng ảnh. Chỉ tách hàm bằng AST; không chạy toàn hệ thống chim. Môi trường: OpenCV 4.12.0, NumPy 1.26.4. Có [mã kiểm tra](reports/yeu_cau_2/check_grabcut.py), [thông tin phiên bản và SHA-256 nguồn](reports/yeu_cau_2/grabcut_moi_truong.json), [số đếm pixel](reports/yeu_cau_2/grabcut_so_do.csv). Chưa có mask chuẩn nên **không tính IoU, tỉ lệ phân đoạn đúng hay độ chính xác**."
+bao_cao_yeu_cau_2_thuoc_tinh.md,129,| Tệp thử | Pixel mask > 0 / 50.176 | Nhận xét trực tiếp từ mask/ảnh phủ |
+bao_cao_yeu_cau_2_thuoc_tinh.md,132,"| `equus-quagga_0779.jpg` | 13.868 (27,64%) | Giữ sọc thân nhưng chân thành các khối bị rút gọn/dính; đuôi không được giữ đầy đủ. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,133,"| `cervidae_0568.jpg` | 13.752 (27,41%) | Giữ vùng nền lớn sau lưng và một phần nền/xe phía trước; mất chân/gạc rõ. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,134,"| `Bos_taurus_1254.jpg` | 13.724 (27,35%) | Khối thân được giữ, các chân và phần dưới bị mất/dính; không đạt để đo dáng chân. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,136,"| `Canis_lupus_familiaris_doberman_0953.jpg` | 13.333 (26,57%) | Nền sáng dưới bụng/giữa chân bị nhập vào tiền cảnh; tai mảnh không được giữ đúng. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,137,"| `Camelus_bactrianus_0303.jpg` | 19.173 (38,21%) | Còn hai đỉnh lưng nhưng nền giữa các chân/dưới thân bị nhập vào mask. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,138,"| `ursus-americanus_0649.jpg` | 22.044 (43,93%) | Giữ khối gấu tương đối rõ; biên chân/lông và nền sát chân vẫn cần sửa. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,142,"**Kết luận trong phạm vi mẫu:** GrabCut tự động với cấu hình này chưa đáng tin để đo tai/chân/gạc. Không suy rộng thành tỉ lệ lỗi trên toàn bộ 812 ảnh. Vật và nền cùng màu, vật sát mép, hàng rào/cỏ che chân và hình thái học mạnh đều là nguồn rủi ro. Hướng dẫn chính thức cũng cho phép đánh dấu bổ sung tiền cảnh/nền để sửa phân đoạn. [Tài liệu GrabCut của OpenCV](https://docs.opencv.org/4.10.0/d8/d83/tutorial_py_grabcut.html)."
+bao_cao_yeu_cau_2_thuoc_tinh.md,146,"| Màu | Bỏ chân sẫm, mặt trắng hoặc tai; phân bố màu lệch về phần thân còn lại. | Màu cỏ/đất/tuyết đi vào histogram, khiến ảnh cùng nền gần nhau. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,147,"| Hình dạng | Tai ngắn giả, mất chân/gạc, thay đổi Hu và biên lưng. | Lấp khe chân, tăng extent/solidity, biến nền thành khối thân. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,148,"| Kết cấu | Mất sọc/đốm ở phần bị loại. | Học vân cỏ, hàng rào, lá thay cho lông. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,149,| Không gian | Ô đầu/chân rỗng giả; vị trí mảng bị thiếu. | Các ô nền có màu/kết cấu giả của chủ thể. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,151,"Ở bước triển khai cần lưu mask, ảnh phủ và trạng thái duyệt; cho phép sửa bằng nét foreground/background hoặc polygon. Không tự coi mask toàn trắng, Otsu hay contour lớn nhất là phân đoạn thành công. Chỉ loại mảnh rời sau khi kiểm tra, vì tai, đuôi hoặc chân bị che có thể tạo thành phần rời hợp lệ. Kernel hình thái học phải theo độ phân giải/bề dày bộ phận, tránh mặc định làm mất cấu trúc mảnh."
+bao_cao_yeu_cau_2_thuoc_tinh.md,155,"**GLCM:** gán nền=0 không có nghĩa bỏ nền. Các cặp nền–nền tăng P(0,0), thường làm ảnh có vẻ đồng nhất/năng lượng cao; cặp vật–nền có thể tăng tương phản và tạo hiệu ứng hướng theo đường bao. Mức 0 còn là mức xám thật của vùng lông rất tối, nên không thể đơn giản xóa cả hàng/cột 0. Cách sửa là chỉ đếm cặp `(p,p+δ)` khi **cả hai pixel thuộc mask hợp lệ**, rồi đối xứng và chuẩn hóa từng ma trận. `graycomatrix` không nhận mask trong giao diện được dùng; cần đếm cặp bằng NumPy hoặc chọn patch nằm hoàn toàn trong vật. GLCM ghi nhận đồng xuất hiện mức xám theo độ lệch, không trực tiếp nhận biết sọc/loài. [Ví dụ GLCM chính thức](https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_glcm.html)."
+bao_cao_yeu_cau_2_thuoc_tinh.md,157,"**HOG:** mã dùng mask để tìm bbox, sau đó tính gradient của ảnh xám trong bbox. Cỏ giữa chân, nền quanh cổ, sọc và đường bao đều có thể tham gia. HOG là mô tả **gradient cục bộ có chuẩn hóa theo block**, không phải riêng silhouette. Bộ cơ bản dưới đây dùng hình dạng từ mask và Gabor cho kết cấu để dễ giải thích. Nếu thử HOG sau này, phải báo rõ loại ảnh đầu vào; HOG của mask vẫn mô tả gradient của silhouette và vẫn nhạy tư thế, còn HOG ảnh xám cần xử lý nền/lân cận hợp lệ. [Mô tả HOG của scikit-image](https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_hog.html)."
+bao_cao_yeu_cau_2_thuoc_tinh.md,159,"**FFT radial:** biên độ FFT đã bỏ pha; lấy trung bình theo bán kính còn bỏ chỉ số góc. Vì vậy có thể phản ánh cỡ lặp của họa tiết nhưng **không giữ được hướng sọc hoặc vị trí sọc trên cơ thể**. Sọc ngang/dọc cùng tần số có thể cho profile gần nhau; dịch chuyển lý tưởng không làm đổi biên độ phổ. Trong mã, nền=0 tạo bước nhảy theo mask, không trừ trung bình hay đặt cửa sổ giảm biên; thành phần DC và biên vật cũng ảnh hưởng phổ. Thay bằng Gabor giữ hướng kết hợp phân vùng; nếu thử FFT thì cần patch bên trong thân, bỏ DC, cửa sổ Hann và phổ theo góc, không chỉ radial."
+bao_cao_yeu_cau_2_thuoc_tinh.md,161,"**L2 một lần:** với `x=[C,T,S,P]`, chuẩn hóa `x/||x||₂` chỉ chia mọi tọa độ cho cùng một số. Tỉ lệ đóng góp `||C||₂²/||T||₂²` không đổi. Mean màu thang 0–255, contrast GLCM tới 63², Hu signed-log và histogram 0–1 có thể chênh lớn. Nhóm nhiều chiều có thể chi phối nếu các tọa độ có cỡ tương tự; số chiều lớn không tự động đồng nghĩa chi phối. L2 cuối không thay thế chuẩn hóa từng biến/khối. Đề xuất cụ thể ở mục 6."
+bao_cao_yeu_cau_2_thuoc_tinh.md,169,"1. Phân đoạn trên ảnh gốc 576 × 384, lưu mask 0/1 và ảnh phủ để duyệt; sửa vùng chân, tai, sừng và nền khi cần. Bbox bao toàn bộ phần vật nhìn thấy, kể cả đuôi/sừng. Không suy ra phần bị che."
+bao_cao_yeu_cau_2_thuoc_tinh.md,171,"3. Với ảnh nhìn ngang có hướng đầu rõ, thống nhất đầu sang trái bằng đánh dấu hướng khi duyệt hoặc một bộ ước lượng hướng sẽ kiểm nghiệm sau. Không dùng nhãn để quyết định hướng. Nếu không rõ, có thể tính cả ảnh và ảnh lật, lấy khoảng cách nhỏ hơn với **cùng quy tắc cho mọi ảnh**; ghi rằng đây là so khớp hai hướng. Không tự xoay để ép tư thế cổ/chân."
+bao_cao_yeu_cau_2_thuoc_tinh.md,176,"- **H:** histogram không âm, chia tổng L1 rồi lấy căn từng phần tử: `h'=sqrt(h/sum(h))`. Cách này giữ ý nghĩa phân bố; L2 giữa hai histogram biến đổi liên hệ khoảng cách Hellinger. Các histogram con được cân bằng trước nối, không chuẩn hóa z từng bin một cách mặc định."
+bao_cao_yeu_cau_2_thuoc_tinh.md,177,"- **Z:** chuẩn hóa từng biến liên tục bằng `z_j=(t_j−μ_j)/(σ_j+ε)`; μ/σ chỉ fit trên tập phát triển/tham chiếu hợp lệ, lưu lại để áp dụng cho truy vấn. Chiều không biến thiên được đặt 0 và ghi nhận. Với tỉ lệ dương rất lệch dùng `log1p` trước Z. Z có miền thực, không giới hạn [0,1]."
+bao_cao_yeu_cau_2_thuoc_tinh.md,178,"- **U:** chuẩn hóa L2 của một khối sau biến đổi. Các khối con trong cùng nhóm được cân bằng như mục 6. “0/1” là mã mask, không phải nhãn loài."
+bao_cao_yeu_cau_2_thuoc_tinh.md,180,"Đây là các quy tắc thiết kế; chưa fit μ/σ hay tạo vector B từ toàn bộ dữ liệu. StandardScaler chuẩn hóa theo từng biến và chịu ảnh hưởng ngoại lệ; nếu dữ liệu phát triển cho thấy ngoại lệ mạnh, thử median/IQR thay thế rồi đánh giá, không đổi thang đo riêng cho từng ảnh. [Tài liệu StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)."
+bao_cao_yeu_cau_2_thuoc_tinh.md,184,"Trong bảng, A là diện tích silhouette; w,h là rộng/cao bbox; P là chu vi; A_hull là diện tích convex hull. Các đại lượng trong cùng công thức phải dùng cùng quy ước tọa độ/diện tích."
+bao_cao_yeu_cau_2_thuoc_tinh.md,186,"| ID / thuộc tính | Định nghĩa và cách tính | Số chiều; miền gốc → chuẩn hóa | Mask? Vùng đo | Giá trị thông tin / cặp áp dụng | Giới hạn tư thế, góc nhìn, ánh sáng, che khuất |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,188,"| **C1 — màu HSV** | Histogram H 16 bin, S 8 bin, V 8 bin. H dùng trọng số S/255 để vùng xám không tạo màu hue giả; phân bố hue xử lý vòng tại 0/180. S,V đếm bình thường. | **32**; bin không âm, sau L1 trong [0,1]; **H**, cân bằng ba kênh rồi U. Nếu tổng trọng số H bằng 0 thì kênh hue không có thông tin. | Có; toàn bộ phần vật nhìn thấy. | Đen–trắng của ngựa vằn/gấu trúc, vàng/cam của hổ, tông lông gấu. S,V giúp phân biệt trắng/đen khi hue ít nghĩa. | Đổi sáng làm V đổi; bóng và cân bằng trắng làm phân bố lệch. Chó hồng và bò nhiều màu khiến cùng nhãn vẫn xa. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,189,"| **C2 — sắc độ Lab** | Histogram a và b, mỗi kênh 8 bin trên mã Lab uint8 [0,256). Không thêm L để giảm lặp với V. | **16**; bin [0,1] sau L1; **H**, cân bằng hai kênh rồi U. | Có; toàn vật. | Bổ sung khác biệt tông vàng/nâu so với xám; hữu ích cùng C1 cho hổ–ngựa vằn, gấu và bò. | Không tự bất biến ánh sáng/cân bằng trắng; histogram biên từng kênh không giữ tương quan màu hoặc vị trí. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,190,"| **T1 — LBP hai bán kính** | Xám uint8; uniform P=8, R=1 và R=3 trên canvas chuẩn hóa; mỗi bán kính 10 bin. Chỉ chọn tâm có đủ lân cận hợp lệ trong mask. | **20 = 2×10**; histogram [0,1]; **H** từng bán kính, cân bằng rồi U. | Có; phần trong vật, tránh biên/nền. | Lông mịn so với xù/cuộn; cừu 0187–dê 1005; bổ sung cho gấu, chó. | Nhiễu, nhòe, tỉ lệ họa tiết và độ phân giải ảnh gốc; LBP uniform gom nhiều mẫu khác nhau, không xác nhận đốm hay sọc riêng biệt. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,191,"| **T2 — GLCM có mask cặp pixel** | Lượng tử 64 mức; d={1,3}, θ={0°,45°,90°,135°}; chỉ đếm cặp trong vật, đối xứng, mỗi P(i,j) tổng 1. Tính energy=√ΣP²; contrast=Σ(i−j)²P; homogeneity=ΣP/[1+(i−j)²]; correlation từ hiệp phương sai hai mức xám. | **32 = 2×4×4**; energy/homogeneity [0,1], contrast [0,3969], correlation [−1,1]. Chia contrast cho 3969, sau đó **Z**, U. Patch hằng số không có phương sai: correlation đánh dấu không xác định, không biến thành bằng chứng tương đồng. | Có; cặp trong phần vật nhìn thấy, không tính nền hoặc cặp bắc qua nền. | Độ thô và biến thiên mức xám ở hai cỡ; giúp cừu–dê, lông gấu, vùng sọc/đốm. | Không mô tả ý nghĩa vật thể; hướng chụp, độ nét, bóng và lượng tử xám ảnh hưởng. Ít cặp hợp lệ thì kết quả kém ổn định. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,192,"| **T3 — Gabor giữ hướng** | Xám/255; f={0,08;0,16;0,24} chu kỳ/pixel, θ={0°,45°,90°,135°}; đáp ứng r=√(real²+imag²), lấy mean/std tại các tâm hợp lệ. Giữ riêng từng hướng và tần số, không trung bình góc. Thiết kế hỗ trợ kernel `n_stds=2`. | **48 = 3×4×2**; mean/std ≥0, không giả định cận trên 1; `log1p` → **Z**, U. | Có; phần trong vật có cửa sổ lọc hợp lệ, bỏ vùng sát biên theo hỗ trợ từng kernel. | Phân biệt họa tiết thiên hướng dài với ít định hướng, cỡ sọc/đốm và lông; hổ–báo, ngựa vằn–ngựa/lừa. | Tổng hợp toàn vật còn mất vị trí; hướng đổi theo tư thế; sọc và lông có thể cùng tạo đáp ứng. Tần số là theo ảnh chuẩn hóa, không phải kích thước thật. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,193,"| **S1 — Hu của silhouette** | Tính 7 Hu trên mask 0/1 hoặc `moments(...,binaryImage=True)`; h=0 trả 0, khác 0 dùng `−sign(h)log10(max(abs(h),10⁻¹²))`. | **7**; giá trị signed-log hữu hạn, coi là miền thực → **Z**, U. | Có; toàn silhouette được duyệt. | Khối thân tổng thể; hỗ trợ ngựa–bò, thân gấu–họ mèo, chuột lang nước. | Chỉ xấp xỉ bất biến dịch/chỉnh tỉ lệ đẳng hướng/quay trong mặt phẳng; không bất biến tư thế, phối cảnh, che khuất hoặc mask sai. Hu không định vị tai/bướu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,194,"| **S2a — tỉ số bbox** | w/h trên bbox chưa thêm đệm. | **1**; >0; `log(w/h)` → **Z**. | Có; toàn vật nhìn thấy. | Dáng dài/thấp so với gọn/cao. | Đầu cúi, đuôi giơ, sừng và góc chụp thay bbox; không suy chiều cao thật. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,195,"| **S2b — extent** | A/(w×h). | **1**; [0,1] → **Z**. | Có; bbox và silhouette. | Mức lấp đầy khung: thân đặc so với nhiều khoảng hở quanh cổ/chân. | Mask lấp khe chân làm tăng giả; phụ thuộc tư thế và hướng nhìn. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,196,"| **S2c — solidity** | A/A_hull; tính hull của toàn silhouette hợp lệ theo cùng quy ước diện tích. | **1**; (0,1] → **Z**. | Có; toàn silhouette. | Độ lõm quanh chân, cổ, đuôi; bổ sung cho thân gọn so với nhiều phần nhô. | Không phân biệt nguyên nhân lõm; che chân, dính nền hoặc sừng dài làm đổi chỉ số. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,197,"| **S2d — circularity** | 4πA/P² với diện tích/chu vi từ cùng biên hình học; giữ một chỉ số này, bỏ compactness nghịch đảo. | **1**; lý tưởng (0,1]; sai số rời rạc cần kiểm tra, không mặc định mọi ước lượng pixel đều ≤1 → **Z**. | Có; tổng biên silhouette, kể cả biên các phần rời đã xác nhận thuộc vật. | Thân tròn/gọn so với biên dài và nhiều chi; gấu/capybara so với lừa/ngựa. | Nhạy răng cưa, độ phân giải, lông và sừng; chuẩn hóa crop không khử đổi tư thế. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,198,"| **S2e — eccentricity** | Từ trị riêng λ₁≥λ₂ của hiệp phương sai tọa độ pixel mask: √(1−λ₂/λ₁); λ₁=0 là không hợp lệ. | **1**; [0,1] → **Z**. Năm scalar S2 ghép chung **5 chiều**, U sau Z. | Có; phân bố khối toàn vật. | Khối kéo dài so với gần tròn; thêm tín hiệu khi màu giống. | Chỉ mô tả ellipse tương đương, không đo riêng chân/tai và không phân biệt bướu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,199,"| **S3 — mật độ mask 6×8** | Canvas 192 hàng × 288 cột; chia **6 hàng × 8 cột**, ô 32 × 36; mỗi ô = số pixel mask / diện tích ô. | **48**; [0,1] → U. Giữ giá trị 0 của ô thật sự không có vật. | Có; lưới toàn crop đã đệm, thống nhất hướng. | Giữ vị trí thô đầu, thân, khoảng chân và đuôi. Hữu ích cho toàn tập. | Lưới không phải bộ phận giải phẫu; nhạy bbox, đầu cúi, hướng/độ che khuất; không đủ đo tai nhỏ. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,200,"| **S4 — biên trên và dưới** | Chia chiều ngang canvas thành 32 dải; tại mỗi dải có vật lấy y nhỏ nhất/lớn nhất và chia H=192; nối 32 giá trị trên + 32 dưới. Dải trống quy ước cả hai bằng 0, được nhận biết cùng mask/occupancy, không đọc là biên cơ thể ở y=0. | **64 = 32+32**; [0,1] → U, cân bằng với S1/S2/S3. | Có; silhouette toàn crop. | Giữ riêng đường lưng và đường chân/bụng thay vì chỉ độ cao; hỗ trợ lạc đà, ngựa/lừa, thân gấu. | Dải có cổ/đầu/đuôi có thể tạo đỉnh giả; chân nhấc/cúi đầu làm đổi biên; chưa phải bộ đếm bướu của thân. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,201,"| **P — bố cục màu 2×4** | Chia canvas **2 hàng × 4 cột**; mỗi ô HSV H8/S4/V4 chỉ trên tiền cảnh, H có trọng số saturation như C1. Nối theo hàng rồi cột. | **128 = 8×16**; bin [0,1], **H** từng kênh, cân bằng kênh/ô và U toàn P. Ô không có vật có vector 0; thiếu dữ liệu do mask lỗi phải đánh dấu riêng. | Có; từng ô không gian trên vật. | Giữ mảng đen vai/chân của gấu trúc, mặt sáng và thân tối của bò, lưng/bụng khác màu. Khác với C, đổi vị trí mảng có thể làm P đổi. | Ô ảnh chỉ xấp xỉ vùng đầu/lưng/bụng; quay đầu hoặc góc trước làm lệch vùng; ô ít pixel dễ nhiễu. Không định vị chính xác mắt hoặc đầu đuôi. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,203,"Các tham số bin, tần số, bán kính và lưới là **lựa chọn kỹ thuật ban đầu**, không phải kết quả tối ưu từ bộ dữ liệu. Gabor là bộ lọc có hướng/tần số; ý nghĩa hướng và phản hồi thực/ảo theo API chính thức, còn việc dùng chúng cho các cặp nhãn ở đây là đề xuất của báo cáo. [Tài liệu bộ lọc Gabor](https://scikit-image.org/docs/stable/api/skimage.filters.html#skimage.filters.gabor)."
+bao_cao_yeu_cau_2_thuoc_tinh.md,207,\[
+bao_cao_yeu_cau_2_thuoc_tinh.md,208,\begin{aligned}
+bao_cao_yeu_cau_2_thuoc_tinh.md,209,"C&=[C1_{32};C2_{16}]&&\Rightarrow48,\\"
+bao_cao_yeu_cau_2_thuoc_tinh.md,210,"T&=[T1_{20};T2_{32};T3_{48}]&&\Rightarrow100,\\"
+bao_cao_yeu_cau_2_thuoc_tinh.md,211,"S&=[S1_7;S2_5;S3_{48};S4_{64}]&&\Rightarrow124,\\"
+bao_cao_yeu_cau_2_thuoc_tinh.md,212,"P&=[HSV_{16}^{(r,c)}]_{r=1..2,c=1..4}&&\Rightarrow128,\\"
+bao_cao_yeu_cau_2_thuoc_tinh.md,213,B&=[C;T;S;P]&&\Rightarrow\boxed{48+100+124+128=400}.
+bao_cao_yeu_cau_2_thuoc_tinh.md,214,\end{aligned}
+bao_cao_yeu_cau_2_thuoc_tinh.md,215,\]
+bao_cao_yeu_cau_2_thuoc_tinh.md,228,"Các khối bổ sung khai thác **vùng thân và bộ phận nhìn thấy**, không dùng tên loài làm dữ liệu. Đề xuất giai đoạn đầu đánh dấu polygon vùng thân/đầu, mốc tai–mõm–chân–đuôi trên ảnh thật khi cần. Chưa có bộ phát hiện landmark đã được huấn luyện/kiểm chứng; không giả định OpenCV tự biết đâu là tai, sừng hoặc bướu."
+bao_cao_yeu_cau_2_thuoc_tinh.md,230,"Quy ước: L_thân là chiều dài trục thân từ vai đến gốc đuôi nhìn thấy; D_thân là độ sâu thân trung vị, vuông góc trục thân; L_đầu từ mốc sau sọ đến đầu mõm, W_đầu là bề rộng đầu trong ảnh. Đo trên tọa độ gốc/đẳng hướng. Đây là **tỉ lệ chiếu trong ảnh**, không phải số đo giải phẫu thật. Mốc không xác định do che/góc nhìn thì ghi thiếu, không đoán và không gán số 0 như một phép đo thật."
+bao_cao_yeu_cau_2_thuoc_tinh.md,232,"| Khối / thuộc tính | Định nghĩa và cách tính | Số chiều; miền và chuẩn hóa | Mask / vùng đo | Giá trị thông tin, cặp áp dụng | Giới hạn và tình trạng triển khai |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,234,"| **T+1 — Gabor theo vùng thân** | Polygon thân bỏ đầu, cổ, đuôi/chân và nền; chia hai nửa trước/sau theo trục thân đã đánh dấu. Dùng cùng 3 tần số, 4 hướng, mean/std như T3, giữ riêng từng nửa. | **96 = 2×3×4×2**; ≥0; `log1p` → Z; U từng nửa rồi cân bằng. | Có mask + polygon thân; chuẩn hóa đẳng hướng theo L_thân về cùng độ dài tham chiếu 192 pixel để giảm sai khác cỡ họa tiết do bbox có cổ/đuôi dài. | Sọc thân hổ/ngựa vằn có hướng và cỡ khác nhau; phân bố hướng trước/sau giúp giữ thay đổi sọc quanh vai và hông; bổ sung cho ngựa–lừa–ngựa vằn, hổ–báo. | Không giữ chính xác từng sọc; thân xoay/da cong làm đổi hướng; thiếu vùng thân hoặc kernel không đủ hỗ trợ thì bỏ phép đo. Polygon hiện là phương án gán tay/bán tự động chưa kiểm nghiệm. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,235,"| **T+2 — thành phần tối nhiều cỡ** | Trong từng nửa thân hợp lệ, với σ={1,2,4} pixel trên ảnh thân chuẩn hóa, lấy D=max(0,Gaussianσ(I)−I). Chọn ngưỡng Otsu từ D trong vùng hợp lệ, tìm thành phần tối 8-liên thông; loại thành phần cắt biên patch. Lấy (a) trung vị λ_min/λ_max của hiệp phương sai tọa độ từng thành phần; (b) số thành phần/diện tích pixel hợp lệ. | **12 = 2 vùng×3 cỡ×2**; độ tròn-kéo dài [0,1], mật độ [0,1] theo đơn vị pixel; Z rồi U. Không có thành phần: mật độ=0; hình dạng thành phần là thiếu, không giả làm tròn. | Có; phần trong hai nửa thân; tránh biên và che khuất. | Vệt dài có tỉ lệ trị riêng nhỏ hơn cụm tròn; bổ sung phân biệt sọc hổ và đốm/hoa văn báo. Kết hợp màu phân biệt ngựa vằn và hổ. | Sọc phân nhánh, đốm dính nhau, lông đen và bóng đều gây sai; không khẳng định Otsu luôn tách được họa tiết. Tất cả ngưỡng/phép đo cần kiểm nghiệm. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,236,"| **E — tai và đầu/mõm** | Sáu phép đo: L_tai/L_đầu; W_tai/L_tai; góc trục tai với trục đầu chia π; L_mõm/L_đầu; W_mõm/W_đầu; L_đầu/L_thân. Nếu thấy hai tai, dùng tai gần máy, nhìn rõ nhất theo quy tắc nhất quán. | **6**; tỉ lệ ≥0, góc [0,1]; tỉ lệ dương `log1p` rồi Z, góc Z; U toàn E. | Mask/đường biên bộ phận + mốc gán; vùng đầu/tai. | Tai lừa 0587 so với ngựa 1014; mõm và tỉ lệ đầu cho chó–sói–cáo. Thể hiện hình học bộ phận mà Hu toàn thân dễ làm mờ. | Tai gập/cụp, mặt quay trước và lông che tai làm phép đo không tương đương; chó nhiều giống không có một giá trị đặc trưng chung. Chưa đo sáu số này từ các ảnh ví dụ. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,237,"| **L — cổ, chân, đuôi** | Sáu tỉ lệ: L_cổ/L_thân; chiều dài đường gấp khúc chân trước gần máy nhìn thấy/D_thân; L_thân/D_thân; chiều dài đường giữa đuôi/L_thân; bề rộng đuôi lớn nhất/D_thân; góc gốc→đầu đuôi với trục thân chia π. | **6**; tỉ lệ ≥0, góc có dấu [−1,1]; `log1p` cho tỉ lệ, Z rồi U. | Mask + mốc/trục; cổ, thân, chân gần máy, đuôi. | Đuôi dài/xù của cáo so với chó/sói trong các ảnh đã xem; chân/thân bổ sung cho các động vật móng guốc. | Đuôi cuộn, bị cắt/che, chó cắt đuôi, chân bước hoặc góc xiên làm đổi phép đo; chiều dài nhìn thấy không bằng chiều dài giải phẫu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,238,"| **H — sừng/gạc** | Bốn phép đo khi quan sát được: độ rộng phủ hai sừng/W_đầu; tỉ số độ dài cung đường giữa sừng/dây cung; số đầu mút nhánh gạc/sừng nhìn thấy; độ cao đầu sừng so với gốc chia L_đầu. Dùng nhánh/sừng nhìn rõ theo quy tắc cố định. | **4**; độ rộng ≥0; cung/dây ≥1; số nhánh là số nguyên ≥0; độ cao tương đối có dấu. `log1p` các lượng không âm, Z, U. | Có đường biên/skeleton bộ phận đã duyệt, mốc đầu; không lấy mọi nhánh skeleton của mask toàn thân. | Sừng cong rộng của ảnh trâu 0639 so với bò 1287; gạc phân nhánh ở Cervidae 0568 khác sừng không phân nhánh. | Mặt quay, một sừng bị che, lông/rào lẫn vào skeleton; không thấy sừng không đồng nghĩa không có. Chỉ “không có nhìn thấy” được ghi quan sát riêng; các tỉ lệ không đo được là thiếu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,239,"| **D1 — profile lưng thân** | Lấy biên trên **riêng polygon thân**, loại đầu/cổ/đuôi. Đặt trục theo vai→gốc đuôi; lấy 32 vị trí đều theo trục thân. Tại mỗi vị trí tính độ cao biên trên so với đường nối hai đầu lưng, chia D_thân. Giữ cả 32 giá trị, không chỉ đếm đỉnh. | **32**; miền thực theo tỉ lệ chiếu; Z rồi U theo khối D. | Có mask thân + mốc vai/gốc đuôi; lưng/vài. | Hình một/hai bướu; độ nổi và vị trí vùng vai của gấu là tín hiệu phụ. | Áo/yên phủ lưng, bướu nghiêng, lông dày, tư thế cúi và góc trước làm đổi profile; không gọi mọi đỉnh là bướu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,240,"| **D2 — thống kê đỉnh lưng** | Làm trơn 32 mẫu D1 bằng Gaussian σ=1 mẫu; tìm đỉnh có prominence ≥0,05D_thân và cách nhau ≥4 mẫu, dùng quy ước điểm biên nhất quán. Lưu số đỉnh, prominence lớn nhất/D_thân, khoảng cách hai đỉnh nổi nhất/L_thân. D1 đã chia D_thân nên ngưỡng tương ứng 0,05 trên profile. | **3**; số đỉnh nguyên ≥0, prominence ≥0, khoảng cách [0,1]; Z. <2 đỉnh thì khoảng cách=0 nghĩa không có cặp đỉnh đạt điều kiện; không đồng nghĩa bị che. D=D1+D2 có **35 chiều**. | Như D1, chỉ tính nếu toàn đoạn lưng cần đo nhìn thấy. | Hai đỉnh tách biệt so với một đỉnh ở lạc đà 0303–0434. Với gấu chỉ hỗ trợ hình vai/lưng, không dùng số đỉnh để suy loài. | Các ngưỡng là **đề xuất ban đầu**, chưa tối ưu; không đủ tách bướu thật với đỉnh do lông/mask. Lưng bị che thì D không hợp lệ. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,241,"| **R — màu theo vùng cơ thể** | Đánh dấu ba vùng nhìn thấy: đầu, nửa lưng thân, nửa bụng thân theo trục cơ thể; mỗi vùng HSV H8/S4/V4 giống quy tắc P. | **48 = 3×16**; [0,1] sau L1, H từng kênh; U từng vùng rồi cân bằng. | Có mask + vùng cơ thể có tên; không chỉ lấy một ô ảnh và gọi là đầu. | Mặt trắng bò 1287, bụng sáng hổ, lưng–bụng/mõm ở chó–sói–cáo; màu đầu/thân gấu. Khắc phục phần nào sự lệch ô lưới khi cổ đổi dáng. | Ánh sáng vẫn gây nhiễu; vùng khuất không suy từ nhãn. R không đo riêng màu đầu đuôi; P chỉ giữ đầu đuôi ở mức vị trí thô. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,243,"**T+ = T+1 + T+2 = 96 + 12 = 108 chiều.** E+L+H = 6+6+4 = 16 chiều. D=32+3=35 chiều. R=48 chiều. Một khối có thông tin trùng một phần với B vẫn có thể hữu ích vì đo đúng vùng hoặc đúng bộ phận; cần kiểm tra bằng thí nghiệm bỏ/thêm khối, không mặc định tăng số chiều là tăng chất lượng."
+bao_cao_yeu_cau_2_thuoc_tinh.md,247,| Bộ / chế độ so sánh | Cấu trúc | Tổng chiều đúng | Công sức và mục đích |
+bao_cao_yeu_cau_2_thuoc_tinh.md,250,| **B_T — thêm họa tiết vùng thân** | B + T+108 | **508** | Thử cho ảnh sọc/đốm; cần vùng thân. Không phải PCA của 1.460 chiều. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,251,| **B_M — bản mở rộng tối đa** | B + T+108 + E6 + L6 + H4 + D35 + R48 | **607** | Dùng để thiết kế schema/đối chứng khi có vùng và mốc được duyệt; không phải mọi ảnh đều đo đủ mọi khối. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,252,"| Ngựa–lừa–ngựa vằn | B + T+108 + E6 | **514** | Dáng chung, họa tiết sọc và tai/đầu; ngựa và lừa màu giống vẫn cần E. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,253,"| Chó–sói–cáo | B + E6 + L6 + R48 | **460** | Đầu/mõm, đuôi và phân bố màu; không bảo đảm tách chó dáng sói. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,254,"| Hổ–báo hoa mai | B + T+108 | **508** | Màu tương đối giống, ưu tiên sọc dài so với đốm/cụm theo vùng. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,255,"| Bò–trâu | B + H4 + R48 | **452** | Sừng và màu vùng đầu/thân, không chỉ độ tối. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,256,| Lạc đà một–hai bướu | B + D35 | **435** | Profile và đỉnh lưng thân. Cần sửa/duyệt nghi vấn nhãn trước đánh giá. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,257,"| Gấu đen–gấu nâu | B + D35 + R48 | **483** | Kết cấu đã có trong B, thêm hình vai/lưng và màu theo vùng; tín hiệu này có thể chồng lấn. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,259,"Các dòng theo cặp là **cấu hình thí nghiệm hoặc chế độ so sánh được công bố trước**, không phải quy tắc đọc tên loài của truy vấn để bí mật chọn bộ đo. Khi xếp hạng một truy vấn, dùng cùng tập khối cho tất cả ứng viên có dữ liệu hợp lệ. Có thể trích các khối bổ sung cho toàn tập rồi xếp hạng lại Top-K khi vùng cần đo nhìn thấy; không dùng nhãn thật của ứng viên để bật/tắt khối hoặc cộng điểm thưởng."
+bao_cao_yeu_cau_2_thuoc_tinh.md,268,"2. **Cân bằng khối con:** đặt mỗi khối con về L2=1, rồi nối với hệ số 1/√k khi có k khối hợp lệ. Ví dụ T gồm LBP20, GLCM32, Gabor48: mỗi khối có cùng tổng năng lượng ban đầu, thay vì để 48 tọa độ Gabor mặc nhiên có tổng năng lượng lớn hơn. S có bốn khối Hu7, scalar5, grid48, profile64. C có HSV32 và Lab16; P cân bằng các ô/kênh trước chuẩn hóa nhóm. Chỉ dùng khối có dữ liệu quan sát hợp lệ."
+bao_cao_yeu_cau_2_thuoc_tinh.md,273,\[
+bao_cao_yeu_cau_2_thuoc_tinh.md,274,"\tilde g_j=\frac{\phi_j(f_j)}{\|\phi_j(f_j)\|_2+\epsilon},\qquad"
+bao_cao_yeu_cau_2_thuoc_tinh.md,275,\hat G=\operatorname{L2}\left([\tilde g_1/\sqrt{k};\ldots;\tilde g_k/\sqrt{k}]\right).
+bao_cao_yeu_cau_2_thuoc_tinh.md,276,\]
+bao_cao_yeu_cau_2_thuoc_tinh.md,278,\[
+bao_cao_yeu_cau_2_thuoc_tinh.md,279,v_B=\left[\sqrt{w_C}\hat C;\sqrt{w_T}\hat T;
+bao_cao_yeu_cau_2_thuoc_tinh.md,280,"\sqrt{w_S}\hat S;\sqrt{w_P}\hat P\right]\in\mathbb R^{400},"
+bao_cao_yeu_cau_2_thuoc_tinh.md,281,"\quad w_g\ge0,\quad\sum_gw_g=1."
+bao_cao_yeu_cau_2_thuoc_tinh.md,282,\]
+bao_cao_yeu_cau_2_thuoc_tinh.md,284,"**Mốc so sánh ban đầu:** w_C=w_T=w_S=w_P=1/4. Đây là quy tắc cân bằng chủ động để làm đối chứng, **không phải trọng số tối ưu đã tìm ra**. Trong một nhóm, các khối con cũng khởi đầu cân bằng. Các phép nhân trọng số không làm thay đổi số chiều."
+bao_cao_yeu_cau_2_thuoc_tinh.md,288,\[
+bao_cao_yeu_cau_2_thuoc_tinh.md,289,"d_B(q,x)=\sum_{g\in\{C,T,S,P\}}w_g"
+bao_cao_yeu_cau_2_thuoc_tinh.md,290,\|\hat g(q)-\hat g(x)\|_2^2
+bao_cao_yeu_cau_2_thuoc_tinh.md,291,=\|v_B(q)-v_B(x)\|_2^2
+bao_cao_yeu_cau_2_thuoc_tinh.md,292,=2\big(1-v_B(q)^Tv_B(x)\big).
+bao_cao_yeu_cau_2_thuoc_tinh.md,293,\]
+bao_cao_yeu_cau_2_thuoc_tinh.md,297,"Nếu thử thay trọng số, phải chọn trên tập phát triển với nhãn đã duyệt; so cấu hình cân bằng, giảm vai trò màu khi màu nội nhóm biến thiên mạnh và tăng vai trò họa tiết hoặc bộ phận khi đo đáng tin. Giữ lại tập kiểm tra để báo cáo. Không điều chỉnh trọng số sau khi xem nhãn đúng của từng kết quả kiểm tra. Các khối bổ sung được chuẩn hóa riêng rồi ghép với căn trọng số hoặc kết hợp khoảng cách theo cùng nguyên tắc; không nối trực tiếp số đo chiều dài/tần số và L2 toàn bộ một lần."
+bao_cao_yeu_cau_2_thuoc_tinh.md,301,"Lưu thêm metadata: trạng thái duyệt mask, hướng đầu, bộ phận nhìn thấy, số pixel/cặp hợp lệ, và cờ hợp lệ của từng phép đo. **Các cờ chất lượng không được cộng vào vector nội dung để tạo tương đồng về “cùng lỗi”.** Số 0 lưu tạm cho giá trị thiếu chỉ là placeholder, không được so như số đo thật."
+bao_cao_yeu_cau_2_thuoc_tinh.md,303,"Đối với cặp ảnh q,x, chỉ dùng các khối/biến mà **cả hai cùng đo hợp lệ**. Khi một khối chỉ còn một phần biến chung, chuẩn hóa lại trên phần biến chung trước so sánh; cần giữ giá trị sau biến đổi và cờ hợp lệ để làm việc này. Khoảng cách khái quát:"
+bao_cao_yeu_cau_2_thuoc_tinh.md,305,\[
+bao_cao_yeu_cau_2_thuoc_tinh.md,306,"d(q,x)=\frac{\sum_{g\in\mathcal A(q,x)}w_gd_g(q,x)}"
+bao_cao_yeu_cau_2_thuoc_tinh.md,307,"{\sum_{g\in\mathcal A(q,x)}w_g},"
+bao_cao_yeu_cau_2_thuoc_tinh.md,308,\]
+bao_cao_yeu_cau_2_thuoc_tinh.md,310,"trong đó A(q,x) là tập khối dùng chung; đồng thời hiển thị/lưu độ phủ bằng chứng. Khi thiếu dữ liệu, công thức không còn tương đương cosine của một vector cố định với các ô thiếu điền 0. Không tuyên bố tương đương trong trường hợp đó. Chỉ xếp hạng mở rộng khi đủ các khối đã yêu cầu; nếu không đủ, trả về so sánh B kèm trạng thái hoặc yêu cầu duyệt dữ liệu, thay vì cho điểm thấp giả do chỉ có một vùng giống màu."
+bao_cao_yeu_cau_2_thuoc_tinh.md,312,"Ảnh chưa có mask đủ tốt cần được sửa trước khi đưa vào chỉ mục B chính thức. Một histogram toàn bbox có thể là chế độ dự phòng riêng, phải ghi rõ là **có nền** và đánh giá riêng; không trộn âm thầm với histogram tiền cảnh. Mask bị lỗi toàn bộ thì không thể coi các nhóm màu/kết cấu/hình dạng phụ thuộc nó là đồng thời đáng tin."
+bao_cao_yeu_cau_2_thuoc_tinh.md,338,"Nhãn và tên tệp đi theo nhánh metadata để tra cứu/đánh giá, **không có mũi tên vào vector**. Không đưa số thứ tự tệp, one-hot nhãn, tên giống, tên họ Cervidae hoặc nhãn dự đoán làm một tọa độ nội dung. Số đỉnh lưng, mức độ sọc và tỉ lệ tai là thuộc tính ảnh có thể đo; chuỗi “lạc đà hai bướu” là nhãn, không phải phép đo."
+bao_cao_yeu_cau_2_thuoc_tinh.md,340,"PCA chỉ là thí nghiệm tùy chọn sau khi có bộ cơ bản và đánh giá. Chưa cần PCA cho 400 chiều; nếu dùng, fit trên tập được phép học, áp dụng cùng scaler/PCA cho truy vấn và gallery, rồi L2 lại khi so cosine. Số chiều PCA phải không vượt số chiều đầu vào và giới hạn theo số mẫu fit; không sao chép mặc định “512 chiều” của bài chim sang B 400 chiều. PCA giữ phương sai, không bảo đảm giữ đặc trưng hữu ích nhất để tách nhãn."
+bao_cao_yeu_cau_2_thuoc_tinh.md,344,"**Phần đã quan sát** là nội dung thị giác ở mục 2 và các ảnh liên kết. **Phần dưới đây là giả thuyết về tác dụng của các khối**, chưa tính khoảng cách, xếp hạng hoặc độ chính xác. Dấu “gần/xa” nói về tín hiệu dự kiến của từng khối, không phải kết quả thực nghiệm."
+bao_cao_yeu_cau_2_thuoc_tinh.md,348,"| **Khác nhãn: ngựa 1014 – lừa 0587** | Thân dài, chân mảnh, đầu dài. | Tai lừa nhìn dài hơn; màu/độ xù khác; góc nhìn cũng khác. | S có thể gần ở khối thân; E có thể bổ sung tỉ lệ tai/đầu. Không dùng chiều cao pixel tai trực tiếp vì cỡ đầu và góc chụp khác. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,349,"| **Khác nhãn: ngựa 1014 – ngựa vằn 0779** | Cấu trúc thân/ngựa tương tự. | Một ảnh lông nâu tương đối liền, một ảnh sọc đen–trắng. | C và T/T+ cần ghi khác biệt mạnh về phân bố màu và năng lượng họa tiết, trong khi S có thể gần. Đây là lý do không dùng riêng silhouette. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,350,"| **Khác nhãn: chó 0410 – sói 0922; thêm cáo 0314** | Màu nâu/xám, mõm và tai có nét gần nhau. | Vị trí mảng lông, dáng đầu/thân, đuôi và chân khác. | B kết hợp E/L/R; đuôi cáo và phân bố màu giúp thêm bằng chứng, nhưng chó dáng sói vẫn là cặp khó. Không bảo đảm khoảng cách chó–sói lớn hơn mọi cặp chó–chó. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,351,"| **Khác nhãn: hổ 0250 – báo 0611** | Nền lông vàng/nâu và dấu tối; thân mèo lớn. | Sọc dài so với đốm/hoa văn cụm. | C có thể gần; T+ giữ hướng, cỡ và độ kéo dài thành phần tối cần làm rõ khác biệt. Cỏ che báo phải bị loại khỏi vùng họa tiết. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,352,"| **Khác nhãn: bò 1287 – trâu 0639** | Khối thân nặng, phần lớn thân tối. | Mặt trắng bò; sừng trâu cong/rộng trong ảnh. | R tách vùng đầu, H tách hình sừng; không dùng màu tối toàn thân như quy tắc phân nhãn. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,353,"| **Khác nhãn: lạc đà hai bướu 0303 – một bướu 0434** | Thân/cổ/chân và màu lông có nét gần. | Hai đỉnh đường lưng so với một đỉnh. | D đo riêng thân, giữ profile và số đỉnh. Không đếm đầu/cổ; cần xác nhận mask lưng và khả năng nhìn thấy trước tính. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,354,"| **Khác nhãn: gấu đen 0649 – gấu nâu 1206** | Cùng khối gấu, cả hai đều khá tối. | Màu lông, kết cấu và dáng vai/lưng khác ở hai ảnh; 1206 cúi đầu. | C/T/D/R cho nhiều tín hiệu, nhưng cần báo độ nhạy tư thế. Màu không đủ khẳng định loài. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,355,"| **Cùng nhãn chó: 0052 – Doberman 0953** | Đều mang nhãn chó và có chủ thể bốn chân. | Hồng/xù so với đen–nâu/lông ngắn; dáng đầu/thân/đuôi cũng khác. | C, T và S đều có thể xa: đây là ca kiểm tra giới hạn của tìm kiếm thị giác khi đánh giá theo nhãn. Hình dạng không được hứa sẽ tự khắc phục toàn bộ khác biệt giống chó. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,356,"| **Cùng nhãn bò: 1254 – 1287** | Thân nặng, có vùng mặt/chân sáng. | Mảng đen–trắng toàn thân so với thân sẫm/mặt trắng. | C có thể xa; S và R vùng đầu có thể giữ điểm chung. So thêm bò 1277 cúi đầu để kiểm tra độ nhạy tư thế. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,357,"| **Cùng nhãn cấp họ Cervidae: 0568 – 0633** | Dáng thú móng guốc, chân mảnh. | Xám/có gạc lớn so với nâu/đốm trắng/không thấy gạc. | Không phạt tuyệt đối việc thiếu gạc; giữ so sánh phần thân và ghi phép đo gạc thiếu. Nhãn cấp họ rộng làm đánh giá theo nhãn khác với giống nhau thuần thị giác. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,359,"Các tên rút gọn trong bảng tương ứng đúng tệp đã liên kết ở mục 2. Một vector có giá trị thông tin khi làm rõ **cái gì giống và cái gì khác trong ảnh**, không phải vì số chiều lớn. Ví dụ, histogram toàn thân của hai bố cục đen–trắng có thể giống, nhưng P/R thay đổi khi mảng tối chuyển từ vai sang bụng; biên lưng D có thể phân biệt số đỉnh dù màu hai lạc đà gần nhau; T+ giữ hướng vệt đen mà FFT radial đã gộp mất."
+bao_cao_yeu_cau_2_thuoc_tinh.md,365,"- **Phân đoạn là nút thắt có bằng chứng:** thử 8 mask đã thấy mất bộ phận và giữ nền. Chưa có mask chuẩn để đo mức lỗi. Nếu không duyệt/sửa mask, vector hình dạng nhiều chiều vẫn có thể chỉ mô tả lỗi phân đoạn."
+bao_cao_yeu_cau_2_thuoc_tinh.md,367,"- **Biến thiên trong nhãn:** chó/mèo nhiều giống, bò nhiều kiểu màu, sư tử có/không thấy bờm, Cervidae ở cấp họ. Không có một histogram hoặc silhouette cố định đúng cho cả nhãn. Tìm kiếm giống ảnh và tìm đúng nhãn là hai tiêu chí liên quan nhưng không đồng nhất."
+bao_cao_yeu_cau_2_thuoc_tinh.md,368,"- **Màu và kết cấu:** bóng, cân bằng trắng, ánh sáng, nhòe, nén JPEG, cỏ và hàng rào làm biến đổi phân bố. Gabor/LBP/GLCM không tự có hiểu biết giải phẫu; sọc nền có thể trông giống sọc lông khi mask sai."
+bao_cao_yeu_cau_2_thuoc_tinh.md,369,"- **Căn chỉnh:** lật hướng đầu chỉ giúp trái/phải, không sửa ảnh nhìn trước, đầu cúi hoặc chân bước. Lưới 2×4 không tự biến thành vùng cơ thể. Gán polygon/landmark cần công sức và quy tắc nhất quán."
+bao_cao_yeu_cau_2_thuoc_tinh.md,371,"- **Chưa có thử nghiệm tìm kiếm:** không có bằng chứng B tốt hơn bộ chim 1.460 chiều, B_T tốt hơn B, hoặc trọng số nào tối ưu. Các kích thước 400/508/607 là kết quả tính số chiều của thiết kế, không phải kết quả đánh giá chất lượng."
+bao_cao_yeu_cau_2_thuoc_tinh.md,375,"1. Duyệt nhãn nghi vấn, lập quy tắc nhãn cấp họ/giống và kiểm tra ảnh trùng hoặc rất gần trùng; giữ các bản từ cùng nguồn/cùng cảnh trong cùng nhóm chia dữ liệu khi đánh giá khả năng tổng quát hóa."
+bao_cao_yeu_cau_2_thuoc_tinh.md,378,"4. So từng nhóm đơn lẻ C/T/S/P với B cân bằng; thử B_T và các khối bộ phận khi đủ dữ liệu. Báo cả cải thiện và trường hợp xấu đi; kiểm tra riêng chó khác giống, bò khác màu, và các cặp dễ nhầm."
+bao_cao_yeu_cau_2_thuoc_tinh.md,379,"5. Đánh giá P@K/mAP@K sau khi loại chính ảnh truy vấn khỏi kết quả, nêu rõ giao thức chia tập. Báo trung bình theo truy vấn và **macro theo nhãn** để nhóm 279 ảnh ngựa vằn không che nhóm ít ảnh; báo riêng nhóm chỉ 2 ảnh và độ bất định. Có thể bổ sung đánh giá tương đồng thị giác do người xem gán, tách khỏi chỉ tiêu trùng nhãn."
+bao_cao_yeu_cau_2_thuoc_tinh.md,380,"6. Chỉ chọn trọng số hoặc PCA bằng tập phát triển; tập kiểm tra không dùng để fit hoặc chọn cấu hình. Tên tệp/nhãn chỉ dùng để kiểm tra, tra ảnh và tính chỉ số, không lọt vào ma trận đặc trưng."
+bao_cao_yeu_cau_2_thuoc_tinh.md,386,"**Chọn B 400 chiều làm bộ mặc định cho yêu cầu 3.** Bộ này đủ bốn nguồn thông tin, số chiều dễ đối chiếu, giữ riêng hình dạng silhouette và kết cấu ảnh, sửa lỗi đếm nền của GLCM, giữ tỉ lệ hình học và có thể giải thích đóng góp theo nhóm. Python + NumPy + OpenCV xử lý ảnh/mask/histogram/contour; scikit-image cung cấp LBP, Gabor và phép tính thuộc tính GLCM. Cần chọn các phiên bản tương thích với Python/macOS Intel trong môi trường riêng rồi kiểm tra khi lập trình; báo cáo này không cài mới thư viện hoặc khẳng định đã chạy trọn pipeline."
+bao_cao_yeu_cau_2_thuoc_tinh.md,388,"Với 812 ảnh, lưu float32 cho B cần **812×400×4 = 1.299.200 byte** cho riêng ma trận đặc trưng, chưa tính ảnh/mask/metadata. Có thể bắt đầu bằng NumPy tính khoảng cách trực tiếp và SQLite lưu siêu dữ liệu; chưa cần GPU hoặc chỉ mục phức tạp. Chưa đo thời gian trích xuất hay truy vấn, nên không đưa cam kết tốc độ."
+bao_cao_yeu_cau_2_thuoc_tinh.md,390,"Ưu tiên thử **T+108** tiếp theo cho sọc/đốm vì có dẫn chứng rõ ở hổ–báo và ngựa vằn. E/L/H/D/R phù hợp làm khối bổ sung sau khi có quy trình gán vùng/mốc đáng tin, đặc biệt D35 cho lạc đà và E6 cho tai lừa. Chưa chọn bản 607 chiều làm mặc định vì công sức gán bộ phận và thiếu dữ liệu có thể lớn hơn lợi ích chưa được kiểm chứng."
+bao_cao_yeu_cau_2_thuoc_tinh.md,398,"| [kiem_ke.json](reports/yeu_cau_2/kiem_ke.json) | Số ảnh, kích thước/định dạng, số ảnh theo tiền tố nhãn, lỗi giải mã và số ảnh mẫu. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,399,"| [anh_da_xem.csv](reports/yeu_cau_2/anh_da_xem.csv) | Đúng 84 tên ảnh đã xem trên bảng thu nhỏ, bảng ảnh tương ứng và kích thước hiển thị. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,400,"| [audit_images.py](reports/yeu_cau_2/audit_images.py) | Chương trình đọc ảnh, kiểm kê và tạo bảng mẫu có thể tái lập; không sửa ảnh nguồn. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,401,"| [check_grabcut.py](reports/yeu_cau_2/check_grabcut.py) | Chạy riêng hàm mask tham khảo với seed cố định, xuất mask và bảng minh họa; không thực hiện tìm kiếm. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,402,| [grabcut_so_do.csv](reports/yeu_cau_2/grabcut_so_do.csv) | Số pixel mặt nạ và tỉ lệ trên 50.176 pixel của từng ảnh thử; không phải số đo cơ thể hoặc độ chính xác mask. |
+bao_cao_yeu_cau_2_thuoc_tinh.md,403,"| [grabcut_moi_truong.json](reports/yeu_cau_2/grabcut_moi_truong.json) | OpenCV/NumPy, seed, resize, hàm và SHA-256 tệp tham khảo. |"
+bao_cao_yeu_cau_2_thuoc_tinh.md,405,Các tài liệu trực tuyến được dẫn tại phần tương ứng để giải thích API/thuật toán; toàn bộ nhận xét về ảnh nhóm xuất phát từ dữ liệu cục bộ nêu trên.
+bo_tool_anh_576x384/HUONG_DAN.md,5,Chép dự án vào `Desktop/CSDLDPT/BTL` trên cả hai máy. Giữ cấu trúc:
+bo_tool_anh_576x384/HUONG_DAN.md,8,BTL/
+bo_tool_anh_576x384/HUONG_DAN.md,9,  bo_tool_anh_576x384/
+bo_tool_anh_576x384/HUONG_DAN.md,10,    cat_tu_dong.py
+bo_tool_anh_576x384/HUONG_DAN.md,11,    duyet_anh.py
+bo_tool_anh_576x384/HUONG_DAN.md,12,    tool_common.py
+bo_tool_anh_576x384/HUONG_DAN.md,15,  data/
+bo_tool_anh_576x384/HUONG_DAN.md,16,    anh-chua-loc/
+bo_tool_anh_576x384/HUONG_DAN.md,17,    anh-da-cat-576x384/
+bo_tool_anh_576x384/HUONG_DAN.md,18,    anh-da-cat-576x384-da-xoa/
+bo_tool_anh_576x384/HUONG_DAN.md,23,"Yêu cầu Python 3.10–3.13, macOS 13+ (Intel/Apple Silicon) hoặc Windows 10/11 x64."
+bo_tool_anh_576x384/HUONG_DAN.md,32,cd ~/Desktop/CSDLDPT/BTL/bo_tool_anh_576x384
+bo_tool_anh_576x384/HUONG_DAN.md,33,python3 cat_tu_dong.py --setup
+bo_tool_anh_576x384/HUONG_DAN.md,34,python3 cat_tu_dong.py --limit 30
+bo_tool_anh_576x384/HUONG_DAN.md,35,python3 duyet_anh.py
+bo_tool_anh_576x384/HUONG_DAN.md,39,"và dùng `.venv`, không cần kích hoạt môi trường ảo mỗi lần mở Terminal."
+bo_tool_anh_576x384/HUONG_DAN.md,41,https://www.python.org/downloads/macos/ có Tkinter rồi tạo lại môi trường bằng bản Python đó.
+bo_tool_anh_576x384/HUONG_DAN.md,47,1. Cài Python **3.13 64-bit** từ https://www.python.org/downloads/windows/.
+bo_tool_anh_576x384/HUONG_DAN.md,48,   Giữ các thành phần **Python Launcher** và **Tcl/Tk and IDLE** khi cài.
+bo_tool_anh_576x384/HUONG_DAN.md,49,2. Mở PowerShell trong `Desktop\CSDLDPT\BTL\bo_tool_anh_576x384`.
+bo_tool_anh_576x384/HUONG_DAN.md,53,py -3.13 cat_tu_dong.py --setup
+bo_tool_anh_576x384/HUONG_DAN.md,54,py -3.13 cat_tu_dong.py --limit 30
+bo_tool_anh_576x384/HUONG_DAN.md,55,py -3.13 duyet_anh.py
+bo_tool_anh_576x384/HUONG_DAN.md,58,"`--setup` tự tạo `.venv-windows` và cài thư viện. Các lần chạy sau, hai tool tự dùng"
+bo_tool_anh_576x384/HUONG_DAN.md,60,Có thể dùng `duyet_anh.py --setup` để cài đặt cùng môi trường đó.
+bo_tool_anh_576x384/HUONG_DAN.md,67,"Nếu Desktop nằm trong OneDrive, mở Terminal/PowerShell tại thư mục thực tế của dự án."
+bo_tool_anh_576x384/HUONG_DAN.md,69,Không dùng lại `.venv` từ máy Mac trên Windows hoặc `.venv-windows` từ Windows trên Mac.
+bo_tool_anh_576x384/HUONG_DAN.md,71,"giữ đầy đủ các file `.py`, `requirements.txt` và thư mục `data`, rồi chạy lại `--setup`"
+bo_tool_anh_576x384/HUONG_DAN.md,76,"Chép cả `data`, gồm ảnh gốc, kết quả, ảnh đã xóa và `_cat_tu_dong.json`."
+bo_tool_anh_576x384/HUONG_DAN.md,78,quyết định xóa/lật ngay cả khi đường dẫn tuyệt đối hoặc thời gian sửa file thay đổi.
+bo_tool_anh_576x384/HUONG_DAN.md,84,Bản nhật ký gốc trước lần cập nhật này được giữ tại `_cat_tu_dong.truoc-cap-nhat.json`.
+bo_tool_anh_576x384/HUONG_DAN.md,91,python cat_tu_dong.py --limit 30
+bo_tool_anh_576x384/HUONG_DAN.md,97,python cat_tu_dong.py
+bo_tool_anh_576x384/HUONG_DAN.md,100,Kết quả JPG nằm ở `BTL/data/anh-da-cat-576x384`.
+bo_tool_anh_576x384/HUONG_DAN.md,110,Phần tai/chân/đuôi có thể bị mô hình bỏ sót; khoảng trống quanh chủ thể giúp giảm rủi ro.
+bo_tool_anh_576x384/HUONG_DAN.md,116,"python cat_tu_dong.py --model u2netp --limit 30 --output ""../data/anh-thu-u2netp"""
+bo_tool_anh_576x384/HUONG_DAN.md,117,"python duyet_anh.py --folder ""../data/anh-thu-u2netp"""
+bo_tool_anh_576x384/HUONG_DAN.md,127,python cat_tu_dong.py --recursive
+bo_tool_anh_576x384/HUONG_DAN.md,128,"python cat_tu_dong.py --input ""../data/anh-chua-loc"" --output ""../data/ket-qua-khac"""
+bo_tool_anh_576x384/HUONG_DAN.md,132,ghi đè ảnh khác. JPG/PNG/WEBP/BMP/TIFF được hỗ trợ; HEIC cần đổi sang JPG trước.
+bo_tool_anh_576x384/HUONG_DAN.md,134,trong `_cat_tu_dong.json`; giữ file này để tiếp tục và liên kết với tool 2.
+bo_tool_anh_576x384/HUONG_DAN.md,135,"`bao_cao_cat.csv` liệt kê ảnh lỗi, cảnh báo sát mép, nhiều vùng chủ thể và ảnh phóng lớn."
+bo_tool_anh_576x384/HUONG_DAN.md,139,"`--force` sẽ tạo lại từ ảnh gốc, gồm cả ảnh đã xóa/lật; chỉ dùng khi muốn bỏ kết quả duyệt."
+bo_tool_anh_576x384/HUONG_DAN.md,140,"Để sửa viền trắng ở các ảnh đã cắt trước đây mà không tải/chạy lại mô hình, dùng:"
+bo_tool_anh_576x384/HUONG_DAN.md,143,python cat_tu_dong.py --repair-borders
+bo_tool_anh_576x384/HUONG_DAN.md,154,python duyet_anh.py
+bo_tool_anh_576x384/HUONG_DAN.md,160,| A | Lật ngang trái/phải và lưu ngay tại chỗ |
+bo_tool_anh_576x384/HUONG_DAN.md,161,| ← / → | Ảnh trước / sau |
+bo_tool_anh_576x384/HUONG_DAN.md,172,Không có tự động xác định bên đầu/đuôi; bạn bấm A khi con vật đang hướng phải.
+bo_tool_anh_576x384/HUONG_DAN.md,186,- U²-Net: https://github.com/xuebinqin/U-2-Net
+bo_tool_anh_576x384/HUONG_DAN.md,187,- Bản ONNX và thông số tiền xử lý: https://github.com/danielgatis/rembg/tree/main/rembg/sessions
+bo_tool_anh_576x384/HUONG_DAN.md,188,"- ONNX Runtime 1.23.2 có wheel cho Windows x64, macOS Intel/Apple Silicon, Python 3.10–3.13:"
+bo_tool_anh_576x384/HUONG_DAN.md,189,  https://pypi.org/project/onnxruntime/1.23.2/
+bo_tool_anh_576x384/HUONG_DAN.md,191,  https://docs.python.org/3/library/msvcrt.html
+bo_tool_anh_576x384/HUONG_DAN.md,199,"chuyển thư mục và thay đổi thời gian sửa file mà vẫn giữ xóa/lật, nhận ra nội dung"
+bo_tool_anh_576x384/HUONG_DAN.md,200,"ảnh gốc đã đổi, tên ảnh tiếng Việt, tên trùng chữ hoa/thường và xóa/lật/hoàn tác."
+bo_tool_anh_576x384/HUONG_DAN.md,211,.venv/bin/python -m unittest discover -s tests -v
+bo_tool_anh_576x384/HUONG_DAN.md,217,.\.venv-windows\Scripts\python.exe -m unittest discover -s tests -v
+bo_tool_anh_576x384/cat_tu_dong.py,1,#!/usr/bin/env python3
+bo_tool_anh_576x384/cat_tu_dong.py,2,"""""""Tự định vị chủ thể bằng U²-Net ONNX/CPU và cắt giữ tỉ lệ 576x384."
+bo_tool_anh_576x384/cat_tu_dong.py,4,python cat_tu_dong.py --limit 30
+bo_tool_anh_576x384/cat_tu_dong.py,5,python cat_tu_dong.py
+bo_tool_anh_576x384/cat_tu_dong.py,6,python cat_tu_dong.py --model u2netp  # mô hình nhỏ hơn
+bo_tool_anh_576x384/cat_tu_dong.py,9,Nguồn mặc định: BTL/data/anh-chua-loc (theo vị trí thư mục chứa tool).
+bo_tool_anh_576x384/cat_tu_dong.py,10,Đích mặc định: BTL/data/anh-da-cat-576x384
+bo_tool_anh_576x384/cat_tu_dong.py,39,"    raise SystemExit(f""Thiếu thư viện: {exc}. Chạy: python cat_tu_dong.py --setup"")"
+bo_tool_anh_576x384/cat_tu_dong.py,43,"    ""u2net"": (""https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx"", ""60024c5c889badc19c04ad937298a77b""),"
+bo_tool_anh_576x384/cat_tu_dong.py,44,"    ""u2netp"": (""https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2netp.onnx"", ""8e83ca70e441ab06c318d82300c84806""),"
+bo_tool_anh_576x384/cat_tu_dong.py,89,"    target = model_dir / (model + "".onnx"")"
+bo_tool_anh_576x384/cat_tu_dong.py,96,"        request = urllib.request.Request(url, headers={""User-Agent"": ""AnimalCrop/1.0""})"
+bo_tool_anh_576x384/cat_tu_dong.py,108,"                    print(f""  {received / 1048576:.1f} MB"" + (f"" / {total / 1048576:.1f} MB"" if total else """"), flush=True)"
+bo_tool_anh_576x384/cat_tu_dong.py,114,"        raise RuntimeError(f""Không tải được mô hình: {exc}\nBạn có thể tải {url} bằng trình duyệt rồi đặt tại {target}."") from exc"
+bo_tool_anh_576x384/cat_tu_dong.py,134,"    # Tiền xử lý theo U²-Net: RGB 320x320, chia giá trị lớn nhất, chuẩn hóa mean/std."
+bo_tool_anh_576x384/cat_tu_dong.py,136,"    arr /= max(float(arr.max()), 1e-6)"
+bo_tool_anh_576x384/cat_tu_dong.py,137,"    arr = (arr - np.array([0.485, 0.456, 0.406], dtype=np.float32)) / np.array([0.229, 0.224, 0.225], dtype=np.float32)"
+bo_tool_anh_576x384/cat_tu_dong.py,145,"    return np.clip((prediction - low) / (high - low), 0, 1)"
+bo_tool_anh_576x384/cat_tu_dong.py,149,"    """"""Gộp các vùng đủ lớn để giữ phần chân/đuôi rời nhau trên mặt nạ."""""""
+bo_tool_anh_576x384/cat_tu_dong.py,184,"    bbox = (math.floor(left*iw/w), math.floor(top*ih/h), math.ceil(right*iw/w), math.ceil(bottom*ih/h))"
+bo_tool_anh_576x384/cat_tu_dong.py,189,"        warnings.append(""Chủ thể sát mép; kiểm tra có mất chân/đuôi ở ảnh gốc"")"
+bo_tool_anh_576x384/cat_tu_dong.py,202,"    units = max(1, math.ceil(max(bw / (3 * fill), bh / (2 * fill))))"
+bo_tool_anh_576x384/cat_tu_dong.py,203,"    max_units = min(image.width // 3, image.height // 2)"
+bo_tool_anh_576x384/cat_tu_dong.py,208,"    cx, cy = (x1+x2)/2, (y1+y2)/2"
+bo_tool_anh_576x384/cat_tu_dong.py,209,"    left = min(max(round(cx - crop_w / 2), 0), image.width - crop_w)"
+bo_tool_anh_576x384/cat_tu_dong.py,210,"    top = min(max(round(cy - crop_h / 2), 0), image.height - crop_h)"
+bo_tool_anh_576x384/cat_tu_dong.py,216,    scale = size[0] / crop_w
+bo_tool_anh_576x384/cat_tu_dong.py,257,"    relative = state.get(""source_relative"")"
+bo_tool_anh_576x384/cat_tu_dong.py,260,        same_source = (path.parent / relative).resolve() == source
+bo_tool_anh_576x384/cat_tu_dong.py,271,"        state[""source_relative""] = Path(os.path.relpath(source, log_path.parent)).as_posix()"
+bo_tool_anh_576x384/cat_tu_dong.py,274,"        state.pop(""source_relative"", None)"
+bo_tool_anh_576x384/cat_tu_dong.py,276,        original = source / key
+bo_tool_anh_576x384/cat_tu_dong.py,287,        return output / previous
+bo_tool_anh_576x384/cat_tu_dong.py,289,"    candidate = output / (path.stem + "".jpg"")"
+bo_tool_anh_576x384/cat_tu_dong.py,292,"        candidate = output / f""{path.stem}_{counter:03d}.jpg"""
+bo_tool_anh_576x384/cat_tu_dong.py,308,"        os.replace(name, output / ""bao_cao_cat.csv"")"
+bo_tool_anh_576x384/cat_tu_dong.py,316,"        log_path = output / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/cat_tu_dong.py,322,            original = source / key
+bo_tool_anh_576x384/cat_tu_dong.py,329,            destination = output / output_name
+bo_tool_anh_576x384/cat_tu_dong.py,334,"                print(f""Bỏ qua {key}: thiếu ảnh/khung cắt hoặc ảnh gốc đã thay đổi."")"
+bo_tool_anh_576x384/cat_tu_dong.py,360,"    output = (args.output.expanduser() if args.output else source.parent / ""anh-da-cat-576x384"").resolve()"
+bo_tool_anh_576x384/cat_tu_dong.py,366,"        if not output.is_dir() or not (output / ""_cat_tu_dong.json"").is_file():"
+bo_tool_anh_576x384/cat_tu_dong.py,374,"        raise ValueError(""Không có ảnh JPG/PNG/WEBP/BMP/TIFF. Nếu ảnh trong thư mục con, thêm --recursive."")"
+bo_tool_anh_576x384/cat_tu_dong.py,378,"        log_path = output / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/cat_tu_dong.py,383,            # Giữ các quyết định xóa/lật của tool duyệt khi chạy lại.
+bo_tool_anh_576x384/cat_tu_dong.py,392,"        print(f""Nguồn: {source}\nĐầu ra: {output}\nCần xử lý: {len(pending)}/{len(files)}"", flush=True)"
+bo_tool_anh_576x384/cat_tu_dong.py,394,"            print(""Không còn ảnh mới. Tool giữ các ảnh bạn đã lật/xóa. --force sẽ tạo lại từ ảnh gốc."")"
+bo_tool_anh_576x384/cat_tu_dong.py,422,"                    print(f""[{index}/{len(pending)}] Đã cắt {path.name}"" + ("" • CẦN DUYỆT: ""+""; "".join(warnings) if warnings else """"), flush=True)"
+bo_tool_anh_576x384/cat_tu_dong.py,426,"                    print(f""[{index}/{len(pending)}] Không cắt được {path.name}: {exc}"", flush=True)"
+bo_tool_anh_576x384/cat_tu_dong.py,431,"            print(""\nĐã dừng. Chạy lại cùng lệnh để xử lý tiếp."")"
+bo_tool_anh_576x384/cat_tu_dong.py,435,"        print(f""Danh sách cảnh báo/lỗi: {output / 'bao_cao_cat.csv'}\nẢnh gốc được giữ nguyên. Chạy duyet_anh.py để duyệt kết quả."")"
+bo_tool_anh_576x384/cat_tu_dong.py,441,"    parser.add_argument(""--input"", type=Path, default=DATA / ""anh-chua-loc"")"
+bo_tool_anh_576x384/cat_tu_dong.py,444,"    parser.add_argument(""--model-dir"", type=Path, default=Path.home()/"".cache/animal-crop"")"
+bo_tool_anh_576x384/cat_tu_dong.py,450,"    parser.add_argument(""--force"", action=""store_true"", help=""Tạo lại từ ảnh gốc, kể cả ảnh đã lật/xóa khi duyệt"")"
+bo_tool_anh_576x384/cat_tu_dong.py,451,"    parser.add_argument(""--repair-borders"", action=""store_true"", help=""Sửa viền trắng ở ảnh đã lưu, giữ trạng thái xóa/lật; không cần tải mô hình"")"
+bo_tool_anh_576x384/cat_tu_dong.py,458,"        print(""\nĐã dừng trước khi cắt. Chạy lại cùng lệnh để tiếp tục."")"
+bo_tool_anh_576x384/doi_ten_anh.py,3,Xem trước: python3 doi_ten_anh.py
+bo_tool_anh_576x384/doi_ten_anh.py,4,Thực hiện: python3 doi_ten_anh.py --apply
+bo_tool_anh_576x384/doi_ten_anh.py,20,"SOURCE = DATA / ""anh-chua-loc"""
+bo_tool_anh_576x384/doi_ten_anh.py,21,"CROPPED = DATA / ""anh-da-cat-576x384"""
+bo_tool_anh_576x384/doi_ten_anh.py,22,"DELETED = DATA / ""anh-da-cat-576x384-da-xoa"""
+bo_tool_anh_576x384/doi_ten_anh.py,25,"NUMBERED_NAME = re.compile(r""^(?P<prefix>.+)_(?P<number>\d+)(?:\((?P<copy>\d+)\))?$"")"
+bo_tool_anh_576x384/doi_ten_anh.py,62,"    log_path = CROPPED / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/doi_ten_anh.py,84,"        moves.append((original[old_name], SOURCE / source_target))"
+bo_tool_anh_576x384/doi_ten_anh.py,124,"    log_path = CROPPED / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/doi_ten_anh.py,125,"    report_path = CROPPED / ""bao_cao_cat.csv"""
+bo_tool_anh_576x384/doi_ten_anh.py,143,"        atomic_write(log_path, (json.dumps(state, ensure_ascii=False, indent=2) + ""\n"").encode(""utf-8""))"
+bo_tool_anh_576x384/doi_ten_anh.py,165,        # Cùng khóa với tool cắt/duyệt: đóng các tool này trước khi đổi tên.
+bo_tool_anh_576x384/duyet_anh.py,1,#!/usr/bin/env python3
+bo_tool_anh_576x384/duyet_anh.py,4,python duyet_anh.py
+bo_tool_anh_576x384/duyet_anh.py,5,"python duyet_anh.py --folder ""../data/anh-da-cat-576x384"""
+bo_tool_anh_576x384/duyet_anh.py,31,"    raise SystemExit(""Thiếu Pillow. Chạy: python duyet_anh.py --setup"")"
+bo_tool_anh_576x384/duyet_anh.py,33,"DEFAULT_FOLDER = DATA / ""anh-da-cat-576x384"""
+bo_tool_anh_576x384/duyet_anh.py,64,"        self.log_path = folder/""_cat_tu_dong.json"""
+bo_tool_anh_576x384/duyet_anh.py,99,"        atomic_bytes(self.folder/""bao_cao_cat.csv"", text.getvalue().encode(""utf-8-sig""))"
+bo_tool_anh_576x384/duyet_anh.py,107,        destination = archive/path.name
+bo_tool_anh_576x384/duyet_anh.py,110,"            destination = archive/f""{path.stem}_{counter:03d}{path.suffix}"""
+bo_tool_anh_576x384/duyet_anh.py,174,"        self.note = tk.StringVar(value=""D: xóa và tiếp • A: lật ngang • ←/→: trước/sau • U: hoàn tác • Esc: thoát"")"
+bo_tool_anh_576x384/duyet_anh.py,216,"            self.status.set(f""{self.index+1}/{len(self.files)} • {path.name} • {self.image.width} × {self.image.height}"" +"
+bo_tool_anh_576x384/duyet_anh.py,217,"                            (""\nCần kiểm tra: ""+""; "".join(warnings) if warnings else """"))"
+bo_tool_anh_576x384/duyet_anh.py,229,"        self.canvas.create_image(self.canvas.winfo_width()/2,self.canvas.winfo_height()/2,image=self.photo)"
+bo_tool_anh_576x384/duyet_anh.py,237,        # Chống sự kiện lặp nhanh khi giữ phím D/A.
+bo_tool_anh_576x384/duyet_anh.py,302,"                raise RuntimeError(""Thiếu Tkinter. Cài Python từ python.org với Tcl/Tk, rồi kiểm tra: python -m tkinter"")"
+bo_tool_anh_576x384/requirements.txt,1,"# Python 3.10–3.13; macOS 13+ (Intel/Apple Silicon), Windows 10/11 x64."
+bo_tool_anh_576x384/tests/test_compatibility.py,39,"            ""from tool_common import folder_lock\n"""
+bo_tool_anh_576x384/tests/test_compatibility.py,40,"            ""try:\n"""
+bo_tool_anh_576x384/tests/test_compatibility.py,41,"            "" with folder_lock(Path(sys.argv[1])): print('locked')\n"""
+bo_tool_anh_576x384/tests/test_compatibility.py,42,"            ""except RuntimeError: sys.exit(2)\n"""
+bo_tool_anh_576x384/tests/test_compatibility.py,66,"        with patch.object(common, ""sys"", SimpleNamespace(platform=""win32"")), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,76,"        with patch.object(common, ""sys"", SimpleNamespace(platform=""win32"")), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,84,"        self.assertEqual(crop.DATA, TOOL_DIR.parent / ""data"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,85,"        self.assertEqual(review.DEFAULT_FOLDER, TOOL_DIR.parent / ""data/anh-da-cat-576x384"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,95,"        for name in (""cat_tu_dong.py"", ""duyet_anh.py""):"
+bo_tool_anh_576x384/tests/test_compatibility.py,96,"            with self.subTest(script=name), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,97,"                    patch.object(sys, ""argv"", [name, ""--setup""]), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,98,"                    patch.object(common, ""setup_environment"") as setup, \"
+bo_tool_anh_576x384/tests/test_compatibility.py,101,"                    runpy.run_path(str(TOOL_DIR / name), run_name=""__main__"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,106,"        tool = self.root / ""thư mục tool"""
+bo_tool_anh_576x384/tests/test_compatibility.py,108,"        environment = tool / ("".venv-windows"" if sys.platform == ""win32"" else "".venv"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,110,"        script = tool / ""sample.py"""
+bo_tool_anh_576x384/tests/test_compatibility.py,112,"            ""import json, os, sys\nfrom pathlib import Path\n"""
+bo_tool_anh_576x384/tests/test_compatibility.py,113,"            ""Path(__file__).with_suffix('.json').write_text(json.dumps({"""
+bo_tool_anh_576x384/tests/test_compatibility.py,114,"            ""'args': sys.argv[1:], 'prefix': sys.prefix, 'cwd': os.getcwd()}), encoding='utf-8')\n"""
+bo_tool_anh_576x384/tests/test_compatibility.py,115,"            ""sys.exit(7)\n"", encoding=""utf-8"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,116,"        args = [str(script), ""--folder"", ""../data/ảnh mèo"", ""--limit"", ""30""]"
+bo_tool_anh_576x384/tests/test_compatibility.py,121,"        received = json.loads(script.with_suffix("".json"").read_text(encoding=""utf-8""))"
+bo_tool_anh_576x384/tests/test_compatibility.py,127,"        with patch.object(common, ""runtime_environment"", return_value=Path(sys.prefix)), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,128,"                patch.object(common, ""runtime_python"", return_value=Path(sys.executable)), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,129,"                patch.object(sys, ""argv"", [""cat_tu_dong.py""]), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,131,"            common.prepare_runtime(TOOL_DIR / ""cat_tu_dong.py"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,135,"        with patch.object(sys, ""argv"", [""cat_tu_dong.py"", ""--setup""]), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,138,"                common.prepare_runtime(TOOL_DIR / ""cat_tu_dong.py"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,141,"        with patch.object(sys, ""argv"", [""cat_tu_dong.py"", ""--setup"", ""--force""]), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,144,"                common.prepare_runtime(TOOL_DIR / ""cat_tu_dong.py"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,148,"        data = self.root / ""Mac Desktop/BTL/data"""
+bo_tool_anh_576x384/tests/test_compatibility.py,149,"        source, output = data / ""anh-chua-loc"", data / ""anh-da-cat-576x384"""
+bo_tool_anh_576x384/tests/test_compatibility.py,155,"            Image.new(""RGB"", (48, 32), ""orange"").save(source / name)"
+bo_tool_anh_576x384/tests/test_compatibility.py,156,"            state[""images""][name] = {""signature"": crop.signature(source / name),"
+bo_tool_anh_576x384/tests/test_compatibility.py,160,"                Image.new(""RGB"", (576, 384), ""blue"").save(output / name)"
+bo_tool_anh_576x384/tests/test_compatibility.py,165,"        log = output / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/tests/test_compatibility.py,167,"        target = self.root / ""Windows Desktop/CSDLDPT/BTL/data"""
+bo_tool_anh_576x384/tests/test_compatibility.py,169,"        moved_source, moved_output = target / source.name, target / output.name"
+bo_tool_anh_576x384/tests/test_compatibility.py,170,"        before = (moved_output / ""ảnh mèo.jpg"").read_bytes()"
+bo_tool_anh_576x384/tests/test_compatibility.py,177,"        with patch.object(crop, ""ensure_model"", side_effect=AssertionError(""Must not recrop"")), \"
+bo_tool_anh_576x384/tests/test_compatibility.py,180,"        updated = json.loads((moved_output / log.name).read_text(encoding=""utf-8""))"
+bo_tool_anh_576x384/tests/test_compatibility.py,182,"        self.assertEqual(updated[""source_relative""], ""../anh-chua-loc"")"
+bo_tool_anh_576x384/tests/test_compatibility.py,185,"        self.assertFalse((moved_output / ""ảnh chó.jpg"").exists())"
+bo_tool_anh_576x384/tests/test_compatibility.py,186,"        self.assertEqual((moved_output / ""ảnh mèo.jpg"").read_bytes(), before)"
+bo_tool_anh_576x384/tests/test_compatibility.py,188,"                         crop.signature(moved_source / ""ảnh mèo.jpg""))"
+bo_tool_anh_576x384/tests/test_compatibility.py,192,"        log = output / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/tests/test_compatibility.py,194,"        for origin in [r""C:\Users\User\Desktop\CSDLDPT\BTL\data\anh-chua-loc"","
+bo_tool_anh_576x384/tests/test_compatibility.py,195,"                       ""/Users/User/Desktop/CSDLDPT/BTL/data/anh-chua-loc""]:"
+bo_tool_anh_576x384/tests/test_compatibility.py,203,"        log = output / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/tests/test_compatibility.py,211,"        image = self.root / ""source.bin"""
+bo_tool_anh_576x384/tests/test_compatibility.py,222,"        log = output / ""_cat_tu_dong.json"""
+bo_tool_anh_576x384/tests/test_compatibility.py,224,"        path = output / ""ảnh mèo.jpg"""
+bo_tool_anh_576x384/tests/test_compatibility.py,236,"        self.assertEqual(restored[""source_relative""], ""../anh-chua-loc"")"
+bo_tool_anh_576x384/tool_common.py,1,"""""""Cài đặt, môi trường Python, đường dẫn và khóa thư mục trên macOS/Windows."""""""
+bo_tool_anh_576x384/tool_common.py,13,"DATA = PROJECT_ROOT / ""data"""
+bo_tool_anh_576x384/tool_common.py,24,"    return TOOL_DIR / ("".venv-windows"" if sys.platform == ""win32"" else "".venv"")"
+bo_tool_anh_576x384/tool_common.py,30,"        return environment / ""Scripts"" / ""python.exe"""
+bo_tool_anh_576x384/tool_common.py,31,"    return environment / ""bin"" / ""python"""
+bo_tool_anh_576x384/tool_common.py,46,"                    ""-r"", str(TOOL_DIR / ""requirements.txt"")], check=True)"
+bo_tool_anh_576x384/tool_common.py,48,"    print(""Cài đặt hoàn tất. Có thể chạy cat_tu_dong.py hoặc duyet_anh.py."", flush=True)"
+bo_tool_anh_576x384/tool_common.py,79,"    with (folder / "".tool_anh.lock"").open(""a+b"") as handle:"
+bo_tool_anh_576x384/tool_common.py,89,"                raise RuntimeError(""Tool cắt/duyệt khác đang dùng thư mục. Đóng tool đó trước."") from exc"
+bo_tool_anh_576x384/tool_common.py,100,"                raise RuntimeError(""Tool cắt/duyệt khác đang dùng thư mục. Đóng tool đó trước."") from exc"
+reports/yeu_cau_2/README_GRABCUT.md,8,python3 reports/yeu_cau_2/check_grabcut.py --limit 8
+reports/yeu_cau_2/README_GRABCUT.md,11,python3 reports/yeu_cau_2/check_grabcut.py --all --resume
+reports/yeu_cau_2/README_GRABCUT.md,14,"Nếu thư mục kết quả đã có dữ liệu, dùng `--resume`. Muốn chạy thử lại từ đầu mà"
+reports/yeu_cau_2/README_GRABCUT.md,18,python3 reports/yeu_cau_2/check_grabcut.py --limit 8 --output-dir reports/yeu_cau_2/grabcut_thu_lai
+reports/yeu_cau_2/README_GRABCUT.md,21,Có thể nhấn **Ctrl+C** để ngắt rồi chạy lại cùng lệnh với `--resume`. Manifest được
+reports/yeu_cau_2/README_GRABCUT.md,32,python3 -m venv .venv-grabcut
+reports/yeu_cau_2/README_GRABCUT.md,33,source .venv-grabcut/bin/activate
+reports/yeu_cau_2/README_GRABCUT.md,37,"Mỗi thư mục đầu ra ghi phiên bản thư viện trong `run_config.json`. Nếu thay thư viện,"
+reports/yeu_cau_2/README_GRABCUT.md,42,Mặc định không resize: bộ ảnh hiện tại và mask/ảnh phủ đều **576 × 384**.
+reports/yeu_cau_2/README_GRABCUT.md,48,python3 reports/yeu_cau_2/check_grabcut.py --all --max-side 384 --output-dir reports/yeu_cau_2/grabcut_384
+reports/yeu_cau_2/README_GRABCUT.md,52,"opening/closing với kernel elip 5 × 5, mỗi phép 2 lần; các kích thước này tính trên"
+reports/yeu_cau_2/README_GRABCUT.md,60,Tất cả kết quả mặc định nằm trong `reports/yeu_cau_2/grabcut_output/`:
+reports/yeu_cau_2/README_GRABCUT.md,62,| Tệp/thư mục | Nội dung |
+reports/yeu_cau_2/README_GRABCUT.md,64,"| `masks/<tên gốc gồm đuôi>.png` | Mask PNG, ví dụ `Equus_asinus_0587.jpg.png`; giữ đầy đủ tên nguồn tránh trùng stem. |"
+reports/yeu_cau_2/README_GRABCUT.md,65,| `overlays/<tên gốc gồm đuôi>.png` | Ảnh phủ PNG cùng kích thước mask. |
+reports/yeu_cau_2/README_GRABCUT.md,66,"| `manifest.csv` | Một dòng mỗi ảnh được chọn, gồm đường dẫn, kích thước nguồn/xử lý, pixel mask, tỉ lệ, trạng thái duyệt, kết luận duyệt, cờ và SHA-256. |"
+reports/yeu_cau_2/README_GRABCUT.md,67,"| `quicklooks/batch_001.jpg`, ... | Mỗi bảng tối đa 8 ảnh, mỗi dòng là nguồn / mask / ảnh phủ. Ảnh xem nhanh giữ tỉ lệ trong ô 288 × 192. |"
+reports/yeu_cau_2/README_GRABCUT.md,68,"| `review_priority.csv` | Các ảnh lỗi hoặc có cờ, kèm tên bảng xem nhanh để ưu tiên duyệt. |"
+reports/yeu_cau_2/README_GRABCUT.md,69,"| `errors.csv` | Nhật ký lỗi tích lũy: thời điểm UTC, tên ảnh, giai đoạn, thông báo. Không có lỗi thì chỉ có dòng tiêu đề. |"
+reports/yeu_cau_2/README_GRABCUT.md,70,"| `run_config.json` | Cấu hình, phiên bản thư viện và SHA-256 script; dùng kiểm tra khi resume. |"
+reports/yeu_cau_2/README_GRABCUT.md,71,"| `summary.json` | Tổng thành công/thất bại/chờ, số dùng lại, số gắn cờ, kích thước, thời gian lần chạy gần nhất. |"
+reports/yeu_cau_2/README_GRABCUT.md,72,"| `full_processing_summary.json` | Bản tổng kết giữ lại của lần xử lý toàn bộ, trước lần kiểm tra resume và bổ sung ghi chú thị giác. |"
+reports/yeu_cau_2/README_GRABCUT.md,73,"| `visual_review_notes.csv` | Ghi chú nghi vấn từ quan sát trực tiếp, kèm tên bảng xem nhanh; chưa phê duyệt mask. |"
+reports/yeu_cau_2/README_GRABCUT.md,75,| `verification.json` | Kết quả kiểm tra lại đầu ra và đối chiếu ảnh nguồn. |
+reports/yeu_cau_2/README_GRABCUT.md,76,"| `resume_verification.json` | Kiểm tra thực tế việc dùng lại toàn bộ kết quả và giữ nguyên manifest, mask/ảnh phủ. |"
+reports/yeu_cau_2/README_GRABCUT.md,81,.venv/bin/python reports/yeu_cau_2/duyet_overlays.py
+reports/yeu_cau_2/README_GRABCUT.md,83,.venv/bin/python reports/yeu_cau_2/duyet_overlays.py --all
+reports/yeu_cau_2/README_GRABCUT.md,86,"Bấm **A** chuyển ảnh đang xem vào `overlays/đạt/`, **S** vào"
+reports/yeu_cau_2/README_GRABCUT.md,87,"`overlays/cần sửa/`, **D** vào `overlays/làm lại/`. Mũi tên trái/phải chuyển"
+reports/yeu_cau_2/README_GRABCUT.md,89,chỉ duyệt ảnh nằm trực tiếp trong `overlays/`; `--all` còn cho phép xem lại và
+reports/yeu_cau_2/README_GRABCUT.md,92,Việc di chuyển ảnh không cập nhật `manifest.csv`. Chạy lệnh đồng bộ ở phần dưới
+reports/yeu_cau_2/README_GRABCUT.md,94,`check_grabcut.py --resume` trên cùng thư mục kết quả vì ảnh đã chuyển sẽ bị
+reports/yeu_cau_2/README_GRABCUT.md,95,coi là thiếu và tạo lại ở `overlays/`.
+reports/yeu_cau_2/README_GRABCUT.md,100,python3 reports/yeu_cau_2/chinh_mask.py
+reports/yeu_cau_2/README_GRABCUT.md,103,Tool mở lần lượt ảnh ở `grabcut_output/overlays/cần sửa/` và tự ghép với ảnh
+reports/yeu_cau_2/README_GRABCUT.md,104,nguồn trong `data/anh-da-cat-576x384/` cùng mask trong `grabcut_output/masks/`.
+reports/yeu_cau_2/README_GRABCUT.md,106,"Pillow và OpenCV. Khi dùng `.venv`, cài OpenCV bằng:"
+reports/yeu_cau_2/README_GRABCUT.md,112,Khung trái hiển thị ảnh gốc để tô hướng dẫn. Khung phải hiển thị ảnh phủ/kết quả.
+reports/yeu_cau_2/README_GRABCUT.md,113,"Nếu ảnh phủ trong `cần sửa` đã khác mask cũ trong `masks/`, tool lấy mask khởi"
+reports/yeu_cau_2/README_GRABCUT.md,115,Mask trong `masks/` chỉ đổi khi bấm **Lưu & chuyển đạt**.
+reports/yeu_cau_2/README_GRABCUT.md,125,"   vào `masks/`, tạo lại ảnh phủ trong `overlays/đạt/`, gỡ ảnh cũ khỏi `cần sửa/`"
+reports/yeu_cau_2/README_GRABCUT.md,129,"Dòng tương ứng trong `manifest.csv` được cập nhật `review_status=da_duyet`,"
+reports/yeu_cau_2/README_GRABCUT.md,131,"đường dẫn ảnh phủ mới, thông số mask và SHA-256. Thư mục `manual_edits/<lần lưu>/`"
+reports/yeu_cau_2/README_GRABCUT.md,132,"giữ mask/ảnh phủ trước khi sửa, `scribbles.png` và `record.json` chứa thông tin"
+reports/yeu_cau_2/README_GRABCUT.md,133,"trước/sau. Nếu lưu gặp lỗi, tool phục hồi các tệp đã thay đổi. Bảng quicklook,"
+reports/yeu_cau_2/README_GRABCUT.md,134,báo cáo và script `verify_grabcut_results.py` là bản kiểm tra của lần tạo mask
+reports/yeu_cau_2/README_GRABCUT.md,143,.venv/bin/python reports/yeu_cau_2/dong_bo_overlays.py --pixel-tolerance 1
+reports/yeu_cau_2/README_GRABCUT.md,144,"# Cập nhật mask, manifest, toàn bộ quicklooks, review_priority và summary."
+reports/yeu_cau_2/README_GRABCUT.md,145,.venv/bin/python reports/yeu_cau_2/dong_bo_overlays.py --apply --pixel-tolerance 1
+reports/yeu_cau_2/README_GRABCUT.md,147,.venv/bin/python reports/yeu_cau_2/dong_bo_overlays.py --verify --pixel-tolerance 1
+reports/yeu_cau_2/README_GRABCUT.md,154,.venv/bin/python reports/yeu_cau_2/dong_bo_overlays.py --apply --mark-pending-reviewed --pixel-tolerance 1
+reports/yeu_cau_2/README_GRABCUT.md,164,.venv/bin/python reports/yeu_cau_2/dong_bo_overlays.py --apply --mark-empty-results-passed --pixel-tolerance 1
+reports/yeu_cau_2/README_GRABCUT.md,167,Script lấy vùng giữ/loại từ ảnh phủ PNG bằng cách đối chiếu với ảnh nguồn và
+reports/yeu_cau_2/README_GRABCUT.md,168,"công thức phủ đỏ; không chạy lại GrabCut, không sửa hoặc di chuyển ảnh phủ/ảnh"
+reports/yeu_cau_2/README_GRABCUT.md,169,nguồn. Chỉ hỗ trợ kết quả giữ kích thước nguồn. Tìm ảnh trong `overlays/` cùng
+reports/yeu_cau_2/README_GRABCUT.md,171,thư mục đầu ra đã được chuyển vào `overlays/` và cập nhật đường dẫn trong manifest. Ảnh trùng
+reports/yeu_cau_2/README_GRABCUT.md,173,dừng trước khi ghi. Giữ quyết định duyệt đã có trong manifest; ảnh ở thư mục
+reports/yeu_cau_2/README_GRABCUT.md,178,các cờ diện tích/hình học được tính lại.
+reports/yeu_cau_2/README_GRABCUT.md,186,nằm trong `overlay_sync_report.json`. Hash nguồn được ghi theo ảnh đang dùng
+reports/yeu_cau_2/README_GRABCUT.md,190,`overlay_sync_backups/<thời điểm>_<mã>.zip`; nếu ghi lỗi sẽ hoàn tác các tệp đã
+reports/yeu_cau_2/README_GRABCUT.md,191,"ghi. Không sửa ảnh bằng công cụ khác trong lúc đồng bộ. `verification.json`,"
+reports/yeu_cau_2/README_GRABCUT.md,192,"`resume_verification.json`, `full_processing_summary.json`"
+reports/yeu_cau_2/README_GRABCUT.md,193,và `visual_review_notes.csv` vẫn là hồ sơ lịch sử của lần chạy ban đầu;
+reports/yeu_cau_2/README_GRABCUT.md,194,`overlay_sync_report.json` và lệnh `--verify` phản ánh dữ liệu hiện tại.
+reports/yeu_cau_2/README_GRABCUT.md,196,Đường dẫn mask/ảnh phủ/bảng xem nhanh trong CSV **tính từ thư mục đầu ra**.
+reports/yeu_cau_2/README_GRABCUT.md,198,"nguồn. `mask_ratio = mask_pixels / total_pixels` là thông số kiểm tra diện tích,"
+reports/yeu_cau_2/README_GRABCUT.md,209,chi tiết nằm trong `visual_review_notes.csv`. Chưa duyệt thị giác toàn bộ 812 ảnh.
+reports/yeu_cau_2/README_GRABCUT.md,213,đủ thân/bộ phận và nền.
+reports/yeu_cau_2/README_GRABCUT.md,215,"Script chỉ đọc ảnh nguồn, không đổi tên/xóa/ghi đè nguồn; từ chối đầu ra trùng,"
+reports/yeu_cau_2/README_GRABCUT.md,217,"so sánh cũ/mới và các bảng kết quả so sánh đã được gỡ. Các công cụ tạo, duyệt,"
+reports/yeu_cau_2/README_GRABCUT.md,218,chỉnh mask và đồng bộ sử dụng kết quả trong `grabcut_output/`.
+reports/yeu_cau_2/README_GRABCUT.md,223,python3 reports/yeu_cau_2/verify_grabcut_results.py
+reports/yeu_cau_2/README_GRABCUT.md,227,"với `grabcut_source_before.json` đã ghi trước lần chạy. Không có ground truth mask,"
+reports/yeu_cau_2/README_GRABCUT.md,230,## Kết quả thực tế ngày 16/10/2026
+reports/yeu_cau_2/README_GRABCUT.md,232,"Đã chạy thử 8 ảnh mẫu ở kích thước 576 × 384, sau đó xử lý đủ **812/812"
+reports/yeu_cau_2/README_GRABCUT.md,241,"Đã kiểm tra PNG nhị phân, kích thước, số pixel/tỉ lệ, SHA-256, từng pixel ảnh phủ"
+reports/yeu_cau_2/README_GRABCUT.md,244,Chi tiết ở `grabcut_output/verification.json`.
+reports/yeu_cau_2/README_GRABCUT.md,246,Lệnh đo tài nguyên `/usr/bin/time -l` bao ngoài lần chạy toàn bộ báo không được
+reports/yeu_cau_2/README_GRABCUT.md,250,dùng bộ đo này; kết quả được ghi riêng trong `resume_verification.json`.
+reports/yeu_cau_2/README_GRABCUT.md,252,manifest và mtime của toàn bộ 1.624 mask/ảnh phủ; tạo lại đủ 102 bảng với cờ mới.
+reports/yeu_cau_2/README_GRABCUT.md,253,"Bảy kiểm tra hồi quy về lỗi, ngắt/resume, sửa đầu ra hỏng, trạng thái duyệt,"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,3,Chương trình `tao_lai_mask_can_sua.py` lấy danh sách ảnh phủ PNG trong
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,4,"`grabcut_output/overlays/cần sửa/`, ghép tên với manifest cũ và chạy U²-Net trên"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,5,**ảnh gốc** trong `data/anh-da-cat-576x384/`. Không đưa ảnh đã tô đỏ vào mô hình.
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,7,Kết quả nằm riêng tại `reports/yeu_cau_2/mask_moi_can_sua/`:
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,9,"- `masks/<tên gốc>.png`: mask nhị phân 0/255, kích thước gốc 576 × 384."
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,10,- `overlays/cần sửa/<tên gốc>.png`: ảnh phủ mới; màu đỏ là phần nền bị loại.
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,11,"- `quicklooks/batch_*.jpg`: mỗi bảng tối đa 8 ảnh, gồm **ảnh gốc / ảnh phủ cũ /"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,12,  mask mới / ảnh phủ mới**. Ảnh thu nhỏ trong bảng giữ đúng tỉ lệ.
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,13,"- `manifest.csv`: nguồn, đường dẫn, kích thước, pixel/tỉ lệ mask, dấu vết kết quả cũ,"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,15,- `review_priority.csv`: ảnh lỗi hoặc có cờ để ưu tiên xem.
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,16,"- `errors.csv`, `summary.json`, `run_config.json`, `full_run.log`: nhật ký và cấu hình."
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,22,Mô hình cục bộ ở `~/.cache/animal-crop/u2net.onnx`; SHA-256 và phiên bản thư viện
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,26,"`status=success` chỉ xác nhận đã tạo được tệp. Các cờ về diện tích quá nhỏ/lớn,"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,31,Các mask/ảnh phủ đã chỉnh tay hoặc đã phân loại trong `grabcut_output/` được giữ
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,32,lại. Tệp `mask_moi_can_sua_truoc_khi_chay.json` cạnh thư mục kết quả ghi kiểm kê
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,39,bo_tool_anh_576x384/.venv/bin/python reports/yeu_cau_2/tao_lai_mask_can_sua.py --resume
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,42,"`--resume` kiểm tra nguồn, mask/ảnh phủ cũ và kết quả mới bằng SHA-256 trước khi"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,49,python3 reports/yeu_cau_2/chinh_mask.py --output-dir reports/yeu_cau_2/mask_moi_can_sua
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,52,Công cụ này chỉ chuyển mask vào `overlays/đạt/` khi người dùng chủ động lưu sau
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,57,"Đã tạo xong **317/317 mask, 0 lỗi**, gồm 8 ảnh thử và 309 ảnh tạo thêm."
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,62,"3.931 tệp ảnh nguồn/kết quả cũ giữ nguyên nội dung, kích thước và mtime. Chi tiết"
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,63,trong `verification.json`. Không có lỗi được ghi trong `errors.csv`.
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,67,`observations.md` và `visual_review_notes.csv`. Tất cả 317 vẫn là `chua_duyet`.
+reports/yeu_cau_2/README_MASK_MOI_CAN_SUA.md,70,"ghi các cột thống kê tùy chọn khi lưu manifest từ phương pháp mới, giữ các cột"
+reports/yeu_cau_2/audit_images.py,10,DATA = ROOT / 'data/anh-da-cat-576x384'
+reports/yeu_cau_2/audit_images.py,24,"    name = re.sub(r'_\d+$', '', p.stem).lower().replace('-', '_')"
+reports/yeu_cau_2/audit_images.py,45,"    selected.update(names[i] for i in sorted({0, len(names)//2, len(names)-1}))"
+reports/yeu_cau_2/audit_images.py,46,missing = sorted(x for x in selected if not (DATA / x).is_file())
+reports/yeu_cau_2/audit_images.py,52,"(OUT / 'kiem_ke.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n')"
+reports/yeu_cau_2/audit_images.py,53,"with (OUT / 'anh_da_xem.csv').open('w', newline='') as f:"
+reports/yeu_cau_2/audit_images.py,57,"        writer.writerow([f'contact_{i//16+1:02d}.jpg', n, 288, 192])"
+reports/yeu_cau_2/audit_images.py,62,"        x,y = (j%4)*288, (j//4)*232"
+reports/yeu_cau_2/audit_images.py,63,        with Image.open(DATA/n) as im:
+reports/yeu_cau_2/audit_images.py,69,"    sheet.save(OUT / f'contact_{start//16+1:02d}.jpg', quality=92)"
+reports/yeu_cau_2/check_grabcut.py,3,python3 reports/yeu_cau_2/check_grabcut.py --limit 8
+reports/yeu_cau_2/check_grabcut.py,4,python3 reports/yeu_cau_2/check_grabcut.py --all --resume
+reports/yeu_cau_2/check_grabcut.py,5,Only filenames/CSV metadata are retained; images are decoded one at a time.
+reports/yeu_cau_2/check_grabcut.py,27,DEFAULT_INPUT = ROOT / 'data/anh-da-cat-576x384'
+reports/yeu_cau_2/check_grabcut.py,28,DEFAULT_OUTPUT = Path(__file__).resolve().parent / 'grabcut_output'
+reports/yeu_cau_2/check_grabcut.py,89,"    atomic_text(path, json.dumps(value, ensure_ascii=False, indent=2) + '\n')"
+reports/yeu_cau_2/check_grabcut.py,106,    Based on create_foreground_mask in the report's feature_extractors.py.
+reports/yeu_cau_2/check_grabcut.py,108,"    margin (10 px), kernel (5x5), opening/closing (2 each) use processing pixels."
+reports/yeu_cau_2/check_grabcut.py,131,"        scale = max_side / max(height, width)"
+reports/yeu_cau_2/check_grabcut.py,140,    ratio = pixels / mask.size
+reports/yeu_cau_2/check_grabcut.py,155,        bbox_fill = pixels / (width * height)
+reports/yeu_cau_2/check_grabcut.py,164,"        border_ratio = float(np.count_nonzero(mask[ring])) / max(1, np.count_nonzero(ring))"
+reports/yeu_cau_2/check_grabcut.py,184,"               mask_path=f'masks/{name}.png', overlay_path=f'overlays/{name}.png',"
+reports/yeu_cau_2/check_grabcut.py,185,               quicklook_path=f'quicklooks/batch_{index // batch_size + 1:03d}.jpg')
+reports/yeu_cau_2/check_grabcut.py,197,        artifact = output / relative
+reports/yeu_cau_2/check_grabcut.py,209,"        canvas.paste(image, (box[0] + (box[2] - image.width) // 2,"
+reports/yeu_cau_2/check_grabcut.py,210,                            box[1] + (box[3] - image.height) // 2))
+reports/yeu_cau_2/check_grabcut.py,222,"            for column, path in enumerate((source / row['filename'],"
+reports/yeu_cau_2/check_grabcut.py,223,"                                            output / row['mask_path'],"
+reports/yeu_cau_2/check_grabcut.py,224,                                            output / row['overlay_path'])):
+reports/yeu_cau_2/check_grabcut.py,236,"    save_image(output / rows[0]['quicklook_path'], canvas)"
+reports/yeu_cau_2/check_grabcut.py,240,    fraction = done / total if total else 1
+reports/yeu_cau_2/check_grabcut.py,242,    print(f'\r[{bar}] {done}/{total} success={success} failed={failed} '
+reports/yeu_cau_2/check_grabcut.py,248,"    with (output / 'errors.csv').open('a', encoding='utf-8', newline='') as stream:"
+reports/yeu_cau_2/check_grabcut.py,271,    # flock releases on interruption/kill; no stale lock to remove on resume.
+reports/yeu_cau_2/check_grabcut.py,272,    with (output / '.run.lock').open('a') as lock:
+reports/yeu_cau_2/check_grabcut.py,285,"                  script_sha256=sha256(Path(__file__)), batch_size=args.batch_size,"
+reports/yeu_cau_2/check_grabcut.py,288,    config_path = output / 'run_config.json'
+reports/yeu_cau_2/check_grabcut.py,289,    manifest_path = output / 'manifest.csv'
+reports/yeu_cau_2/check_grabcut.py,293,        raise ValueError('Output is not empty. Use --resume or choose a new --output-dir')
+reports/yeu_cau_2/check_grabcut.py,296,            raise ValueError('Resume configuration/code differs. Choose a new --output-dir')
+reports/yeu_cau_2/check_grabcut.py,298,        raise ValueError('Missing run_config.json; use a new --output-dir')
+reports/yeu_cau_2/check_grabcut.py,299,    if manifest_path.exists():
+reports/yeu_cau_2/check_grabcut.py,300,"        with manifest_path.open(encoding='utf-8', newline='') as stream:"
+reports/yeu_cau_2/check_grabcut.py,303,            raise ValueError('Selection would discard previous manifest rows; use --all --resume')
+reports/yeu_cau_2/check_grabcut.py,304,    # Prevent output symlinks from redirecting writes into source/other directories.
+reports/yeu_cau_2/check_grabcut.py,306,        path = output / directory
+reports/yeu_cau_2/check_grabcut.py,310,"    for name in ('manifest.csv', 'run_config.json', 'errors.csv', 'summary.json', 'review_priority.csv'):"
+reports/yeu_cau_2/check_grabcut.py,311,        if (output / name).is_symlink():
+reports/yeu_cau_2/check_grabcut.py,314,    if not (output / 'errors.csv').exists():
+reports/yeu_cau_2/check_grabcut.py,315,"        write_csv(output / 'errors.csv', [], ERROR_FIELDS)"
+reports/yeu_cau_2/check_grabcut.py,325,"    write_csv(manifest_path, rows)"
+reports/yeu_cau_2/check_grabcut.py,334,"                if args.resume and reusable(row, source / row['filename'], output):"
+reports/yeu_cau_2/check_grabcut.py,340,"                    image, sw, sh = read_image(source / row['filename'], args.max_side)"
+reports/yeu_cau_2/check_grabcut.py,343,                               source_sha256=sha256(source / row['filename']))
+reports/yeu_cau_2/check_grabcut.py,348,"                    save_image(output / row['mask_path'], Image.fromarray(mask))"
+reports/yeu_cau_2/check_grabcut.py,349,"                    save_image(output / row['overlay_path'], Image.fromarray(make_overlay(image, mask)))"
+reports/yeu_cau_2/check_grabcut.py,351,"                               mask_sha256=sha256(output / row['mask_path']),"
+reports/yeu_cau_2/check_grabcut.py,352,                               overlay_sha256=sha256(output / row['overlay_path']))
+reports/yeu_cau_2/check_grabcut.py,361,"            write_csv(manifest_path, rows)"
+reports/yeu_cau_2/check_grabcut.py,372,"        print('\nInterrupted; committed rows can be resumed.', file=sys.stderr)"
+reports/yeu_cau_2/check_grabcut.py,374,"        write_csv(manifest_path, rows)"
+reports/yeu_cau_2/check_grabcut.py,377,"        write_csv(output / 'review_priority.csv', priority)"
+reports/yeu_cau_2/check_grabcut.py,395,"        write_json(output / 'summary.json', summary)"
+reports/yeu_cau_2/check_grabcut.py,406,"    parser.add_argument('--resume', action='store_true', help='Reuse intact outputs; retry failed/missing/corrupt outputs')"
+reports/yeu_cau_2/chinh_mask.py,1,#!/usr/bin/env python3
+reports/yeu_cau_2/chinh_mask.py,2,"""""""Chỉnh mask tương tác: tô giữ con vật / loại nền, GrabCut, lưu vào đạt."
+reports/yeu_cau_2/chinh_mask.py,4,    python3 reports/yeu_cau_2/chinh_mask.py
+reports/yeu_cau_2/chinh_mask.py,34,"            ""Thiếu OpenCV trong Python đang chạy. Cài vào đúng môi trường hiện tại bằng:\n"""
+reports/yeu_cau_2/chinh_mask.py,100,"        raise ValueError(""Mask đang rỗng hoặc phủ toàn ảnh. Tô thêm vùng giữ / loại rồi chạy lại."")"
+reports/yeu_cau_2/chinh_mask.py,105,"    """"""Recover 0/255 labels from a PNG made by make_overlay."""""""
+reports/yeu_cau_2/chinh_mask.py,178,"        self.pending_dir = self.output / ""overlays"" / ""cần sửa"""
+reports/yeu_cau_2/chinh_mask.py,179,"        self.accepted_dir = self.output / ""overlays"" / ""đạt"""
+reports/yeu_cau_2/chinh_mask.py,180,"        self.manifest = self.output / ""manifest.csv"""
+reports/yeu_cau_2/chinh_mask.py,182,"            raise ValueError(""Không tìm thấy thư mục ảnh gốc hoặc overlays/cần sửa."")"
+reports/yeu_cau_2/chinh_mask.py,183,"        self.safe_output(""manifest.csv"")"
+reports/yeu_cau_2/chinh_mask.py,184,"        self.safe_output(""overlays/cần sửa"")"
+reports/yeu_cau_2/chinh_mask.py,185,"        self.safe_output(""overlays/đạt"")"
+reports/yeu_cau_2/chinh_mask.py,186,        self.read_manifest()
+reports/yeu_cau_2/chinh_mask.py,192,        path = self.output / relative
+reports/yeu_cau_2/chinh_mask.py,202,    def read_manifest(self):
+reports/yeu_cau_2/chinh_mask.py,203,        data = self.manifest.read_bytes()
+reports/yeu_cau_2/chinh_mask.py,208,"            raise ValueError(""manifest.csv thiếu cột cần thiết."")"
+reports/yeu_cau_2/chinh_mask.py,210,"            raise ValueError(""manifest.csv có tên ảnh trùng nhau."")"
+reports/yeu_cau_2/chinh_mask.py,220,"            raise ValueError(""Chỉ mở ảnh trực tiếp trong overlays/cần sửa."")"
+reports/yeu_cau_2/chinh_mask.py,223,"            raise ValueError(""Chỉ mở ảnh trực tiếp trong overlays/cần sửa."")"
+reports/yeu_cau_2/chinh_mask.py,224,"        _, _, rows = self.read_manifest()"
+reports/yeu_cau_2/chinh_mask.py,227,"            raise ValueError(f""Không ghép được ảnh với manifest: {overlay_path.name}"")"
+reports/yeu_cau_2/chinh_mask.py,231,"        source_path = self.source / row[""filename""]"
+reports/yeu_cau_2/chinh_mask.py,236,"            raise ValueError(""Ảnh nguồn đã thay đổi so với manifest."")"
+reports/yeu_cau_2/chinh_mask.py,239,"            raise ValueError(""Mask đã thay đổi so với manifest; cần kiểm tra trước khi sửa."")"
+reports/yeu_cau_2/chinh_mask.py,265,"        manifest_before, fields, rows = self.read_manifest()"
+reports/yeu_cau_2/chinh_mask.py,268,"            raise ValueError(""Dòng manifest đã thay đổi. Mở lại ảnh trước khi lưu."")"
+reports/yeu_cau_2/chinh_mask.py,269,"        self.safe_output(""overlays/đạt"")"
+reports/yeu_cau_2/chinh_mask.py,271,        destination = self.accepted_dir / document.overlay_path.name
+reports/yeu_cau_2/chinh_mask.py,282,        # A new mask method may omit optional GrabCut statistics in its manifest.
+reports/yeu_cau_2/chinh_mask.py,288,"        manifest_after = stream.getvalue().encode(""utf-8"")"
+reports/yeu_cau_2/chinh_mask.py,293,"        backup = backup_root / f""{stamp}_{uuid.uuid4().hex[:12]}"""
+reports/yeu_cau_2/chinh_mask.py,295,"        create_bytes(backup / ""mask_before.png"", document.mask_before)"
+reports/yeu_cau_2/chinh_mask.py,296,"        create_bytes(backup / ""overlay_before.png"", document.overlay_before)"
+reports/yeu_cau_2/chinh_mask.py,297,"        create_bytes(backup / ""scribbles.png"", png_bytes(document.strokes))"
+reports/yeu_cau_2/chinh_mask.py,303,"                      manifest_before=before_row, manifest_after=dict(row),"
+reports/yeu_cau_2/chinh_mask.py,308,"            atomic_bytes(backup / ""record.json"", json.dumps(record, ensure_ascii=False, indent=2).encode(""utf-8""))"
+reports/yeu_cau_2/chinh_mask.py,311,        mask_written = manifest_written = destination_created = source_removed = False
+reports/yeu_cau_2/chinh_mask.py,317,"            atomic_bytes(self.manifest, manifest_after)"
+reports/yeu_cau_2/chinh_mask.py,318,            manifest_written = True
+reports/yeu_cau_2/chinh_mask.py,326,"                (manifest_written, lambda: atomic_bytes(self.manifest, manifest_before)),"
+reports/yeu_cau_2/chinh_mask.py,347,"    with (output / "".run.lock"").open(""a"") as lock:"
+reports/yeu_cau_2/chinh_mask.py,351,"            raise RuntimeError(""Có công cụ tạo / chỉnh mask khác đang dùng thư mục kết quả."") from exc"
+reports/yeu_cau_2/chinh_mask.py,359,"    scale = min(max(1, canvas_width - 20) / image_width,"
+reports/yeu_cau_2/chinh_mask.py,360,"                max(1, canvas_height - 20) / image_height)"
+reports/yeu_cau_2/chinh_mask.py,362,"    return (canvas_width - width) / 2, (canvas_height - height) / 2, width, height"
+reports/yeu_cau_2/chinh_mask.py,407,"        ttk.Label(viewbar, text=""Ảnh phủ / kết quả:"").pack(side=""left"")"
+reports/yeu_cau_2/chinh_mask.py,429,"        for text, command in ((""◀ Trước"", lambda: self.navigate(-1)), (""Bỏ qua / Sau ▶"", lambda: self.navigate(1)),"
+reports/yeu_cau_2/chinh_mask.py,473,"            self.status.set(f""{self.index + 1}/{len(self.files)} • {document.row['filename']} • {width} × {height} • {state}{source_note}"")"
+reports/yeu_cau_2/chinh_mask.py,517,"        return min(image_width - 1, int((event.x - left) * image_width / width)), \"
+reports/yeu_cau_2/chinh_mask.py,518,"            min(image_height - 1, int((event.y - top) * image_height / height))"
+reports/yeu_cau_2/chinh_mask.py,524,        radius = self.radius.get() * self.transform[2] / self.document.mask.shape[1]
+reports/yeu_cau_2/chinh_mask.py,586,"            self.note.set(""Tô thêm nét giữ con vật / loại nền rồi thử chạy lại."")"
+reports/yeu_cau_2/chinh_mask.py,604,"        self.note.set(f""Đã lưu mask và chuyển {destination.name} sang 'đạt'. Bản trước khi sửa nằm trong manual_edits/."")"
+reports/yeu_cau_2/dong_bo_overlays.py,29,    path = root / relative
+reports/yeu_cau_2/dong_bo_overlays.py,65,"    return (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf-8')"
+reports/yeu_cau_2/dong_bo_overlays.py,71,    for path in (output / 'manual_edits').glob('*/record.json'):
+reports/yeu_cau_2/dong_bo_overlays.py,76,                and record.get('overlay_after') == f'overlays/đạt/{name}.png'):
+reports/yeu_cau_2/dong_bo_overlays.py,77,"            digest = record.get('manifest_after', {}).get('overlay_sha256')"
+reports/yeu_cau_2/dong_bo_overlays.py,105,    manifest_before = (output / 'manifest.csv').read_bytes()
+reports/yeu_cau_2/dong_bo_overlays.py,106,    reader = csv.DictReader(io.StringIO(manifest_before.decode('utf-8')))
+reports/yeu_cau_2/dong_bo_overlays.py,109,        raise ValueError('Empty manifest or duplicate filenames')
+reports/yeu_cau_2/dong_bo_overlays.py,115,    for path in (output / 'overlays').rglob('*.png'):
+reports/yeu_cau_2/dong_bo_overlays.py,184,                staged_mask = stage / row['mask_path']
+reports/yeu_cau_2/dong_bo_overlays.py,223,"                print(f'Audited {index + 1}/{len(original_rows)}', flush=True)"
+reports/yeu_cau_2/dong_bo_overlays.py,238,"            (stage / relative).parent.mkdir(parents=True, exist_ok=True)"
+reports/yeu_cau_2/dong_bo_overlays.py,242,            if before != (stage / relative).read_bytes():
+reports/yeu_cau_2/dong_bo_overlays.py,246,"        prepare('manifest.csv', csv_bytes(rows, fields))"
+reports/yeu_cau_2/dong_bo_overlays.py,249,"        prepare('review_priority.csv', csv_bytes(priority, fields))"
+reports/yeu_cau_2/dong_bo_overlays.py,255,        summary_path = output / 'summary.json'
+reports/yeu_cau_2/dong_bo_overlays.py,268,"        prepare('summary.json', json_bytes(summary))"
+reports/yeu_cau_2/dong_bo_overlays.py,276,"        prepare('overlay_sync_report.json', json_bytes(report))"
+reports/yeu_cau_2/dong_bo_overlays.py,278,        if (output / 'manifest.csv').read_bytes() != manifest_before:
+reports/yeu_cau_2/dong_bo_overlays.py,284,            path = output / relative
+reports/yeu_cau_2/dong_bo_overlays.py,290,"        backup = backup_dir / f'{gc.now().replace("":"", ""-"")}_{uuid.uuid4().hex[:8]}.zip'"
+reports/yeu_cau_2/dong_bo_overlays.py,295,"            archive.writestr('sync_transaction.json', json_bytes(dict("
+reports/yeu_cau_2/dong_bo_overlays.py,301,                target = output / relative
+reports/yeu_cau_2/dong_bo_overlays.py,303,"                atomic_bytes(target, (stage / relative).read_bytes())"
+reports/yeu_cau_2/dong_bo_overlays.py,309,                    (output / relative).unlink(missing_ok=True)
+reports/yeu_cau_2/dong_bo_overlays.py,311,"                    atomic_bytes(output / relative, before)"
+reports/yeu_cau_2/dong_bo_overlays.py,332,    with (args.output_dir / '.run.lock').open('a') as lock:
+reports/yeu_cau_2/duyet_overlays.py,1,#!/usr/bin/env python3
+reports/yeu_cau_2/duyet_overlays.py,2,"""""""Duyệt ảnh phủ và phân loại bằng A/S/D."
+reports/yeu_cau_2/duyet_overlays.py,5,    .venv/bin/python reports/yeu_cau_2/duyet_overlays.py
+reports/yeu_cau_2/duyet_overlays.py,22,"DEFAULT_FOLDER = Path(__file__).resolve().parent / ""grabcut_output"" / ""overlays"""
+reports/yeu_cau_2/duyet_overlays.py,37,"        self.destinations = {key: folder / name for key, name in CATEGORIES.items()}"
+reports/yeu_cau_2/duyet_overlays.py,59,        destination = self.destinations[key] / source.name
+reports/yeu_cau_2/duyet_overlays.py,119,"        self.note = tk.StringVar(value=""A: đạt   •   S: cần sửa   •   D: làm lại   •   ←/→: chuyển ảnh   •   U: hoàn tác   •   Esc: thoát"")"
+reports/yeu_cau_2/duyet_overlays.py,185,"        # Trên một số hệ, giữ phím tạo cặp KeyRelease/KeyPress liên tục."
+reports/yeu_cau_2/duyet_overlays.py,203,"                f""{self.session.index + 1}/{len(self.session.files)}   •   {path.name}   •   """
+reports/yeu_cau_2/duyet_overlays.py,204,"                f""{self.image.width} × {self.image.height}   •   {category}\n{summary}"""
+reports/yeu_cau_2/duyet_overlays.py,207,"            self.status.set(f""Không đọc được {path.name}: {exc}. Dùng ←/→ để chuyển ảnh.\n{summary}"")"
+reports/yeu_cau_2/duyet_overlays.py,221,"        self.canvas.create_image(self.canvas.winfo_width() / 2, self.canvas.winfo_height() / 2,"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,1,#!/usr/bin/env python3
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,4,Run with bo_tool_anh_576x384/.venv/bin/python. Sources and existing masks are read
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,28,PREVIOUS = BASE / 'grabcut_output'
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,66,"    atomic_bytes(path, (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode())"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,86,"    scale = 320 / max(width, height)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,88,"    left, top = (320 - rw) // 2, (320 - rh) // 2"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,97,"    values /= max(float(values.max()), 1e-6)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,98,"    values = (values - np.array([0.485, 0.456, 0.406], np.float32)) / np.array([0.229, 0.224, 0.225], np.float32)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,112,"    probability = np.clip((prediction - low) / (high - low), 0, 1)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,127,    ratio = count / mask.size
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,141,"                previous_mask_ratio=int(np.count_nonzero(previous)) / previous.size,"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,154,        path = output / row[name + '_path']
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,167,"                 output / row['mask_path'], output / row['overlay_path']]"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,173,"                    canvas.paste(image, (column * 288 + (288 - image.width) // 2, y + (192 - image.height) // 2))"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,179,"    save_image(output / rows[0]['quicklook_path'], canvas)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,184,"    parser.add_argument('--queue-dir', type=Path, default=PREVIOUS / 'overlays/cần sửa')"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,186,"    parser.add_argument('--source-dir', type=Path, default=ROOT / 'data/anh-da-cat-576x384')"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,187,"    parser.add_argument('--output-dir', type=Path, default=BASE / 'mask_moi_can_sua')"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,188,"    parser.add_argument('--model', type=Path, default=Path.home() / '.cache/animal-crop/u2net.onnx')"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,190,"    parser.add_argument('--resume', action='store_true')"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,206,"    with (previous / 'manifest.csv').open(encoding='utf-8-sig', newline='') as stream:"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,212,        raise ValueError('Empty queue or queue image missing from original manifest')
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,214,    with (output / '.run.lock').open('a') as lock:
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,218,            raise ValueError('Output exists; use --resume or a new output directory')
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,220,"                      script_sha256=sha256(Path(__file__)), input_size=[320, 320],"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,225,        config_path = output / 'run_config.json'
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,230,"        for directory in ('masks', 'overlays/cần sửa', 'overlays/đạt', 'quicklooks'):"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,231,            path = output / directory
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,237,        manifest = output / 'manifest.csv'
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,238,        if manifest.exists():
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,239,            with manifest.open(newline='') as stream:
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,243,            raise ValueError('Selection would discard existing manifest rows')
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,250,            mask_path = (previous / original['mask_path']).resolve()
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,254,"            row.update(filename=name, source_path=str(source / name),"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,255,"                       mask_path=f'masks/{name}.png', overlay_path=f'overlays/cần sửa/{name}.png',"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,257,"                       quicklook_path=f'quicklooks/batch_{index // 8 + 1:03d}.jpg',"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,262,                row['quicklook_path'] = f'quicklooks/batch_{index // 8 + 1:03d}.jpg'
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,264,"        write_csv(manifest, rows)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,265,        error_path = output / 'errors.csv'
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,290,                            raise ValueError('Source image differs from original manifest')
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,302,"                        save_image(output / row['mask_path'], Image.fromarray(mask))"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,303,"                        save_image(output / row['overlay_path'], overlay(image, mask))"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,306,"                        row.update(status='success', mask_sha256=sha256(output / row['mask_path']),"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,307,"                                   overlay_sha256=sha256(output / row['overlay_path']), processed_at=now())"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,314,"                write_csv(manifest, rows)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,316,"                print(f'{done}/{len(rows)} status={row[""status""]} reused={skipped} elapsed={time.monotonic() - start:.1f}s {row[""filename""]}', flush=True)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,322,"            write_csv(manifest, rows)"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,323,"            write_csv(output / 'review_priority.csv', [row for row in rows if row['suspicious'] == 'yes' or row['status'] == 'failed'])"
+reports/yeu_cau_2/tao_lai_mask_can_sua.py,334,"            write_json(output / 'summary.json', summary)"
+reports/yeu_cau_2/verify_grabcut_results.py,14,    with (output / 'manifest.csv').open(newline='') as stream:
+reports/yeu_cau_2/verify_grabcut_results.py,21,    before = json.loads((Path(__file__).parent / 'grabcut_source_before.json').read_text())
+reports/yeu_cau_2/verify_grabcut_results.py,24,        path = gc.DEFAULT_INPUT / name
+reports/yeu_cau_2/verify_grabcut_results.py,34,        with Image.open(output / row['mask_path']) as image:
+reports/yeu_cau_2/verify_grabcut_results.py,42,        assert abs(float(row['mask_ratio']) - pixels / (width * height)) < 1e-12
+reports/yeu_cau_2/verify_grabcut_results.py,43,"        source, sw, sh = gc.read_image(gc.DEFAULT_INPUT / row['filename'])"
+reports/yeu_cau_2/verify_grabcut_results.py,45,        with Image.open(output / row['overlay_path']) as image:
+reports/yeu_cau_2/verify_grabcut_results.py,49,            assert gc.sha256(output / row[f'{artifact}_path']) == row[f'{artifact}_sha256']
+reports/yeu_cau_2/verify_grabcut_results.py,52,        with Image.open(output / path) as image:
+reports/yeu_cau_2/verify_grabcut_results.py,54,    with (output / 'errors.csv').open(newline='') as stream:
+reports/yeu_cau_2/verify_grabcut_results.py,60,"    gc.write_json(output / 'verification.json', result)"
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,1,#!/usr/bin/env python3
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,2,"""""""Verify the new queue results and confirm old/source files were preserved."""""""
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,14,    output = batch.BASE / 'mask_moi_can_sua'
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,15,    inventory = json.loads((batch.BASE / 'mask_moi_can_sua_truoc_khi_chay.json').read_text())
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,18,        path = batch.ROOT / relative
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,26,    with (output / 'manifest.csv').open(newline='') as stream:
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,28,    expected = {p.name for p in (batch.PREVIOUS / 'overlays/cần sửa').iterdir() if p.is_file() and p.suffix.lower() == '.png'}
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,36,        with Image.open(output / row['mask_path']) as image:
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,43,        assert abs(float(row['mask_ratio']) - pixels / mask.size) < 1e-12
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,47,        with Image.open(output / row['overlay_path']) as image:
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,51,            assert batch.sha256(output / row[artifact + '_path']) == row[artifact + '_sha256']
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,59,        with Image.open(output / sheet) as image:
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,61,    with (output / 'errors.csv').open(newline='') as stream:
+reports/yeu_cau_2/verify_mask_moi_can_sua.py,67,"    batch.write_json(output / 'verification.json', result)"

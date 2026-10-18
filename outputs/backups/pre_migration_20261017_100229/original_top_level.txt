@@ -1,0 +1,9 @@
+.DS_Store
+.git
+.venv
+README.md
+bao_cao_giong_khac_dong_vat.md
+bao_cao_yeu_cau_2_thuoc_tinh.md
+bo_tool_anh_576x384
+data
+reports

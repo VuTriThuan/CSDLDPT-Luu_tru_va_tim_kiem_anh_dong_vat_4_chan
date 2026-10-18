@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "suites": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 bo_tool_anh_576x384/.venv/bin/python -B -m unittest discover -s tests/image_processing -v",
+      "tests": 16,
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/validation -v",
+      "tests": 7,
+      "exit_code": 0
+    }
+  ],
+  "tests_passed": 23,
+  "cli_help_checks": 22,
+  "real_batch_processing": false,
+  "gui_opened": false,
+  "real_model_inference": false,
+  "algorithm_and_history_ast_comparison": true
+}

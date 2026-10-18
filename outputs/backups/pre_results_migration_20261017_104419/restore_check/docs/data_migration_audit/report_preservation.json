@@ -1,0 +1,16 @@
+[
+  {
+    "path": "docs/reports/animal_comparison.md",
+    "only_data_directory_paths_changed": true,
+    "analysis_and_numeric_results_unchanged": true,
+    "sha256_before": "84e85efb77d1ba7b010320d03a82df6ad027866bdeafcdb426e034443ca92fb1",
+    "sha256_after": "127be209282feb2d9d7a7eb2eec4f4d96c4e5f3056d23a78ab7be65d3ba90256"
+  },
+  {
+    "path": "docs/reports/search_feature_design.md",
+    "only_data_directory_paths_changed": true,
+    "analysis_and_numeric_results_unchanged": true,
+    "sha256_before": "455b01dedf0e6b3d4c91197329ca5eb69215bb3565983bc00d1c01ddb97d402f",
+    "sha256_after": "326f9f0d34dedacc13419b9f8812925a9ff5ad67f29636bd725d96bb287bc710"
+  }
+]

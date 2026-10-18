@@ -1,0 +1,296 @@
+[
+  {
+    "document": "README.md",
+    "line": 48,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 49,
+    "script": "tools/image_processing/rename_images.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 50,
+    "script": "tools/image_processing/review_images.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 52,
+    "script": "tools/segmentation/run_grabcut.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 53,
+    "script": "tools/segmentation/review_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 54,
+    "script": "tools/segmentation/edit_masks.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 55,
+    "script": "tools/segmentation/sync_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 56,
+    "script": "tools/segmentation/regenerate_masks.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 58,
+    "script": "tools/validation/audit_images.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 59,
+    "script": "tools/validation/verify_grabcut_results.py",
+    "exists": true
+  },
+  {
+    "document": "README.md",
+    "line": 60,
+    "script": "tools/validation/verify_regenerated_masks.py",
+    "exists": true
+  },
+  {
+    "document": "docs/documentation_migration.md",
+    "line": 52,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/documentation_migration.md",
+    "line": 53,
+    "script": "tools/image_processing/review_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/documentation_migration.md",
+    "line": 54,
+    "script": "tools/segmentation/run_grabcut.py",
+    "exists": true
+  },
+  {
+    "document": "docs/documentation_migration.md",
+    "line": 55,
+    "script": "tools/segmentation/edit_masks.py",
+    "exists": true
+  },
+  {
+    "document": "docs/documentation_migration.md",
+    "line": 56,
+    "script": "tools/segmentation/regenerate_masks.py",
+    "exists": true
+  },
+  {
+    "document": "docs/documentation_migration.md",
+    "line": 57,
+    "script": "tools/validation/audit_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/source_migration.md",
+    "line": 114,
+    "script": "tools/validation/audit_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/source_migration.md",
+    "line": 115,
+    "script": "tools/validation/verify_grabcut_results.py",
+    "exists": true
+  },
+  {
+    "document": "docs/source_migration.md",
+    "line": 116,
+    "script": "tools/validation/verify_regenerated_masks.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 14,
+    "script": "tools/segmentation/run_grabcut.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 17,
+    "script": "tools/segmentation/run_grabcut.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 24,
+    "script": "tools/segmentation/run_grabcut.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 57,
+    "script": "tools/segmentation/run_grabcut.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 90,
+    "script": "tools/segmentation/review_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 92,
+    "script": "tools/segmentation/review_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 109,
+    "script": "tools/segmentation/edit_masks.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 152,
+    "script": "tools/segmentation/sync_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 154,
+    "script": "tools/segmentation/sync_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 156,
+    "script": "tools/segmentation/sync_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 163,
+    "script": "tools/segmentation/sync_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 173,
+    "script": "tools/segmentation/sync_overlays.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/grabcut.md",
+    "line": 232,
+    "script": "tools/validation/verify_grabcut_results.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 45,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 46,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 47,
+    "script": "tools/image_processing/review_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 65,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 66,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 67,
+    "script": "tools/image_processing/review_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 103,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 109,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 128,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 129,
+    "script": "tools/image_processing/review_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 139,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 140,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 155,
+    "script": "tools/image_processing/auto_crop.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/image_tools.md",
+    "line": 166,
+    "script": "tools/image_processing/review_images.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/mask_regeneration.md",
+    "line": 43,
+    "script": "tools/segmentation/regenerate_masks.py",
+    "exists": true
+  },
+  {
+    "document": "docs/guides/mask_regeneration.md",
+    "line": 53,
+    "script": "tools/segmentation/edit_masks.py",
+    "exists": true
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "document": "docs/reports/search_feature_design.md",
+    "line": 142,
+    "destination": "https://docs.opencv.org/4.10.0/d8/d83/tutorial_py_grabcut.html",
+    "status": "unchanged_not_fetched"
+  },
+  {
+    "document": "docs/reports/search_feature_design.md",
+    "line": 155,
+    "destination": "https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_glcm.html",
+    "status": "unchanged_not_fetched"
+  },
+  {
+    "document": "docs/reports/search_feature_design.md",
+    "line": 157,
+    "destination": "https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_hog.html",
+    "status": "unchanged_not_fetched"
+  },
+  {
+    "document": "docs/reports/search_feature_design.md",
+    "line": 180,
+    "destination": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html",
+    "status": "unchanged_not_fetched"
+  },
+  {
+    "document": "docs/reports/search_feature_design.md",
+    "line": 203,
+    "destination": "https://scikit-image.org/docs/stable/api/skimage.filters.html#skimage.filters.gabor",
+    "status": "unchanged_not_fetched"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "opencv": "4.12.0",
+  "numpy": "1.26.4",
+  "seed": 0,
+  "source": "/Users/trithuan/Downloads/feature_extractors.py",
+  "source_sha256": "3c5d1b0a5f74016f66e1d785c1a56786904caff2126506b465fbade5fb47512c",
+  "function": "create_foreground_mask",
+  "resize": [
+    224,
+    224
+  ],
+  "note": "No ground-truth masks; pixel counts are algorithm outputs, not segmentation accuracy."
+}

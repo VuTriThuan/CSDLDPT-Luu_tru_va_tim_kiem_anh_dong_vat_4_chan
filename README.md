@@ -40,9 +40,9 @@ sao lưu/khôi phục và các giới hạn nằm trong
 | [outputs/inventory/](outputs/inventory/) | Kiểm kê ảnh, danh sách ảnh đã xem, số liệu và môi trường mẫu GrabCut |
 | [outputs/segmentation/grabcut/](outputs/segmentation/grabcut/) | Mask, overlay, manifest, nhật ký và lịch sử chỉnh sửa |
 | [bo_tool_anh_576x384/](bo_tool_anh_576x384/) | Requirements và cache lịch sử; không còn môi trường đang dùng |
-| [outputs/backups/](outputs/backups/) | Toàn bộ bản sao lưu; tệp lớn chia phần và có công cụ ghép lại |
+| [outputs/backups/](outputs/backups/) | Toàn bộ bản sao lưu; tệp lớn chia phần, kèm hướng dẫn ghép lại |
 
-**Bản sao lưu:** toàn bộ dữ liệu của 3.469 tệp gốc đã có trong `outputs/backups/` trên nhánh `main`. Trong đó 5 tệp lớn được chia thành 125 phần, mỗi phần tối đa 48 MiB. Sau khi clone hoặc tải ZIP, chạy `python3 outputs/backups/restore_large_files.py` để ghép đúng tệp gốc và kiểm tra SHA-256. Xem [hướng dẫn đầy đủ](outputs/backups/README.md).
+**Bản sao lưu:** toàn bộ dữ liệu của 3.469 tệp gốc đã có trong `outputs/backups/` trên nhánh `main`. Trong đó 5 tệp lớn được chia thành 125 phần, mỗi phần tối đa 48 MiB. Sau khi clone hoặc tải ZIP, ghép các phần bằng lệnh `cat` và kiểm tra SHA-256 theo hướng dẫn. Xem [hướng dẫn đầy đủ](outputs/backups/README.md).
 
 Ba thư mục ảnh đã dùng tên mới như bảng trên; tên và nội dung từng ảnh giữ nguyên.
 Kết quả GrabCut nằm ở `outputs/segmentation/grabcut/`; cấu hình chạy nằm trong bộ kết quả,

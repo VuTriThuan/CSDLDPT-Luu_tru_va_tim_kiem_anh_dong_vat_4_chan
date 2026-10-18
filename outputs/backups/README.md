@@ -29,24 +29,22 @@ Các tệp cache và metadata nằm trong snapshot cũng được giữ nguyên.
 
 ## Khôi phục sau khi clone hoặc tải ZIP
 
-Mở Terminal tại thư mục gốc dự án:
+Mở Terminal tại thư mục gốc dự án. Ví dụ ghép bản sao lưu dữ liệu:
 
 ```sh
-python3 outputs/backups/restore_large_files.py
+BACKUP_FILE="outputs/backups/pre_data_migration_20261017_103325/before_data_migration.tar"
+(set -C; cat "$BACKUP_FILE".parts/part-* > "$BACKUP_FILE")
+shasum -a 256 "$BACKUP_FILE"
 ```
 
-Cần Python 3.10 trở lên, chỉ dùng thư viện chuẩn. Công cụ đọc
-[parts-manifest.json](parts-manifest.json), kiểm tra SHA-256 từng phần và
-từng tệp hoàn chỉnh, rồi tạo lại 5 tệp lớn tại đúng đường dẫn gốc. Cần thêm
-khoảng **5,8 GiB** dung lượng trống để ghép đầy đủ. Các phần gốc vẫn được giữ lại.
+Đối chiếu SHA-256 với giá trị trong README của thư mục `.parts/` tương ứng
+hoặc [parts-manifest.json](parts-manifest.json). Lặp lại với 4 đường dẫn tệp
+còn lại trong bảng trên bằng cách đổi `BACKUP_FILE`.
 
-Nếu tệp đích đã tồn tại và đúng SHA-256, công cụ bỏ qua. Nếu khác nội dung,
-công cụ báo lỗi và giữ nguyên tệp đang có. Chỉ kiểm tra các phần mà không ghi
-tệp khôi phục:
-
-```sh
-python3 outputs/backups/restore_large_files.py --verify-only
-```
+`set -C` ngăn ghi đè nếu tệp đích đã tồn tại. Tải đủ các phần trước khi ghép;
+nếu thiếu phần hoặc checksum không khớp, tệp ghép chưa hợp lệ.
+Cần thêm khoảng **5,8 GiB** dung lượng trống để ghép đầy đủ.
+Các phần gốc vẫn được giữ lại.
 
 Sau khi ghép xong, dùng các hướng dẫn khôi phục snapshot trong
 [migration_verification.md](../../docs/migration_verification.md).

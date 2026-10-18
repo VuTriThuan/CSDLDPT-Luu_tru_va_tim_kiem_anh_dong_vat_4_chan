@@ -10,9 +10,11 @@ Tệp gốc: `outputs/backups/pre_environment_migration_20261017_105624/before_e
 Sau khi clone hoặc tải ZIP đầy đủ, mở Terminal ở thư mục gốc dự án và chạy:
 
 ```sh
-python3 outputs/backups/restore_large_files.py
+BACKUP_FILE="outputs/backups/pre_environment_migration_20261017_105624/before_environment_migration.tar"
+(set -C; cat "$BACKUP_FILE".parts/part-* > "$BACKUP_FILE")
+shasum -a 256 "$BACKUP_FILE"
 ```
 
-Công cụ ghép cả 5 tệp lớn, kiểm tra SHA-256 từng phần và tệp hoàn chỉnh,
-đồng thời giữ nguyên mọi tệp đích đã tồn tại. Hướng dẫn đầy đủ nằm trong
+Đối chiếu kết quả với SHA-256 ở trên. `set -C` ngăn ghi đè tệp đã tồn tại.
+Tải đủ các phần trước khi ghép. Hướng dẫn đầy đủ nằm trong
 `outputs/backups/README.md`.

@@ -1,0 +1,37 @@
+{
+  "images": 812,
+  "masks_changed": 0,
+  "overlay_paths_changed": 0,
+  "source_hashes_changed": 0,
+  "metadata_rows_changed": 0,
+  "review_statuses_changed": 0,
+  "review_results_changed": 0,
+  "approximate_pixels": 5,
+  "approximate_images": [
+    {
+      "filename": "Equus_quagga_1056.jpg",
+      "pixels": 5
+    }
+  ],
+  "external_overlays": [
+    "Ailuropoda_melanoleuca_1211.jpg.png",
+    "Ailuropoda_melanoleuca_1249.jpg.png",
+    "equus-quagga_0294.jpg.png",
+    "equus-quagga_0821.jpg.png",
+    "equus-quagga_0836.jpg.png"
+  ],
+  "errors": [],
+  "quicklooks": 102,
+  "quicklooks_changed": 0,
+  "verified": true,
+  "stale_files": [],
+  "verified_at": "2026-10-16T17:11:33+00:00",
+  "pixel_tolerance": 1,
+  "review_status_counts": {
+    "da_duyet": 812
+  },
+  "review_result_counts": {
+    "dat": 812
+  },
+  "flagged_count": 4
+}

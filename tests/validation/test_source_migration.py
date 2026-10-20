@@ -136,22 +136,8 @@ class SourceMigrationTests(unittest.TestCase):
                     with self.subTest(script=destination, definition=definition.name):
                         self.assertEqual(ast.dump(definition), ast.dump(new_defs[definition.name]))
                     compared += 1
-                if destination.endswith('/audit_images.py'):
-                    start = next(i for i, n in enumerate(old_tree.body)
-                                 if isinstance(n, ast.Assign) and isinstance(n.targets[0], ast.Name)
-                                 and n.targets[0].id == 'groups')
-
-                    class LocalNames(ast.NodeTransformer):
-                        def visit_Name(self, node):
-                            return ast.copy_location(ast.Name(id={'DATA': 'data', 'OUT': 'output'}.get(node.id, node.id),
-                                                              ctx=node.ctx), node)
-
-                    expected = [LocalNames().visit(n) for n in old_tree.body[start:]]
-                    body = new_defs['main'].body
-                    start_new = next(i for i, n in enumerate(body)
-                                     if isinstance(n, ast.Assign) and isinstance(n.targets[0], ast.Name)
-                                     and n.targets[0].id == 'groups')
-                    self.assertEqual([ast.dump(n) for n in expected], [ast.dump(n) for n in body[start_new:]])
+                # The auditor now implements the full-dataset requirement-2 analysis.
+                # Its coverage, accounting and numerics are checked in test_audit_images.
         self.assertGreater(compared, 90)
 
     def fixture(self):
@@ -224,7 +210,8 @@ class SourceMigrationTests(unittest.TestCase):
             audit_images.main(['--input-dir', str(source), '--output-dir', str(output)])
         result = json.loads((output / 'image_inventory.json').read_text())
         self.assertEqual(result['image_count'], 1)
-        self.assertTrue((output / 'contact_01.jpg').is_file())
+        self.assertEqual(result['feature_status_counts'], {'success': 1})
+        self.assertTrue((output / 'image_processing.csv').is_file())
 
 
 if __name__ == '__main__':

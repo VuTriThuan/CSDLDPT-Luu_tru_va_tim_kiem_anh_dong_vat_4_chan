@@ -1,10 +1,25 @@
 {
+  "schema_version": 2,
   "image_count": 812,
+  "file_count": 816,
+  "non_image_file_count": 4,
+  "unique_image_filenames": 812,
+  "unique_image_basenames": 812,
+  "duplicate_image_basenames": [],
+  "technical_status_counts": {
+    "success": 812
+  },
+  "feature_status_counts": {
+    "success": 812
+  },
   "sizes": {
-    "(576, 384)": 812
+    "576x384": 812
   },
   "formats": {
     "JPEG": 812
+  },
+  "modes": {
+    "RGB": 812
   },
   "labels": {
     "ailuropoda_melanoleuca": 16,
@@ -30,7 +45,300 @@
     "ursus_arctos": 14,
     "vulpes_vulpes": 23
   },
-  "errors": [],
-  "missing_requested": [],
-  "selected_count": 84
+  "label_counts": [
+    {
+      "label": "ailuropoda_melanoleuca",
+      "input_count": 16,
+      "technical_success": 16,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 16,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "bos_taurus",
+      "input_count": 42,
+      "technical_success": 42,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 42,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "bubalus_bubalis",
+      "input_count": 7,
+      "technical_success": 7,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 7,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "camelus_bactrianus",
+      "input_count": 71,
+      "technical_success": 71,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 71,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "camelus_dromedarius",
+      "input_count": 72,
+      "technical_success": 72,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 72,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "canis_familiaris",
+      "input_count": 69,
+      "technical_success": 69,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 69,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "canis_lupus",
+      "input_count": 9,
+      "technical_success": 9,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 9,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "capra_hircus",
+      "input_count": 10,
+      "technical_success": 10,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 10,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "cervidae",
+      "input_count": 24,
+      "technical_success": 24,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 24,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "equus_asinus",
+      "input_count": 10,
+      "technical_success": 10,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 10,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "equus_caballus",
+      "input_count": 17,
+      "technical_success": 17,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 17,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "equus_quagga",
+      "input_count": 279,
+      "technical_success": 279,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 279,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "felis_catus",
+      "input_count": 5,
+      "technical_success": 5,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 5,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "hydrochoerus_hydrochaeris",
+      "input_count": 26,
+      "technical_success": 26,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 26,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "orycteropus_afer",
+      "input_count": 2,
+      "technical_success": 2,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 2,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "ovis_aries",
+      "input_count": 43,
+      "technical_success": 43,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 43,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "panthera_leo",
+      "input_count": 8,
+      "technical_success": 8,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 8,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "panthera_pardus",
+      "input_count": 2,
+      "technical_success": 2,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 2,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "panthera_tigris",
+      "input_count": 53,
+      "technical_success": 53,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 53,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "ursus_americanus",
+      "input_count": 10,
+      "technical_success": 10,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 10,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "ursus_arctos",
+      "input_count": 14,
+      "technical_success": 14,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 14,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    },
+    {
+      "label": "vulpes_vulpes",
+      "input_count": 23,
+      "technical_success": 23,
+      "technical_failed": 0,
+      "technical_skipped": 0,
+      "feature_success": 23,
+      "feature_failed": 0,
+      "feature_skipped": 0
+    }
+  ],
+  "issues": [
+    {
+      "filename": ".tool_anh.lock",
+      "basename": ".tool_anh.lock",
+      "label": "",
+      "is_image_candidate": 0,
+      "sha256": "",
+      "technical_status": "skipped",
+      "technical_error": "unsupported_extension",
+      "width": "",
+      "height": "",
+      "format": "",
+      "mode": "",
+      "frame_count": "",
+      "feature_status": "skipped",
+      "feature_error": "not_an_image_candidate"
+    },
+    {
+      "filename": "_cat_tu_dong.json",
+      "basename": "_cat_tu_dong.json",
+      "label": "",
+      "is_image_candidate": 0,
+      "sha256": "",
+      "technical_status": "skipped",
+      "technical_error": "unsupported_extension",
+      "width": "",
+      "height": "",
+      "format": "",
+      "mode": "",
+      "frame_count": "",
+      "feature_status": "skipped",
+      "feature_error": "not_an_image_candidate"
+    },
+    {
+      "filename": "_cat_tu_dong.truoc-cap-nhat.json",
+      "basename": "_cat_tu_dong.truoc-cap-nhat.json",
+      "label": "",
+      "is_image_candidate": 0,
+      "sha256": "",
+      "technical_status": "skipped",
+      "technical_error": "unsupported_extension",
+      "width": "",
+      "height": "",
+      "format": "",
+      "mode": "",
+      "frame_count": "",
+      "feature_status": "skipped",
+      "feature_error": "not_an_image_candidate"
+    },
+    {
+      "filename": "bao_cao_cat.csv",
+      "basename": "bao_cao_cat.csv",
+      "label": "",
+      "is_image_candidate": 0,
+      "sha256": "",
+      "technical_status": "skipped",
+      "technical_error": "unsupported_extension",
+      "width": "",
+      "height": "",
+      "format": "",
+      "mode": "",
+      "frame_count": "",
+      "feature_status": "skipped",
+      "feature_error": "not_an_image_candidate"
+    }
+  ],
+  "checks": {
+    "unique_relative_filenames": true,
+    "unique_basenames": true,
+    "technical_total": true,
+    "feature_total": true,
+    "label_total": true,
+    "feature_rows": true
+  }
 }

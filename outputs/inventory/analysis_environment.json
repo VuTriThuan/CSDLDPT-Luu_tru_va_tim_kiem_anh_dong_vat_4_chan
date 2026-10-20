@@ -1,0 +1,48 @@
+{
+  "created_at_utc": "2026-10-20T03:31:03.144466+00:00",
+  "input_directory": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384",
+  "python": "3.10.11",
+  "platform": "macOS-13.7.6-x86_64-i386-64bit",
+  "machine": "x86_64",
+  "pillow": "12.3.0",
+  "numpy": "1.26.4",
+  "opencv": "4.11.0",
+  "script_sha256": "4c6f44d65e9835fa78ac88807b788e8e777b4e769b0926f336588ebf00f28799",
+  "image_extensions": [
+    ".avif",
+    ".bmp",
+    ".gif",
+    ".jpeg",
+    ".jpg",
+    ".png",
+    ".tif",
+    ".tiff",
+    ".webp"
+  ],
+  "recursive": true,
+  "source_writes": false,
+  "color_conversion": "Pillow RGB then OpenCV uint8 HSV/Lab/GRAY; no resize, EXIF rotation or ICC transform",
+  "histogram": "Per-channel L1, saturation-weighted hue; zero total gives zero histogram; no final L2",
+  "grid": "2 rows x 4 columns, numpy.array_split, row-major",
+  "descriptor_blocks": {
+    "global_hsv": [
+      0,
+      32
+    ],
+    "global_lab_ab": [
+      32,
+      48
+    ],
+    "grid_hsv": [
+      48,
+      176
+    ]
+  },
+  "grayscale": "OpenCV uint8 gray, then float64 /255; entropy on 256 gray levels",
+  "dark_threshold": "gray_u8 < 64",
+  "bright_threshold": "gray_u8 >= 192",
+  "sobel": "ksize=3, no scale factor; hypot(gx,gy), strong > 0.5",
+  "laplacian": "ksize=3 on gray/255; population variance",
+  "border": "BORDER_REFLECT_101",
+  "aggregation": "Each successful image has equal weight; population std, linear quantiles"
+}

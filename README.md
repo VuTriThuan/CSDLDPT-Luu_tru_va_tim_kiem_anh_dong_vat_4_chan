@@ -1,21 +1,21 @@
 # Lưu trữ và tìm kiếm ảnh động vật bốn chân
 
 Dự án gồm công cụ chuẩn bị ảnh, tạo và duyệt mask, cùng báo cáo so sánh động vật
-và thiết kế bộ thuộc tính tìm kiếm. Phần thiết kế đặc trưng là đề xuất phân tích;
-chưa phải hệ thống tìm kiếm đã triển khai hoặc đã đánh giá.
+và phân tích dữ liệu để chọn bộ thuộc tính tìm kiếm. Yêu cầu 2 đã xử lý tự động
+toàn bộ 812 ảnh; B400 vẫn là thiết kế, chưa triển khai hoặc đánh giá tìm kiếm.
 
 ## Đọc tài liệu
 
 | Tài liệu | Nội dung |
 |---|---|
-| [So sánh ảnh động vật](docs/reports/animal_comparison.md) | Đặc điểm giống/khác, các cặp ảnh minh họa và phạm vi quan sát |
-| [Thiết kế thuộc tính tìm kiếm](docs/reports/search_feature_design.md) | Phân tích mã tham khảo, đề xuất đặc trưng và giới hạn của kết quả |
+| [So sánh ảnh động vật](docs/reports/animal_comparison.md) | Yêu cầu 1: giống/khác bằng 104 ảnh đại diện và các cặp minh họa |
+| [Thiết kế thuộc tính tìm kiếm](docs/reports/search_feature_design.md) | Yêu cầu 2: phân tích tự động 812 ảnh, kết quả đo thực tế và thiết kế B400 |
 | [Hướng dẫn công cụ ảnh](docs/guides/image_tools.md) | Cài môi trường, cắt ảnh, duyệt/lật/loại ảnh và kiểm thử |
 | [Hướng dẫn GrabCut](docs/guides/grabcut.md) | Tạo mask, duyệt overlay, chỉnh mask và đồng bộ |
 | [Hướng dẫn tạo lại mask](docs/guides/mask_regeneration.md) | Tạo mask U²-Net từ hàng đợi và kiểm tra kết quả lịch sử |
 
-Các báo cáo giữ số liệu và kết luận theo thời điểm quan sát. Một số kết quả hoặc
-tệp trung gian được mô tả trong lịch sử hiện không còn trên cây; xem
+Báo cáo yêu cầu 2 dùng đầu ra mới trong `outputs/inventory/`. Một số kết quả hoặc
+tệp trung gian được mô tả trong tài liệu lịch sử hiện không còn trên cây; xem
 [báo cáo kiểm tra tài liệu](docs/documentation_migration.md) để biết phạm vi kiểm tra.
 
 Đã xác minh sau sắp xếp: **38 kiểm thử đạt**, luồng xử lý trên dữ liệu riêng và
@@ -23,6 +23,45 @@ ba giao diện Tkinter đạt trên macOS Intel/Python 3.10.11. Ảnh, mask, ove
 quicklook, manifest và lịch sử khớp SHA-256 bước 1. Cây bàn giao, lệnh chạy,
 sao lưu/khôi phục và các giới hạn nằm trong
 [migration_verification.md](docs/migration_verification.md).
+
+## Phân tích dữ liệu yêu cầu 2
+
+Lần chạy mới trên Mac Intel dùng Python 3.10.11, NumPy 1.26.4, Pillow 12.3.0
+và OpenCV 4.11.0. Kết quả: **812 ảnh đầu vào; 812 giải mã thành công; 812 tính
+đặc trưng thành công; 0 ảnh lỗi; 0 ảnh bị bỏ qua**. Tất cả là JPEG RGB,
+576 × 384; 812 tên ảnh duy nhất, thuộc 22 nhóm nhãn theo tên tệp. Bốn tệp
+không phải ảnh được ghi riêng, tổng manifest có 816 dòng tệp.
+
+Hai bước kiểm tra kỹ thuật và tính đặc trưng có trạng thái/lý do riêng trong
+[image_processing.csv](outputs/inventory/image_processing.csv). Mã duyệt toàn bộ
+thư mục, không chọn mẫu và không sửa ảnh gốc. [label_counts.csv](outputs/inventory/label_counts.csv)
+ghi số lượng từng nhãn, gồm cả thành công/lỗi/bỏ qua.
+
+Đã tính từ ảnh thật: **812 vector màu toàn khung 176 chiều** (HSV 32 + Lab a/b 16 +
+HSV lưới 2×4 là 128), cùng **10 phép đo mỗi ảnh** về bão hòa, sáng, tương phản,
+pixel tối/sáng, entropy, Sobel và phương sai Laplacian. Trung bình S/255 toàn tập
+là **0,320669**, entropy xám trung bình **7,367510 bit**. Các phép đo bao gồm nền;
+không diễn giải chúng thành số đo màu lông hoặc hình dạng con vật.
+Ví dụ `Equus_caballus_1014.jpg` và `equus-quagga_0779.jpg` có dáng thân tương tự
+nhưng khác họa tiết; ảnh và số đo cụ thể nằm trong báo cáo.
+
+**B400 = màu tiền cảnh 48 + kết cấu 100 + hình dạng 124 + bố cục màu 128** là bộ
+được chọn để triển khai sau; chưa tính vector B400, scaler hay chất lượng tìm kiếm.
+Yêu cầu 1 giữ 104 ảnh đại diện để mô tả giống/khác. Chưa triển khai hệ thống tìm
+kiếm yêu cầu 3–4.
+
+Chạy lại tại root dự án bằng môi trường `.venv/` nêu bên dưới:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/audit_images.py
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/verify_image_analysis.py
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest tests.validation.test_audit_images -v
+```
+
+Lệnh đầu ghi lại JSON/CSV/NPZ hiện hành; lệnh sau đối chiếu tên, số lượng, nhãn,
+hash ảnh, thống kê và bảng báo cáo. Xem [báo cáo yêu cầu 2](docs/reports/search_feature_design.md)
+và [danh mục đầu ra](outputs/inventory/README.md) để biết định nghĩa, giới hạn và
+cách đọc vector. Khi đổi tập đầu vào, cập nhật báo cáo theo kết quả chạy mới.
 
 ## Cấu trúc hiện tại
 
@@ -37,7 +76,7 @@ sao lưu/khôi phục và các giới hạn nằm trong
 | [data/source_images/](data/source_images/) | Ảnh nguồn |
 | [data/cropped_images_576x384/](data/cropped_images_576x384/) | Ảnh cắt đang dùng |
 | [data/rejected_crops/](data/rejected_crops/) | Ảnh cắt đã loại khi duyệt |
-| [outputs/inventory/](outputs/inventory/) | Kiểm kê ảnh, danh sách ảnh đã xem, số liệu và môi trường mẫu GrabCut |
+| [outputs/inventory/](outputs/inventory/) | Trạng thái từng tệp, thống kê và đặc trưng toàn khung của yêu cầu 2; xem ghi chú hồ sơ cũ |
 | [outputs/segmentation/grabcut/](outputs/segmentation/grabcut/) | Mask, overlay, manifest, nhật ký và lịch sử chỉnh sửa |
 | [bo_tool_anh_576x384/](bo_tool_anh_576x384/) | Requirements và cache lịch sử; không còn môi trường đang dùng |
 | [outputs/backups/](outputs/backups/) | Toàn bộ bản sao lưu; tệp lớn chia phần, kèm hướng dẫn ghép lại |

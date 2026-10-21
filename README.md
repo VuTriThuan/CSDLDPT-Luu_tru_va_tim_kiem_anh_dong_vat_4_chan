@@ -1,8 +1,10 @@
 # Lưu trữ và tìm kiếm ảnh động vật bốn chân
 
 Dự án gồm công cụ chuẩn bị ảnh, tạo và duyệt mask, cùng báo cáo so sánh động vật
-và phân tích dữ liệu để chọn bộ thuộc tính tìm kiếm. Yêu cầu 2 đã xử lý tự động
-toàn bộ 812 ảnh; B400 vẫn là thiết kế, chưa triển khai hoặc đánh giá tìm kiếm.
+và phân tích dữ liệu để chọn bộ thuộc tính tìm kiếm. Yêu cầu 3 đã triển khai
+B400 400 chiều, chuẩn hóa tái sử dụng và CSDL SQLite. Kết quả thực tế, kiểm thử
+và các quy ước phép đo nằm trong [báo cáo yêu cầu 3](docs/reports/b400_implementation.md).
+Chức năng tìm kiếm yêu cầu 4 chưa triển khai.
 
 ## Đọc tài liệu
 
@@ -10,6 +12,7 @@ toàn bộ 812 ảnh; B400 vẫn là thiết kế, chưa triển khai hoặc đ�
 |---|---|
 | [So sánh ảnh động vật](docs/reports/animal_comparison.md) | Yêu cầu 1: giống/khác bằng 104 ảnh đại diện và các cặp minh họa |
 | [Thiết kế thuộc tính tìm kiếm](docs/reports/search_feature_design.md) | Yêu cầu 2: phân tích tự động 812 ảnh, kết quả đo thực tế và thiết kế B400 |
+| [Triển khai B400 và CSDL](docs/reports/b400_implementation.md) | Yêu cầu 3: công thức, chuẩn hóa, SQLite, kết quả và tái lập |
 | [Hướng dẫn công cụ ảnh](docs/guides/image_tools.md) | Cài môi trường, cắt ảnh, duyệt/lật/loại ảnh và kiểm thử |
 | [Hướng dẫn GrabCut](docs/guides/grabcut.md) | Tạo mask, duyệt overlay, chỉnh mask và đồng bộ |
 | [Hướng dẫn tạo lại mask](docs/guides/mask_regeneration.md) | Tạo mask U²-Net từ hàng đợi và kiểm tra kết quả lịch sử |
@@ -45,10 +48,11 @@ không diễn giải chúng thành số đo màu lông hoặc hình dạng con v
 Ví dụ `Equus_caballus_1014.jpg` và `equus-quagga_0779.jpg` có dáng thân tương tự
 nhưng khác họa tiết; ảnh và số đo cụ thể nằm trong báo cáo.
 
-**B400 = màu tiền cảnh 48 + kết cấu 100 + hình dạng 124 + bố cục màu 128** là bộ
-được chọn để triển khai sau; chưa tính vector B400, scaler hay chất lượng tìm kiếm.
-Yêu cầu 1 giữ 104 ảnh đại diện để mô tả giống/khác. Chưa triển khai hệ thống tìm
-kiếm yêu cầu 3–4.
+**B400 = màu tiền cảnh 48 + kết cấu 100 + hình dạng 124 + bố cục màu 128**
+được triển khai riêng tại `tools/features/`; vector thô, chuẩn hóa và SQLite
+ở `outputs/features/b400_v1/`. NPZ 176 chiều yêu cầu 2 giữ nguyên.
+Yêu cầu 1 giữ 104 ảnh đại diện để mô tả giống/khác. Chưa đánh giá chất lượng
+truy hồi hoặc triển khai tìm kiếm yêu cầu 4.
 
 Chạy lại tại root dự án bằng môi trường `.venv/` nêu bên dưới:
 
@@ -63,16 +67,49 @@ hash ảnh, thống kê và bảng báo cáo. Xem [báo cáo yêu cầu 2](docs/
 và [danh mục đầu ra](outputs/inventory/README.md) để biết định nghĩa, giới hạn và
 cách đọc vector. Khi đổi tập đầu vào, cập nhật báo cáo theo kết quả chạy mới.
 
+## Trích xuất B400 và quản trị CSDL — yêu cầu 3
+
+Kết quả thực tế: **812 ảnh / 812 mask hợp lệ; 812 vector B400 thành công,
+0 thất bại; 66 kiểm thử đạt**. Đã đọc lại toàn bộ vector từ SQLite để đối chiếu.
+552 vector có quy ước cho ô màu/profile trống, kèm validity và lý do riêng.
+
+Dùng `.venv/` hiện có, không thêm phụ thuộc, chạy bằng CPU. Ảnh, mask, manifest
+và đầu ra 176 chiều chỉ được đọc. Lệnh `extract` kiểm tra toàn bộ đầu vào,
+trích xuất, fit chuẩn hóa trên tập phát triển và nhập/cập nhật SQLite;
+`verify` đọc lại CSDL, đối chiếu tên/hash/vector/NPZ và tái hiện chuẩn hóa.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/features -v
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py validate
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py verify
+.venv/bin/python -B tools/features/cli.py status
+```
+
+CSDL: [`outputs/features/b400_v1/features.sqlite3`](outputs/features/b400_v1/features.sqlite3).
+Đọc một ảnh bằng `get --filename Equus_asinus_0587.jpg --run-id ID`, dùng ID từ
+lệnh `status`. Các lệnh `init`, `status`, `get` phục vụ tạo/kiểm kê/đọc CSDL;
+đọc luôn chỉ rõ lần chạy để tránh dùng nhầm scaler. `extract` chạy lại cùng đầu
+vào cập nhật cùng bản ghi; nguồn thay đổi tạo lần chạy/scaler riêng. Nếu mã,
+thư viện hoặc cấu hình thay đổi, chọn `--output-dir` mới trong `outputs/features/`.
+
+Các trường hợp ô trống, hue không bão hòa và phép đo không xác định có quy ước
+rõ, kèm validity 400 phần tử và metadata ngoài vector. Thành công trích xuất
+không có nghĩa mọi phép đo đều hợp lệ. Xem [báo cáo yêu cầu 3](docs/reports/b400_implementation.md)
+và [danh mục đầu ra](outputs/features/b400_v1/README.md).
+
 ## Cấu trúc hiện tại
 
 | Vị trí | Vai trò |
 |---|---|
-| [docs/reports/](docs/reports/) | Hai báo cáo phân tích |
+| [docs/reports/](docs/reports/) | Báo cáo yêu cầu 1–3 |
 | [docs/guides/](docs/guides/) | Ba hướng dẫn sử dụng |
 | [tools/image_processing/](tools/image_processing/) | Cắt ảnh, xem trước đổi tên, duyệt ảnh |
 | [tools/segmentation/](tools/segmentation/) | Tạo, duyệt, chỉnh và đồng bộ mask/overlay |
 | [tools/validation/](tools/validation/) | Kiểm kê ảnh và xác minh kết quả |
-| [tests/](tests/) | Kiểm thử compatibility và chuyển mã |
+| [tools/features/](tools/features/) | B400, kiểm tra đầu vào, chuẩn hóa, SQLite và CLI yêu cầu 3 |
+| [outputs/features/b400_v1/](outputs/features/b400_v1/) | CSDL thực tế, scaler, vector và báo cáo kiểm tra yêu cầu 3 |
+| [tests/](tests/) | Kiểm thử công cụ ảnh, chuyển mã, validation và B400/SQLite |
 | [data/source_images/](data/source_images/) | Ảnh nguồn |
 | [data/cropped_images_576x384/](data/cropped_images_576x384/) | Ảnh cắt đang dùng |
 | [data/rejected_crops/](data/rejected_crops/) | Ảnh cắt đã loại khi duyệt |

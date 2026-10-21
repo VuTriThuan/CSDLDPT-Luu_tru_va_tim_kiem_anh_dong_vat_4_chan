@@ -177,44 +177,53 @@ Sobel tổng hợp không định vị cạnh thuộc lông hay nền. Vì vậy
 kết cấu có hướng, hình dạng tiền cảnh và bố cục màu. Đây là lập luận chọn thuộc
 tính từ các ảnh cụ thể, chưa phải kết quả so khoảng cách hoặc thử nghiệm tìm kiếm.
 
-## 4. Bộ thuộc tính được chọn: B400, trạng thái thiết kế
+## 4. Bộ thuộc tính được chọn: B400, đã triển khai ở yêu cầu 3
 
-**Chọn B400 làm bộ cơ bản để triển khai sau. Chưa trích xuất vector B400 cho
-bất kỳ ảnh nào trong lần chạy này.** Đã tính histogram màu toàn khung và các
-thống kê mục 2; chưa tính đầy đủ các khối tiền cảnh, LBP, GLCM, Gabor, Hu,
-lưới mask hay profile đường bao theo định nghĩa dưới đây.
+**Trạng thái hiện tại:** B400, chuẩn hóa và SQLite đã được triển khai trong
+[tools/features/](../../tools/features/), đầu ra riêng tại
+[outputs/features/b400_v1/](../../outputs/features/b400_v1/). Kết quả chạy thực tế
+và quy ước chi tiết ở [báo cáo yêu cầu 3](b400_implementation.md).
+Các kết quả 812×176 và thống kê mục 1–3 vẫn thuộc lần phân tích yêu cầu 2;
+NPZ cũ được giữ nguyên, không đổi tên hoặc diễn giải thành B400.
 
 B400 áp dụng cùng công thức cho mọi nhãn, gồm 4 nhóm: **màu 48 + kết cấu 100 +
 hình dạng 124 + bố cục màu 128 = 400 chiều**.
 
-| Khối thiết kế | Thuộc tính và cách tính dự kiến | Chiều | Giá trị thông tin và giới hạn |
+| Khối thiết kế | Thuộc tính và cách tính | Chiều | Giá trị thông tin và giới hạn |
 |---|---|---:|---|
 | C1 | Histogram tiền cảnh HSV H16/S8/V8; hue có trọng số saturation và xử lý vòng. | 32 | Tông màu, đen–trắng; không giữ vị trí, chịu ảnh hưởng ánh sáng. |
 | C2 | Histogram a8/b8 của Lab uint8, trên tiền cảnh. | 16 | Bổ sung sắc độ vàng/nâu/xám; vẫn chịu cân bằng trắng. |
 | T1 | LBP uniform P=8, R=1 và R=3, mỗi bán kính 10 bin. Chỉ lấy tâm có đủ lân cận trong mask. | 20 | Lông mịn/xù/cuộn; nhạy độ nét và cỡ họa tiết. |
-| T2 | GLCM 64 mức, d={1,3}, góc {0°,45°,90°,135°}; energy, contrast, homogeneity, correlation. Chỉ đếm cặp có cả hai pixel trong mask, đối xứng rồi chuẩn hóa. | 32 | Độ thô/biến thiên mức xám; không dùng nền đặt 0 như cách bỏ nền. Correlation thiếu phương sai phải ghi không hợp lệ. |
-| T3 | Gabor f={0,08;0,16;0,24}, 4 hướng như T2; mean/std biên độ, giữ riêng từng hướng/tần số; hỗ trợ kernel `n_stds=2`. Tâm phải có đủ cửa sổ trong mask. | 48 | Hướng và cỡ vệt; hỗ trợ phân tích sọc/đốm, không tự nhận biết loài. |
+| T2 | GLCM 64 mức, d={1,3}, góc {0°,45°,90°,135°}; energy, contrast, homogeneity, correlation. Chỉ đếm cặp có cả hai pixel trong mask, đối xứng rồi chuẩn hóa. | 32 | Độ thô/biến thiên mức xám; không dùng nền đặt 0 như cách bỏ nền. Correlation thiếu phương sai ghi raw=0, validity=false trong metadata. |
+| T3 | Gabor f={0,08;0,16;0,24}, 4 hướng như T2, bandwidth={1,2}; mean/std biên độ, giữ riêng từng tổ hợp; hỗ trợ kernel `n_stds=2`. Tâm phải có đủ cửa sổ trong mask. | 48 | Hướng và cỡ vệt; hỗ trợ phân tích sọc/đốm, không tự nhận biết loài. |
 | S1 | 7 Hu trên silhouette, signed-log: h=0 trả 0, còn lại −sign(h)log10(max(abs(h),10⁻¹²)). | 7 | Khối dáng chung; nhạy tư thế, che khuất và mask sai. |
 | S2 | w/h bbox; extent A/(wh); solidity A/A_hull; circularity 4πA/P²; eccentricity √(1−λ₂/λ₁). Dùng quy ước diện tích/biên nhất quán. | 5 | Độ kéo dài, lấp đầy và lõm; không phải kích thước cơ thể thật. |
 | S3 | Tỉ lệ pixel tiền cảnh trong lưới 6 hàng × 8 cột. | 48 | Vị trí khối thân/khe chân thô; lưới không là bộ phận giải phẫu. |
-| S4 | Biên trên và dưới, mỗi biên 32 dải ngang, tọa độ y/H; dải trống ghi quy ước thiếu cùng occupancy. | 64 | Đường lưng và phần chân/bụng; đầu/cổ có thể tạo đỉnh giả, chưa là phép đếm bướu. |
+| S4 | Biên trên và dưới, mỗi biên 32 dải ngang, tọa độ y/H; dải trống ghi raw=0, validity=false cùng occupancy ngoài vector. | 64 | Đường lưng và phần chân/bụng; đầu/cổ có thể tạo đỉnh giả, chưa là phép đếm bướu. |
 | P | Lưới 2 hàng × 4 cột; mỗi ô tiền cảnh HSV H8/S4/V4. | 128 | Vị trí mảng màu; nhạy hướng đầu, bbox và lỗi mask. |
 
-Điều kiện triển khai B400:
+Các quyết định triển khai B400 v1 (chi tiết và cấu hình máy đọc được ở yêu cầu 3):
 
-- Có mask đủ tin cậy; không coi mặt nạ đọc được hoặc toàn trắng là phân đoạn đúng.
-  Kết quả GrabCut lịch sử trong repo không chứng minh đã có mask chuẩn cho mọi ảnh.
-- Bbox phải giữ đủ phần nhìn thấy; co đẳng hướng vừa canvas 288 × 192 và thêm
-  đệm, mask nearest-neighbor. Pixel đệm không tham gia màu/kết cấu. Tỉ lệ bbox
-  đo trước đệm; không bóp hình hoặc suy bộ phận bị che.
-- Thống nhất hướng đầu bằng dữ liệu hướng được kiểm tra hoặc quy tắc so khớp
-  hai hướng áp dụng như nhau cho mọi ảnh; tên nhãn không quyết định hướng.
-- Histogram chia L1 rồi căn từng bin; biến liên tục chuẩn hóa theo biến, fit
-  tham số trên phần dữ liệu phát triển. Cân bằng khối trước khi ghép; chưa fit
-  scaler, chọn trọng số hay kiểm nghiệm quy tắc so khớp ở yêu cầu 2.
-- Dữ liệu thiếu do che khuất hoặc mask lỗi phải ghi trạng thái; không điền 0
-  rồi coi đó là phép đo thật. Các khối bộ phận như tai, sừng, bướu cần vùng/mốc
-  riêng trước khi đo; không tự coi OpenCV đã định vị các bộ phận này.
+- Kế thừa manifest `success/da_duyet/dat` hiện hành, kiểm tra SHA-256/kích thước/
+  mask nhị phân. Cờ chất lượng chỉ là metadata, không tự hủy quyết định duyệt.
+- Bbox giữ mọi thành phần, co đẳng hướng vào canvas 288 × 192, đệm giữa;
+  mask nearest-neighbor. RGB nội suy tuyến tính có chuẩn hóa theo mask, tránh
+  pha nền. Tỉ lệ bbox đo trước đệm, không suy bộ phận bị che.
+- LBP chỉ lấy tâm đủ các pixel nội suy; GLCM chỉ đếm cặp tiền cảnh; Gabor chỉ
+  lấy tâm đủ toàn bộ cửa sổ. Gabor thiết kế cũ 3×4×2 chỉ có 24 giá trị: thêm
+  hai bandwidth cố định `{1,2}` cho 48, không lặp giá trị hoặc thêm chiều khác.
+- Không suy hướng từ nhãn: lưu hướng đầu vào; yêu cầu 4 dùng cùng công thức
+  cho truy vấn gốc và lật ngang rồi lấy khoảng cách nhỏ nhất cho mọi ảnh.
+  Chưa triển khai so khớp ở yêu cầu 3.
+- Histogram L1 rồi căn từng bin. Biến liên tục z-score theo chiều trên các
+  quan sát hợp lệ của tập phát triển hiện hành. L2 từng khối con, L2 từng nhóm,
+  trọng số mỗi nhóm 1/4 (hệ số nhân 1/2), nối và L2 cuối. Lưu đầy đủ scaler,
+  khối/thứ tự/phiên bản và hash cấu hình để truy vấn dùng lại, không fit lại.
+- Ô trống, hue tổng saturation bằng 0, correlation thiếu phương sai, vùng
+  kết cấu thiếu hỗ trợ hoặc mẫu số không xác định ghi raw=0 và validity=false
+  cùng lý do ngoài 400 chiều. Fit bỏ giá trị quy ước; sau biến đổi đặt chiều
+  không hợp lệ về 0. Mask rỗng/toàn trắng, sai hash hoặc sai kích thước thất bại
+  và không có vector. Tai, sừng, bướu chưa được định vị/đo riêng.
 
 Các số bin, tần số, lưới và kích thước canvas là tham số thiết kế ban đầu,
 chưa được chọn bằng thử nghiệm chất lượng truy hồi. B400 còn phải kiểm chứng
@@ -225,13 +234,14 @@ trên các cặp khác nhãn giống màu và cùng nhãn khác giống/màu ở
 - Đọc được, cùng kích thước và có vector màu không xác nhận mọi ảnh có đúng
   một cá thể đứng ngang, đủ bốn chân hoặc nhãn sinh học đúng.
 - Các thống kê hiện hành gồm cả nền, không là số đo màu lông/hình dạng con vật.
-  Chưa đo diện tích chủ thể, mốc tai/chân/bướu hoặc chất lượng phân đoạn.
+  Yêu cầu 3 đo silhouette theo mask; chưa định vị mốc tai/chân/bướu hoặc
+  đánh giá chất lượng phân đoạn bằng ground truth.
 - Nhãn theo tên tệp được giữ nguyên, gồm quyết định giữ nhãn một bướu cho
   `Camelus_dromedarius_0892.jpg`, `0894.jpg`, `0910.jpg`, `0912.jpg`; không dùng
   các chỉ số toàn khung để tự đổi nhãn. Kiểm tra tên duy nhất không đồng nghĩa
   kiểm tra ảnh trùng nội dung hoặc gần trùng.
 - Không có kết quả xếp hạng, P@K, mAP, IoU, trọng số tối ưu hoặc phép đo thời
-  gian truy vấn. Chưa triển khai hệ thống tìm kiếm của yêu cầu 3–4.
+  gian truy vấn. Yêu cầu 3 đã có CSDL đặc trưng; chức năng tìm kiếm yêu cầu 4 chưa triển khai.
 
 Chạy từ root dự án trên Mac Intel, dùng môi trường `.venv/` hiện có:
 

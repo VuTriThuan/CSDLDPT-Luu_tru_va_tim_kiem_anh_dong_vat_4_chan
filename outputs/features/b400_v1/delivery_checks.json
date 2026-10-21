@@ -1,0 +1,28 @@
+{
+  "sqlite_table_counts": {
+    "images": 812,
+    "masks": 812,
+    "feature_sets": 1,
+    "normalizers": 1,
+    "runs": 1,
+    "extraction_status": 812,
+    "vectors": 812
+  },
+  "arrays": {
+    "raw_shape": [
+      812,
+      400
+    ],
+    "normalized_shape": [
+      812,
+      400
+    ],
+    "raw_dtype": "float32",
+    "normalized_dtype": "float32",
+    "valid_dimensions": 314202,
+    "invalid_dimensions": 10598,
+    "max_l2_norm_error": 5.960464477539063e-08
+  },
+  "documentation_links_checked": 82,
+  "missing_links": []
+}

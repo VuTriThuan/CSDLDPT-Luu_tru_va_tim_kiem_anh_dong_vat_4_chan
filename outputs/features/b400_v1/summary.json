@@ -1,0 +1,32 @@
+{
+  "run_id": "43e97c9ebecd0ddb8236ecf86fafe9f7d4e4d6a59d7f931786aeea6d3cec6d20",
+  "feature_set_id": "6fdca079a1e06d6cbd7e9952d28e3632a84edb8409f250b006c43f0b5a8ad36c",
+  "normalizer_id": "90c574fe453cfb652fe6df93a24836111d5a608c43cdd861b8c12d65da8b9f98",
+  "input_images": 812,
+  "manifest_rows": 812,
+  "mask_png_files": 812,
+  "validation_success": 812,
+  "validation_failed": 0,
+  "vector_success": 812,
+  "vector_failed": 0,
+  "dimensions": 400,
+  "dtype": "<f4",
+  "finite_raw": true,
+  "finite_normalized": true,
+  "images_with_conventions": 552,
+  "images_all_measurements_valid": 260,
+  "convention_reason_counts": {
+    "empty_profile_strip": 5350,
+    "empty_cell": 984
+  },
+  "invalid_dimensions": 10598,
+  "source_suspicious_flags": 4,
+  "failures": [],
+  "input_issues": [],
+  "elapsed_seconds": 274.901,
+  "created_at_utc": "2026-10-20T04:03:47.698241+00:00",
+  "completed_at_utc": "2026-10-20T04:08:00.380673+00:00",
+  "machine": "x86_64",
+  "database": "features.sqlite3",
+  "status": "complete"
+}

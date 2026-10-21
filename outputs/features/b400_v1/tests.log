@@ -1,0 +1,26 @@
+test_background_cannot_change_any_measurement (test_b400.DescriptorTests) ... ok
+test_dimensions_and_order (test_b400.DescriptorTests) ... ok
+test_foreground_red_histogram_and_undefined_correlation (test_b400.DescriptorTests) ... ok
+test_gabor_constant_and_directional_response (test_b400.DescriptorTests) ... ok
+test_geometry_preserves_disconnected_parts_and_holes (test_b400.DescriptorTests) ... ok
+test_glcm_pair_count_and_known_properties (test_b400.DescriptorTests) ... ok
+test_invalid_masks_fail_without_vector (test_b400.DescriptorTests) ... ok
+test_lbp_uniform_and_exact_support (test_b400.DescriptorTests) ... ok
+test_missing_and_achromatic_histograms_have_metadata (test_b400.DescriptorTests) ... ok
+test_normalization_valid_only_fit_reusable_and_balanced (test_b400.DescriptorTests) ... ok
+test_rectangle_geometry_has_analytical_values (test_b400.DescriptorTests) ... ok
+test_thin_foreground_records_missing_texture_support (test_b400.DescriptorTests) ... ok
+test_changed_configuration_and_source_are_rejected (test_b400.PipelineTests) ... ok
+test_failed_input_is_stored_without_vector (test_b400.PipelineTests) ... ok
+test_missing_source_mask_and_unreferenced_mask (test_b400.PipelineTests) ... ok
+test_output_overlap_is_rejected_before_writing (test_b400.PipelineTests) ... ok
+test_preflight_hash_mismatch_is_named (test_b400.PipelineTests) ... ok
+test_preflight_inherits_review_flags_and_is_read_only (test_b400.PipelineTests) ... ok
+test_preflight_mismatch_binary_duplicates_and_unsafe_paths (test_b400.PipelineTests) ... ok
+test_sqlite_roundtrip_idempotency_verify_and_constraints (test_b400.PipelineTests) ... ok
+test_updated_masks_create_isolated_run_without_duplicate_images (test_b400.PipelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 7.310s
+
+OK

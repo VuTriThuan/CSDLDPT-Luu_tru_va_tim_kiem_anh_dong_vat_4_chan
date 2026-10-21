@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "run_id": "43e97c9ebecd0ddb8236ecf86fafe9f7d4e4d6a59d7f931786aeea6d3cec6d20",
+  "sqlite_vectors_checked": 812,
+  "source_hashes_checked": 812,
+  "mask_hashes_checked": 812,
+  "input_validation_failed": 0,
+  "sqlite_integrity": "ok",
+  "sqlite_foreign_keys": "ok",
+  "frozen_normalization_reproduced": true,
+  "source_audit_unchanged": true,
+  "checked_at_utc": "2026-10-21T12:38:59.792675+00:00"
+}

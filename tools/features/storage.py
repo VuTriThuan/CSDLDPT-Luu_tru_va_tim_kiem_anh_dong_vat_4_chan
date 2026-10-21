@@ -67,8 +67,13 @@ def save(db, feature_set, run, records, raw, normalized, validity, normalizer):
         if normalizer:
             db.execute('INSERT OR IGNORE INTO normalizers VALUES(?,?,?)',
                        (normalizer['id'],feature_set['id'],dumps(normalizer)))
+        # A transient extraction failure can change the successful fit rows while
+        # retaining the same input/run digest. Remove children before switching
+        # the parent's scaler, then replace them inside this same transaction.
+        db.execute('DELETE FROM vectors WHERE run_id=?',(run['id'],))
         db.execute('INSERT INTO runs VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET '
-                   'completed_at=excluded.completed_at,status=excluded.status,audit_json=excluded.audit_json',
+                   'normalizer_id=excluded.normalizer_id,completed_at=excluded.completed_at,'
+                   'status=excluded.status,audit_json=excluded.audit_json',
                    (run['id'],feature_set['id'],normalizer['id'] if normalizer else None,
                     run['input_digest'],run['created_at'],run['completed_at'],run['status'],dumps(run['audit'])))
         index=0
@@ -101,6 +106,8 @@ def save(db, feature_set, run, records, raw, normalized, validity, normalizer):
                 db.execute('DELETE FROM vectors WHERE run_id=? AND filename=?',(run['id'],row['filename']))
         if index!=len(raw):
             raise ValueError('Vector count differs from successful records')
+        db.execute('DELETE FROM normalizers WHERE id NOT IN '
+                   '(SELECT normalizer_id FROM runs WHERE normalizer_id IS NOT NULL)')
 
 
 def read_vector(db, run_id, filename):

@@ -1,6 +1,6 @@
 {
   "verified": true,
-  "run_id": "43e97c9ebecd0ddb8236ecf86fafe9f7d4e4d6a59d7f931786aeea6d3cec6d20",
+  "run_id": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
   "sqlite_vectors_checked": 812,
   "source_hashes_checked": 812,
   "mask_hashes_checked": 812,
@@ -9,5 +9,7 @@
   "sqlite_foreign_keys": "ok",
   "frozen_normalization_reproduced": true,
   "source_audit_unchanged": true,
-  "checked_at_utc": "2026-10-21T12:38:59.792675+00:00"
+  "checked_at_utc": "2026-10-21T14:53:58.684080+00:00",
+  "scaler_refit_reproduced": true,
+  "raw_s3_binary": true
 }

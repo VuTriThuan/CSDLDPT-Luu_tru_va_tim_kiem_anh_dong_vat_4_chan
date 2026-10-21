@@ -6,6 +6,7 @@ from pathlib import Path
 import sqlite3
 import tempfile
 import unittest
+from unittest import mock
 
 import cv2
 import numpy as np
@@ -35,6 +36,115 @@ class DescriptorTests(unittest.TestCase):
         self.assertTrue(np.isfinite(raw).all())
         self.assertEqual(valid.shape,(400,))
         self.assertEqual(q['gabor_support'].__len__(),24)
+        self.assertEqual(names[159],'S2_axis_ratio')
+        self.assertNotIn('eccentricity',' '.join(names))
+        self.assertTrue(np.isin(raw[160:208],[0,1]).all())
+        config=b400.configuration()
+        self.assertEqual(config['canvas'],[288,192])
+        self.assertEqual(config['s3']['canvas'],[256,192])
+        self.assertEqual(config['s3']['cell'],[32,32])
+        self.assertEqual([b['version'] for b in config['blocks']],[1,1,1,1,1,1,2,2,1,1])
+
+    def test_strict_threshold_below_equal_above(self):
+        # 32x32 cells cannot have exactly 15% integer occupancy. Use 20 pixels
+        # to exercise exact equality independently of the production cell size.
+        np.testing.assert_array_equal(b400.occupancy_bits([2,3,4],20),[0,0,1])
+        np.testing.assert_array_equal(b400.occupancy_bits([153,154],1024),[0,1])
+
+    def test_grid_all_48_cells_in_row_order_and_square_cells(self):
+        mask=np.zeros((192,256),np.uint8)
+        # Every cell has a distinct known count. Opposite corner pixels anchor
+        # the full bbox so the resize is exactly identity.
+        counts=[50+12*i for i in range(48)]
+        for i,n in enumerate(counts):
+            r,c=divmod(i,8)
+            for offset in range(n):
+                y,x=divmod(offset,32)
+                mask[32*r+y,32*c+x]=255
+        mask[-1,-1]=255
+        counts[-1]+=1
+        bits,q=b400.shape_grid(mask)
+        np.testing.assert_array_equal(q['foreground_counts'],counts)
+        np.testing.assert_array_equal(q['occupancy'],np.array(counts)/1024)
+        np.testing.assert_array_equal(bits,[int(n/1024>.15) for n in counts])
+        self.assertEqual(q['resized'],[256,192])
+        self.assertEqual(q['offset'],[0,0])
+
+    def test_grid_uniform_scale_padding_and_disconnected_bbox(self):
+        mask=np.zeros((300,400),np.uint8)
+        mask[30:110,50:210]=255  # aspect 2 -> 256x128 with 32px y padding
+        bits,q=b400.shape_grid(mask)
+        self.assertEqual(q['source_bbox'],[50,30,160,80])
+        self.assertEqual(q['scale'],1.6)
+        self.assertEqual(q['resized'],[256,128])
+        self.assertEqual(q['offset'],[0,32])
+        np.testing.assert_array_equal(np.array(q['occupancy']).reshape(6,8),
+                                      [[0]*8]+[[1]*8]*4+[[0]*8])
+        mask[200,350]=255
+        _,q=b400.shape_grid(mask)
+        self.assertEqual(q['source_bbox'],[50,30,301,171])
+
+    def test_axis_rectangle_tie_and_source_pixel_lengths(self):
+        mask=np.zeros((20,30),np.uint8)
+        mask[4:9,3:12]=255  # endpoints (3,4),(11,8), diagonal sqrt(80)
+        ratio,valid,q=b400.source_axis_ratio(mask)
+        self.assertTrue(valid)
+        self.assertEqual(q['major_endpoints'],[[3,4],[11,8]])
+        self.assertAlmostEqual(q['major_length'],np.sqrt(80))
+        self.assertAlmostEqual(q['minor_length'],64/np.sqrt(80))
+        self.assertAlmostEqual(ratio,80/64)
+        # Both rectangle diagonals tie; translation preserves the chosen pair.
+        for _ in range(3):
+            self.assertEqual(b400.source_axis_ratio(mask)[2],q)
+        raw,v,quality=b400.extract(np.zeros((20,30,3),np.uint8),mask)
+        self.assertEqual(raw[159],np.float32(1.25))
+        self.assertEqual(quality['s2e'],q)
+        mask[:]=0;mask[4:9,3:8]=255
+        ratio,valid,q=b400.source_axis_ratio(mask)
+        self.assertAlmostEqual(ratio,1.)
+        self.assertEqual(q['major_endpoints'],[[3,4],[7,8]])
+
+    def test_axis_triangle_and_disconnected_parts(self):
+        mask=np.zeros((20,20),np.uint8)
+        # Three points, known unique diameter (2,8)->(10,2), length 10;
+        # perpendicular span from (2,2) is 48/10, ratio=25/12.
+        mask[2,2]=mask[8,2]=mask[2,10]=255
+        ratio,valid,q=b400.source_axis_ratio(mask)
+        self.assertTrue(valid)
+        self.assertEqual(q['major_endpoints'],[[2,8],[10,2]])
+        self.assertAlmostEqual(q['major_length'],10.)
+        self.assertAlmostEqual(q['minor_length'],4.8)
+        self.assertAlmostEqual(ratio,25/12)
+
+    def test_axis_degenerate_point_and_collinear_mask(self):
+        for coords in [[(5,5)],[(5,5),(5,6),(5,7)],[(2,2),(4,4),(6,6)]]:
+            mask=np.zeros((20,20),np.uint8)
+            for y,x in coords:
+                mask[y,x]=255
+            ratio,ok,q=b400.source_axis_ratio(mask)
+            self.assertFalse(ok)
+            self.assertEqual(ratio,0.)
+            raw,valid,quality=b400.extract(np.zeros((20,20,3),np.uint8),mask)
+            self.assertEqual(raw[159],0.)
+            self.assertFalse(valid[159])
+            self.assertIn(q['reason'],[c['reason'] for c in quality['conventions']])
+            self.assertTrue(np.isfinite(raw).all())
+
+    def test_axis_hull_matches_independent_bruteforce_foreground(self):
+        rng=np.random.default_rng(91)
+        for _ in range(25):
+            mask=(rng.random((8,10))<.2).astype(np.uint8)*255
+            points=sorted((int(x),int(y)) for y,x in zip(*np.nonzero(mask)))
+            pairs=[(a,b) for i,a in enumerate(points) for b in points[i+1:]]
+            squared=lambda p:sum((b-a)**2 for a,b in zip(*p))
+            maximum=max(map(squared,pairs))
+            a,b=min(p for p in pairs if squared(p)==maximum)
+            dx,dy=b[0]-a[0],b[1]-a[1]
+            projections=[-dy*(x-a[0])+dx*(y-a[1]) for x,y in points]
+            ratio,ok,q=b400.source_axis_ratio(mask)
+            self.assertEqual(q['major_endpoints'],[list(a),list(b)])
+            self.assertTrue(ok)
+            self.assertAlmostEqual(ratio,maximum/(max(projections)-min(projections)))
 
     def test_foreground_red_histogram_and_undefined_correlation(self):
         raw,valid,q=b400.extract(self.rgb,self.mask)
@@ -307,6 +417,58 @@ class PipelineTests(unittest.TestCase):
         row=db.execute('SELECT * FROM extraction_status').fetchone()
         self.assertEqual(row['status'],'failed')
         self.assertTrue(row['error'])
+
+    def test_partial_extraction_retry_replaces_scaler_transactionally(self):
+        # Two valid inputs; one transient descriptor failure leaves a partial
+        # run with a one-row scaler, then retry fits two rows under the same ID.
+        second='animal_0002.jpg'
+        for directory in [self.source,self.seg/'masks',self.seg/'overlays']:
+            suffix='' if directory==self.source else '.png'
+            (directory/(second+suffix)).write_bytes((directory/(self.name+suffix)).read_bytes())
+        entry=dict(self.entry,filename=second,mask_path='masks/'+second+'.png',
+                   overlay_path='overlays/'+second+'.png')
+        self.write_manifest([self.entry,entry])
+        with self.inventory.open('a',newline='') as f:
+            csv.writer(f).writerow([second,1,entry['source_sha256']])
+        original=b400.extract
+        calls=0
+        def fail_second(*args):
+            nonlocal calls
+            calls+=1
+            if calls==2:
+                raise ValueError('injected transient failure')
+            return original(*args)
+        with mock.patch.object(b400,'extract',side_effect=fail_second):
+            self.assertEqual(self.command('extract'),1)
+        first=json.loads((self.out/'summary.json').read_text())
+        self.assertEqual(first['vector_success'],1)
+        self.assertEqual(self.command('extract'),0)
+        second_summary=json.loads((self.out/'summary.json').read_text())
+        self.assertEqual(first['run_id'],second_summary['run_id'])
+        self.assertNotEqual(first['normalizer_id'],second_summary['normalizer_id'])
+        with storage.connect(self.out/'features.sqlite3') as db:
+            self.assertEqual(db.execute('SELECT count(*) FROM normalizers').fetchone()[0],1)
+            self.assertEqual(db.execute('SELECT count(*) FROM vectors').fetchone()[0],2)
+            self.assertEqual(db.execute('PRAGMA foreign_key_check').fetchall(),[])
+            self.assertEqual({r[0] for r in db.execute('SELECT normalizer_id FROM vectors')},
+                             {second_summary['normalizer_id']})
+        self.assertEqual(self.command('verify'),0)
+
+    def test_rebuild_failure_preserves_old_outputs_then_success_replaces(self):
+        self.assertEqual(self.command('extract'),0)
+        (self.out/'obsolete.txt').write_text('old formula artifact')
+        before={p.name:p.read_bytes() for p in self.out.iterdir() if p.is_file()}
+        with mock.patch.object(b400,'extract',side_effect=ValueError('injected')):
+            self.assertEqual(self.command('extract','--rebuild'),1)
+        self.assertEqual(before,{p.name:p.read_bytes() for p in self.out.iterdir() if p.is_file()})
+        with mock.patch.object(cli,'exchange_directories',side_effect=OSError('injected exchange failure')):
+            with contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(self.command('extract','--rebuild'),2)
+        self.assertEqual(before,{p.name:p.read_bytes() for p in self.out.iterdir() if p.is_file()})
+        self.assertEqual(self.command('extract','--rebuild'),0)
+        self.assertFalse((self.out/'obsolete.txt').exists())
+        self.assertEqual(list(self.out.parent.glob('.features-build-*')),[])
+        self.assertEqual(self.command('verify'),0)
 
     def test_changed_configuration_and_source_are_rejected(self):
         self.assertEqual(self.command('extract'),0)

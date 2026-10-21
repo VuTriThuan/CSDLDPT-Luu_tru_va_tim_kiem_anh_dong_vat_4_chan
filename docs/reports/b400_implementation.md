@@ -36,7 +36,10 @@ kiểm tra lại cả tập đầu vào. Nếu thay đổi trong lúc chạy, kh
 
 ## Định nghĩa 400 giá trị
 
-Tất cả khối có phiên bản 1. `feature_set.json` lưu đầy đủ 400 tên chiều và thứ tự;
+Giữ tên B400 và đường dẫn `outputs/features/b400_v1/`; ngày 21/10/2026 đã tính
+lại nội dung theo S2e/S3 mới. Vector/scaler cũ không tương đương vector/scaler
+hiện hành. S2/S3 có revision khối 2, các khối khác vẫn 1; không tạo bộ B400 mới.
+`feature_set.json` lưu đầy đủ 400 tên chiều, công thức, hash mã/runtime và thứ tự;
 NPZ lưu cùng tên. Dtype vector lưu trữ là little-endian float32 (`<f4`). Tính nội
 bộ bằng float64 rồi chuyển một lần sang float32.
 
@@ -48,8 +51,8 @@ bộ bằng float64 rồi chuyển một lần sang float32.
 | T2 | `[68:100]` | 32 | d=1,3; góc 0,45,90,135; energy/contrast/homogeneity/correlation |
 | T3 | `[100:148]` | 48 | f=0.08,0.16,0.24; góc 0,45,90,135; bandwidth=1,2; mean/std |
 | S1 | `[148:155]` | 7 | Hu h1…h7 signed-log |
-| S2 | `[155:160]` | 5 | aspect, extent, solidity, circularity, eccentricity |
-| S3 | `[160:208]` | 48 | Lưới mask 6 hàng × 8 cột, theo hàng rồi cột |
+| S2 | `[155:160]` | 5 | aspect, extent, solidity, circularity, axis_ratio (S2e tại 159) |
+| S3 | `[160:208]` | 48 | Bit lưới mask 6 hàng × 8 cột, theo hàng rồi cột |
 | S4 | `[208:272]` | 64 | 32 biên trên rồi 32 biên dưới |
 | P | `[272:400]` | 128 | Lưới 2 hàng × 4 cột, mỗi ô H8/S4/V4 |
 
@@ -57,7 +60,9 @@ bộ bằng float64 rồi chuyển một lần sang float32.
 
 Bbox bao toàn bộ pixel tiền cảnh, giữ mọi thành phần liên thông. Co cùng một
 hệ số `min(288/w,192/h)`; làm tròn kích thước về số nguyên gần nhất, ít nhất 1
-pixel; đặt giữa canvas 288×192. Không xoay ảnh EXIF hoặc biến đổi ICC.
+pixel; đặt giữa canvas 288×192 cho các khối hiện hữu trừ S3. S2e đo trực tiếp
+mask nguồn trước resize. S3 có canvas riêng mô tả bên dưới.
+Không xoay ảnh EXIF hoặc biến đổi ICC.
 Mask resize nearest-neighbor. RGB resize tuyến tính theo
 `resize(RGB×mask)/resize(mask)` để pixel nền không pha vào tiền cảnh. Trường hợp
 nearest mask chọn pixel tiền cảnh mà tổng trọng số tuyến tính bằng 0 dùng RGB
@@ -107,13 +112,49 @@ phần giới hạn mask và quy ước thiếu là quyết định cụ thể c
 
 Hu từ moments mask nhị phân trên canvas, bao mọi thành phần và lỗ;
 `h=0→0`, còn lại `−sign(h) log10(max(|h|,10⁻¹²))`. Aspect w/h lấy bbox nguồn
-trước đệm. Các phép hình học còn lại đo canvas bằng quy ước raster nhất quán:
+trước đệm. Extent, solidity và circularity đo canvas 288×192 bằng quy ước raster nhất quán:
 A là số pixel tiền cảnh; extent=A/(w×h) với bbox canvas; A_hull là số pixel của
 convex hull tô kín bao tâm mọi pixel; P là tổng cạnh pixel lộ ra, gồm biên lỗ;
-circularity=4πA/P². Eccentricity từ covariance tâm pixel (ddof=0),
-`√max(0,1−λmin/λmax)`.
+circularity=4πA/P². Các công thức này không thay đổi.
 
-S3 là occupancy mỗi ô mask, gồm vùng đệm để giữ bố cục. S4 chia trục x canvas
+**S2e (`S2_axis_ratio`, một chiều):** `major_length/minor_length`, đo trên mask
+nguồn trước resize, không dùng PCA hoặc tỉ lệ trị riêng covariance. Tọa độ là
+tâm pixel nguyên `(x=cột,y=hàng)`, gốc trên trái, y tăng xuống; độ dài theo
+đơn vị pixel, không cộng 1 vào khoảng cách. Lấy convex hull của tâm mọi pixel
+tiền cảnh: các đỉnh là điểm biên, giữ cả thành phần rời; đường kính và cực trị
+phép chiếu của hull bằng của toàn đường bao.
+
+Trục chính nối hai đỉnh có khoảng cách Euclid lớn nhất. So sánh khoảng cách
+bình phương bằng số nguyên; nếu nhiều cặp hòa, sắp hai đầu theo `(x,y)` rồi
+chọn cặp nhỏ nhất theo thứ tự từ điển. Trục phụ đo bề rộng bao đủ hình theo
+phương vuông góc: với `d=(dx,dy)`, `L=|d|`, lấy
+`minor=(max cross(d,p−a)−min cross(d,p−a))/L`. Không dùng trục phụ đi qua
+trọng tâm để thay thế bề rộng này. Hình chữ nhật có trục chính là đường chéo;
+tỉ lệ này không đồng nhất w/h bbox, cũng không bị chặn trong [0,1].
+Một tâm pixel hoặc hình thẳng hàng có trục chính/bề rộng bằng 0: raw=0,
+validity=false, lý do `undefined_axis_ratio_zero_major` hoặc
+`undefined_axis_ratio_zero_minor`. `quality.s2e` lưu hai đầu trục chính, độ dài
+hai trục, cực trị phép chiếu, cross span và trạng thái hợp lệ; không tạo tỉ lệ giả.
+
+**S3 (48 bit raw):** bbox bao toàn bộ tiền cảnh mask nguồn; co cùng một hệ số
+`min(256/w,192/h)`; round kích thước gần nhất (hòa về số chẵn), ít nhất 1 pixel;
+nearest-neighbor, đệm 0 vào giữa canvas **256×192**, offset floor. Làm tròn
+kích thước chỉ gây sai số raster, không co riêng hai trục để kéo giãn con vật.
+Lưới **6 hàng × 8 cột**, mỗi ô vuông **32×32=1024 pixel**, gồm cả đệm;
+đọc trái sang phải rồi trên xuống dưới. `r=foreground_count/1024`,
+`bit=1 nếu r>0.15, ngược lại 0`, triển khai so nguyên `20*count>3*1024`.
+Đúng 15% cho 0; với ô 1024 pixel, 153 cho 0 và 154 cho 1 (không có số pixel
+nguyên đạt đúng 15%, nên kiểm thử riêng 3/20). `quality.s3` lưu 48 occupancy
+trước ngưỡng, counts, diện tích ô, bbox, scale, resized và offset.
+Bit 0 có thể là ô trống **hoặc có không quá 15% tiền cảnh**, đều là phép đo hợp lệ.
+
+Canvas 256×192 và lưới 6×8 là lựa chọn của nhóm để giữ 48 chiều, không do bài
+giảng quy định. Repo không có PDF bài giảng nên **chưa đối chiếu được bản PDF**;
+dùng định nghĩa đã giao: ngưỡng trên 15%, hai điểm xa nhất, trục phụ vuông góc
+bao đủ hình, tỉ lệ độ dài. Chưa chuẩn hóa xoay hoặc đặt trục chính dài 192;
+chỉ áp dụng hai thay đổi S2e/S3, không tuyên bố đủ quy trình slide.
+
+S4 giữ nguyên, chia trục x canvas 288×192
 thành 32 dải, biên trên=min_y/192, biên dưới=(max_y+1)/192 trên mọi tiền cảnh
 của dải; lưu thêm số pixel occupancy mỗi dải trong metadata.
 
@@ -125,7 +166,7 @@ của dải; lưu thêm số pixel occupancy mỗi dải trong metadata.
 | Hue tổng saturation bằng 0 | raw=0 | validity=false, `zero_hue_saturation` |
 | Không có tâm LBP/Gabor hoặc cặp GLCM hợp lệ | raw=0 | validity=false, lý do thiếu hỗ trợ, số mẫu |
 | Correlation hoặc mẫu số hình học không xác định | raw=0 | validity=false, lý do cụ thể |
-| Hu bằng 0, histogram có bin 0, occupancy ô mask bằng 0 | Giá trị đo hợp lệ | validity=true |
+| Hu bằng 0, histogram có bin 0, bit S3 bằng 0 | Giá trị đo hợp lệ | validity=true; S3 có thể có occupancy ≤15% |
 | Mask rỗng/toàn ảnh, không nhị phân, lệch kích thước/hash hoặc NaN/Inf | Không tạo vector | status=failed, tên và lý do |
 
 `validity` có 400 phần tử, lưu riêng trong NPZ/SQLite; không nối vào B400.
@@ -140,6 +181,8 @@ phép đo của ảnh là hợp lệ.
    các giá trị validity=true. Chiều không có quan sát dùng mean=0, scale=1;
    std≤10⁻¹² dùng scale=1. Lưu count, mean, scale và cờ constant cho mọi chiều.
    Không clipping; sau biến đổi đặt chiều validity=false về 0.
+   S3 raw vẫn là bit; sau z-score/L2 giá trị có thể không còn 0 hoặc 1.
+   Scaler đã được fit lại trên toàn bộ vector mới, không tái sử dụng scaler cũ.
 3. L2 mỗi khối con: C1/C2; T1/T2/T3; S1/S2/S3/S4; tám ô P. L2 lại mỗi nhóm
    màu/kết cấu/hình dạng/bố cục để cân bằng nội nhóm.
 4. Mỗi nhóm có trọng số khoảng cách 1/4, nhân hệ số √(1/4)=1/2, nối theo
@@ -203,65 +246,79 @@ PRAGMA foreign_keys bật trên mọi kết nối. Đọc/kiểm kê dùng mode=
 
 Chạy lại cùng mã/cấu hình/runtime/nguồn dùng cùng run ID, UPSERT không nhân đôi.
 Ảnh hoặc mask đổi hợp lệ tạo revision và run/scaler mới; giữ vector/scaler cũ
-trong SQLite. Các JSON/NPZ/CSV bên cạnh biểu diễn lần chạy mới nhất. Khi mã,
-cấu hình hoặc runtime đổi, CLI từ chối trộn trong cùng thư mục: chọn đầu ra mới.
+trong SQLite nếu cùng công thức. Các JSON/NPZ/CSV bên cạnh biểu diễn lần chạy
+mới nhất. Khi mã/cấu hình/runtime đổi, `extract` thường từ chối; dùng
+`extract --rebuild` để dựng sạch bằng thư mục tạm cùng filesystem, fit scaler
+mới và verify toàn bộ trước khi hoán đổi thư mục nguyên tử (macOS renamex_np,
+Linux renameat2). Nếu trích xuất/kiểm chứng/hoán đổi thất bại, đầu ra cũ vẫn
+nguyên; không công bố kết quả partial. Thư mục tạm được dọn sau cùng; không
+bàn giao thư mục B400 thứ hai. Khóa ghi nằm ngoài thư mục được hoán đổi.
+Lần thay công thức này CSDL được dựng sạch, không giữ vector/scaler/cấu hình cũ.
+
+Lỗi một phần rồi chạy lại cùng input/run ID: xóa vector con trước khi cập nhật
+normalizer của run và tạo lại vector trong cùng transaction; loại scaler không
+còn được run nào tham chiếu. Lỗi nhập CSDL rollback cả lần thay, tránh lỗi FK
+và tránh gắn vector vào scaler của tập fit trước.
 Tên nhãn không làm khóa vector; đọc phải cung cấp filename **và** run ID.
 
 ## Kết quả chạy và kiểm chứng
 
 <!-- actual-results:start -->
-Lần chạy thực tế ngày 20/10/2026, Mac Intel, CPU; mã thoát **0**.
-Không còn lỗi ảnh/mask/trích xuất hoặc sai lệch chưa xử lý trong lần chạy này.
+Lần chạy thực tế ngày 21/10/2026, Mac Intel, CPU, môi trường Python hiện có;
+`extract --rebuild` trả mã **0**. Kiểm kê đầu vào thực tế, không gắn cứng số ảnh.
+Không có tệp lỗi: `failures=[]`; không có vấn đề đầu vào toàn cục.
 
 | Kiểm tra | Kết quả thực tế |
 |---|---:|
 | Ảnh JPEG / dòng manifest / mask PNG | 812 / 812 / 812 |
 | Kiểm tra ảnh–mask thành công / thất bại | 812 / 0 |
 | Vector B400 thành công / thất bại | **812 / 0** |
-| Raw / normalized | 812×400 / 812×400, float32, không NaN/Inf |
-| Vector đọc lại từ SQLite và khớp kết quả trích xuất | 812 |
-| Hash ảnh / mask kiểm lại | 812 / 812 |
-| Ảnh có toàn bộ phép đo hợp lệ | 260 |
-| Ảnh có ít nhất một giá trị theo quy ước | 552 |
-| Số chiều không hợp lệ (ngoài vector ghi validity=false) | 10598 / 324800 |
-| Bản ghi quy ước empty_profile_strip / empty_cell | 5350 / 984 |
-| Ảnh có cờ suspicious lịch sử, vẫn giữ quyết định duyệt | 4 |
-| Lỗi / ảnh bỏ qua / vấn đề đầu vào toàn cục | 0 / 0 / 0 |
-| SQLite integrity / foreign keys | ok / ok |
-| Chuẩn hóa tái hiện từ scaler đã lưu | Đạt, khớp chính xác float32 |
-| Thời gian đến xuất summary, gồm preflight và nhập CSDL, chưa gồm verify | 274.901 giây |
+| Raw / normalized | 812×400 / 812×400, float32, hữu hạn |
+| Vector đọc lại SQLite; hash ảnh / mask kiểm lại | 812; 812 / 812 |
+| Ảnh có toàn bộ phép đo hợp lệ / có quy ước thiếu | 260 / 552 |
+| Số chiều validity=false | 10598 / 324800 |
+| Quy ước empty_profile_strip / empty_cell | 5350 / 984 |
+| Ảnh có cờ suspicious lịch sử, giữ quyết định duyệt | 4 |
+| SQLite integrity / khóa ngoại | ok / ok |
+| Tái hiện chuẩn hóa / fit lại scaler để đối chiếu | Khớp chính xác / đạt |
+| Thời gian tới summary, chưa gồm verify | 370.076 giây |
 
-**812 vector B400 trích xuất thành công** có cả giá trị đo và giá trị quy ước
-được phân biệt rõ. Các quy ước của bộ thực tế chỉ do dải profile hoặc ô màu
-trống; không có ảnh thiếu hỗ trợ LBP/Gabor/cặp GLCM hoặc correlation không xác
-định. 984 bản ghi empty_cell là các histogram kênh trong 328 ô HSV trống;
-5350 bản ghi profile tương ứng 2675 dải trống × hai biên. Không tạo số đo giả
-cho vùng đó và không loại mask đã duyệt chỉ vì vùng trống.
+CSDL dựng sạch có 812 images, masks, extraction_status, vectors;
+một feature_set, một normalizer và một run. Không còn bản ghi công thức/scaler
+cũ trong CSDL hiện hành. Các quy ước thiếu thực tế chỉ do ô màu/profile trống;
+S2e và 48 bit S3 đều hợp lệ trên bộ ảnh lần này.
 
-CSDL hiện có 812 images, 812 masks, 812 extraction_status, 812 vectors, một
-feature_set, một normalizer và một run. Các kiểm thử chạy lại/cập nhật mask trên
-bộ tạm chứng minh không trùng bản ghi và không trộn scaler giữa hai lần chạy.
-
-- Run ID: `43e97c9ebecd0ddb8236ecf86fafe9f7d4e4d6a59d7f931786aeea6d3cec6d20`.
-- Feature set ID: `6fdca079a1e06d6cbd7e9952d28e3632a84edb8409f250b006c43f0b5a8ad36c`.
-- Normalizer ID: `90c574fe453cfb652fe6df93a24836111d5a608c43cdd861b8c12d65da8b9f98`.
+- Run ID: `2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804`.
+- Feature set ID: `35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338`.
+- Normalizer ID: `fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4`.
 
 Bằng chứng: [summary.json](../../outputs/features/b400_v1/summary.json),
 [verification.json](../../outputs/features/b400_v1/verification.json),
 [input_validation.json](../../outputs/features/b400_v1/input_validation.json),
 [status.csv](../../outputs/features/b400_v1/status.csv),
-[extraction.log](../../outputs/features/b400_v1/extraction.log).
-Verifier yêu cầu 2 cũng [đạt trên dữ liệu cũ](../../outputs/features/b400_v1/requirement2_verification.log),
-bao gồm 812 vector 176 chiều, hash nguồn và bảng số liệu báo cáo; các đầu ra đó
-không bị chuyển thành B400. Tổng cộng **66 kiểm thử đạt** (21 mới + 45 hồi quy).
+[extraction.log](../../outputs/features/b400_v1/extraction.log),
+[delivery_checks.json](../../outputs/features/b400_v1/delivery_checks.json).
+Verifier đọc lại toàn bộ raw/normalized/validity từ SQLite, đối chiếu chính xác
+float32 với NPZ, tên/hash ảnh và mask, metadata, config/scaler và ID. Kiểm tra
+integrity/FK, fit lại scaler từ raw để đối chiếu và tái hiện chuẩn hóa đã lưu.
+Kiểm tra độc lập S2e/S3 từ từng mask nguồn và so 351 chiều raw không sửa với
+toàn bộ bộ cũ; hash mọi tệp được bảo vệ (ảnh/mask/manifest/nhãn và đầu ra yêu
+cầu 2) không đổi, chi tiết trong delivery_checks.json.
+
+Bộ **176 chiều yêu cầu 2 giữ nguyên**, [verifier đạt](../../outputs/features/b400_v1/requirement2_verification.log).
+Tổng **75 kiểm thử đạt**: 30 B400/SQLite + 21 validation + 24 xử lý ảnh.
 <!-- actual-results:end -->
 
-[21 kiểm thử mới](../../outputs/features/b400_v1/tests.log) kiểm tra thứ tự/chiều,
+[30 kiểm thử B400/SQLite](../../outputs/features/b400_v1/tests.log) kiểm tra thứ tự/chiều,
 màu đơn sắc, histogram hue vòng, độc lập nền khi resize, LBP hỗ trợ nội suy,
 GLCM cặp tiền cảnh và phép tính biết trước, Gabor trên ảnh hằng/sọc, hình học
 hình chữ nhật, giữ phần rời/lỗ, mask không hợp lệ, vùng thiếu hỗ trợ, scaler
 fit bỏ giá trị quy ước, trọng số/L2, hash/đường dẫn/ảnh thiếu, SQLite round trip,
 FK/ràng buộc, idempotency, phiên bản mask mới và phát hiện sửa CSDL/nguồn.
+Bổ sung ngưỡng dưới/đúng/trên 15%, 48 ô vuông theo hàng, co đều/đệm,
+trục hình chữ nhật/vuông/tam giác, hòa đường kính, hình suy biến, so đường
+kính với vét cạn độc lập, chạy lại sau lỗi một phần và giữ đầu ra cũ khi
+rebuild hoặc hoán đổi thư mục thất bại.
 
 Hồi quy đã chạy: [21 kiểm thử validation](../../outputs/features/b400_v1/regression_validation.log)
 và [24 kiểm thử xử lý ảnh](../../outputs/features/b400_v1/regression_image_processing.log).
@@ -279,13 +336,11 @@ trong README. SQLite đi kèm Python; cần hệ tệp cục bộ hỗ trợ kh�
 ```sh
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/features -v
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py validate
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract --rebuild
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py verify
 .venv/bin/python -B tools/features/cli.py status
 # Thay ID bằng run ID từ status; không bỏ phiên bản khi đọc.
 .venv/bin/python -B tools/features/cli.py get --filename Equus_asinus_0587.jpg --run-id ID
-# Tạo schema riêng khi cần, không trích xuất:
-.venv/bin/python -B tools/features/cli.py init --output-dir outputs/features/b400_empty
 ```
 
 CLI hỗ trợ cả `python -m tools.features.cli` và gọi tệp trực tiếp. Có thể chỉ
@@ -306,5 +361,12 @@ status CSV và metadata SQLite của lần trích xuất đã hoàn tất.
   trên tập phát triển là các lựa chọn v1; chưa chứng minh tối ưu truy hồi.
 - Không có hướng đầu được xác minh, mốc tai/chân/sừng/bướu, P@K/mAP/IoU hoặc
   giao diện/tìm 5 ảnh của yêu cầu 4. Chưa triển khai chức năng xếp hạng.
-- Mã/runtime khác phải tạo bộ đầu ra mới. CLI ghi dùng fcntl cho macOS/Linux;
+- Lưới nhị phân mất độ phủ liên tục, có thể bỏ phần mảnh hoặc thay đổi bit khi
+  occupancy gần ngưỡng; nhạy tư thế và sai lệch mask. Chưa đánh giá chất lượng
+  truy hồi, không khẳng định hai thay đổi làm tìm kiếm tốt hơn.
+- Không có báo cáo Word/PDF của nhóm hoặc bản nguồn tương ứng trong repo.
+  Khi đưa sang báo cáo nhóm, cập nhật bảng S2/S3, tiền xử lý canvas, miền giá
+  trị, chuẩn hóa/scaler, cấu hình/hash và kết quả CSDL ở các mục tương ứng.
+  Không sửa/ghi đè PDF không kiểm chứng.
+- Mã/runtime khác cần `extract --rebuild` tại đường dẫn hiện hành. CLI dùng fcntl cho macOS/Linux;
   chưa kiểm chứng CLI trên Windows. CSDL SQLite/NumPy thuần có thể đọc độc lập.

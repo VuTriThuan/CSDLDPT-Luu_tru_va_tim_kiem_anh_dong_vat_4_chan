@@ -197,8 +197,8 @@ hình dạng 124 + bố cục màu 128 = 400 chiều**.
 | T2 | GLCM 64 mức, d={1,3}, góc {0°,45°,90°,135°}; energy, contrast, homogeneity, correlation. Chỉ đếm cặp có cả hai pixel trong mask, đối xứng rồi chuẩn hóa. | 32 | Độ thô/biến thiên mức xám; không dùng nền đặt 0 như cách bỏ nền. Correlation thiếu phương sai ghi raw=0, validity=false trong metadata. |
 | T3 | Gabor f={0,08;0,16;0,24}, 4 hướng như T2, bandwidth={1,2}; mean/std biên độ, giữ riêng từng tổ hợp; hỗ trợ kernel `n_stds=2`. Tâm phải có đủ cửa sổ trong mask. | 48 | Hướng và cỡ vệt; hỗ trợ phân tích sọc/đốm, không tự nhận biết loài. |
 | S1 | 7 Hu trên silhouette, signed-log: h=0 trả 0, còn lại −sign(h)log10(max(abs(h),10⁻¹²)). | 7 | Khối dáng chung; nhạy tư thế, che khuất và mask sai. |
-| S2 | w/h bbox; extent A/(wh); solidity A/A_hull; circularity 4πA/P²; eccentricity √(1−λ₂/λ₁). Dùng quy ước diện tích/biên nhất quán. | 5 | Độ kéo dài, lấp đầy và lõm; không phải kích thước cơ thể thật. |
-| S3 | Tỉ lệ pixel tiền cảnh trong lưới 6 hàng × 8 cột. | 48 | Vị trí khối thân/khe chân thô; lưới không là bộ phận giải phẫu. |
+| S2 | w/h bbox; extent A/(wh); solidity A/A_hull; circularity 4πA/P²; S2e=độ dài trục chính/trục phụ trên mask nguồn. Trục chính nối hai điểm đường bao xa nhất; trục phụ là bề rộng bao hình theo phương vuông góc. | 5 | Độ kéo dài, lấp đầy và lõm; không phải kích thước cơ thể thật. Không dùng PCA/covariance cho S2e. |
+| S3 | 48 bit raw, ô nhận 1 khi occupancy >15%, đúng 15% nhận 0. Canvas riêng 256×192, lưới 6 hàng × 8 cột, ô vuông 32×32, đọc theo hàng. | 48 | Vị trí khối thân/khe chân thô; bit 0 gồm cả ô trống và ô có ≤15% tiền cảnh. Mất độ phủ liên tục, nhạy ngưỡng/tư thế/mask; không là bộ phận giải phẫu. |
 | S4 | Biên trên và dưới, mỗi biên 32 dải ngang, tọa độ y/H; dải trống ghi raw=0, validity=false cùng occupancy ngoài vector. | 64 | Đường lưng và phần chân/bụng; đầu/cổ có thể tạo đỉnh giả, chưa là phép đếm bướu. |
 | P | Lưới 2 hàng × 4 cột; mỗi ô tiền cảnh HSV H8/S4/V4. | 128 | Vị trí mảng màu; nhạy hướng đầu, bbox và lỗi mask. |
 
@@ -206,19 +206,33 @@ Các quyết định triển khai B400 v1 (chi tiết và cấu hình máy đọ
 
 - Kế thừa manifest `success/da_duyet/dat` hiện hành, kiểm tra SHA-256/kích thước/
   mask nhị phân. Cờ chất lượng chỉ là metadata, không tự hủy quyết định duyệt.
-- Bbox giữ mọi thành phần, co đẳng hướng vào canvas 288 × 192, đệm giữa;
+- Bbox giữ mọi thành phần, co đẳng hướng vào canvas 288 × 192 cho các khối
+  hiện hữu trừ S3, đệm giữa;
   mask nearest-neighbor. RGB nội suy tuyến tính có chuẩn hóa theo mask, tránh
   pha nền. Tỉ lệ bbox đo trước đệm, không suy bộ phận bị che.
+- S3 lấy bbox nguồn riêng, hệ số `min(256/w,192/h)`, round kích thước về
+  số nguyên gần nhất (hòa về số chẵn), ít nhất 1; nearest-neighbor, đệm 0 ở
+  giữa với offset floor. Canvas 256×192 và lưới 6×8 do nhóm chọn để giữ 48
+  chiều, không phải thông số do bài giảng quy định. Metadata lưu occupancy
+  trước ngưỡng, số pixel mỗi ô, bbox, scale, kích thước và offset.
+- S2e đo tâm pixel nguồn `(x=cột,y=hàng)`, gốc trên trái, y tăng xuống;
+  độ dài Euclid tính bằng pixel, không cộng 1. Convex hull giữ cả phần rời;
+  hai điểm xa nhất xác định trục chính. Bề rộng là max−min phép chiếu toàn
+  đường bao theo phương vuông góc. Nếu hòa khoảng cách bình phương nguyên,
+  sắp hai đầu theo `(x,y)`, chọn cặp nhỏ nhất theo thứ tự từ điển. Một điểm
+  hoặc hình thẳng hàng không có tỉ lệ hợp lệ: raw=0, validity=false, lý do
+  và số đo trục nằm trong metadata. Không gán tỉ lệ giả.
 - LBP chỉ lấy tâm đủ các pixel nội suy; GLCM chỉ đếm cặp tiền cảnh; Gabor chỉ
   lấy tâm đủ toàn bộ cửa sổ. Gabor thiết kế cũ 3×4×2 chỉ có 24 giá trị: thêm
   hai bandwidth cố định `{1,2}` cho 48, không lặp giá trị hoặc thêm chiều khác.
 - Không suy hướng từ nhãn: lưu hướng đầu vào; yêu cầu 4 dùng cùng công thức
   cho truy vấn gốc và lật ngang rồi lấy khoảng cách nhỏ nhất cho mọi ảnh.
   Chưa triển khai so khớp ở yêu cầu 3.
-- Histogram L1 rồi căn từng bin. Biến liên tục z-score theo chiều trên các
+- Histogram L1 rồi căn từng bin. T2/T3/S1/S2/S3/S4 (gồm bit S3) z-score theo chiều trên các
   quan sát hợp lệ của tập phát triển hiện hành. L2 từng khối con, L2 từng nhóm,
   trọng số mỗi nhóm 1/4 (hệ số nhân 1/2), nối và L2 cuối. Lưu đầy đủ scaler,
   khối/thứ tự/phiên bản và hash cấu hình để truy vấn dùng lại, không fit lại.
+  S3 raw nhị phân nhưng sau z-score/L2 có thể không còn là 0 hoặc 1.
 - Ô trống, hue tổng saturation bằng 0, correlation thiếu phương sai, vùng
   kết cấu thiếu hỗ trợ hoặc mẫu số không xác định ghi raw=0 và validity=false
   cùng lý do ngoài 400 chiều. Fit bỏ giá trị quy ước; sau biến đổi đặt chiều
@@ -228,6 +242,19 @@ Các quyết định triển khai B400 v1 (chi tiết và cấu hình máy đọ
 Các số bin, tần số, lưới và kích thước canvas là tham số thiết kế ban đầu,
 chưa được chọn bằng thử nghiệm chất lượng truy hồi. B400 còn phải kiểm chứng
 trên các cặp khác nhãn giống màu và cùng nhãn khác giống/màu ở yêu cầu sau.
+
+Ngày 21/10/2026 đã tính lại B400 theo hai công thức trên, vẫn giữ tên và đường
+dẫn `outputs/features/b400_v1/` để không phá đường dẫn dự án. Vector và scaler
+cũ không tương đương bộ hiện hành; toàn bộ đầu ra đã được thay sau kiểm thử,
+trích xuất và kiểm chứng SQLite, không trộn hai công thức. Số liệu chạy mới
+ở [b400_implementation.md](b400_implementation.md); bộ 176 chiều mục 1–3 giữ nguyên.
+Không tìm thấy PDF bài giảng trong repo, **chưa đối chiếu được bản PDF**;
+dùng định nghĩa được giao: ngưỡng trên 15%, hai điểm xa nhất và trục phụ vuông
+góc bao đủ hình. Bài giảng còn đề cập chuẩn hóa xoay/trục chính dài 192;
+nhiệm vụ này chỉ sửa S2e/S3, không thực hiện hoặc tuyên bố đủ quy trình slide.
+Không có báo cáo Word/PDF của nhóm trong repo để sửa trực tiếp. Khi đưa sang
+báo cáo nhóm, cập nhật bảng chọn đặc trưng S2/S3, tiền xử lý canvas, miền giá
+trị, chuẩn hóa, cấu hình/scaler và bảng kết quả ở yêu cầu 3.
 
 ## 5. Giới hạn và hồ sơ tái lập
 

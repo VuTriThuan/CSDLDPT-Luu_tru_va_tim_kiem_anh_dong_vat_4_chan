@@ -70,8 +70,27 @@ cách đọc vector. Khi đổi tập đầu vào, cập nhật báo cáo theo k
 ## Trích xuất B400 và quản trị CSDL — yêu cầu 3
 
 Kết quả thực tế: **812 ảnh / 812 mask hợp lệ; 812 vector B400 thành công,
-0 thất bại; 66 kiểm thử đạt**. Đã đọc lại toàn bộ vector từ SQLite để đối chiếu.
+0 thất bại; 75 kiểm thử đạt** (30 B400/SQLite + 45 hồi quy), tính lại ngày
+21/10/2026 sau kiểm kê toàn bộ đầu vào. Đã đọc lại toàn bộ vector từ SQLite để đối chiếu.
 552 vector có quy ước cho ô màu/profile trống, kèm validity và lý do riêng.
+
+S2e tại chỉ số 159 là `S2_axis_ratio`: độ dài nối hai điểm đường bao xa nhất
+chia bề rộng bao hình theo phương vuông góc, đo tâm pixel trên mask nguồn
+trước resize; hòa khoảng cách chọn cặp nhỏ nhất theo `(x,y)`; trục suy biến
+ghi raw=0, validity=false. S3 `[160:208]` là 48 bit raw theo hàng, nhận 1 khi
+occupancy **>15%**, đúng 15% nhận 0. S3 có canvas riêng 256×192, ô vuông
+32×32 trong lưới 6×8; bbox toàn tiền cảnh co đều, nearest-neighbor, đệm giữa.
+Các khối khác giữ canvas 288×192 và công thức cũ. Bit 0 có thể có ≤15% tiền
+cảnh; occupancy/biến đổi hình học lưu metadata. S3 sau z-score/L2 có thể khác 0/1.
+
+Giữ tên B400 và thư mục `b400_v1/` để đường dẫn tiếp tục hoạt động; nội dung
+đã được tính lại, vector/scaler cũ **không tương đương** bộ hiện hành. Hash
+công thức/tên chiều đã đổi và scaler được fit mới. Canvas/lưới S3 do nhóm chọn
+để giữ 48 chiều, không do bài giảng quy định. Repo không có PDF bài giảng nên
+chưa đối chiếu được PDF; chưa làm chuẩn hóa xoay/trục chính dài 192 trong slide.
+Lưới nhị phân mất thông tin độ phủ, nhạy ngưỡng và mask; chưa đánh giá để
+khẳng định chất lượng tìm kiếm tăng. Các đoạn cần chuyển vào báo cáo nhóm
+được chỉ rõ trong [báo cáo triển khai](docs/reports/b400_implementation.md).
 
 Dùng `.venv/` hiện có, không thêm phụ thuộc, chạy bằng CPU. Ảnh, mask, manifest
 và đầu ra 176 chiều chỉ được đọc. Lệnh `extract` kiểm tra toàn bộ đầu vào,
@@ -81,7 +100,7 @@ trích xuất, fit chuẩn hóa trên tập phát triển và nhập/cập nhậ
 ```sh
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/features -v
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py validate
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract --rebuild
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py verify
 .venv/bin/python -B tools/features/cli.py status
 ```
@@ -91,7 +110,9 @@ CSDL: [`outputs/features/b400_v1/features.sqlite3`](outputs/features/b400_v1/fea
 lệnh `status`. Các lệnh `init`, `status`, `get` phục vụ tạo/kiểm kê/đọc CSDL;
 đọc luôn chỉ rõ lần chạy để tránh dùng nhầm scaler. `extract` chạy lại cùng đầu
 vào cập nhật cùng bản ghi; nguồn thay đổi tạo lần chạy/scaler riêng. Nếu mã,
-thư viện hoặc cấu hình thay đổi, chọn `--output-dir` mới trong `outputs/features/`.
+thư viện hoặc cấu hình thay đổi, dùng `extract --rebuild`: dựng sạch trong thư
+mục tạm, kiểm chứng toàn bộ rồi hoán đổi nguyên tử tại đường dẫn hiện hành.
+Lỗi giữ nguyên đầu ra cũ; không trộn vector/scaler hoặc bàn giao thư mục mới.
 
 Các trường hợp ô trống, hue không bão hòa và phép đo không xác định có quy ước
 rõ, kèm validity 400 phần tử và metadata ngoài vector. Thành công trích xuất

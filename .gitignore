@@ -7,6 +7,7 @@ __pycache__/
 *.py[cod]
 .DS_Store
 /outputs/features/b400_v1/.b400.lock
+/outputs/features/.b400_v1.lock
 # Original large files are reconstructed from the tracked .parts/ directories.
 /outputs/backups/pre_data_migration_20261017_103325/before_data_migration.tar
 /outputs/backups/pre_environment_migration_20261017_105624/before_environment_migration.tar

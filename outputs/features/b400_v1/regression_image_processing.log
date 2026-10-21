@@ -24,6 +24,6 @@ test_review_delete_flip_and_undo_use_rejected_crops (test_data_migration.DataMig
 test_unrelated_source_is_still_rejected (test_data_migration.DataMigrationTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 22.455s
+Ran 24 tests in 22.485s
 
 OK

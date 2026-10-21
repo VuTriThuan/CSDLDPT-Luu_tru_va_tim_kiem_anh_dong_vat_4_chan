@@ -1,5 +1,6 @@
 """Requirement 3: validate, extract/upsert, verify and inspect local B400 SQLite."""
 import argparse
+import ctypes
 from collections import Counter
 from datetime import datetime, timezone
 import fcntl
@@ -8,6 +9,7 @@ from pathlib import Path
 import platform
 import sqlite3
 import sys
+import tempfile
 import time
 
 if __package__ in (None, ''):
@@ -69,7 +71,7 @@ def extract_all(args):
     spec=feature_set()
     config_path=output/'feature_set.json'
     if config_path.exists() and json.loads(config_path.read_text())!=spec:
-        raise ValueError('Feature configuration/code/runtime changed; select a new output directory')
+        raise ValueError('Feature configuration/code/runtime changed; use extract --rebuild to replace safely')
     write_json(config_path,spec)
     report=validate(args)
     created=now()
@@ -143,6 +145,41 @@ def extract_all(args):
     return 0 if run['status']=='complete' else 1
 
 
+def exchange_directories(first, second):
+    """Atomic same-filesystem exchange; failure leaves the old output in place."""
+    libc=ctypes.CDLL(None,use_errno=True)
+    if sys.platform=='darwin':
+        call=libc.renamex_np
+        call.argtypes=[ctypes.c_char_p,ctypes.c_char_p,ctypes.c_uint]
+        result=call(bytes(first),bytes(second),2)  # RENAME_SWAP
+    elif sys.platform.startswith('linux'):
+        call=libc.renameat2
+        call.argtypes=[ctypes.c_int,ctypes.c_char_p,ctypes.c_int,ctypes.c_char_p,ctypes.c_uint]
+        result=call(-100,bytes(first),-100,bytes(second),2)  # RENAME_EXCHANGE
+    else:
+        raise OSError('Atomic directory exchange requires macOS or Linux')
+    if result:
+        error=ctypes.get_errno()
+        raise OSError(error,'Atomic output exchange failed')
+
+
+def rebuild(args):
+    output=args.output_dir
+    # The old output remains fully readable until both extraction and verification
+    # succeed. After exchange the temporary directory owns the old artifacts.
+    with tempfile.TemporaryDirectory(prefix=f'.{output.name}-build-',dir=output.parent) as temporary:
+        stage=Path(temporary)/'result'
+        stage.mkdir()
+        staged=argparse.Namespace(**vars(args))
+        staged.output_dir=stage
+        code=extract_all(staged)
+        if code:
+            return code
+        verify(staged)
+        exchange_directories(stage,output)
+    return 0
+
+
 def verify(args):
     output,root=args.output_dir.resolve(),args.project_root.resolve()
     summary=json.loads((output/'summary.json').read_text())
@@ -187,10 +224,19 @@ def verify(args):
                 raise ValueError('NPZ names/order differ')
             if str(arrays['run_id'])!=summary['run_id'] or str(arrays['feature_set_id'])!=spec['id']:
                 raise ValueError('NPZ version differs')
+            if str(arrays['normalizer_id'])!=(params['id'] if params else ''):
+                raise ValueError('NPZ normalizer differs')
+            if params and b400.digest_json(params)!=b400.digest_json(
+                    b400.fit_normalizer(arrays['raw'],arrays['validity'],run['input_digest'])):
+                raise ValueError('Scaler was not fitted on current successful raw vectors')
+            if len(expected) and not np.isin(arrays['raw'][:,160:208],[0,1]).all():
+                raise ValueError('Raw S3 must contain only binary bits')
             if params and not np.array_equal(b400.transform(arrays['raw'],arrays['validity'],params),arrays['normalized']):
                 raise ValueError('Frozen normalization not reproducible')
             for i,row in enumerate(expected):
                 stored=storage.read_vector(db,summary['run_id'],row['filename'])
+                if stored['feature_set_id']!=spec['id'] or stored['normalizer_id']!=params['id']:
+                    raise ValueError('SQLite vector configuration/scaler differs')
                 for key in ['raw','normalized','validity']:
                     if not np.array_equal(stored[key],arrays[key][i]):
                         raise ValueError(f'SQLite/NPZ {key} differs: {row["filename"]}')
@@ -206,6 +252,7 @@ def verify(args):
             source_hashes_checked=audit['success'],mask_hashes_checked=audit['success'],
             input_validation_failed=audit['failed'],sqlite_integrity='ok',sqlite_foreign_keys='ok',
             frozen_normalization_reproduced=True,source_audit_unchanged=True,checked_at_utc=now())
+        result.update(scaler_refit_reproduced=True,raw_s3_binary=True)
     finally:
         db.close()
     write_json(output/'verification.json',result)
@@ -222,9 +269,12 @@ def main(argv=None):
     parser.add_argument('--output-dir',type=Path,default=B400_OUTPUT_DIR)
     parser.add_argument('--filename')
     parser.add_argument('--run-id')
+    parser.add_argument('--rebuild',action='store_true',help='Build and verify fresh outputs, then atomically replace output directory')
     args=parser.parse_args(argv)
     try:
         cv2.setNumThreads(1)
+        if args.rebuild and args.command!='extract':
+            raise ValueError('--rebuild requires extract')
         if args.command in {'status','get'}:
             db=storage.connect(args.output_dir/'features.sqlite3',readonly=True)
             try:
@@ -240,10 +290,12 @@ def main(argv=None):
             print(json.dumps(value,ensure_ascii=False,indent=2))
             return 0
         args.project_root,args.output_dir=prepare_output(args)
-        with (args.output_dir/'.b400.lock').open('a') as lock:
+        # Keep the lock outside the exchanged directory so waiting writers use
+        # the same inode before and after publication.
+        with (args.output_dir.parent/f'.{args.output_dir.name}.lock').open('a') as lock:
             fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
             if args.command=='extract':
-                return extract_all(args)
+                return rebuild(args) if args.rebuild else extract_all(args)
             if args.command=='init':
                 storage.connect(args.output_dir/'features.sqlite3').close()
                 result={'initialized':True}

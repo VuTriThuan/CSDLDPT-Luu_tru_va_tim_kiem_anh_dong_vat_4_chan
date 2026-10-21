@@ -21,8 +21,22 @@
     "normalized_dtype": "float32",
     "valid_dimensions": 314202,
     "invalid_dimensions": 10598,
-    "max_l2_norm_error": 5.960464477539063e-08
+    "max_l2_norm_error": 5.960464477539063e-08,
+    "s2e_range": [
+      1.0092992782592773,
+      2.5805420875549316
+    ],
+    "raw_s3_unique": [
+      0.0,
+      1.0
+    ]
   },
-  "documentation_links_checked": 82,
+  "protected_files_checked": 5856,
+  "protected_files_changed": [],
+  "unchanged_raw_dimensions_checked": 351,
+  "unchanged_raw_vectors_checked": 812,
+  "independent_s2e_s3_source_checks": 812,
+  "old_configuration_and_scaler_absent": true,
+  "documentation_links_checked": 85,
   "missing_links": []
 }

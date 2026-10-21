@@ -27,7 +27,7 @@ def feature_names():
     names += [f'T3_gabor_f{f:.2f}_a{a}_bw{b}_{stat}' for f in [.08, .16, .24]
               for a in [0, 45, 90, 135] for b in [1, 2] for stat in ['mean', 'std']]
     names += [f'S1_hu_{i}' for i in range(7)]
-    names += [f'S2_{s}' for s in ['aspect', 'extent', 'solidity', 'circularity', 'eccentricity']]
+    names += [f'S2_{s}' for s in ['aspect', 'extent', 'solidity', 'circularity', 'axis_ratio']]
     names += [f'S3_mask_r{r}_c{c}' for r in range(6) for c in range(8)]
     names += [f'S4_{side}_{i:02}' for side in ['upper', 'lower'] for i in range(32)]
     names += [f'P_r{r}_c{c}_{ch}_{i:02}' for r in range(2) for c in range(4)
@@ -36,7 +36,8 @@ def feature_names():
 
 
 def configuration():
-    return dict(name='b400_v1', dimensions=400, dtype='<f4', blocks=[dict(name=n, start=s, stop=e, version=1)
+    return dict(name='b400_v1', formula_revision='source-diameter-axis-ratio_binary-square-grid-15pct',
+        dimensions=400, dtype='<f4', blocks=[dict(name=n, start=s, stop=e, version=2 if n in {'S2','S3'} else 1)
         for n, s, e in BLOCKS], feature_names=feature_names(), canvas=[288, 192],
         resize='bbox all components; uniform scale min(288/w,192/h), round sizes; centered; nearest mask; '
                'RGB masked normalized INTER_LINEAR, uint8 round; nearest RGB fallback if alpha0; no background interpolation',
@@ -55,9 +56,20 @@ def configuration():
             order='frequency,angle,bandwidth,stat',
             design_resolution='12 filters x 2 statistics was 24, not 48; two fixed bandwidths resolve design ambiguity'),
         shape='Hu binary canvas all components, signed log floor1e-12, zero->zero; aspect original bbox; '
-              'remaining geometry canvas; A=pixel count; hull=raster filled convex hull of all pixel centers; '
-              'P=exposed pixel edges including holes; eccentricity covariance pixel centers ddof0; '
-              'mask grid row-major6x8; profiles32 x-strips upper=min_y/H,lower=(max_y+1)/H',
+              'extent/solidity/circularity canvas; A=pixel count; hull=raster filled convex hull of all pixel centers; '
+              'P=exposed pixel edges including holes; profiles32 x-strips upper=min_y/H,lower=(max_y+1)/H',
+        s2e=dict(measurement='source mask before resize; convex hull of all foreground pixel centers; '
+                 'major=max Euclidean pair distance; minor=full contour projection span perpendicular to major; '
+                 'axis_ratio=major/minor; no PCA',
+                 coordinates='integer pixel centers (x=column,y=row), origin top-left, y down; pixel units; no +1',
+                 ties='sort endpoints within pair lexicographically by (x,y); choose lexicographically smallest '
+                      'pair among exact integer squared-distance maxima',
+                 degenerate='fewer than two distinct points or zero perpendicular span -> raw0,validity=false'),
+        s3=dict(canvas=[256,192], grid=[6,8], cell=[32,32], threshold='foreground_count*20 > cell_pixels*3',
+                resize='bbox all foreground; uniform scale min(256/w,192/h); round sizes (ties to even), min1; '
+                       'center with floor offsets; zero padding; INTER_NEAREST; no rotation',
+                order='row-major, left-to-right then top-to-bottom', raw='48 bits; occupancy before threshold in metadata',
+                provenance='canvas/grid chosen by team to retain 48 dimensions, not specified by lecture'),
         missing='empty histogram/texture support/profile or undefined denominator -> raw0, validity=false, '
                 'explicit reason outside vector; valid observations alone fit scaler; transformed missing=0; '
                 'empty/full source mask, shape mismatch, nonbinary or nonfinite -> fail without vector',
@@ -114,6 +126,70 @@ def prepare(rgb, mask):
     return canvas, foreground, dict(source_bbox=[x,y,w,h], scale=scale, resized=[nw,nh], offset=[ox,oy],
         nearest_rgb_fallback_pixels=int(fallback.sum()),
         source_component_count=int(cv2.connectedComponents((mask>0).astype(np.uint8))[0]-1))
+
+
+def occupancy_bits(counts, totals):
+    """Strict >15%, compared as integers so exactly 3/20 stays zero."""
+    return (np.asarray(counts, dtype=np.int64)*20 > np.asarray(totals, dtype=np.int64)*3).astype('<f4')
+
+
+def shape_grid(mask):
+    """Independent S3 canvas; never change the canvas used by other blocks."""
+    ys,xs = np.nonzero(mask)
+    x,y = int(xs.min()),int(ys.min())
+    w,h = int(xs.max()-x+1),int(ys.max()-y+1)
+    scale = min(256/w,192/h)
+    nw,nh = max(1,round(w*scale)),max(1,round(h*scale))
+    ox,oy = (256-nw)//2,(192-nh)//2
+    canvas = np.zeros((192,256),np.uint8)
+    canvas[oy:oy+nh,ox:ox+nw] = cv2.resize((mask[y:y+h,x:x+w]>0).astype(np.uint8),
+                                         (nw,nh),interpolation=cv2.INTER_NEAREST)
+    counts = canvas.reshape(6,32,8,32).sum(axis=(1,3)).ravel()
+    quality = dict(source_bbox=[x,y,w,h],scale=scale,resized=[nw,nh],offset=[ox,oy],
+                   canvas=[256,192],grid=[6,8],cell=[32,32],foreground_counts=counts.tolist(),
+                   occupancy=(counts/1024).tolist(),cell_pixels=1024)
+    return occupancy_bits(counts,1024),quality
+
+
+def source_axis_ratio(mask):
+    """Exact hull diameter, deterministic ties, perpendicular enclosing width.
+
+    Hull vertices are boundary pixel centers. Projection extrema and diameter
+    of all foreground centers equal those of this hull, including disconnected
+    parts. Integer cross products avoid a false nonzero width for collinear data.
+    """
+    ys,xs = np.nonzero(mask)
+    points = np.column_stack([xs,ys]).astype(np.int32)
+    hull = cv2.convexHull(points).reshape(-1,2).astype(np.int64)
+    hull = hull[np.lexsort((hull[:,1],hull[:,0]))]
+    best_squared,best_pair = 0,None
+    for i in range(len(hull)-1):
+        delta = hull[i+1:]-hull[i]
+        squared = (delta*delta).sum(axis=1)
+        j = i+1+int(np.argmax(squared))
+        distance = int(squared[j-i-1])
+        pair = (tuple(map(int,hull[i])),tuple(map(int,hull[j])))
+        if distance>best_squared or (distance==best_squared and (best_pair is None or pair<best_pair)):
+            best_squared,best_pair = distance,pair
+    quality = dict(coordinate_convention='source pixel centers (column,row); no +1',
+                   major_endpoints=[list(p) for p in best_pair] if best_pair else None,
+                   major_length=math.sqrt(best_squared),minor_length=0.,valid=False)
+    if not best_squared:
+        quality['reason']='undefined_axis_ratio_zero_major'
+        return 0.,False,quality
+    a,b = np.asarray(best_pair,dtype=np.int64)
+    dx,dy = b-a
+    projection = -dy*(hull[:,0]-a[0])+dx*(hull[:,1]-a[1])
+    span = int(projection.max()-projection.min())
+    quality.update(perpendicular_cross_span=span,
+                   minor_length=span/math.sqrt(best_squared),
+                   perpendicular_projection_bounds=[float(projection.min()/math.sqrt(best_squared)),
+                                                    float(projection.max()/math.sqrt(best_squared))])
+    if not span:
+        quality['reason']='undefined_axis_ratio_zero_minor'
+        return 0.,False,quality
+    quality['valid']=True
+    return best_squared/span,True,quality
 
 
 def histogram(values, bins, upper, weights=None, circular=False):
@@ -264,17 +340,17 @@ def extract(rgb, mask):
     hull_area = int(raster.sum())
     pad = np.pad(m.astype(np.int32),1)
     perimeter = np.abs(np.diff(pad,axis=0)).sum()+np.abs(np.diff(pad,axis=1)).sum()
-    eig = np.linalg.eigvalsh(np.cov(points.astype(float).T,bias=True)) if area>1 else np.zeros(2)
+    axis_ratio,axis_valid,axis_quality = source_axis_ratio(mask)
     vector[155:160] = [quality['source_bbox'][2]/quality['source_bbox'][3],area/(width*height),
         area/hull_area if hull_area else 0,4*np.pi*area/perimeter**2 if perimeter else 0,
-        math.sqrt(max(0,1-eig[0]/eig[1])) if eig[1]>1e-15 else 0]
+        axis_ratio]
     if not hull_area:
         missing(157,158,'zero_hull_area')
     if not perimeter:
         missing(158,159,'zero_perimeter')
-    if eig[1]<=1e-15:
-        missing(159,160,'undefined_eccentricity')
-    vector[160:208] = [cell.mean() for band in np.array_split(m,6) for cell in np.array_split(band,8,axis=1)]
+    if not axis_valid:
+        missing(159,160,axis_quality['reason'])
+    vector[160:208],grid_quality = shape_grid(mask)
     occupancy = []
     for i,columns in enumerate(np.array_split(np.arange(288),32)):
         yy,_ = np.nonzero(m[:,columns])
@@ -291,7 +367,7 @@ def extract(rgb, mask):
             k+=16
     quality.update(conventions=conventions, valid_dimensions=int(valid.sum()),
         lbp_support=lbp_counts, glcm_pairs=glcm_counts, gabor_support=gabor_counts,
-        profile_occupancy=occupancy, foreground_pixels=area,
+        profile_occupancy=occupancy, s2e=axis_quality, s3=grid_quality, foreground_pixels=area,
         component_count=int(cv2.connectedComponents(m.astype(np.uint8),connectivity=8)[0]-1))
     result = vector.astype('<f4')
     if result.shape!=(400,) or not np.isfinite(result).all():

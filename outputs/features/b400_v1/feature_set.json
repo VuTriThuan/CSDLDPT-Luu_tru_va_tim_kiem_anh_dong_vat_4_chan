@@ -1,6 +1,7 @@
 {
   "descriptor": {
     "name": "b400_v1",
+    "formula_revision": "source-diameter-axis-ratio_binary-square-grid-15pct",
     "dimensions": 400,
     "dtype": "<f4",
     "blocks": [
@@ -44,13 +45,13 @@
         "name": "S2",
         "start": 155,
         "stop": 160,
-        "version": 1
+        "version": 2
       },
       {
         "name": "S3",
         "start": 160,
         "stop": 208,
-        "version": 1
+        "version": 2
       },
       {
         "name": "S4",
@@ -225,7 +226,7 @@
       "S2_extent",
       "S2_solidity",
       "S2_circularity",
-      "S2_eccentricity",
+      "S2_axis_ratio",
       "S3_mask_r0_c0",
       "S3_mask_r0_c1",
       "S3_mask_r0_c2",
@@ -498,7 +499,32 @@
       "order": "frequency,angle,bandwidth,stat",
       "design_resolution": "12 filters x 2 statistics was 24, not 48; two fixed bandwidths resolve design ambiguity"
     },
-    "shape": "Hu binary canvas all components, signed log floor1e-12, zero->zero; aspect original bbox; remaining geometry canvas; A=pixel count; hull=raster filled convex hull of all pixel centers; P=exposed pixel edges including holes; eccentricity covariance pixel centers ddof0; mask grid row-major6x8; profiles32 x-strips upper=min_y/H,lower=(max_y+1)/H",
+    "shape": "Hu binary canvas all components, signed log floor1e-12, zero->zero; aspect original bbox; extent/solidity/circularity canvas; A=pixel count; hull=raster filled convex hull of all pixel centers; P=exposed pixel edges including holes; profiles32 x-strips upper=min_y/H,lower=(max_y+1)/H",
+    "s2e": {
+      "measurement": "source mask before resize; convex hull of all foreground pixel centers; major=max Euclidean pair distance; minor=full contour projection span perpendicular to major; axis_ratio=major/minor; no PCA",
+      "coordinates": "integer pixel centers (x=column,y=row), origin top-left, y down; pixel units; no +1",
+      "ties": "sort endpoints within pair lexicographically by (x,y); choose lexicographically smallest pair among exact integer squared-distance maxima",
+      "degenerate": "fewer than two distinct points or zero perpendicular span -> raw0,validity=false"
+    },
+    "s3": {
+      "canvas": [
+        256,
+        192
+      ],
+      "grid": [
+        6,
+        8
+      ],
+      "cell": [
+        32,
+        32
+      ],
+      "threshold": "foreground_count*20 > cell_pixels*3",
+      "resize": "bbox all foreground; uniform scale min(256/w,192/h); round sizes (ties to even), min1; center with floor offsets; zero padding; INTER_NEAREST; no rotation",
+      "order": "row-major, left-to-right then top-to-bottom",
+      "raw": "48 bits; occupancy before threshold in metadata",
+      "provenance": "canvas/grid chosen by team to retain 48 dimensions, not specified by lecture"
+    },
     "missing": "empty histogram/texture support/profile or undefined denominator -> raw0, validity=false, explicit reason outside vector; valid observations alone fit scaler; transformed missing=0; empty/full source mask, shape mismatch, nonbinary or nonfinite -> fail without vector",
     "direction": "stored input orientation; requirement4 must compare original and horizontal flip queries through same frozen pipeline, min distance for every label; retrieval not implemented",
     "normalization": {
@@ -616,10 +642,10 @@
     }
   },
   "code_sha256": {
-    "b400.py": "0d015f858aa7a4359b6cd725cdee12894c21381a783470763dc3c82091e44d0c",
+    "b400.py": "620bfa20cd8d84f40ecfe69ae778dd180e76913f0235fe351b5a13ab6a01d15c",
     "inputs.py": "e2181784179d7355d2bb518612de1aca1afb664d6967b17879a9a49cddac437c",
-    "storage.py": "ca8544051dfc454ca776e10844e2b750a0a57729471a802a5a040eb08a2914ff",
-    "cli.py": "ff422cdbb016ffd9b9190423b79e1b85382eb289b642417ec356857b55e69514"
+    "storage.py": "c3a70b70a7406ebe56298e9b0e6cd3e05714e30f2b9b88f39fb5245daa773d4b",
+    "cli.py": "54ff3628f9017737a3b0da880e7f1f8f930582b96cf341b3abce2b2006600c90"
   },
   "runtime": {
     "python": "3.10.11",
@@ -627,5 +653,5 @@
     "opencv": "4.11.0",
     "pillow": "12.3.0"
   },
-  "id": "6fdca079a1e06d6cbd7e9952d28e3632a84edb8409f250b006c43f0b5a8ad36c"
+  "id": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338"
 }

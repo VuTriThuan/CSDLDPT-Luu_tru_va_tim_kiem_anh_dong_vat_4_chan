@@ -60,10 +60,7 @@ Sau khi có bộ mới, mở chỉnh bằng:
 ```
 
 Chỉ chuyển sang `overlays/accepted/` khi người dùng chủ động lưu sau khi chỉnh
-và duyệt. Công cụ xác minh ở `tools/validation/verify_regenerated_masks.py` nhận
-`--output-dir`, `--previous-dir`, `--inventory`. Với lần chạy mới, truyền kiểm kê
-được chụp ngay trước chính lần chạy đó; mặc định vẫn trỏ tới hồ sơ lịch sử được giữ
-nguyên. Không chạy batch cùng lúc với công cụ chỉnh mask.
+và duyệt. Script xác minh độc lập của bộ lịch sử đã được gỡ khỏi bản tinh gọn. Với lần tạo mới, giữ manifest, cấu hình và kiểm kê nguồn của chính lần chạy để đối chiếu. Không chạy batch cùng lúc với công cụ chỉnh mask.
 
 ## Kết quả lần chạy này
 

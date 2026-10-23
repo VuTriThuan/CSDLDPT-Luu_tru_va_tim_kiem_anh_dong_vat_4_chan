@@ -226,15 +226,4 @@ không phục hồi `tests/`, backup hoặc hồ sơ di chuyển cũ. Không có
 thị giác mới, không công bố P@5. Giới hạn còn lại là thực thi Windows thật,
 sai số số học Windows, thao tác GUI thủ công và filesystem ngoài ổ cục bộ.
 
-Các tệp thay đổi trong lần bàn giao này (21 tệp, chưa commit/push):
-
-| Vị trí | Tệp |
-|---|---|
-| Root | `.gitattributes`, `README.md`, `requirements.txt`, `requirements_image_tools.txt` |
-| `docs/` | `python_environments.md` |
-| `tools/` | `file_lock.py` |
-| `tools/features/` | `cli.py`, `compatibility.py`, `compatibility.json`, `publication.py` |
-| `tools/image_processing/` | `tool_common.py` |
-| `tools/search/` | `cli.py`, `index.py`, `evaluation.py` |
-| `tools/segmentation/` | `run_grabcut.py`, `edit_masks.py`, `regenerate_masks.py`, `sync_overlays.py` |
-| `tools/validation/` | `verify_grabcut_results.py`, `verify_image_analysis.py`, `verify_regenerated_masks.py` |
+Bản tinh gọn đã gỡ ba script xác minh độc lập trong `tools/validation/` cùng dữ liệu kiểm thử lịch sử. `audit_images.py`, kiểm tra đầu vào, allowlist tương thích B400 và khóa tệp được giữ vì chương trình đang sử dụng.

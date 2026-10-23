@@ -297,7 +297,7 @@ Bằng chứng: [summary.json](../../outputs/features/b400_v1/summary.json),
 [input_validation.json](../../outputs/features/b400_v1/input_validation.json),
 [status.csv](../../outputs/features/b400_v1/status.csv),
 [extraction.log](../../outputs/features/b400_v1/extraction.log),
-[delivery_checks.json](../../outputs/features/b400_v1/delivery_checks.json).
+[delivery_checks.json](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/features/b400_v1/delivery_checks.json).
 Verifier đọc lại toàn bộ raw/normalized/validity từ SQLite, đối chiếu chính xác
 float32 với NPZ, tên/hash ảnh và mask, metadata, config/scaler và ID. Kiểm tra
 integrity/FK, fit lại scaler từ raw để đối chiếu và tái hiện chuẩn hóa đã lưu.

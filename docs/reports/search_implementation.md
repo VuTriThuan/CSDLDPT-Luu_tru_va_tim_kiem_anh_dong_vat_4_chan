@@ -294,7 +294,7 @@ dùng thư mục cục bộ `queries/ID/query_rgb.png`, `mask.png`, `results/1.j
 không cần nạp SQLite, ảnh Downloads cũ hoặc trích xuất lại B400. Tạo `.venv/`
 tại clone mới theo README; không sao chép venv từ máy khác.
 
-Kiểm chứng thực tế: [hai bản sao batch](../../outputs/search/verification/completion_checks.json)
+Kiểm chứng thực tế: [hai bản sao batch](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/verification/completion_checks.json)
 đều có 4/4 truy vấn chức năng, chấm lại khớp toàn bộ tổng hợp gốc, file nguồn
 và file sao chép giữ nguyên bytes. P@5 thị giác vẫn null vì chưa có chấm độc lập.
 58 kiểm thử tìm kiếm/phân tích và 30 hồi quy B400 đạt trong `.venv/` Mac Intel;
@@ -326,15 +326,15 @@ tổng hợp có đáp án biết trước, relevance chưa chấm và dữ li�
 
 Kiểm thử tạo scaler trên fixture tổng hợp trong thư mục tạm, không dùng chúng
 làm kết quả đánh giá truy hồi và không thay scaler thật. Mọi truy vấn thực tế
-dùng scaler đã lưu. Các bản tổng kết cuối được giữ trong
-[`verification/`](../../outputs/search/verification/). Bộ mã `tests/` và các script xác minh trong đó đã được gỡ khỏi nhánh hiện tại; số lần đạt dưới đây chỉ phản ánh các lần chạy trước đó; log chi tiết và các script đã gỡ không còn trong checkout này.
+dùng scaler đã lưu. Các bản tổng kết kiểm thử lịch sử được tham chiếu tại commit trước khi dọn:
+[`verification/`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/tree/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/verification). Bộ mã `tests/` và các script xác minh trong đó đã được gỡ khỏi nhánh hiện tại; số lần đạt dưới đây chỉ phản ánh các lần chạy trước đó; log chi tiết và các script đã gỡ không còn trong checkout này.
 
 Đã mở **cửa sổ Tkinter thật** và chạy tự động 16 nhóm kiểm tra: nạp SQLite qua
 worker, chọn ảnh tự dùng mask CSDL cùng hash hoặc tạo GrabCut với bbox tự động,
 không còn nút nạp mask/kéo bbox, nét giữ/loại, chặn nét chưa áp dụng, hoàn tác/
 refine, chặn tìm kiếm chồng, top 5, đóng góp/vector/validity, xuất, hiển thị
 lỗi worker, tùy chọn hiện ảnh tự khớp và đổi ảnh truy vấn. Xem
-[`gui_smoke.json`](../../outputs/search/verification/gui_smoke.json).
+[`gui_smoke.json`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/verification/gui_smoke.json).
 Chưa duyệt GUI thủ công hoặc kiểm tra ảnh chụp cửa sổ; không tuyên bố đã làm.
 
 Script `verify_real_run.py` (đã gỡ khỏi nhánh hiện tại) từng đọc lại các lượt
@@ -349,7 +349,7 @@ SHA-256 được ghi trước khi triển khai cho **6.118 tệp** trong `data/`
 tài liệu cũ và mã B400/phân đoạn. Sau chạy đối chiếu từng tệp: không sửa/xóa,
 không thêm ngoài dự kiến; chỉ thêm báo cáo yêu cầu 4 trong vùng docs. Bằng chứng
 [`protected_before.json`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/search/verification/protected_before.json)
-và [`delivery_checks.json`](../../outputs/search/verification/delivery_checks.json).
+và [`delivery_checks.json`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/verification/delivery_checks.json).
 Không chạy verifier yêu cầu 3 vì lệnh đó ghi `verification.json` trong B400.
 
 Giới hạn: chất lượng mask phụ thuộc người sửa; B400 cố định nhạy tư thế/khuyết

@@ -16,7 +16,7 @@ tạo chính xác **50/50 artifact hiện có trước khi tạo batch kiểm ch
 cuối **62/62**, gồm 12 artifact trong các batch mới/bản sao, **0 không khớp**.
 Chuẩn hóa raw/validity với scaler cố định khớp **124/124 vector** ở lần cuối.
 Số lượt được tính động và ghi cả đường dẫn artifact, không coi bản xuất là
-truy vấn độc lập. [Bằng chứng đầy đủ](../../outputs/search/diagnostics/search_audit/evidence_20261023T133817_524683Z_002c30.json)
+truy vấn độc lập. [Bằng chứng đầy đủ](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/diagnostics/search_audit/evidence_20261023T133817_524683Z_002c30.json)
 giữ chính sách, kết quả đã lưu/tái tạo và lý do từng sai khác nếu có.
 Bốn trường hợp trích xuất lại
 từ RGB và mask cũng khớp vector đã lưu. Hai nguyên nhân đã đo được là mask
@@ -131,13 +131,13 @@ CSDL, phần reference mask ghi chưa có thay vì tạo mốc so sánh giả.
 Mã: [`diagnostics.py`](../../tools/search/diagnostics.py),
 [`mask_quality.py`](../../tools/search/mask_quality.py),
 [`gui.py`](../../tools/search/gui.py). Bằng chứng thực nghiệm:
-[audit xếp hạng](../../outputs/search/diagnostics/search_audit/README.md),
+[audit xếp hạng](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/diagnostics/search_audit/README.md),
 [audit mask và ablation](../../outputs/search/diagnostics/mask_audit/README.md).
 
 Kiểm tra tại thời điểm audit: **48 kiểm thử tìm kiếm/chẩn đoán**, **30 hồi quy B400**,
 **17 nhóm kiểm tra trên cửa sổ Tk thật**. Kiểm tra sau thay đổi chính sách tệp
-trùng: **49 kiểm thử tìm kiếm/chẩn đoán** và **16 nhóm Tk**. Các bản tổng kết cuối nằm trong
-[`verification/`](../../outputs/search/verification/); log chi tiết đã được gỡ ở nhánh tinh gọn; kiểm tra bảo toàn nguồn
+trùng: **49 kiểm thử tìm kiếm/chẩn đoán** và **16 nhóm Tk**. Các bản tổng kết kiểm thử lịch sử được tham chiếu tại commit trước khi dọn:
+[`verification/`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/tree/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/verification); log chi tiết đã được gỡ ở nhánh tinh gọn; kiểm tra bảo toàn nguồn
 tiếp tục đối chiếu 6.118 tệp từ manifest trước triển khai. Không công bố P@5
 hoặc hiệu quả truy hồi khi chưa có chấm phù hợp thị giác.
 
@@ -200,6 +200,6 @@ xạ đường dẫn tuyệt đối lịch sử khi artifact tương ứng hiệ
 batch đang mở, có ID/metadata khớp. Đã chấm lại bản sao đầy đủ của cả batch
 lịch sử và batch mới ở vị trí khác, kết quả tổng hợp khớp; hồ sơ cũ giữ bytes.
 [Hướng dẫn clone/chấm](search_implementation.md#chấm-batch-sau-khi-clone-hoặc-di-chuyển),
-[kiểm chứng hai batch và 5.989 tệp được bảo vệ](../../outputs/search/verification/completion_checks.json).
+[kiểm chứng hai batch và 5.989 tệp được bảo vệ](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/448c8bf674fced49b1a87625468ce6a71b6e60fb/outputs/search/verification/completion_checks.json).
 58 kiểm thử tìm kiếm/phân tích và 30 hồi quy B400 đều đạt; không chạy extract
 --rebuild, không sửa B400, scaler, SQLite, 812 ảnh hoặc mask trong kho.

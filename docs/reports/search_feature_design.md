@@ -268,14 +268,12 @@ trị, chuẩn hóa, cấu hình/scaler và bảng kết quả ở yêu cầu 3.
   các chỉ số toàn khung để tự đổi nhãn. Kiểm tra tên duy nhất không đồng nghĩa
   kiểm tra ảnh trùng nội dung hoặc gần trùng.
 - Không có kết quả xếp hạng, P@K, mAP, IoU, trọng số tối ưu hoặc phép đo thời
-  gian truy vấn. Yêu cầu 3 đã có CSDL đặc trưng; chức năng tìm kiếm yêu cầu 4 chưa triển khai.
+  gian truy vấn. Tại thời điểm thiết kế yêu cầu 2 chưa có đánh giá truy hồi. Chức năng tìm kiếm hiện được mô tả trong [báo cáo yêu cầu 4](search_implementation.md).
 
 Chạy từ root dự án trên Mac Intel, dùng môi trường `.venv/` hiện có:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/audit_images.py
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/verify_image_analysis.py
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest tests.validation.test_audit_images -v
 ```
 
 Có thể truyền `--input-dir` và `--output-dir`; hai thư mục không được chồng lấp.
@@ -287,7 +285,6 @@ Nếu đổi bộ dữ liệu, cần chạy lại và cập nhật số liệu b
 | Tệp hiện hành | Nội dung |
 |---|---|
 | [audit_images.py](../../tools/validation/audit_images.py) | Kiểm kê và đo mọi ảnh, không sửa ảnh gốc. |
-| [verify_image_analysis.py](../../tools/validation/verify_image_analysis.py) | Đối chiếu tệp nguồn, hash, trạng thái, nhãn, CSV/JSON/ma trận và các bảng số liệu trong báo cáo. |
 | [image_inventory.json](../../outputs/inventory/image_inventory.json) | Số lượng tệp/ảnh, giải mã, tính đặc trưng, tên duy nhất, từng nhãn và các tệp lỗi/bỏ qua. |
 | [image_processing.csv](../../outputs/inventory/image_processing.csv) | Từng tên tệp, SHA-256 ảnh, metadata kỹ thuật và trạng thái hai công đoạn. |
 | [label_counts.csv](../../outputs/inventory/label_counts.csv) | Số đầu vào/thành công/lỗi/bỏ qua của từng nhãn. |

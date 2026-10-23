@@ -1,6 +1,6 @@
-# Kết quả tìm kiếm và bằng chứng cuối
+# Kết quả tìm kiếm và phân tích
 
-Nhánh tinh gọn giữ tám lượt truy vấn dùng trong báo cáo. Batch dữ liệu thử, kiểm tra di chuyển, bản xuất trùng và kết quả trung gian đã được gỡ. Các số 62/62 artifact hoặc số kiểm thử đạt là kết quả lịch sử trước khi dọn, không phải kiểm kê checkout hiện tại.
+Nhánh tinh gọn giữ tám lượt truy vấn dùng trong báo cáo. Batch dữ liệu thử, kiểm tra di chuyển, bản xuất trùng và kết quả trung gian đã được gỡ. Hồ sơ kiểm thử/xác minh bổ sung đã được gỡ. Các số 62/62 artifact hoặc số kiểm thử đạt trong báo cáo là kết quả lịch sử trước khi dọn, không phải kiểm kê checkout hiện tại.
 
 ## Các lượt được giữ
 
@@ -15,15 +15,10 @@ Nhánh tinh gọn giữ tám lượt truy vấn dùng trong báo cáo. Batch d�
 
 Mỗi thư mục giữ nguyên ảnh truy vấn, mask, vector, top 5 và JSON đã lưu. Đường dẫn tuyệt đối trong JSON là thông tin nguồn lịch sử; ảnh truy vấn đóng gói nằm trong chính thư mục lượt chạy.
 
-## Phân tích và kiểm chứng được giữ
+## Phân tích được giữ
 
 - [Phân tích chín cấu hình bốn nhóm cuối](diagnostics/group_analysis/20261023T133848_225643Z_20473d/README.md): ngựa/bò/chó, 135 dòng top 5 và các giới hạn.
 - [Phân tích độ nhạy mask](diagnostics/mask_audit/README.md).
-- [Tổng kết kiểm chứng phép xếp hạng](diagnostics/search_audit/README.md) và JSON bằng chứng cuối.
-- [Kiểm chứng hai batch trước khi gỡ dữ liệu thử](verification/completion_checks.json).
-- [Tổng kết bàn giao trước khi dọn](verification/delivery_checks.json).
-- [Kết quả kiểm tra GUI lịch sử](verification/gui_smoke.json).
-- [Log audit cuối](verification/ranking_audit_final.log).
 
 Chưa có tập truy vấn độc lập và chấm relevance đầy đủ để công bố P@5 thị giác. Các quan sát và thay đổi thứ hạng trong phân tích nhóm không chứng minh chất lượng truy hồi tăng.
 

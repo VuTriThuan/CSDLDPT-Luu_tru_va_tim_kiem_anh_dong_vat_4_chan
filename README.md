@@ -86,11 +86,9 @@ Chạy lại tại root dự án bằng môi trường `.venv/` nêu bên dướ
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/audit_images.py
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/verify_image_analysis.py
 ```
 
-Lệnh đầu ghi lại JSON/CSV/NPZ hiện hành; lệnh sau đối chiếu tên, số lượng, nhãn,
-hash ảnh, thống kê và bảng báo cáo. Xem [báo cáo yêu cầu 2](docs/reports/search_feature_design.md)
+Lệnh trên kiểm kê và ghi lại JSON/CSV/NPZ hiện hành. Xem [báo cáo yêu cầu 2](docs/reports/search_feature_design.md)
 và [danh mục đầu ra](outputs/inventory/README.md) để biết định nghĩa, giới hạn và
 cách đọc vector. Khi đổi tập đầu vào, cập nhật báo cáo theo kết quả chạy mới.
 
@@ -288,8 +286,6 @@ Các lệnh dưới chỉ hiện hướng dẫn, không chạy xử lý dữ li�
 .venv-image-tools/bin/python tools/segmentation/regenerate_masks.py --help
 
 .venv/bin/python tools/validation/audit_images.py --help
-.venv/bin/python tools/validation/verify_grabcut_results.py --help
-.venv/bin/python tools/validation/verify_regenerated_masks.py --help
 ```
 
 `auto_crop.py` và `review_images.py` cũng tự chọn `.venv-image-tools/` khi được
@@ -306,9 +302,9 @@ khi mở hàng đợi `needs_revision/` để chỉnh hoặc tạo lại mask.
 
 ## Phạm vi bản tinh gọn
 
-- Giữ nguyên mã trong `tools/`, ba thư mục ảnh, kiểm kê yêu cầu 2, mask/manifest và B400 hiện hành.
-- Giữ tám lượt truy vấn dùng trong báo cáo, phân tích bốn nhóm cuối, so sánh mask và các bản tổng kết kiểm chứng cuối trong [outputs/search/](outputs/search/README.md).
-- Đã gỡ `tests/`, bản sao lưu lớn, hồ sơ di chuyển cũ, batch kiểm tra chức năng/di chuyển, bản xuất trùng và các log/kết quả trung gian.
+- Giữ mã xử lý/tìm kiếm, ba thư mục ảnh, kiểm kê toàn bộ ảnh của yêu cầu 2, mask/manifest và B400 hiện hành.
+- Giữ tám lượt truy vấn dùng trong báo cáo, phân tích bốn nhóm cuối, so sánh mask trong [outputs/search/](outputs/search/README.md).
+- Đã gỡ `tests/`, các script xác minh độc lập, hồ sơ kiểm thử/bộ mẫu cũ, bản sao lưu lớn, hồ sơ di chuyển, batch thử và bản xuất trùng. Kiểm tra đầu vào và tương thích B400 vẫn thuộc luồng chương trình.
 - Các kết quả 62/62 artifact hoặc số kiểm thử đạt là số đo trước khi dọn, không phải số artifact hiện còn. Một số liên kết chứng cứ lịch sử trỏ về commit gốc trên GitHub.
 
 Hướng dẫn cài đặt hiện hành ở [môi trường Python](docs/python_environments.md). Dùng các lệnh xử lý và đánh giá trong phần tương ứng để tạo kết quả mới.

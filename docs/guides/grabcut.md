@@ -77,7 +77,6 @@ Tất cả kết quả mặc định nằm trong `outputs/segmentation/grabcut/`
 | `visual_review_notes.csv` | Ghi chú nghi vấn từ quan sát trực tiếp, kèm tên bảng xem nhanh; chưa phê duyệt mask. |
 | `full_run.log` | Thanh tiến độ và thống kê lần chạy toàn bộ thực tế. |
 | `verification.json` | Kết quả kiểm tra lại đầu ra và đối chiếu ảnh nguồn. |
-| `resume_verification.json` | Kiểm tra thực tế việc dùng lại toàn bộ kết quả và giữ nguyên manifest, mask/ảnh phủ. |
 
 ## Duyệt và phân loại ảnh phủ
 
@@ -135,8 +134,7 @@ Dòng tương ứng trong `manifest.csv` được cập nhật `review_status=da
 đường dẫn ảnh phủ mới, thông số mask và SHA-256. Thư mục `manual_edits/<lần lưu>/`
 giữ mask/ảnh phủ trước khi sửa, `scribbles.png` và `record.json` chứa thông tin
 trước/sau. Nếu lưu gặp lỗi, tool phục hồi các tệp đã thay đổi. Bảng quicklook,
-báo cáo và script `verify_grabcut_results.py` là bản kiểm tra của lần tạo mask
-ban đầu. Chạy lệnh đồng bộ bên dưới để cập nhật dữ liệu sau khi chỉnh tay.
+báo cáo của lần tạo mask ban đầu là hồ sơ lịch sử. Chạy lệnh đồng bộ bên dưới để cập nhật dữ liệu sau khi chỉnh tay.
 
 Có thể chọn bộ dữ liệu khác bằng `--output-dir` và `--source-dir`.
 
@@ -192,8 +190,7 @@ nằm trong `overlay_sync_report.json`. Hash nguồn được ghi theo ảnh đa
 
 Trước khi ghi, script sao lưu tất cả tệp sẽ thay thế vào
 `overlay_sync_backups/<thời điểm>_<mã>.zip`; nếu ghi lỗi sẽ hoàn tác các tệp đã
-ghi. Không sửa ảnh bằng công cụ khác trong lúc đồng bộ. `verification.json`,
-`resume_verification.json`, `full_processing_summary.json`
+ghi. Không sửa ảnh bằng công cụ khác trong lúc đồng bộ. `verification.json`, `full_processing_summary.json`
 và `visual_review_notes.csv` vẫn là hồ sơ lịch sử của lần chạy ban đầu;
 `overlay_sync_report.json` và lệnh `--verify` phản ánh dữ liệu hiện tại.
 
@@ -221,16 +218,7 @@ chứa hoặc nằm trong thư mục nguồn. Các mask thử nghiệm cũ 224 �
 so sánh cũ/mới và các bảng kết quả so sánh đã được gỡ. Các công cụ tạo, duyệt,
 chỉnh mask và đồng bộ sử dụng kết quả trong `outputs/segmentation/grabcut/`.
 
-## Kiểm tra chương trình
-
-```sh
-.venv/bin/python tools/validation/verify_grabcut_results.py
-```
-
-Script xác minh lịch sử có ghi `verification.json` và yêu cầu trạng thái lúc tạo mask (`chua_duyet`);
-không dùng nó để ghi đè bằng chứng xác minh của bộ đã chỉnh/duyệt. Hồ sơ kiểm tra chỉ đọc của lần chuyển thư mục trước đây đã được gỡ cùng tài liệu di chuyển. Script này dành cho lần chạy toàn bộ mặc định ở 576 × 384, đối chiếu ảnh nguồn
-với `outputs/segmentation/grabcut/provenance/source_before.json` đã ghi trước lần chạy. Không có ground truth mask,
-không tính IoU, độ chính xác phân đoạn hoặc độ chính xác truy hồi từ các tệp này.
+Script xác minh của lần tạo mask ban đầu đã được gỡ khỏi bản tinh gọn. `manifest.csv`, hash nguồn và metadata phân đoạn hiện hành vẫn được giữ. Dùng thao tác đồng bộ/`--verify` của công cụ đồng bộ cho đầu ra đang chỉnh; các kết quả này không phải phép đo độ chính xác phân đoạn hoặc truy hồi.
 
 ## Kết quả thực tế ngày 16/10/2026
 
@@ -252,7 +240,7 @@ Lệnh đo tài nguyên `/usr/bin/time -l` bao ngoài lần chạy toàn bộ b�
 phép đọc `sysctl kern.clockrate` trong sandbox sau khi chương trình đã hoàn tất;
 dòng này trong `full_run.log` thuộc bộ đo tài nguyên. Tổng kết xử lý có 0 lỗi ảnh
 và 0 lỗi bảng xem nhanh. Lần kiểm tra resume chạy trực tiếp bằng Python, không
-dùng bộ đo này; kết quả được ghi riêng trong `resume_verification.json`.
+dùng bộ đo này; hồ sơ kiểm thử resume chi tiết đã được gỡ khỏi nhánh tinh gọn.
 Lần kiểm tra này trả mã 0, dùng lại đủ 812 ảnh, không xử lý lại ảnh nào, giữ nguyên
 manifest và mtime của toàn bộ 1.624 mask/ảnh phủ; tạo lại đủ 102 bảng với cờ mới.
 Bảy kiểm tra hồi quy về lỗi, ngắt/resume, sửa đầu ra hỏng, trạng thái duyệt,

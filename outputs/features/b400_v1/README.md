@@ -25,7 +25,6 @@ chưa làm chuẩn hóa xoay/trục chính dài 192. Chưa đánh giá chất l�
 | `input_validation.json` | Kiểm kê thực tế và hash ảnh/mask/manifest/CSV |
 | `extraction_records.json`, `status.csv` | Mọi tên tệp, trạng thái/lý do, metadata occupancy/trục |
 | `summary.json`, `verification.json` | Kết quả chạy và đọc lại mọi vector SQLite, integrity/FK, kiểm scaler |
-| `delivery_checks.json` | Kiểm độc lập S2e/S3, so 351 chiều giữ nguyên, hash tệp được bảo vệ và liên kết |
 | `extraction.log` | Nhật ký trích xuất bộ B400 hiện hành |
 
 552 vector có quy ước thiếu ô màu/profile, phân biệt bằng validity;
@@ -40,7 +39,7 @@ CSDL hiện hành chỉ có một cấu hình, một scaler và một run theo c
 ```
 
 Lấy ID từ status. `--rebuild` dựng sạch trong thư mục tạm, kiểm chứng trước
-hoán đổi nguyên tử, giữ nguyên bộ cũ khi lỗi và dọn thư mục tạm. Không bàn giao
+thay đầu ra và dọn thư mục tạm. macOS/Linux dùng đổi chỗ nguyên tử; Windows dùng hai bước đổi tên dưới khóa chung, có backup/rollback và phục hồi khi gián đoạn, không phải đổi chỗ nguyên tử. Không bàn giao
 thư mục B400 thứ hai. Khóa `.b400_v1.lock` nằm ở thư mục cha. `extract` thường
 chỉ tiếp tục khi cùng cấu hình/mã/runtime; chạy lại partial thay scaler/vector
 trong một transaction để tránh lỗi khóa ngoại hoặc trộn scaler. Ảnh/mask đổi
@@ -48,4 +47,4 @@ hợp lệ tạo run riêng nếu cùng công thức. `validate` ghi lại audit
 đổi nguồn cần extract trước verify. Chi tiết tại
 [báo cáo triển khai](../../../docs/reports/b400_implementation.md).
 
-Nhánh tinh gọn đã gỡ log unit test/hồi quy và mã `tests/`. Các số kiểm thử trong báo cáo là lịch sử; `summary.json`, `verification.json`, `delivery_checks.json`, NPZ, SQLite và metadata hiện hành vẫn được giữ nguyên.
+Nhánh tinh gọn đã gỡ log unit test/hồi quy và mã `tests/`. Các số kiểm thử trong báo cáo là lịch sử; `summary.json`, `verification.json`, NPZ, SQLite và metadata hiện hành vẫn được giữ; hồ sơ kiểm thử bàn giao bổ sung đã được gỡ.

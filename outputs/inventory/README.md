@@ -31,12 +31,6 @@ with np.load('outputs/inventory/full_frame_color_features.npz', allow_pickle=Fal
     features = data['features']
 ```
 
-Ba tệp `viewed_images.csv`, `grabcut_sample_statistics.csv`,
-`grabcut_sample_environment.json` là hồ sơ mẫu lịch sử được giữ nguyên để tra
-cứu tài liệu chuyển thư mục. Chúng **không phải đầu ra hoặc căn cứ kết quả hiện
-hành**; lệnh phân tích mới không tạo lại chúng. Danh sách xử lý tự động hiện nay
-là `image_processing.csv`; tên đó không hàm ý quan sát thị giác.
+Danh sách xử lý tự động hiện hành là `image_processing.csv`; tên này không hàm ý quan sát thị giác. Ba tệp mẫu lịch sử và script xác minh độc lập đã được gỡ khỏi nhánh tinh gọn.
 
-Từ root dự án, chạy `.venv/bin/python tools/validation/verify_image_analysis.py`
-để đối chiếu tệp nguồn, hash, các đầu ra và số liệu báo cáo. Lần kiểm tra không
-chỉnh sửa ảnh hay sửa báo cáo.
+Chạy công cụ `tools/validation/audit_images.py` theo [hướng dẫn yêu cầu 2](../../docs/reports/search_feature_design.md) khi cần tạo lại kiểm kê và các phép đo toàn bộ ảnh. Chạy lại sẽ ghi đầu ra mới; các số liệu trong báo cáo cần được cập nhật nếu thay dữ liệu.

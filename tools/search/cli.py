@@ -11,6 +11,8 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from tools.image_processing.tool_common import configure_console
+
 from tools.project_paths import B400_OUTPUT_DIR, PROJECT_ROOT
 from tools.search.index import SearchIndex
 from tools.search.query import load_image, load_mask, create_mask, refine, retrieve, output_base
@@ -19,6 +21,7 @@ from tools.search.mask_quality import review_message
 
 
 def main(argv=None):
+    configure_console()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--feature-dir', type=Path, default=B400_OUTPUT_DIR)
     parser.add_argument('--project-root', type=Path, default=PROJECT_ROOT)

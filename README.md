@@ -9,6 +9,36 @@ công cụ chấm theo lô; xem [báo cáo tìm kiếm](docs/reports/search_impl
 Đã kiểm tra thêm các lượt tìm kiếm thực tế ngày 23/10, sửa thao tác bbox/mask và
 thêm chẩn đoán từng lượt; xem [kiểm tra chất lượng](docs/reports/search_quality_audit.md).
 
+## Mở demo trên Windows (PowerShell)
+
+Cài **CPython 3.10.11 x64** với Tcl/Tk, mở PowerShell tại root dự án.
+Tạo venv mới trên Windows; không sao chép venv từ Mac. Kiểm tra `py -3.10 --version`
+phải ra `3.10.11`, rồi chạy:
+
+```powershell
+py -3.10 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --only-binary=:all: -r .\requirements.txt
+.\.venv\Scripts\python.exe -m pip check
+.\.venv\Scripts\python.exe -c "import tkinter; print(tkinter.TkVersion)"
+.\.venv\Scripts\python.exe -B .\tools\features\cli.py verify
+.\.venv\Scripts\python.exe -B .\tools\search\cli.py status
+.\.venv\Scripts\python.exe -B .\tools\search\cli.py gui
+```
+
+Dùng ngay SQLite/scaler tại `outputs/features/b400_v1/`; không chạy `extract`
+hoặc fit lại scaler để mở demo. Trong GUI chọn ảnh, kiểm tra mask, tô giữ/loại,
+áp dụng GrabCut, hoàn tác nếu cần, rồi tìm và xuất kết quả.
+Lệnh truy vấn, batch/score và môi trường công cụ ảnh riêng nằm trong
+[hướng dẫn Windows/macOS](docs/python_environments.md).
+
+**Phạm vi kiểm chứng ngày 23/10/2026:** đã chạy thật CLI, truy vấn, batch và GUI
+trên macOS Intel; chưa có máy Windows thật. Đã tải wheel cho Windows x64/Python
+3.10, đối chiếu đủ phụ thuộc theo marker Windows, mô phỏng nhánh khóa Win32 và
+hai bước đổi tên/khôi phục. Đây chưa phải xác nhận chạy Windows thành công.
+812 vector × 400 chiều đọc được; chuẩn hóa lại bằng scaler frozen khớp chính xác
+(sai số lớn nhất 0); SHA-256 của 6.037 tệp dữ liệu/đầu ra/báo cáo giữ nguyên.
+Chi tiết kiểm chứng và giới hạn ở cuối [hướng dẫn môi trường](docs/python_environments.md#kiểm-chứng-ngày-23102026).
+
 ## Đọc tài liệu
 
 | Tài liệu | Nội dung |
@@ -89,10 +119,11 @@ Lưới nhị phân mất thông tin độ phủ, nhạy ngưỡng và mask; ch�
 khẳng định chất lượng tìm kiếm tăng. Các đoạn cần chuyển vào báo cáo nhóm
 được chỉ rõ trong [báo cáo triển khai](docs/reports/b400_implementation.md).
 
-Dùng `.venv/` hiện có, không thêm phụ thuộc, chạy bằng CPU. Ảnh, mask, manifest
+Dùng `.venv/` đúng phiên bản ghim, chạy bằng CPU. Ảnh, mask, manifest
 và đầu ra 176 chiều chỉ được đọc. Lệnh `extract` kiểm tra toàn bộ đầu vào,
 trích xuất, fit chuẩn hóa trên tập phát triển và nhập/cập nhật SQLite;
-`verify` đọc lại CSDL, đối chiếu tên/hash/vector/NPZ và tái hiện chuẩn hóa.
+`verify` chỉ đọc CSDL và các sidecar, đối chiếu tên/hash/vector/NPZ và tái hiện
+chuẩn hóa bằng scaler đã lưu; không fit lại hoặc ghi đè báo cáo xác minh cũ.
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py validate
@@ -104,11 +135,14 @@ PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py verify
 CSDL: [`outputs/features/b400_v1/features.sqlite3`](outputs/features/b400_v1/features.sqlite3).
 Đọc một ảnh bằng `get --filename Equus_asinus_0587.jpg --run-id ID`, dùng ID từ
 lệnh `status`. Các lệnh `init`, `status`, `get` phục vụ tạo/kiểm kê/đọc CSDL;
-đọc luôn chỉ rõ lần chạy để tránh dùng nhầm scaler. `extract` chạy lại cùng đầu
-vào cập nhật cùng bản ghi; nguồn thay đổi tạo lần chạy/scaler riêng. Nếu mã,
-thư viện hoặc cấu hình thay đổi, dùng `extract --rebuild`: dựng sạch trong thư
-mục tạm, kiểm chứng toàn bộ rồi hoán đổi nguyên tử tại đường dẫn hiện hành.
-Lỗi giữ nguyên đầu ra cũ; không trộn vector/scaler hoặc bàn giao thư mục mới.
+đọc luôn chỉ rõ lần chạy để tránh dùng nhầm scaler. Bản tương thích I/O hiện tại
+dùng lại B400 đã lưu qua chính sách fingerprint tường minh, giữ nguyên ID cũ và
+runtime ghim. Không cần rebuild cho thay đổi khóa/đường dẫn đã được duyệt.
+`extract --rebuild` dành cho việc chủ động xây lại dữ liệu: dựng và xác minh staging
+trước; macOS/Linux đổi chỗ nguyên tử, Windows đổi tên hai bước có backup/rollback
+dưới khóa chung. Windows có khoảng trống giữa hai lần đổi tên, không nguyên tử.
+Lỗi khôi phục giữ bộ cũ trong thư mục sibling `.b400_v1-previous`; lần mở tiếp theo
+dưới khóa sẽ phục hồi. Xem giới hạn và chính sách byte/runtime trong hướng dẫn môi trường.
 
 Các trường hợp ô trống, hue không bão hòa và phép đo không xác định có quy ước
 rõ, kèm validity 400 phần tử và metadata ngoài vector. Thành công trích xuất
@@ -234,8 +268,8 @@ python3 -m venv .venv-image-tools
 ```
 
 Không chuyển nguyên thư mục venv khi đổi máy/đường dẫn dự án; tạo lại tại đích.
-Bản wheel có SHA-256 dùng để cài lại offline trên macOS Intel/Python 3.10 và
-kiểm kê đầy đủ nằm trong [báo cáo môi trường](docs/python_environments.md).
+Cách cài Windows, phiên bản đã chạy trên macOS Intel, kiểm tra wheel Windows và
+phạm vi tương thích nằm trong [hướng dẫn môi trường](docs/python_environments.md).
 
 ## Chạy công cụ
 

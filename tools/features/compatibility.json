@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "legacy_feature_set_id": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+  "runtime": {
+    "python": "3.10.11",
+    "numpy": "1.26.4",
+    "opencv": "4.11.0",
+    "pillow": "12.3.0"
+  },
+  "approved_code_sha256": {
+    "tools/features/b400.py": "620bfa20cd8d84f40ecfe69ae778dd180e76913f0235fe351b5a13ab6a01d15c",
+    "tools/features/inputs.py": "e2181784179d7355d2bb518612de1aca1afb664d6967b17879a9a49cddac437c",
+    "tools/features/storage.py": "c3a70b70a7406ebe56298e9b0e6cd3e05714e30f2b9b88f39fb5245daa773d4b",
+    "tools/features/cli.py": "6c8766d8d5fc9b1ca6e6e554d1c8cae0fc46410fd67098b4d6c55db392a5a8ce",
+    "tools/features/compatibility.py": "c05afc5739dfae06e7c7a8995ba98a2875d5bbb47c76519f1a699ea6caa40b99",
+    "tools/features/publication.py": "9026a7d1a5fc8eb1eb78fd97a5ffe259ed175045041ba04cd951bf9bb492726d",
+    "tools/file_lock.py": "916271fa0e36ec75f0bb4ee819bb3a5f7d5945874509df749916910225887ebe",
+    "tools/project_paths.py": "6625dbfa623e3ba397ccfc6384c82f209637ca5ef4c52b4000d8319e55342b6f",
+    "tools/image_processing/tool_common.py": "bcd939490cc34605d04f6746fa98ec3fa62c3054a6b18411b952412d8e0a684a",
+    "tools/validation/audit_images.py": "4c6f44d65e9835fa78ac88807b788e8e777b4e769b0926f336588ebf00f28799"
+  }
+}

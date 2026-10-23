@@ -26,7 +26,7 @@ def main(argv=None):
     parser.add_argument('--project-root', type=Path, default=PROJECT_ROOT)
     args = parser.parse_args(argv)
     output = args.output_dir
-    inventory = json.loads(args.inventory.read_text())
+    inventory = json.loads(args.inventory.read_text(encoding='utf-8'))
     changed = []
     for relative, before in inventory.items():
         path = resolve_project_reference(relative, args.project_root)

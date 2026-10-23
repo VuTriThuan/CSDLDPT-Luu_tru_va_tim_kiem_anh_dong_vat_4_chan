@@ -31,7 +31,7 @@ def main(argv=None):
     assert len(rows) == len(image_names), (len(rows), len(image_names))
     assert {row['filename'] for row in rows} == image_names
     assert len({row['filename'] for row in rows}) == len(rows)
-    before = json.loads(args.inventory.read_text())
+    before = json.loads(args.inventory.read_text(encoding='utf-8'))
     assert set(before) == source_files, 'Source file list changed'
     for name, record in before.items():
         path = source_dir / name

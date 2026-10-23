@@ -26,9 +26,9 @@ def read_csv(path):
 
 def verify(data, output, report=None):
     data, output = data.resolve(), output.resolve()
-    inventory = json.loads((output / 'image_inventory.json').read_text())
-    summary = json.loads((output / 'feature_summary.json').read_text())
-    environment = json.loads((output / 'analysis_environment.json').read_text())
+    inventory = json.loads((output / 'image_inventory.json').read_text(encoding='utf-8'))
+    summary = json.loads((output / 'feature_summary.json').read_text(encoding='utf-8'))
+    environment = json.loads((output / 'analysis_environment.json').read_text(encoding='utf-8'))
     require(environment['script_sha256'] == hashlib.sha256(Path(audit.__file__).read_bytes()).hexdigest(),
             'Analysis script has changed since the run; rerun the analysis')
     records = read_csv(output / 'image_processing.csv')
@@ -110,7 +110,7 @@ def verify(data, output, report=None):
             sums = matrix[:, start:stop].sum(axis=1)
             require(np.all(np.isclose(sums, 1) | (hue & np.isclose(sums, 0))), 'Histogram L1 mismatch')
     if report is not None:
-        text = report.read_text()
+        text = report.read_text(encoding='utf-8')
         for row in counts:
             line = f"| `{row['label']}` | {row['input_count']} | {row['technical_success']} | {row['feature_success']} |"
             require(line in text, f'Report label row mismatch: {row["label"]}')

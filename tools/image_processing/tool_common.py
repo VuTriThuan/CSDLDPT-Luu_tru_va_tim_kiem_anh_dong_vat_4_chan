@@ -1,6 +1,5 @@
 """Cài đặt, môi trường Python, đường dẫn và khóa thư mục trên macOS/Windows."""
 from contextlib import contextmanager
-import errno
 import os
 from pathlib import Path
 import struct
@@ -13,6 +12,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.project_paths import PROJECT_ROOT, DATA_DIR
+from tools.file_lock import file_lock
 
 TOOL_DIR = Path(__file__).resolve().parent
 DATA = DATA_DIR
@@ -47,7 +47,9 @@ def setup_environment():
         print(f"Tạo môi trường Python tại {environment}", flush=True)
         # On macOS, sys._base_executable can still point into the calling venv.
         # Invoke the base installation so new launchers do not depend on that venv.
-        base_python = Path(sys.base_prefix) / ("python.exe" if sys.platform == "win32" else "bin/python3")
+        base_python = Path(sys.base_prefix) / ("python.exe" if sys.platform == "win32" else "bin")
+        if sys.platform != "win32":
+            base_python = base_python / "python3"
         if not base_python.is_file():
             raise RuntimeError(f"Không tìm thấy Python nền: {base_python}. Tạo lại môi trường bằng Python hệ thống.")
         subprocess.run([str(base_python), "-m", "venv", str(environment)], check=True)
@@ -87,29 +89,5 @@ def prepare_runtime(script):
 @contextmanager
 def folder_lock(folder):
     """Khóa tự nhả khi đóng tool hoặc tiến trình bị ngắt; không xóa file khóa."""
-    with (folder / ".tool_anh.lock").open("a+b") as handle:
-        if sys.platform == "win32":
-            import msvcrt
-            # Windows cho phép khóa một byte vượt cuối file, kể cả file rỗng.
-            handle.seek(0)
-            try:
-                msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
-            except OSError as exc:
-                if exc.errno not in {errno.EACCES, errno.EAGAIN, errno.EDEADLK}:
-                    raise
-                raise RuntimeError("Tool cắt/duyệt khác đang dùng thư mục. Đóng tool đó trước.") from exc
-            try:
-                yield
-            finally:
-                handle.seek(0)
-                msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
-        else:
-            import fcntl
-            try:
-                fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            except BlockingIOError as exc:
-                raise RuntimeError("Tool cắt/duyệt khác đang dùng thư mục. Đóng tool đó trước.") from exc
-            try:
-                yield
-            finally:
-                fcntl.flock(handle, fcntl.LOCK_UN)
+    with file_lock(folder / '.tool_anh.lock'):
+        yield

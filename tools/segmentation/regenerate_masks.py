@@ -9,7 +9,6 @@ from __future__ import annotations
 import argparse
 import csv
 from datetime import datetime, timezone
-import fcntl
 import hashlib
 import io
 import json
@@ -22,6 +21,8 @@ import time
 # Allow both `python -m tools....` and direct invocation from any cwd.
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from tools.file_lock import file_lock
 
 from tools.project_paths import PROJECT_ROOT, SEGMENTATION_DIR, GRABCUT_OUTPUT_DIR
 
@@ -217,8 +218,7 @@ def run(args):
     if not files or any(path.name not in original_rows for path in files):
         raise ValueError('Empty queue or queue image missing from original manifest')
     output.mkdir(parents=True, exist_ok=True)
-    with (output / '.run.lock').open('a') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    with file_lock(output / '.run.lock'):
         existing = [p for p in output.iterdir() if p.name != '.run.lock']
         if existing and not args.resume:
             raise ValueError('Output exists; use --resume or a new output directory')
@@ -229,7 +229,7 @@ def run(args):
                       source_dir=str(source), previous_dir=str(previous), method='u2net_onnx_cpu',
                       numpy=np.__version__, onnxruntime=ort.__version__, pillow=pillow_version, note=NOTE)
         config_path = output / 'run_config.json'
-        if config_path.exists() and json.loads(config_path.read_text()) != config:
+        if config_path.exists() and json.loads(config_path.read_text(encoding='utf-8')) != config:
             raise ValueError('Configuration changed; use a new output directory')
         if existing and not config_path.exists():
             raise ValueError('Missing run configuration; use a new output directory')
@@ -242,7 +242,7 @@ def run(args):
         old_rows = {}
         manifest = output / 'manifest.csv'
         if manifest.exists():
-            with manifest.open(newline='') as stream:
+            with manifest.open(encoding='utf-8', newline='') as stream:
                 old_rows = {row['filename']: row for row in csv.DictReader(stream)}
         names = {original_rows[path.name]['filename'] for path in files}
         if not set(old_rows).issubset(names):

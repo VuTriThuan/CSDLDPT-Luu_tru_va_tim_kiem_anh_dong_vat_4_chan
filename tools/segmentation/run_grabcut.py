@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import fcntl
 import hashlib
 import io
 import json
@@ -22,6 +21,8 @@ from datetime import datetime, timezone
 # Allow both `python -m tools....` and direct invocation from any cwd.
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from tools.file_lock import file_lock
 
 from tools.project_paths import PROJECT_ROOT, DATA_DIR, GRABCUT_OUTPUT_DIR
 
@@ -67,17 +68,13 @@ def now():
 
 
 def atomic_text(path, value):
-    with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', newline='',
-                                     dir=path.parent, delete=False) as stream:
-        temporary = Path(stream.name)
-        try:
+    fd, name = tempfile.mkstemp(dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8', newline='') as stream:
             stream.write(value)
             stream.flush()
             os.fsync(stream.fileno())
-        except BaseException:
-            temporary.unlink(missing_ok=True)
-            raise
-    try:
         temporary.replace(path)
     finally:
         temporary.unlink(missing_ok=True)
@@ -129,7 +126,8 @@ def create_foreground_mask(image, iterations=5, seed=0):
 
 
 def read_image(path, max_side=0):
-    image = cv2.imread(str(path), cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
+    image = cv2.imdecode(np.frombuffer(Path(path).read_bytes(), dtype=np.uint8),
+                         cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
     if image is None:
         raise ValueError('Cannot decode image')
     height, width = image.shape[:2]
@@ -275,12 +273,7 @@ def run(args):
     if not names:
         raise ValueError('No input images selected')
     output.mkdir(parents=True, exist_ok=True)
-    # flock releases on interruption/kill; no stale lock to remove on resume.
-    with (output / '.run.lock').open('a') as lock:
-        try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError as exc:
-            raise ValueError('Another process is using this output directory') from exc
+    with file_lock(output / '.run.lock'):
         return run_locked(args, source, output, names, len(found))
 
 

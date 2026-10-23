@@ -1,9 +1,7 @@
 """Requirement 3: validate, extract/upsert, verify and inspect local B400 SQLite."""
 import argparse
-import ctypes
 from collections import Counter
 from datetime import datetime, timezone
-import fcntl
 import json
 from pathlib import Path
 import platform
@@ -17,9 +15,13 @@ if __package__ in (None, ''):
 
 import cv2
 import numpy as np
-from PIL import __version__ as pillow_version
 
 from tools.features import b400, inputs, storage
+from tools.features.compatibility import feature_set, check_feature_set
+from tools.features.publication import exchange_directories, recover_output
+from tools.file_lock import file_lock
+from tools.image_processing.tool_common import configure_console
+
 from tools.project_paths import PROJECT_ROOT, CROPPED_IMAGES_DIR, GRABCUT_OUTPUT_DIR, INVENTORY_DIR, B400_OUTPUT_DIR
 from tools.validation.audit_images import write_csv
 
@@ -35,15 +37,6 @@ def write_json(path,value):
     temporary.replace(path)
 
 
-def feature_set():
-    files=[Path(module.__file__) for module in [b400,inputs,storage]]+[Path(__file__)]
-    value=dict(descriptor=b400.configuration(),code_sha256={p.name:inputs.sha256(p) for p in files},
-               runtime=dict(python=platform.python_version(),numpy=np.__version__,opencv=cv2.__version__,pillow=pillow_version))
-    value=json.loads(json.dumps(value))  # Canonical lists for round trips through JSON/SQLite.
-    value['id']=b400.digest_json(value)
-    return value
-
-
 def prepare_output(args):
     root=args.project_root.resolve()
     output=args.output_dir.resolve()
@@ -55,7 +48,7 @@ def prepare_output(args):
             raise ValueError(f'Input/protected directory and output overlap: {source}')
     if any(p.is_symlink() for p in [args.output_dir,*args.output_dir.parents]):
         raise ValueError('Output symlinks are not supported')
-    output.mkdir(parents=True,exist_ok=True)
+    output.parent.mkdir(parents=True,exist_ok=True)
     return root,output
 
 
@@ -69,8 +62,9 @@ def extract_all(args):
     start=time.monotonic()
     root,output=args.project_root.resolve(),args.output_dir.resolve()
     spec=feature_set()
+    check_feature_set(spec)
     config_path=output/'feature_set.json'
-    if config_path.exists() and json.loads(config_path.read_text())!=spec:
+    if config_path.exists() and json.loads(config_path.read_text(encoding='utf-8'))!=spec:
         raise ValueError('Feature configuration/code/runtime changed; use extract --rebuild to replace safely')
     write_json(config_path,spec)
     report=validate(args)
@@ -140,33 +134,15 @@ def extract_all(args):
         failures=failures,input_issues=report['issues'],elapsed_seconds=round(time.monotonic()-start,3),
         created_at_utc=created,completed_at_utc=now(),machine=platform.machine(),database='features.sqlite3',status=run['status'])
     write_json(output/'summary.json',summary)
-    verification=verify(args)
+    verification=verify(args,write_report=True)
     print(json.dumps(dict(summary=summary,verification=verification),ensure_ascii=False,indent=2))
     return 0 if run['status']=='complete' else 1
 
 
-def exchange_directories(first, second):
-    """Atomic same-filesystem exchange; failure leaves the old output in place."""
-    libc=ctypes.CDLL(None,use_errno=True)
-    if sys.platform=='darwin':
-        call=libc.renamex_np
-        call.argtypes=[ctypes.c_char_p,ctypes.c_char_p,ctypes.c_uint]
-        result=call(bytes(first),bytes(second),2)  # RENAME_SWAP
-    elif sys.platform.startswith('linux'):
-        call=libc.renameat2
-        call.argtypes=[ctypes.c_int,ctypes.c_char_p,ctypes.c_int,ctypes.c_char_p,ctypes.c_uint]
-        result=call(-100,bytes(first),-100,bytes(second),2)  # RENAME_EXCHANGE
-    else:
-        raise OSError('Atomic directory exchange requires macOS or Linux')
-    if result:
-        error=ctypes.get_errno()
-        raise OSError(error,'Atomic output exchange failed')
-
-
 def rebuild(args):
     output=args.output_dir
-    # The old output remains fully readable until both extraction and verification
-    # succeed. After exchange the temporary directory owns the old artifacts.
+    # Extraction/verification close their DB and NPZ handles before publication.
+    # macOS/Linux swap atomically; Windows uses a sibling backup and rollback.
     with tempfile.TemporaryDirectory(prefix=f'.{output.name}-build-',dir=output.parent) as temporary:
         stage=Path(temporary)/'result'
         stage.mkdir()
@@ -180,17 +156,16 @@ def rebuild(args):
     return 0
 
 
-def verify(args):
+def verify(args, write_report=False):
     output,root=args.output_dir.resolve(),args.project_root.resolve()
-    summary=json.loads((output/'summary.json').read_text())
-    spec=json.loads((output/'feature_set.json').read_text())
-    if spec!=feature_set():
-        raise ValueError('Implementation/runtime differs from saved feature set')
+    summary=json.loads((output/'summary.json').read_text(encoding='utf-8'))
+    spec=json.loads((output/'feature_set.json').read_text(encoding='utf-8'))
+    compatibility = check_feature_set(spec)
     audit=inputs.audit(root,args.input_dir,args.segmentation_dir,args.inventory_csv)
-    saved_audit=json.loads((output/'input_validation.json').read_text())
+    saved_audit=json.loads((output/'input_validation.json').read_text(encoding='utf-8'))
     if audit!=saved_audit:
         raise ValueError('Source/mask/manifest/inventory changed after preflight')
-    records=json.loads((output/'extraction_records.json').read_text())
+    records=json.loads((output/'extraction_records.json').read_text(encoding='utf-8'))
     expected=[r for r in records if r['feature_status']=='success']
     db=storage.connect(output/'features.sqlite3',readonly=True)
     try:
@@ -211,7 +186,7 @@ def verify(args):
         count=db.execute('SELECT count(*) FROM vectors WHERE run_id=?',(summary['run_id'],)).fetchone()[0]
         if count!=len(expected) or count!=summary['vector_success'] or len(records)-count!=summary['vector_failed']:
             raise ValueError('SQLite vector/status counts differ')
-        params=json.loads((output/'normalizer.json').read_text())
+        params=json.loads((output/'normalizer.json').read_text(encoding='utf-8'))
         if params:
             db_params=db.execute('SELECT params_json FROM normalizers WHERE id=?',(params['id'],)).fetchone()
             if not db_params or json.loads(db_params[0])!=params or run['normalizer_id']!=params['id']:
@@ -226,9 +201,11 @@ def verify(args):
                 raise ValueError('NPZ version differs')
             if str(arrays['normalizer_id'])!=(params['id'] if params else ''):
                 raise ValueError('NPZ normalizer differs')
-            if params and b400.digest_json(params)!=b400.digest_json(
-                    b400.fit_normalizer(arrays['raw'],arrays['validity'],run['input_digest'])):
-                raise ValueError('Scaler was not fitted on current successful raw vectors')
+            if params:
+                from tools.search.index import check_normalizer
+                check_normalizer(params,run)
+                if params['fit_rows']!=len(expected) or params['valid_counts']!=arrays['validity'].sum(axis=0).tolist():
+                    raise ValueError('Scaler fit row/validity counts differ')
             if len(expected) and not np.isin(arrays['raw'][:,160:208],[0,1]).all():
                 raise ValueError('Raw S3 must contain only binary bits')
             if params and not np.array_equal(b400.transform(arrays['raw'],arrays['validity'],params),arrays['normalized']):
@@ -252,14 +229,16 @@ def verify(args):
             source_hashes_checked=audit['success'],mask_hashes_checked=audit['success'],
             input_validation_failed=audit['failed'],sqlite_integrity='ok',sqlite_foreign_keys='ok',
             frozen_normalization_reproduced=True,source_audit_unchanged=True,checked_at_utc=now())
-        result.update(scaler_refit_reproduced=True,raw_s3_binary=True)
+        result.update(scaler_checksum_verified=True,raw_s3_binary=True,compatibility=compatibility)
     finally:
         db.close()
-    write_json(output/'verification.json',result)
+    if write_report:
+        write_json(output/'verification.json',result)
     return result
 
 
 def main(argv=None):
+    configure_console()
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command',choices=['validate','extract','verify','init','status','get'])
     parser.add_argument('--project-root',type=Path,default=PROJECT_ROOT)
@@ -269,31 +248,20 @@ def main(argv=None):
     parser.add_argument('--output-dir',type=Path,default=B400_OUTPUT_DIR)
     parser.add_argument('--filename')
     parser.add_argument('--run-id')
-    parser.add_argument('--rebuild',action='store_true',help='Build and verify fresh outputs, then atomically replace output directory')
+    parser.add_argument('--rebuild',action='store_true',help='Build and verify staging, then replace output (Windows: two renames with rollback)')
     args=parser.parse_args(argv)
     try:
         cv2.setNumThreads(1)
         if args.rebuild and args.command!='extract':
             raise ValueError('--rebuild requires extract')
         if args.command in {'status','get'}:
-            db=storage.connect(args.output_dir/'features.sqlite3',readonly=True)
-            try:
-                if args.command=='status':
-                    value=storage.status(db)
-                else:
-                    if not args.filename or not args.run_id:
-                        raise ValueError('get requires --filename and --run-id (explicit version)')
-                    value=storage.read_vector(db,args.run_id,args.filename)
-                    value={k:v.tolist() if isinstance(v,np.ndarray) else v for k,v in value.items()}
-            finally:
-                db.close()
-            print(json.dumps(value,ensure_ascii=False,indent=2))
-            return 0
+            with file_lock(args.output_dir.parent/f'.{args.output_dir.name}.lock'):
+                recover_output(args.output_dir)
+                return inspect_database(args)
         args.project_root,args.output_dir=prepare_output(args)
-        # Keep the lock outside the exchanged directory so waiting writers use
-        # the same inode before and after publication.
-        with (args.output_dir.parent/f'.{args.output_dir.name}.lock').open('a') as lock:
-            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        with file_lock(args.output_dir.parent/f'.{args.output_dir.name}.lock'):
+            recover_output(args.output_dir)
+            args.output_dir.mkdir(exist_ok=True)
             if args.command=='extract':
                 return rebuild(args) if args.rebuild else extract_all(args)
             if args.command=='init':
@@ -310,6 +278,22 @@ def main(argv=None):
     except (ValueError,OSError,KeyError,TypeError,sqlite3.Error) as exc:
         print(f'B400 error: {exc}',file=sys.stderr)
         return 2
+
+
+def inspect_database(args):
+    db=storage.connect(args.output_dir/'features.sqlite3',readonly=True)
+    try:
+        if args.command=='status':
+            value=storage.status(db)
+        else:
+            if not args.filename or not args.run_id:
+                raise ValueError('get requires --filename and --run-id (explicit version)')
+            value=storage.read_vector(db,args.run_id,args.filename)
+            value={k:v.tolist() if isinstance(v,np.ndarray) else v for k,v in value.items()}
+    finally:
+        db.close()
+    print(json.dumps(value,ensure_ascii=False,indent=2))
+    return 0
 
 
 if __name__=='__main__':

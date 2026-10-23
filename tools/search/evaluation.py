@@ -1,7 +1,7 @@
 """Batch retrieval and human visual relevance; labels are a separate diagnostic."""
 import csv
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import time
 import uuid
 
@@ -122,7 +122,9 @@ def resolve_result(batch_path, batch, query):
     then cross-check the local result's ID, original directory and index IDs.
     """
     folder = Path(batch_path).resolve().parent
-    stored = Path(query['result_json'])
+    text = query['result_json']
+    # Persisted paths are protocol text, independent of the current host OS.
+    stored = PureWindowsPath(text) if PureWindowsPath(text).is_absolute() else PurePosixPath(text)
     if '..' in stored.parts:
         raise ValueError(f'Unsafe batch artifact path: {stored}')
     legacy = stored.is_absolute()
@@ -204,7 +206,9 @@ def score_batch(batch_path, judgments_path, destination, project_root=PROJECT_RO
                         raise ValueError(f'Judgment identity/metadata changed: {key}, {field}')
                 # Never open paths from the judging sheet. Check immutable fields
                 # against the saved artifact (legacy paths remain literal evidence).
-                stored_folder = Path(query['result_json']).parent
+                text = query['result_json']
+                stored_folder = (PureWindowsPath(text) if PureWindowsPath(text).is_absolute()
+                                 else PurePosixPath(text)).parent
                 for field, value in (
                     ('result_image', str(stored_folder/hit['artifact_image'])),
                     ('query_image', str(stored_folder/'query_rgb.png')),

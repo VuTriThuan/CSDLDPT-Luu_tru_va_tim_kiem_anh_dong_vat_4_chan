@@ -12,7 +12,6 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 import csv
 from datetime import datetime, timezone
-import fcntl
 import hashlib
 import io
 import json
@@ -36,9 +35,11 @@ except ImportError as exc:
     if exc.name == "cv2":
         raise SystemExit(
             "Thiếu OpenCV trong Python đang chạy. Cài vào đúng môi trường hiện tại bằng:\n"
-            ".venv/bin/python -m pip install --only-binary=:all: -r requirements.txt"
+            f'"{sys.executable}" -m pip install --only-binary=:all: -r requirements.txt'
         ) from exc
     raise SystemExit(f"Thiếu thư viện: {exc}. Cài Tkinter, NumPy và Pillow cho Python đang chạy.") from exc
+
+from tools.file_lock import file_lock
 
 from tools.segmentation import run_grabcut as gc
 
@@ -348,15 +349,8 @@ class MaskRepository:
 
 @contextmanager
 def output_lock(output: Path):
-    with (output / ".run.lock").open("a") as lock:
-        try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError as exc:
-            raise RuntimeError("Có công cụ tạo / chỉnh mask khác đang dùng thư mục kết quả.") from exc
-        try:
-            yield
-        finally:
-            fcntl.flock(lock, fcntl.LOCK_UN)
+    with file_lock(output / '.run.lock'):
+        yield
 
 
 def fit_image(canvas_width, canvas_height, image_width, image_height):

@@ -1,0 +1,26 @@
+# Source bytes are fingerprinted: clone with LF even when core.autocrlf=true.
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+.gitattributes text eol=lf
+
+# Frozen artifacts include CSV with intentional CRLF and JSON/CSV byte hashes.
+# Disable conversion (rather than renormalizing historical bytes).
+/data/** -text
+/outputs/** -text
+/reports/** -text
+
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.npz binary
+*.npy binary
+*.sqlite3 binary
+*.db binary
+*.onnx binary
+*.pdf binary
+*.zip binary
+*.tar binary

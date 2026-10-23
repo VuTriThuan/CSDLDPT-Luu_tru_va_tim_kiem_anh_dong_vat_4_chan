@@ -7,7 +7,9 @@ import time
 import numpy as np
 
 from tools.features import b400, storage
-from tools.features.cli import feature_set
+from tools.features.compatibility import check_feature_set
+from tools.features.publication import recover_output
+from tools.file_lock import file_lock
 from tools.features.inputs import safe_path
 from tools.project_paths import B400_OUTPUT_DIR, PROJECT_ROOT
 
@@ -100,6 +102,12 @@ def rank(matrix, records, original, flipped, query_hash=None, exclude_self=True,
 
 class SearchIndex:
     def __init__(self, feature_dir=B400_OUTPUT_DIR, run_id=None, project_root=PROJECT_ROOT):
+        feature_dir = Path(feature_dir).resolve()
+        with file_lock(feature_dir.parent/f'.{feature_dir.name}.lock'):
+            recover_output(feature_dir)
+            self._load(feature_dir, run_id, project_root)
+
+    def _load(self, feature_dir, run_id, project_root):
         start = time.perf_counter()
         self.root, self.feature_dir = Path(project_root).resolve(), Path(feature_dir).resolve()
         summary = read_json(self.feature_dir/'summary.json')
@@ -117,8 +125,9 @@ class SearchIndex:
             self.run = dict(run)
             spec_row = db.execute('SELECT * FROM feature_sets WHERE id=?', (run['feature_set_id'],)).fetchone()
             self.spec = json.loads(spec_row['config_json'])
-            if self.spec['id'] != run['feature_set_id'] or (spec_row['dimensions'], spec_row['dtype']) != (400, '<f4') or self.spec != feature_set():
+            if self.spec['id'] != run['feature_set_id'] or (spec_row['dimensions'], spec_row['dtype']) != (400, '<f4'):
                 raise ValueError('B400 configuration/code/runtime differs from selected feature set; no automatic rebuild')
+            self.compatibility = check_feature_set(self.spec)
             if read_json(self.feature_dir/'feature_set.json') != self.spec:
                 raise ValueError('Feature configuration sidecar differs from SQLite')
             scaler_row = db.execute('SELECT * FROM normalizers WHERE id=? AND feature_set_id=?',
@@ -186,7 +195,8 @@ class SearchIndex:
         return dict(run_id=self.run['id'], feature_set_id=self.run['feature_set_id'],
                     normalizer_id=self.run['normalizer_id'], database=str(self.feature_dir/'features.sqlite3'),
                     candidate_files=len(self.records), candidate_unique_contents=len({r['sha256'] for r in self.records}),
-                    dimensions=400, dtype=self.matrix.dtype.str, load_seconds=self.load_seconds)
+                    dimensions=400, dtype=self.matrix.dtype.str, load_seconds=self.load_seconds,
+                    compatibility=self.compatibility)
 
     def search(self, original, flipped, query_hash=None, exclude_self=True, deduplicate=False):
         return rank(self.matrix, self.records, original, flipped, query_hash, exclude_self,

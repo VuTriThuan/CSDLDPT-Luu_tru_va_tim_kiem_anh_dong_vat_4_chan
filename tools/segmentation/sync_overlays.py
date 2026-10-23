@@ -8,9 +8,9 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import csv
-import fcntl
 import io
 import json
+import shutil
 from pathlib import Path
 import sys
 import tempfile
@@ -23,6 +23,8 @@ if __package__ in (None, ""):
 
 import numpy as np
 from PIL import Image
+
+from tools.file_lock import file_lock
 
 from tools.segmentation import run_grabcut as gc
 
@@ -87,17 +89,14 @@ def accepted_manual_edits(output):
 
 
 def atomic_bytes(path, data):
-    with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
-        temporary = Path(stream.name)
-        try:
+    import os
+    fd, name = tempfile.mkstemp(dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, 'wb') as stream:
             stream.write(data)
             stream.flush()
-            import os
             os.fsync(stream.fileno())
-        except BaseException:
-            temporary.unlink(missing_ok=True)
-            raise
-    try:
         temporary.replace(path)
     finally:
         temporary.unlink(missing_ok=True)
@@ -232,14 +231,13 @@ def sync(output, source, apply=False, verify=False, tolerance=0,
         if not apply and not verify:
             return report
 
-        # Render sheets against staged masks and unchanged overlays. Temporary links
-        # are internal to the staging directory and never replace user artifacts.
+        # Render sheets from private copies; Windows symlinks need extra privileges.
         for row in rows:
             for field in ('mask_path', 'overlay_path'):
                 link = safe_path(stage, row[field])
                 if not link.exists():
                     link.parent.mkdir(parents=True, exist_ok=True)
-                    link.symlink_to(safe_path(output, row[field]))
+                    shutil.copyfile(safe_path(output, row[field]), link)
         for relative, batch in batches.items():
             (stage / relative).parent.mkdir(parents=True, exist_ok=True)
             gc.quicklook(stage, source, batch)
@@ -259,7 +257,7 @@ def sync(output, source, apply=False, verify=False, tolerance=0,
             return report
 
         summary_path = output / 'summary.json'
-        summary = json.loads(summary_path.read_text()) if summary_path.exists() else {}
+        summary = json.loads(summary_path.read_text(encoding='utf-8')) if summary_path.exists() else {}
         summary.update(selected=len(rows), success=len(rows), failed=0, pending=0,
                        suspicious=sum(r['suspicious'] == 'yes' for r in rows),
                        review_status_counts=dict(Counter(r['review_status'] for r in rows)),
@@ -335,8 +333,7 @@ def main():
     args = parser.parse_args()
     if (args.mark_pending_reviewed or args.mark_empty_results_passed) and not args.apply:
         parser.error('review changes require --apply')
-    with (args.output_dir / '.run.lock').open('a') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    with file_lock(args.output_dir / '.run.lock'):
         result = sync(args.output_dir, args.source_dir, args.apply, args.verify,
                       args.pixel_tolerance, args.mark_pending_reviewed,
                       args.mark_empty_results_passed)

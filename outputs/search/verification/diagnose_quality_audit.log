@@ -1,0 +1,88 @@
+{
+  "verified": true,
+  "output_directory": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/diagnostics/cli_check/20261023T014542_632499Z_e8f7fc8d",
+  "normalization": {
+    "original": {
+      "exact_match": true,
+      "max_absolute_difference": 0.0,
+      "valid_dimensions": 400,
+      "saved_vector_norm": 1.0000000001604135
+    },
+    "flipped": {
+      "exact_match": true,
+      "max_absolute_difference": 0.0,
+      "valid_dimensions": 400,
+      "saved_vector_norm": 1.000000000236426
+    }
+  },
+  "reranking": {
+    "exclude_self": true,
+    "excluded_self_files": 1,
+    "saved_excluded_self_files": 1,
+    "excluded_self_count_matches": true,
+    "all_saved_hits_match": true,
+    "rank_checks": [
+      {
+        "rank": 1,
+        "saved_filename": "Camelus_bactrianus_0113.jpg",
+        "actual_filename": "Camelus_bactrianus_0113.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 2,
+        "saved_filename": "Ursus_arctos_1209.jpg",
+        "actual_filename": "Ursus_arctos_1209.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 3,
+        "saved_filename": "Ursus_arctos_1192.jpg",
+        "actual_filename": "Ursus_arctos_1192.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 4,
+        "saved_filename": "Ursus_arctos_1207.jpg",
+        "actual_filename": "Ursus_arctos_1207.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 5,
+        "saved_filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+        "actual_filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      }
+    ]
+  },
+  "reference_mask_available": true
+}

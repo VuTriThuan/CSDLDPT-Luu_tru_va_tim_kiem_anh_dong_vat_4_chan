@@ -1,0 +1,1410 @@
+{
+  "version": 1,
+  "created_at_utc": "2026-10-23T02:02:36.420157+00:00",
+  "query_id": "20261023T014542_632499Z_e8f7fc8d",
+  "query_directory": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/20261023T014542_632499Z_e8f7fc8d",
+  "index": {
+    "run_id": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+    "feature_set_id": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+    "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+    "database": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/features/b400_v1/features.sqlite3",
+    "candidate_files": 812,
+    "candidate_unique_contents": 810,
+    "dimensions": 400,
+    "dtype": "<f4",
+    "load_seconds": 3.6540609529984067
+  },
+  "identity": {
+    "run_id": {
+      "saved": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+      "current": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+      "matches": true
+    },
+    "feature_set_id": {
+      "saved": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+      "current": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+      "matches": true
+    },
+    "normalizer_id": {
+      "saved": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "current": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "matches": true
+    }
+  },
+  "configuration_matches": {
+    "feature_set": true,
+    "normalizer": true,
+    "selected_run": true
+  },
+  "artifact_integrity": {
+    "source_sha256": true,
+    "rgb_matches_input": true,
+    "rgb_pixels_sha256": true,
+    "mask_pixels_sha256": true,
+    "saved_mask_sha256": true,
+    "dimensions": true
+  },
+  "normalization": {
+    "original": {
+      "exact_match": true,
+      "max_absolute_difference": 0.0,
+      "valid_dimensions": 400,
+      "saved_vector_norm": 1.0000000001604135
+    },
+    "flipped": {
+      "exact_match": true,
+      "max_absolute_difference": 0.0,
+      "valid_dimensions": 400,
+      "saved_vector_norm": 1.000000000236426
+    }
+  },
+  "reranking": {
+    "exclude_self": true,
+    "excluded_self_files": 1,
+    "saved_excluded_self_files": 1,
+    "excluded_self_count_matches": true,
+    "all_saved_hits_match": true,
+    "rank_checks": [
+      {
+        "rank": 1,
+        "saved_filename": "Camelus_bactrianus_0113.jpg",
+        "actual_filename": "Camelus_bactrianus_0113.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 2,
+        "saved_filename": "Ursus_arctos_1209.jpg",
+        "actual_filename": "Ursus_arctos_1209.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 3,
+        "saved_filename": "Ursus_arctos_1192.jpg",
+        "actual_filename": "Ursus_arctos_1192.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 4,
+        "saved_filename": "Ursus_arctos_1207.jpg",
+        "actual_filename": "Ursus_arctos_1207.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 5,
+        "saved_filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+        "actual_filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      }
+    ]
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "filename": "Camelus_bactrianus_0113.jpg",
+      "path": "data/cropped_images_576x384/Camelus_bactrianus_0113.jpg",
+      "sha256": "45a0a5786b88d0517cb02cacaca14f674eb042cd2d2e063d17487bb27a1b1a0b",
+      "distance": 0.44543807043769523,
+      "orientation": "original",
+      "original_distance": 0.44543807043769523,
+      "flipped_distance": 0.4700008031596553,
+      "candidate_row": 69,
+      "decomposition": {
+        "distance": 0.44543807043769523,
+        "groups": {
+          "color": 0.006357676863032367,
+          "texture": 0.14377795854565303,
+          "shape": 0.26041875375956125,
+          "layout": 0.03488368126944854
+        },
+        "group_fractions": {
+          "color": 0.014272863693004963,
+          "texture": 0.32277878360144274,
+          "shape": 0.584635151422215,
+          "layout": 0.07831320128333716
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.0036376265871654956,
+            "fraction": 0.008166402534006804,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.0027200502758668718,
+            "fraction": 0.006106461158998158,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0003438653483038706,
+            "fraction": 0.0007719711697879404,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.005420620653878426,
+            "fraction": 0.012169190317639508,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.13801347254347077,
+            "fraction": 0.30983762211401533,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.027556561345925133,
+            "fraction": 0.0618639563494148,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.055229329673336346,
+            "fraction": 0.12398879516307854,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.10412820467689242,
+            "fraction": 0.2337658399394875,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.07350465806340738,
+            "fraction": 0.1650165599702343,
+            "query_valid_dimensions": 64,
+            "candidate_valid_dimensions": 52
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.003143125679076136,
+            "fraction": 0.007056257396202453,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.002118265346743747,
+            "fraction": 0.004755465433527723,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.00338206402547696,
+            "fraction": 0.0075926694414639615,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.00230988443595419,
+            "fraction": 0.005185646645973608,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.0034416364047417268,
+            "fraction": 0.007726408300394968,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.006461763991627028,
+            "fraction": 0.014506537317920728,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.008051084030642471,
+            "fraction": 0.018074530591270153,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.005975857355186283,
+            "fraction": 0.013415686156583567,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 2,
+      "filename": "Ursus_arctos_1209.jpg",
+      "path": "data/cropped_images_576x384/Ursus_arctos_1209.jpg",
+      "sha256": "8a92d470a722aae7617c7c942c47edd452e94fb397f70cdfc9d141a257b66e54",
+      "distance": 0.4830480642462344,
+      "orientation": "flipped",
+      "original_distance": 0.4873089679341803,
+      "flipped_distance": 0.4830480642462344,
+      "candidate_row": 410,
+      "decomposition": {
+        "distance": 0.4830480642462344,
+        "groups": {
+          "color": 0.01982300420750457,
+          "texture": 0.16959943434732805,
+          "shape": 0.2244732080825085,
+          "layout": 0.06915241760889321
+        },
+        "group_fractions": {
+          "color": 0.041037332875843525,
+          "texture": 0.3511026063461761,
+          "shape": 0.464701599483241,
+          "layout": 0.1431584612947391
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.006048653084027678,
+            "fraction": 0.012521845198709603,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.013774351123476893,
+            "fraction": 0.02851548767713392,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0010782515761507544,
+            "fraction": 0.0022321827908228903,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.024484699686353868,
+            "fraction": 0.05068791596248434,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.14403648308482342,
+            "fraction": 0.2981825075928689,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.005705258135647928,
+            "fraction": 0.01181095331486447,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.008446926444244449,
+            "fraction": 0.01748672041037021,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.11093347980987761,
+            "fraction": 0.22965308842088458,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.09938754369273856,
+            "fraction": 0.20575083733712182,
+            "query_valid_dimensions": 64,
+            "candidate_valid_dimensions": 60
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.0046905789436256645,
+            "fraction": 0.009710377270520714,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.003040084734671243,
+            "fraction": 0.006293545010712547,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.002350134398556527,
+            "fraction": 0.004865218541396623,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.0016855410746629677,
+            "fraction": 0.0034893858384323446,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.03124999953544457,
+            "fraction": 0.0646933542404485,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 0
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.008124032221376651,
+            "fraction": 0.01681826886948338,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.010625675491535116,
+            "fraction": 0.02199713916277835,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.0073863712090204625,
+            "fraction": 0.01529117236096665,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 3,
+      "filename": "Ursus_arctos_1192.jpg",
+      "path": "data/cropped_images_576x384/Ursus_arctos_1192.jpg",
+      "sha256": "0386ee334a5c8cd4a54448d5a657a8ccb63510f27bbd5a366b27b19a71dfd13e",
+      "distance": 0.4845689545002807,
+      "orientation": "original",
+      "original_distance": 0.4845689545002807,
+      "flipped_distance": 0.5150694450126494,
+      "candidate_row": 403,
+      "decomposition": {
+        "distance": 0.4845689545002807,
+        "groups": {
+          "color": 0.024523945732182594,
+          "texture": 0.2572563302940363,
+          "shape": 0.15463946014249896,
+          "layout": 0.04814921833156283
+        },
+        "group_fractions": {
+          "color": 0.05060981621794838,
+          "texture": 0.5308972601419253,
+          "shape": 0.3191278737656095,
+          "layout": 0.09936504987451676
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.01618416821838405,
+            "fraction": 0.03339910257988819,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.008339777513798547,
+            "fraction": 0.017210713638060187,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.00012417659518117186,
+            "fraction": 0.00025626197061929173,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.021036824557571852,
+            "fraction": 0.043413479881859965,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.23609532914128328,
+            "fraction": 0.4872275182894461,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.0441211184425038,
+            "fraction": 0.09105230129322749,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.007414673680830327,
+            "fraction": 0.015301586310820976,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.05368663440772421,
+            "fraction": 0.11079255884869758,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.04941703361144066,
+            "fraction": 0.10198142731286355,
+            "query_valid_dimensions": 64,
+            "candidate_valid_dimensions": 56
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.009048655032308147,
+            "fraction": 0.01867361692958583,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.0060636652899236825,
+            "fraction": 0.012513524099324382,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.008523589368786211,
+            "fraction": 0.01759004428497962,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.0035991660279105324,
+            "fraction": 0.007427562154951154,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.005328285676360728,
+            "fraction": 0.010995928705039732,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.005714790396056418,
+            "fraction": 0.011793554545709361,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.00456675352522472,
+            "fraction": 0.009424362586196337,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.005304313014992395,
+            "fraction": 0.010946456568730348,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 4,
+      "filename": "Ursus_arctos_1207.jpg",
+      "path": "data/cropped_images_576x384/Ursus_arctos_1207.jpg",
+      "sha256": "c36e1bb024e999361ebf751b61652cf7c9f7204167bcd3ebffd704a63986078e",
+      "distance": 0.48501240689067243,
+      "orientation": "original",
+      "original_distance": 0.48501240689067243,
+      "flipped_distance": 0.50496961982438,
+      "candidate_row": 408,
+      "decomposition": {
+        "distance": 0.48501240689067243,
+        "groups": {
+          "color": 0.019945005549662807,
+          "texture": 0.19117015699803006,
+          "shape": 0.23064959339672736,
+          "layout": 0.04324765094625218
+        },
+        "group_fractions": {
+          "color": 0.041122670814807936,
+          "texture": 0.394155189191113,
+          "shape": 0.47555400670135545,
+          "layout": 0.0891681332927236
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.008468643228596816,
+            "fraction": 0.01746067339367207,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.011476362321065987,
+            "fraction": 0.02366199742113586,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0007739457663428068,
+            "fraction": 0.0015957236461319295,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.028514458546125616,
+            "fraction": 0.058791194082903356,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.16188175268556165,
+            "fraction": 0.3337682714620777,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.05907955297257883,
+            "fraction": 0.12181039522540722,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.0011011530745024855,
+            "fraction": 0.0022703606317244136,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.074151624167068,
+            "fraction": 0.15288603572523177,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.09631726318257808,
+            "fraction": 0.19858721511899208,
+            "query_valid_dimensions": 64,
+            "candidate_valid_dimensions": 64
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.004123927750763012,
+            "fraction": 0.008502726305911994,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.004348598508752882,
+            "fraction": 0.008965953132273394,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.005826534602652362,
+            "fraction": 0.012013166096111293,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.0021367382395532414,
+            "fraction": 0.004405533155845408,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.0018643811489281149,
+            "fraction": 0.0038439865092943252,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.0067534570669008955,
+            "fraction": 0.013924297545698053,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.011942815134846789,
+            "fraction": 0.024623731197744064,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.0062511984938548835,
+            "fraction": 0.012888739349845081,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 5,
+      "filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+      "path": "data/cropped_images_576x384/Hydrochoerus_hydrochaeris_1131.jpg",
+      "sha256": "b588ea20c4ad3110711608467e9b4e31e802251061f8e566aab1ed4da7e817de",
+      "distance": 0.4923644870681324,
+      "orientation": "original",
+      "original_distance": 0.4923644870681324,
+      "flipped_distance": 0.5788577047218161,
+      "candidate_row": 361,
+      "decomposition": {
+        "distance": 0.4923644870681324,
+        "groups": {
+          "color": 0.04437578306520034,
+          "texture": 0.21738199997893715,
+          "shape": 0.16584682768042203,
+          "layout": 0.06475987634357284
+        },
+        "group_fractions": {
+          "color": 0.09012791180258235,
+          "texture": 0.4415062533721208,
+          "shape": 0.3368375096830907,
+          "layout": 0.13152832514220608
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.025260853267884274,
+            "fraction": 0.051305189410195476,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.019114929797316067,
+            "fraction": 0.038822722392386884,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0021602820045544535,
+            "fraction": 0.004387566652944891,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.01921657682525716,
+            "fraction": 0.03902916910130037,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.19600514114912548,
+            "fraction": 0.3980895176178754,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.06705706012098706,
+            "fraction": 0.13619394144425334,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.009113977296004053,
+            "fraction": 0.01851063091547234,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.04832203645128952,
+            "fraction": 0.09814281435899501,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.0413537538121414,
+            "fraction": 0.08399012296437,
+            "query_valid_dimensions": 64,
+            "candidate_valid_dimensions": 60
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.006112688936196884,
+            "fraction": 0.012414967156944895,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.01506252082250688,
+            "fraction": 0.03059221616936511,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.018758469932735,
+            "fraction": 0.038098746813433844,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.008831730438901082,
+            "fraction": 0.017937383119345413,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.00466745040605114,
+            "fraction": 0.009479665021830194,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.0036790201606381927,
+            "fraction": 0.007472147681782535,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.0038701636046431474,
+            "fraction": 0.00786036301620511,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.0037778320419005274,
+            "fraction": 0.0076728361632989964,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    }
+  ],
+  "reference_mask": {
+    "available": true,
+    "matching_corpus_rows": 1,
+    "comparisons": [
+      {
+        "filename": "Camelus_bactrianus_0057.jpg",
+        "candidate_row": 62,
+        "mask_path": "outputs/segmentation/grabcut/masks/Camelus_bactrianus_0057.jpg.png",
+        "mask_sha256": "0896f109dc296c7ae6efb5039315b1eb55831b9192c69bd613c93b7706f3c9db",
+        "review_status": "da_duyet",
+        "review_result": "dat",
+        "agreement": {
+          "iou": 0.4252416043605329,
+          "intersection_pixels": 47434,
+          "union_pixels": 111546,
+          "used_area_pixels": 111290,
+          "approved_area_pixels": 47690,
+          "used_area_fraction": 0.5031557436342593,
+          "approved_area_fraction": 0.21561234085648148,
+          "symmetric_difference_pixels": 64112,
+          "symmetric_difference_fraction": 0.2898582175925926,
+          "identical": false,
+          "interpretation": "Agreement with an approved mask; not segmentation accuracy or ground truth."
+        },
+        "original_vector_comparison": {
+          "distance": 0.8988326934777167,
+          "groups": {
+            "color": 0.017018204314542495,
+            "texture": 0.28257060787080257,
+            "shape": 0.5645878966851257,
+            "layout": 0.034655984607246
+          },
+          "group_fractions": {
+            "color": 0.018933673016161154,
+            "texture": 0.31437508884717474,
+            "shape": 0.6281345803084349,
+            "layout": 0.038556657828229264
+          },
+          "subblocks": [
+            {
+              "name": "C1",
+              "group": "color",
+              "start": 0,
+              "stop": 32,
+              "distance": 0.006884011638088123,
+              "fraction": 0.007658835385095822,
+              "query_valid_dimensions": 32,
+              "candidate_valid_dimensions": 32
+            },
+            {
+              "name": "C2",
+              "group": "color",
+              "start": 32,
+              "stop": 48,
+              "distance": 0.010134192676454372,
+              "fraction": 0.011274837631065333,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "T1",
+              "group": "texture",
+              "start": 48,
+              "stop": 68,
+              "distance": 0.0009566459560813173,
+              "fraction": 0.0010643203824506123,
+              "query_valid_dimensions": 20,
+              "candidate_valid_dimensions": 20
+            },
+            {
+              "name": "T2",
+              "group": "texture",
+              "start": 68,
+              "stop": 100,
+              "distance": 0.07203938358170767,
+              "fraction": 0.0801477116981322,
+              "query_valid_dimensions": 32,
+              "candidate_valid_dimensions": 32
+            },
+            {
+              "name": "T3",
+              "group": "texture",
+              "start": 100,
+              "stop": 148,
+              "distance": 0.2095745783330136,
+              "fraction": 0.23316305676659196,
+              "query_valid_dimensions": 48,
+              "candidate_valid_dimensions": 48
+            },
+            {
+              "name": "S1",
+              "group": "shape",
+              "start": 148,
+              "stop": 155,
+              "distance": 0.06656204028119762,
+              "fraction": 0.07405387094194275,
+              "query_valid_dimensions": 7,
+              "candidate_valid_dimensions": 7
+            },
+            {
+              "name": "S2",
+              "group": "shape",
+              "start": 155,
+              "stop": 160,
+              "distance": 0.2130033561151642,
+              "fraction": 0.2369777575524347,
+              "query_valid_dimensions": 5,
+              "candidate_valid_dimensions": 5
+            },
+            {
+              "name": "S3",
+              "group": "shape",
+              "start": 160,
+              "stop": 208,
+              "distance": 0.15057229794238947,
+              "fraction": 0.16751982769986143,
+              "query_valid_dimensions": 48,
+              "candidate_valid_dimensions": 48
+            },
+            {
+              "name": "S4",
+              "group": "shape",
+              "start": 208,
+              "stop": 272,
+              "distance": 0.1344502023463744,
+              "fraction": 0.14958312411419603,
+              "query_valid_dimensions": 64,
+              "candidate_valid_dimensions": 52
+            },
+            {
+              "name": "P_cell_0",
+              "group": "layout",
+              "start": 272,
+              "stop": 288,
+              "distance": 0.0029177682497357918,
+              "fraction": 0.00324617503447334,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_1",
+              "group": "layout",
+              "start": 288,
+              "stop": 304,
+              "distance": 0.0012145054338069468,
+              "fraction": 0.001351203002093577,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_2",
+              "group": "layout",
+              "start": 304,
+              "stop": 320,
+              "distance": 0.0011373716423990958,
+              "fraction": 0.0012653874860720038,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_3",
+              "group": "layout",
+              "start": 320,
+              "stop": 336,
+              "distance": 0.000396135374225992,
+              "fraction": 0.0004407220354805805,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_4",
+              "group": "layout",
+              "start": 336,
+              "stop": 352,
+              "distance": 0.013753661842135684,
+              "fraction": 0.015301692897841458,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_5",
+              "group": "layout",
+              "start": 352,
+              "stop": 368,
+              "distance": 0.008356988925233302,
+              "fraction": 0.009297602307832034,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_6",
+              "group": "layout",
+              "start": 368,
+              "stop": 384,
+              "distance": 0.00210709969387699,
+              "fraction": 0.00234426240741679,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_7",
+              "group": "layout",
+              "start": 384,
+              "stop": 400,
+              "distance": 0.004772453445832192,
+              "fraction": 0.005309612657019476,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            }
+          ],
+          "contributions_sum_matches": true
+        },
+        "approved_mask_search": {
+          "original_vector": "stored corpus vector for this candidate row",
+          "flipped_vector": "full horizontal flip of RGB and approved mask, complete frozen B400 extraction",
+          "exclude_self": true,
+          "excluded_self_files": 1,
+          "results": [
+            {
+              "rank": 1,
+              "filename": "Camelus_bactrianus_0183.jpg",
+              "path": "data/cropped_images_576x384/Camelus_bactrianus_0183.jpg",
+              "sha256": "68e8432bdaebe6c95b1c3a148a5e1ee59400f1bf97256cfb2e0cca3d689d6452",
+              "distance": 0.22747021905501996,
+              "orientation": "original",
+              "original_distance": 0.22747021905501996,
+              "flipped_distance": 0.5010612580528302
+            },
+            {
+              "rank": 2,
+              "filename": "Camelus_bactrianus_0141.jpg",
+              "path": "data/cropped_images_576x384/Camelus_bactrianus_0141.jpg",
+              "sha256": "e5ebda7ebe72c5846098948b08b2c37b8eeb9c0605219570c8bf4816d4303796",
+              "distance": 0.25127049339911567,
+              "orientation": "original",
+              "original_distance": 0.25127049339911567,
+              "flipped_distance": 0.4912367763502069
+            },
+            {
+              "rank": 3,
+              "filename": "Camelus_bactrianus_0500.jpg",
+              "path": "data/cropped_images_576x384/Camelus_bactrianus_0500.jpg",
+              "sha256": "2ec6e06c7010b24987da521d14810e9045978853d37378352fe722437d2fc301",
+              "distance": 0.3307937805643396,
+              "orientation": "original",
+              "original_distance": 0.3307937805643396,
+              "flipped_distance": 0.46328156002597753
+            },
+            {
+              "rank": 4,
+              "filename": "Camelus_bactrianus_0468.jpg",
+              "path": "data/cropped_images_576x384/Camelus_bactrianus_0468.jpg",
+              "sha256": "13e566e9950a85324536c771217b43d308d01038a231fe1b878db743043c7835",
+              "distance": 0.37563459598672017,
+              "orientation": "original",
+              "original_distance": 0.37563459598672017,
+              "flipped_distance": 0.47848175550805133
+            },
+            {
+              "rank": 5,
+              "filename": "Camelus_dromedarius_0459.jpg",
+              "path": "data/cropped_images_576x384/Camelus_dromedarius_0459.jpg",
+              "sha256": "2679ac046336528275e663f71d2d6e73f0c786367b31a31a08d0e7a5b0429262",
+              "distance": 0.37608848148248186,
+              "orientation": "original",
+              "original_distance": 0.37608848148248186,
+              "flipped_distance": 0.5973363147944075
+            }
+          ],
+          "top5_filename_overlap": 0
+        }
+      }
+    ],
+    "note": "The alternative ranking is a mask-sensitivity check. No automatic relevance judgment is made."
+  },
+  "interpretation": {
+    "relevance": "No automatic visual relevance, P@5, or label-based quality evaluation is performed.",
+    "target": "Similarity of shape, color, and texture can cross animal labels.",
+    "mask": "Mask agreement compares the saved query mask with an approved corpus mask, not ground truth.",
+    "vectors": "Normalization is reproduced from saved raw/validity arrays; query descriptors are not re-extracted.",
+    "distance": "Fixed squared L2 on frozen B400 vectors; validity counts are explanatory and do not change ranking."
+  },
+  "output_directory": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/diagnostics/cli_check/20261023T014542_632499Z_e8f7fc8d"
+}

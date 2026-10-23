@@ -1,0 +1,40 @@
+test_batch_new_unknown_group_corpus_query_and_error (test_search.DatabaseTests) ... ok
+test_candidate_bytes_changed_after_index_load (test_search.DatabaseTests) ... ok
+test_changed_finite_vector_is_not_silently_accepted (test_search.DatabaseTests) ... ok
+test_cli_query_and_invalid_image_exit (test_search.DatabaseTests) ... ok
+test_configuration_and_runtime_mismatch (test_search.DatabaseTests) ... ok
+test_end_to_end_two_full_extractions_artifacts_export (test_search.DatabaseTests) ... ok
+test_export_rejects_recursive_overlap (test_search.DatabaseTests) ... ok
+test_invalid_validity_bytes (test_search.DatabaseTests) ... ok
+test_missing_candidate_and_missing_vector (test_search.DatabaseTests) ... ok
+test_nonfinite_vector_and_invalid_validity (test_search.DatabaseTests) ... ok
+test_readonly_database_and_no_feature_fit (test_search.DatabaseTests) ... ok
+test_run_missing_or_incomplete (test_search.DatabaseTests) ... ok
+test_scaler_checksum_corruption (test_search.DatabaseTests) ... ok
+test_select_current_and_explicit_old_run_scaler (test_search.DatabaseTests) ... ok
+test_summary_ids_and_scaler_sidecar_mismatch (test_search.DatabaseTests) ... ok
+test_wrong_vector_scaler_detected (test_search.DatabaseTests) ... ok
+test_duplicate_invalid_unknown_and_changed_identity_judgments (test_search.EvaluationTests) ... ok
+test_functional_checks_and_errors_excluded_from_metrics (test_search.EvaluationTests) ... ok
+test_known_p5_per_query_group_overall_separate_label_agreement (test_search.EvaluationTests) ... ok
+test_partial_judgments_and_short_top5_have_no_p5 (test_search.EvaluationTests) ... ok
+test_unjudged_blank_not_zero (test_search.EvaluationTests) ... ok
+test_bad_bbox_strokes_and_output_protection (test_search.QueryTests) ... ok
+test_corrupt_missing_and_unsupported_image (test_search.QueryTests) ... ok
+test_default_grabcut_reuses_existing_tool (test_search.QueryTests) ... ok
+test_grabcut_bbox_refine_hard_labels_and_original_resolution (test_search.QueryTests) ... ok
+test_invalid_masks_nonbinary_empty_full_wrong_shape_and_mode (test_search.QueryTests) ... ok
+test_output_symlink_rejected (test_search.QueryTests) ... ok
+test_query_arbitrary_size_rgb_conversion_no_stretch (test_search.QueryTests) ... ok
+test_empty_candidates_and_invalid_vectors (test_search.RankingTests) ... ok
+test_hash_dedup_self_exclusion_and_shortfall (test_search.RankingTests) ... ok
+test_known_distance_all_groups_and_no_second_weight (test_search.RankingTests) ... ok
+test_label_changes_do_not_change_ranking (test_search.RankingTests) ... ok
+test_orientation_is_per_candidate_and_tie_original (test_search.RankingTests) ... ok
+test_top5_distance_then_lexical_ties (test_search.RankingTests) ... ok
+test_validity_is_not_pairwise_distance_mask (test_search.RankingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 4.918s
+
+OK

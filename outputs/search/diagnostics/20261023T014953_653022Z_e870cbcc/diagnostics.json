@@ -1,0 +1,1410 @@
+{
+  "version": 1,
+  "created_at_utc": "2026-10-23T02:01:34.627901+00:00",
+  "query_id": "20261023T014953_653022Z_e870cbcc",
+  "query_directory": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/20261023T014953_653022Z_e870cbcc",
+  "index": {
+    "run_id": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+    "feature_set_id": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+    "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+    "database": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/features/b400_v1/features.sqlite3",
+    "candidate_files": 812,
+    "candidate_unique_contents": 810,
+    "dimensions": 400,
+    "dtype": "<f4",
+    "load_seconds": 4.200066900993988
+  },
+  "identity": {
+    "run_id": {
+      "saved": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+      "current": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+      "matches": true
+    },
+    "feature_set_id": {
+      "saved": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+      "current": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+      "matches": true
+    },
+    "normalizer_id": {
+      "saved": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "current": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "matches": true
+    }
+  },
+  "configuration_matches": {
+    "feature_set": true,
+    "normalizer": true,
+    "selected_run": true
+  },
+  "artifact_integrity": {
+    "source_sha256": true,
+    "rgb_matches_input": true,
+    "rgb_pixels_sha256": true,
+    "mask_pixels_sha256": true,
+    "saved_mask_sha256": true,
+    "dimensions": true
+  },
+  "normalization": {
+    "original": {
+      "exact_match": true,
+      "max_absolute_difference": 0.0,
+      "valid_dimensions": 380,
+      "saved_vector_norm": 0.9999999974090537
+    },
+    "flipped": {
+      "exact_match": true,
+      "max_absolute_difference": 0.0,
+      "valid_dimensions": 380,
+      "saved_vector_norm": 0.9999999964649533
+    }
+  },
+  "reranking": {
+    "exclude_self": true,
+    "excluded_self_files": 1,
+    "saved_excluded_self_files": 1,
+    "excluded_self_count_matches": true,
+    "all_saved_hits_match": true,
+    "rank_checks": [
+      {
+        "rank": 1,
+        "saved_filename": "cervidae_0580.jpg",
+        "actual_filename": "cervidae_0580.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 2,
+        "saved_filename": "Camelus_dromedarius_0261.jpg",
+        "actual_filename": "Camelus_dromedarius_0261.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 3,
+        "saved_filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+        "actual_filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 4,
+        "saved_filename": "cervidae_0571.jpg",
+        "actual_filename": "cervidae_0571.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      },
+      {
+        "rank": 5,
+        "saved_filename": "Camelus_dromedarius_0254.jpg",
+        "actual_filename": "Camelus_dromedarius_0254.jpg",
+        "filename_matches": true,
+        "path_matches": true,
+        "sha256_matches": true,
+        "orientation_matches": true,
+        "distance_matches": true,
+        "original_distance_matches": true,
+        "flipped_distance_matches": true
+      }
+    ]
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "filename": "cervidae_0580.jpg",
+      "path": "data/cropped_images_576x384/cervidae_0580.jpg",
+      "sha256": "85433c7edb27b6abed4676850c503fe7b333d726f37a03bbd08e2eeaee1b7a18",
+      "distance": 0.3241501520539458,
+      "orientation": "original",
+      "original_distance": 0.3241501520539458,
+      "flipped_distance": 0.5237172921102142,
+      "candidate_row": 453,
+      "decomposition": {
+        "distance": 0.3241501520539458,
+        "groups": {
+          "color": 0.0526152520161904,
+          "texture": 0.030707058517326115,
+          "shape": 0.19038790370781528,
+          "layout": 0.050439937812613946
+        },
+        "group_fractions": {
+          "color": 0.16231752995579052,
+          "texture": 0.09473097057876985,
+          "shape": 0.5873447922249639,
+          "layout": 0.15560670724047543
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.019824790091284544,
+            "fraction": 0.06115928055460315,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.03279046192490585,
+            "fraction": 0.10115824940118735,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.00023263535099930788,
+            "fraction": 0.0007176777475661716,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.007789599151422276,
+            "fraction": 0.024030836024799745,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.022684824014904535,
+            "fraction": 0.06998245680640394,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.02677604051372716,
+            "fraction": 0.08260381907601583,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.03082196703906344,
+            "fraction": 0.09508546222719025,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.07709663270343294,
+            "fraction": 0.23784234625502298,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.055693263451591785,
+            "fraction": 0.17181316466673502,
+            "query_valid_dimensions": 60,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.013587750933092887,
+            "fraction": 0.04191807669068001,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.008627698833560422,
+            "fraction": 0.02661636522115399,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.009927161345731152,
+            "fraction": 0.030625194166433868,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.006653371824485022,
+            "fraction": 0.020525586004901064,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.0,
+            "fraction": 0.0,
+            "query_valid_dimensions": 0,
+            "candidate_valid_dimensions": 0
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.0044120922112320686,
+            "fraction": 0.013611260655826556,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.006374789017826394,
+            "fraction": 0.01966616081292316,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.0008570736466860026,
+            "fraction": 0.002644063688556797,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 2,
+      "filename": "Camelus_dromedarius_0261.jpg",
+      "path": "data/cropped_images_576x384/Camelus_dromedarius_0261.jpg",
+      "sha256": "95f75501c376ed09ce850706fc90f6c0bc60f6e7ae73015727c7b06e9f5893ef",
+      "distance": 0.3792523059570766,
+      "orientation": "original",
+      "original_distance": 0.3792523059570766,
+      "flipped_distance": 0.5596209957081717,
+      "candidate_row": 159,
+      "decomposition": {
+        "distance": 0.3792523059570766,
+        "groups": {
+          "color": 0.026610596769290777,
+          "texture": 0.054759278276654506,
+          "shape": 0.24255503196334594,
+          "layout": 0.05532739894778539
+        },
+        "group_fractions": {
+          "color": 0.07016594586587047,
+          "texture": 0.14438746295415303,
+          "shape": 0.6395611263357699,
+          "layout": 0.1458854648442066
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.017194879400852486,
+            "fraction": 0.04533889215903301,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.00941571736843829,
+            "fraction": 0.024827053706837455,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0006965214772603617,
+            "fraction": 0.0018365649102716156,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.0061657788185982675,
+            "fraction": 0.016257722686849278,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.04789697798079587,
+            "fraction": 0.1262931753570321,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.02153056731373472,
+            "fraction": 0.05677109136990067,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.02162784450631379,
+            "fraction": 0.057027588670117695,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.10912382522109976,
+            "fraction": 0.28773411132126453,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.0902727949221977,
+            "fraction": 0.2380283349744871,
+            "query_valid_dimensions": 60,
+            "candidate_valid_dimensions": 58
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.016581955942283188,
+            "fraction": 0.04372275575342162,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.004049926762060767,
+            "fraction": 0.01067871361214382,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.00399414642921219,
+            "fraction": 0.01053163386609505,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.0008671416291877424,
+            "fraction": 0.0022864505121450327,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.0,
+            "fraction": 0.0,
+            "query_valid_dimensions": 0,
+            "candidate_valid_dimensions": 0
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.008749023328315866,
+            "fraction": 0.02306913680125671,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.01709794933531899,
+            "fraction": 0.04508331015198657,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.003987255521406654,
+            "fraction": 0.010513464147157824,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 3,
+      "filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+      "path": "data/cropped_images_576x384/Canis_lupus_familiaris_golden_retriever_0971.jpg",
+      "sha256": "1ccdb4363536d08a07fd7358449b4cb213a1cc5d4d38e348c45445acbd0be802",
+      "distance": 0.4063579304742525,
+      "orientation": "original",
+      "original_distance": 0.4063579304742525,
+      "flipped_distance": 0.4116660414185722,
+      "candidate_row": 256,
+      "decomposition": {
+        "distance": 0.4063579304742525,
+        "groups": {
+          "color": 0.01792393837262731,
+          "texture": 0.014853691168318521,
+          "shape": 0.3114623566876344,
+          "layout": 0.06211794424567224
+        },
+        "group_fractions": {
+          "color": 0.04410874509501667,
+          "texture": 0.03655322082919131,
+          "shape": 0.7664729375999446,
+          "layout": 0.15286509647584726
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.008584460402044403,
+            "fraction": 0.02112536696903059,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.009339477970582908,
+            "fraction": 0.02298337812598608,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0003094928065040248,
+            "fraction": 0.0007616261017542384,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.009281411671449935,
+            "fraction": 0.022840483660840034,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.005262786690364561,
+            "fraction": 0.012951111066597036,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.04891234808201333,
+            "fraction": 0.120367647371687,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.07487723275257574,
+            "fraction": 0.18426423391119245,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.10481874898198852,
+            "fraction": 0.2579468520760911,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.08285402687105688,
+            "fraction": 0.2038942042409743,
+            "query_valid_dimensions": 60,
+            "candidate_valid_dimensions": 56
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.012920100916272232,
+            "fraction": 0.031794878227658634,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.0013586159449839189,
+            "fraction": 0.0033433971459553022,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.000759162431803194,
+            "fraction": 0.001868211187406113,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.002048737804389013,
+            "fraction": 0.005041707447417036,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.03125000098722579,
+            "fraction": 0.07690264824105811,
+            "query_valid_dimensions": 0,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.0047163580077880084,
+            "fraction": 0.011606413100597393,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.0062009277446589284,
+            "fraction": 0.01525976800162838,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.0028640404085511603,
+            "fraction": 0.0070480731241262945,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 4,
+      "filename": "cervidae_0571.jpg",
+      "path": "data/cropped_images_576x384/cervidae_0571.jpg",
+      "sha256": "cc0c8b8ae7c3c30dabf07d2d61eadb1a1c43adfd46fa9819db8353bb03575c8c",
+      "distance": 0.41907493198733237,
+      "orientation": "original",
+      "original_distance": 0.41907493198733237,
+      "flipped_distance": 0.5608167831243472,
+      "candidate_row": 450,
+      "decomposition": {
+        "distance": 0.41907493198733237,
+        "groups": {
+          "color": 0.03553123894035118,
+          "texture": 0.06976657929015241,
+          "shape": 0.24821252895909446,
+          "layout": 0.06556458479773426
+        },
+        "group_fractions": {
+          "color": 0.08478493039861712,
+          "texture": 0.16647757707507374,
+          "shape": 0.5922867487731224,
+          "layout": 0.15645074375318666
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.020496127495720842,
+            "fraction": 0.04890802558512469,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.01503511144463034,
+            "fraction": 0.035876904813492434,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.0030432035055476953,
+            "fraction": 0.007261716875109304,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.024892968198950365,
+            "fraction": 0.059399802514799,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.041830407585654344,
+            "fraction": 0.09981605768516542,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.0446924578806497,
+            "fraction": 0.1066455053007099,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.016241743822102042,
+            "fraction": 0.0387561807743561,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.11141126515337173,
+            "fraction": 0.2658504640805846,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.075867062102971,
+            "fraction": 0.1810345986174718,
+            "query_valid_dimensions": 60,
+            "candidate_valid_dimensions": 44
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.020709837446291512,
+            "fraction": 0.049417982001647195,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.007736354612324983,
+            "fraction": 0.01846055209181263,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.021379643354640824,
+            "fraction": 0.05101627829002924,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.0035061994726951285,
+            "fraction": 0.00836652160526059,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.0,
+            "fraction": 0.0,
+            "query_valid_dimensions": 0,
+            "candidate_valid_dimensions": 0
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.004237286939478094,
+            "fraction": 0.010111048445164878,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.006887089082025635,
+            "fraction": 0.016434027798717905,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.0011081738902780857,
+            "fraction": 0.0026443335205542265,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    },
+    {
+      "rank": 5,
+      "filename": "Camelus_dromedarius_0254.jpg",
+      "path": "data/cropped_images_576x384/Camelus_dromedarius_0254.jpg",
+      "sha256": "030d39693cd94806a8f13cd77e17659d484669c3f24131e40e7c122c7981f29b",
+      "distance": 0.4200658003680867,
+      "orientation": "flipped",
+      "original_distance": 0.5279012496954185,
+      "flipped_distance": 0.4200658003680867,
+      "candidate_row": 158,
+      "decomposition": {
+        "distance": 0.4200658003680867,
+        "groups": {
+          "color": 0.04168462491473902,
+          "texture": 0.03737458407855593,
+          "shape": 0.2281670405780039,
+          "layout": 0.11283955079678783
+        },
+        "group_fractions": {
+          "color": 0.09923356026177914,
+          "texture": 0.08897316574166735,
+          "shape": 0.5431697614470645,
+          "layout": 0.26862351254948885
+        },
+        "subblocks": [
+          {
+            "name": "C1",
+            "group": "color",
+            "start": 0,
+            "stop": 32,
+            "distance": 0.016543327781219794,
+            "fraction": 0.039382705677833196,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "C2",
+            "group": "color",
+            "start": 32,
+            "stop": 48,
+            "distance": 0.025141297133519223,
+            "fraction": 0.05985085458394594,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "T1",
+            "group": "texture",
+            "start": 48,
+            "stop": 68,
+            "distance": 0.00010919835265806033,
+            "fraction": 0.00025995535119110915,
+            "query_valid_dimensions": 20,
+            "candidate_valid_dimensions": 20
+          },
+          {
+            "name": "T2",
+            "group": "texture",
+            "start": 68,
+            "stop": 100,
+            "distance": 0.0256492825287385,
+            "fraction": 0.06106015416218856,
+            "query_valid_dimensions": 32,
+            "candidate_valid_dimensions": 32
+          },
+          {
+            "name": "T3",
+            "group": "texture",
+            "start": 100,
+            "stop": 148,
+            "distance": 0.011616103197159371,
+            "fraction": 0.027653056228287683,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S1",
+            "group": "shape",
+            "start": 148,
+            "stop": 155,
+            "distance": 0.03369708815985434,
+            "fraction": 0.08021859463523795,
+            "query_valid_dimensions": 7,
+            "candidate_valid_dimensions": 7
+          },
+          {
+            "name": "S2",
+            "group": "shape",
+            "start": 155,
+            "stop": 160,
+            "distance": 0.009743827040191564,
+            "fraction": 0.02319595413778851,
+            "query_valid_dimensions": 5,
+            "candidate_valid_dimensions": 5
+          },
+          {
+            "name": "S3",
+            "group": "shape",
+            "start": 160,
+            "stop": 208,
+            "distance": 0.09701242490685225,
+            "fraction": 0.23094578235563135,
+            "query_valid_dimensions": 48,
+            "candidate_valid_dimensions": 48
+          },
+          {
+            "name": "S4",
+            "group": "shape",
+            "start": 208,
+            "stop": 272,
+            "distance": 0.08771370047110574,
+            "fraction": 0.2088094303184067,
+            "query_valid_dimensions": 60,
+            "candidate_valid_dimensions": 56
+          },
+          {
+            "name": "P_cell_0",
+            "group": "layout",
+            "start": 272,
+            "stop": 288,
+            "distance": 0.0034769550110697197,
+            "fraction": 0.008277167548567402,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_1",
+            "group": "layout",
+            "start": 288,
+            "stop": 304,
+            "distance": 0.004733471406192658,
+            "fraction": 0.01126840462147813,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_2",
+            "group": "layout",
+            "start": 304,
+            "stop": 320,
+            "distance": 0.0028256124340266258,
+            "fraction": 0.006726594813361754,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_3",
+            "group": "layout",
+            "start": 320,
+            "stop": 336,
+            "distance": 0.012066817037855,
+            "fraction": 0.028726016322398382,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_4",
+            "group": "layout",
+            "start": 336,
+            "stop": 352,
+            "distance": 0.03238334300107786,
+            "fraction": 0.0770911199452601,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_5",
+            "group": "layout",
+            "start": 352,
+            "stop": 368,
+            "distance": 0.017820323732359467,
+            "fraction": 0.04242269596035725,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_6",
+            "group": "layout",
+            "start": 368,
+            "stop": 384,
+            "distance": 0.008283028805384991,
+            "fraction": 0.019718407921156415,
+            "query_valid_dimensions": 16,
+            "candidate_valid_dimensions": 16
+          },
+          {
+            "name": "P_cell_7",
+            "group": "layout",
+            "start": 384,
+            "stop": 400,
+            "distance": 0.03124999936882151,
+            "fraction": 0.07439310541690944,
+            "query_valid_dimensions": 0,
+            "candidate_valid_dimensions": 16
+          }
+        ],
+        "contributions_sum_matches": true
+      }
+    }
+  ],
+  "reference_mask": {
+    "available": true,
+    "matching_corpus_rows": 1,
+    "comparisons": [
+      {
+        "filename": "Canis_familiaris_0355.jpg",
+        "candidate_row": 213,
+        "mask_path": "outputs/segmentation/grabcut/masks/Canis_familiaris_0355.jpg.png",
+        "mask_sha256": "297218b7f60a3b9e9d9ab92eae3ee0a4ab3136b6b149a8e154badef136fb6fdb",
+        "review_status": "da_duyet",
+        "review_result": "dat",
+        "agreement": {
+          "iou": 0.6093205574912892,
+          "intersection_pixels": 37773,
+          "union_pixels": 61992,
+          "used_area_pixels": 45942,
+          "approved_area_pixels": 53823,
+          "used_area_fraction": 0.2077094184027778,
+          "approved_area_fraction": 0.2433403862847222,
+          "symmetric_difference_pixels": 24219,
+          "symmetric_difference_fraction": 0.1094970703125,
+          "identical": false,
+          "interpretation": "Agreement with an approved mask; not segmentation accuracy or ground truth."
+        },
+        "original_vector_comparison": {
+          "distance": 0.462111938287448,
+          "groups": {
+            "color": 0.013228484659367488,
+            "texture": 0.031629667600541624,
+            "shape": 0.3759548587021262,
+            "layout": 0.04129892732541262
+          },
+          "group_fractions": {
+            "color": 0.02862614782987701,
+            "texture": 0.06844590018115261,
+            "shape": 0.813557987909567,
+            "layout": 0.0893699640794032
+          },
+          "subblocks": [
+            {
+              "name": "C1",
+              "group": "color",
+              "start": 0,
+              "stop": 32,
+              "distance": 0.008100127988681318,
+              "fraction": 0.017528497572903614,
+              "query_valid_dimensions": 32,
+              "candidate_valid_dimensions": 32
+            },
+            {
+              "name": "C2",
+              "group": "color",
+              "start": 32,
+              "stop": 48,
+              "distance": 0.005128356670686169,
+              "fraction": 0.01109765025697339,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "T1",
+              "group": "texture",
+              "start": 48,
+              "stop": 68,
+              "distance": 0.0002857691498717313,
+              "fraction": 0.000618398111355379,
+              "query_valid_dimensions": 20,
+              "candidate_valid_dimensions": 20
+            },
+            {
+              "name": "T2",
+              "group": "texture",
+              "start": 68,
+              "stop": 100,
+              "distance": 0.0060573261398422,
+              "fraction": 0.013107919614217702,
+              "query_valid_dimensions": 32,
+              "candidate_valid_dimensions": 32
+            },
+            {
+              "name": "T3",
+              "group": "texture",
+              "start": 100,
+              "stop": 148,
+              "distance": 0.02528657231082769,
+              "fraction": 0.05471958245557953,
+              "query_valid_dimensions": 48,
+              "candidate_valid_dimensions": 48
+            },
+            {
+              "name": "S1",
+              "group": "shape",
+              "start": 148,
+              "stop": 155,
+              "distance": 0.10598392799984348,
+              "fraction": 0.22934687295163142,
+              "query_valid_dimensions": 7,
+              "candidate_valid_dimensions": 7
+            },
+            {
+              "name": "S2",
+              "group": "shape",
+              "start": 155,
+              "stop": 160,
+              "distance": 0.14897945590178666,
+              "fraction": 0.32238824310381003,
+              "query_valid_dimensions": 5,
+              "candidate_valid_dimensions": 5
+            },
+            {
+              "name": "S3",
+              "group": "shape",
+              "start": 160,
+              "stop": 208,
+              "distance": 0.09370427360415005,
+              "fraction": 0.20277397279847612,
+              "query_valid_dimensions": 48,
+              "candidate_valid_dimensions": 48
+            },
+            {
+              "name": "S4",
+              "group": "shape",
+              "start": 208,
+              "stop": 272,
+              "distance": 0.02728720119634611,
+              "fraction": 0.05904889905564963,
+              "query_valid_dimensions": 60,
+              "candidate_valid_dimensions": 40
+            },
+            {
+              "name": "P_cell_0",
+              "group": "layout",
+              "start": 272,
+              "stop": 288,
+              "distance": 0.014913436492667888,
+              "fraction": 0.03227234628028862,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_1",
+              "group": "layout",
+              "start": 288,
+              "stop": 304,
+              "distance": 0.004555337561997996,
+              "fraction": 0.009857649596501952,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_2",
+              "group": "layout",
+              "start": 304,
+              "stop": 320,
+              "distance": 0.00014741754242438812,
+              "fraction": 0.0003190082969306234,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_3",
+              "group": "layout",
+              "start": 320,
+              "stop": 336,
+              "distance": 0.009527585481900917,
+              "fraction": 0.02061748397414148,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_4",
+              "group": "layout",
+              "start": 336,
+              "stop": 352,
+              "distance": 0.0,
+              "fraction": 0.0,
+              "query_valid_dimensions": 0,
+              "candidate_valid_dimensions": 0
+            },
+            {
+              "name": "P_cell_5",
+              "group": "layout",
+              "start": 352,
+              "stop": 368,
+              "distance": 0.0038528111079126144,
+              "fraction": 0.008337397908807208,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_6",
+              "group": "layout",
+              "start": 368,
+              "stop": 384,
+              "distance": 0.0016452298087956613,
+              "fraction": 0.0035602408691122736,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            },
+            {
+              "name": "P_cell_7",
+              "group": "layout",
+              "start": 384,
+              "stop": 400,
+              "distance": 0.006657109329713155,
+              "fraction": 0.014405837153621046,
+              "query_valid_dimensions": 16,
+              "candidate_valid_dimensions": 16
+            }
+          ],
+          "contributions_sum_matches": true
+        },
+        "approved_mask_search": {
+          "original_vector": "stored corpus vector for this candidate row",
+          "flipped_vector": "full horizontal flip of RGB and approved mask, complete frozen B400 extraction",
+          "exclude_self": true,
+          "excluded_self_files": 1,
+          "results": [
+            {
+              "rank": 1,
+              "filename": "Vulpes_vulpes_0028.jpg",
+              "path": "data/cropped_images_576x384/Vulpes_vulpes_0028.jpg",
+              "sha256": "f033c9857551e91e5b028fa833c41004d0841259baef157bd28cc66f379d2d65",
+              "distance": 0.38538791009485285,
+              "orientation": "original",
+              "original_distance": 0.38538791009485285,
+              "flipped_distance": 0.7535862981884306
+            },
+            {
+              "rank": 2,
+              "filename": "Canis_familiaris_0365.jpg",
+              "path": "data/cropped_images_576x384/Canis_familiaris_0365.jpg",
+              "sha256": "045d9504be1ffed3c84a6a3f9743da6415bdb988295ca633ef6aca16c00675f3",
+              "distance": 0.40403417401185904,
+              "orientation": "original",
+              "original_distance": 0.40403417401185904,
+              "flipped_distance": 0.6591154901930281
+            },
+            {
+              "rank": 3,
+              "filename": "Bos_taurus_1254.jpg",
+              "path": "data/cropped_images_576x384/Bos_taurus_1254.jpg",
+              "sha256": "4c2c9cfb6d9c85c5b5779bbfbe7589dc8fcc70782f56a9a1884aee31a230670b",
+              "distance": 0.43053009062666936,
+              "orientation": "original",
+              "original_distance": 0.43053009062666936,
+              "flipped_distance": 0.7010833558258087
+            },
+            {
+              "rank": 4,
+              "filename": "Canis_familiaris_0281.jpg",
+              "path": "data/cropped_images_576x384/Canis_familiaris_0281.jpg",
+              "sha256": "ece740354741fb0a6996338781ec798212733f63c5cf80dcf38e4bdee97cfc91",
+              "distance": 0.4397417323478584,
+              "orientation": "original",
+              "original_distance": 0.4397417323478584,
+              "flipped_distance": 0.7079902812029926
+            },
+            {
+              "rank": 5,
+              "filename": "cervidae_0586.jpg",
+              "path": "data/cropped_images_576x384/cervidae_0586.jpg",
+              "sha256": "ba305e815eaea536ef31206b888edc51664a12cc61392974f1a31c494bfb10e0",
+              "distance": 0.4620346877521945,
+              "orientation": "original",
+              "original_distance": 0.4620346877521945,
+              "flipped_distance": 0.7993296748132376
+            }
+          ],
+          "top5_filename_overlap": 0
+        }
+      }
+    ],
+    "note": "The alternative ranking is a mask-sensitivity check. No automatic relevance judgment is made."
+  },
+  "interpretation": {
+    "relevance": "No automatic visual relevance, P@5, or label-based quality evaluation is performed.",
+    "target": "Similarity of shape, color, and texture can cross animal labels.",
+    "mask": "Mask agreement compares the saved query mask with an approved corpus mask, not ground truth.",
+    "vectors": "Normalization is reproduced from saved raw/validity arrays; query descriptors are not re-extracted.",
+    "distance": "Fixed squared L2 on frozen B400 vectors; validity counts are explanatory and do not change ranking."
+  },
+  "output_directory": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/diagnostics/20261023T014953_653022Z_e870cbcc"
+}

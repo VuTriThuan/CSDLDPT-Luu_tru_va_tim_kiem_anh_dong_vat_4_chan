@@ -1,0 +1,1223 @@
+{
+  "note": "Agreement with manually approved mask is not accuracy. No ground-truth masks supplied.",
+  "rows": [
+    {
+      "run": "20261023T005527_002900Z_39619666",
+      "filename": "ngua_576x384.jpg",
+      "source_path": "/Users/trithuan/Downloads/ngua_576x384.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "b30c667b1470a8df60b8e9d47dc5d9c8174458c1a72b076eef340594e10e113f",
+          "keep_pixels": 0,
+          "remove_pixels": 0,
+          "seconds": 5.968545504998474
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 162593,
+        "mask_ratio": 0.7351029007523148,
+        "total_pixels": 221184,
+        "suspicious": "yes",
+        "review_flags": "near_initial_rectangle_border",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.7884902622594662,
+        "init_border_ratio": 0.5771334792122538
+      },
+      "top5": [
+        {
+          "filename": "Ursus_arctos_1192.jpg",
+          "distance": 0.2710563675496528
+        },
+        {
+          "filename": "ovis-aries_0074.jpg",
+          "distance": 0.32660548389990407
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+          "distance": 0.4116766425700747
+        },
+        {
+          "filename": "ovis-aries_0888.jpg",
+          "distance": 0.41340699109976603
+        },
+        {
+          "filename": "Ursus_arctos_1207.jpg",
+          "distance": 0.4224523852914944
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T012837_426171Z_19029e33",
+      "filename": "Bos_taurus_001.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Bos_taurus_001.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "b30c667b1470a8df60b8e9d47dc5d9c8174458c1a72b076eef340594e10e113f",
+          "keep_pixels": 0,
+          "remove_pixels": 0,
+          "seconds": 1.3187274539959617
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 56744,
+        "mask_ratio": 0.25654658564814814,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.634351383982471,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Panthera_tigris_0377.jpg",
+          "distance": 0.3803461466658036
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1127.jpg",
+          "distance": 0.44075917946510706
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1119.jpg",
+          "distance": 0.46856089464799844
+        },
+        {
+          "filename": "Panthera_tigris_0503.jpg",
+          "distance": 0.47428166516142395
+        },
+        {
+          "filename": "Equus_caballus_1031.jpg",
+          "distance": 0.4867673481300616
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T013221_715108Z_1fc08824",
+      "filename": "Equus_asinus_0587.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Equus_asinus_0587.jpg",
+      "method": "loaded",
+      "initial_bbox": null,
+      "edits": [
+        {
+          "strokes_pixels_sha256": "b1aaa7bb70b14380d2ee812aa43bf2f7159d7948ce908d7718d1a362efaab42d",
+          "keep_pixels": 49,
+          "remove_pixels": 47,
+          "seconds": 11.133897847001208
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 49258,
+        "mask_ratio": 0.22270146122685186,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 3,
+        "bbox_fill_ratio": 0.4199532797926578,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Equus_caballus_1018.jpg",
+          "distance": 0.3576953922208432
+        },
+        {
+          "filename": "Camelus_bactrianus_0463.jpg",
+          "distance": 0.37960437225536936
+        },
+        {
+          "filename": "Canis_familiaris_0365.jpg",
+          "distance": 0.4296671703478573
+        },
+        {
+          "filename": "Canis_lupus_0926.jpg",
+          "distance": 0.4392280426112749
+        },
+        {
+          "filename": "cervidae_0586.jpg",
+          "distance": 0.4463486826064201
+        }
+      ],
+      "approved_match": {
+        "filename": "Equus_asinus_0587.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Equus_asinus_0587.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.8418478643304482,
+        "pixel_agreement": 0.9593551070601852,
+        "query_foreground_pixels": 49258,
+        "approved_foreground_pixels": 55440,
+        "query_only_pixels": 1404,
+        "approved_only_pixels": 7586
+      }
+    },
+    {
+      "run": "20261023T013415_198984Z_78af6ee8",
+      "filename": "Bos_taurus_001.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Bos_taurus_001.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "b30c667b1470a8df60b8e9d47dc5d9c8174458c1a72b076eef340594e10e113f",
+          "keep_pixels": 0,
+          "remove_pixels": 0,
+          "seconds": 0.9289975369974854
+        },
+        {
+          "strokes_pixels_sha256": "b30c667b1470a8df60b8e9d47dc5d9c8174458c1a72b076eef340594e10e113f",
+          "keep_pixels": 0,
+          "remove_pixels": 0,
+          "seconds": 1.6393503430008423
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 56750,
+        "mask_ratio": 0.25657371238425924,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.6344184590618432,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Panthera_tigris_0377.jpg",
+          "distance": 0.3805915062526616
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1127.jpg",
+          "distance": 0.44077062479235996
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1119.jpg",
+          "distance": 0.46898650098257094
+        },
+        {
+          "filename": "Panthera_tigris_0503.jpg",
+          "distance": 0.47437647775390096
+        },
+        {
+          "filename": "Equus_caballus_1031.jpg",
+          "distance": 0.48689960937155846
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T013510_179045Z_e5ee7591",
+      "filename": "Canis_familiaris_004.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Canis_familiaris_004.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "3760a92782608718eb7236c82dcd00ba000b64276d4bad065a4339540612bbdf",
+          "keep_pixels": 0,
+          "remove_pixels": 13380,
+          "seconds": 1.1384383830009028
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 79309,
+        "mask_ratio": 0.35856571903935186,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 11,
+        "bbox_fill_ratio": 0.3864961013645224,
+        "init_border_ratio": 0.039022611232676876
+      },
+      "top5": [
+        {
+          "filename": "cervidae_0616.jpg",
+          "distance": 0.44618175197158894
+        },
+        {
+          "filename": "Canis_lupus_familiaris_labrador_retriever_0978.jpg",
+          "distance": 0.45171884185064454
+        },
+        {
+          "filename": "cervidae_0580.jpg",
+          "distance": 0.4637104947956898
+        },
+        {
+          "filename": "Capra_hircus_1001.jpg",
+          "distance": 0.4738317497700363
+        },
+        {
+          "filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+          "distance": 0.4844078908455036
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T013530_562273Z_9f339754",
+      "filename": "Canis_familiaris_005.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Canis_familiaris_005.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 54224,
+        "mask_ratio": 0.24515335648148148,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.304230978550549,
+        "init_border_ratio": 0.0350109409190372
+      },
+      "top5": [
+        {
+          "filename": "Canis_lupus_familiaris_doberman_0956.jpg",
+          "distance": 0.26673609958047356
+        },
+        {
+          "filename": "Canis_lupus_familiaris_doberman_0959.jpg",
+          "distance": 0.2886517034781652
+        },
+        {
+          "filename": "Canis_lupus_familiaris_doberman_0953.jpg",
+          "distance": 0.2904247669765162
+        },
+        {
+          "filename": "Panthera_leo_1157.jpg",
+          "distance": 0.31993469532266916
+        },
+        {
+          "filename": "Canis_lupus_familiaris_doberman_0960.jpg",
+          "distance": 0.3216224135792794
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T013655_840428Z_bbe42aa3",
+      "filename": "Equus_africanus_asinus_002.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Equus_africanus_asinus_002.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "626990fed6688b7b5ddabc531291be4964712e32aca6096f1ec9f7a14680d54a",
+          "keep_pixels": 1879,
+          "remove_pixels": 4891,
+          "seconds": 1.0896460079966346
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 45286,
+        "mask_ratio": 0.2047435619212963,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 2,
+        "bbox_fill_ratio": 0.40714568274175567,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Camelus_dromedarius_0184.jpg",
+          "distance": 0.33900193495128617
+        },
+        {
+          "filename": "Equus_caballus_1014.jpg",
+          "distance": 0.3831811954999182
+        },
+        {
+          "filename": "Camelus_dromedarius_0016.jpg",
+          "distance": 0.4132811984828332
+        },
+        {
+          "filename": "Camelus_dromedarius_0198.jpg",
+          "distance": 0.41349915294475326
+        },
+        {
+          "filename": "Camelus_dromedarius_0219.jpg",
+          "distance": 0.4165977844979669
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T013724_287536Z_6f6c1168",
+      "filename": "Equus_caballus_003.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Equus_caballus_003.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "b30c667b1470a8df60b8e9d47dc5d9c8174458c1a72b076eef340594e10e113f",
+          "keep_pixels": 0,
+          "remove_pixels": 0,
+          "seconds": 0.7722159210024984
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 59504,
+        "mask_ratio": 0.26902488425925924,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 57,
+        "bbox_fill_ratio": 0.37641700404858297,
+        "init_border_ratio": 0.007111597374179431
+      },
+      "top5": [
+        {
+          "filename": "Equus_caballus_1020.jpg",
+          "distance": 0.08014733265317926
+        },
+        {
+          "filename": "Camelus_dromedarius_0198.jpg",
+          "distance": 0.28422260403063526
+        },
+        {
+          "filename": "Camelus_bactrianus_0297.jpg",
+          "distance": 0.3367399174126767
+        },
+        {
+          "filename": "Camelus_dromedarius_0016.jpg",
+          "distance": 0.41352042216495777
+        },
+        {
+          "filename": "Vulpes_vulpes_0308.jpg",
+          "distance": 0.4181115181343515
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T014055_354991Z_9fb2c575",
+      "filename": "Bos_taurus_001.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Bos_taurus_001.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 57215,
+        "mask_ratio": 0.25867603443287035,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.6474189241179532,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Panthera_tigris_0377.jpg",
+          "distance": 0.3887282930081289
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1127.jpg",
+          "distance": 0.4127792418354576
+        },
+        {
+          "filename": "Panthera_tigris_0503.jpg",
+          "distance": 0.45909801356902236
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1119.jpg",
+          "distance": 0.463893215706664
+        },
+        {
+          "filename": "Ursus_arctos_1206.jpg",
+          "distance": 0.47983703671940986
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T014122_493152Z_1cb7678c",
+      "filename": "Canis_familiaris_004.jpg",
+      "source_path": "/Users/trithuan/Downloads/5_anh_dong_vat_4_chan_576x384/Canis_familiaris_004.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 104587,
+        "mask_ratio": 0.47285065827546297,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.5504347185381668,
+        "init_border_ratio": 0.028081692195477754
+      },
+      "top5": [
+        {
+          "filename": "canis-lupus-familiaris_0687.jpg",
+          "distance": 0.3905418373366277
+        },
+        {
+          "filename": "Canis_lupus_0921.jpg",
+          "distance": 0.4035993074305325
+        },
+        {
+          "filename": "ovis-aries_0883.jpg",
+          "distance": 0.4491525383156074
+        },
+        {
+          "filename": "ovis-aries_0229.jpg",
+          "distance": 0.46334051488305367
+        },
+        {
+          "filename": "ovis-aries_0901.jpg",
+          "distance": 0.4748528527952268
+        }
+      ],
+      "approved_match": null
+    },
+    {
+      "run": "20261023T014359_973770Z_2a3de400",
+      "filename": "Ailuropoda_melanoleuca_1217.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Ailuropoda_melanoleuca_1217.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 106894,
+        "mask_ratio": 0.4832808883101852,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.7012891586025914,
+        "init_border_ratio": 0.00674690007293946
+      },
+      "top5": [
+        {
+          "filename": "Ailuropoda_melanoleuca_1249.jpg",
+          "distance": 0.1347126251056328
+        },
+        {
+          "filename": "Ailuropoda_melanoleuca_1237.jpg",
+          "distance": 0.2449741459351556
+        },
+        {
+          "filename": "Ailuropoda_melanoleuca_1245.jpg",
+          "distance": 0.24671636817675668
+        },
+        {
+          "filename": "Ailuropoda_melanoleuca_1218.jpg",
+          "distance": 0.26882166629103144
+        },
+        {
+          "filename": "Ailuropoda_melanoleuca_1222.jpg",
+          "distance": 0.319837313177153
+        }
+      ],
+      "approved_match": {
+        "filename": "Ailuropoda_melanoleuca_1217.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Ailuropoda_melanoleuca_1217.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.9266122639309863,
+        "pixel_agreement": 0.9644232855902778,
+        "query_foreground_pixels": 106894,
+        "approved_foreground_pixels": 99687,
+        "query_only_pixels": 7538,
+        "approved_only_pixels": 331
+      }
+    },
+    {
+      "run": "20261023T014418_919569Z_58b4eb69",
+      "filename": "Bos_taurus_1258.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Bos_taurus_1258.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 84620,
+        "mask_ratio": 0.38257740162037035,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.6044285714285714,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Bos_taurus_1296.jpg",
+          "distance": 0.28181373709396823
+        },
+        {
+          "filename": "Bos_taurus_1268.jpg",
+          "distance": 0.3273399881779917
+        },
+        {
+          "filename": "Bos_taurus_1283.jpg",
+          "distance": 0.3842765940096813
+        },
+        {
+          "filename": "Bos_taurus_1271.jpg",
+          "distance": 0.39473123716731245
+        },
+        {
+          "filename": "Bos_taurus_1259.jpg",
+          "distance": 0.40160901546340966
+        }
+      ],
+      "approved_match": {
+        "filename": "Bos_taurus_1258.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Bos_taurus_1258.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.8313921242373822,
+        "pixel_agreement": 0.9354021990740741,
+        "query_foreground_pixels": 84620,
+        "approved_foreground_pixels": 70574,
+        "query_only_pixels": 14167,
+        "approved_only_pixels": 121
+      }
+    },
+    {
+      "run": "20261023T014435_860621Z_d43ac6d7",
+      "filename": "Bos_taurus_1256.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Bos_taurus_1256.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 81612,
+        "mask_ratio": 0.3689778645833333,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 2,
+        "bbox_fill_ratio": 0.628708333012349,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Bos_taurus_1266.jpg",
+          "distance": 0.19235683543386484
+        },
+        {
+          "filename": "Bos_taurus_1286.jpg",
+          "distance": 0.29425872115567797
+        },
+        {
+          "filename": "Bos_taurus_1262.jpg",
+          "distance": 0.30441867665808287
+        },
+        {
+          "filename": "Bos_taurus_1267.jpg",
+          "distance": 0.3136857760720219
+        },
+        {
+          "filename": "Bos_taurus_1265.jpg",
+          "distance": 0.31397516808571035
+        }
+      ],
+      "approved_match": {
+        "filename": "Bos_taurus_1256.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Bos_taurus_1256.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.9463921438398406,
+        "pixel_agreement": 0.9795645254629629,
+        "query_foreground_pixels": 81612,
+        "approved_foreground_pixels": 82500,
+        "query_only_pixels": 1816,
+        "approved_only_pixels": 2704
+      }
+    },
+    {
+      "run": "20261023T014457_674112Z_e533ac3b",
+      "filename": "bubalus-bubalis_0645.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/bubalus-bubalis_0645.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 79428,
+        "mask_ratio": 0.3591037326388889,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.546223515091498,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Canis_lupus_0920.jpg",
+          "distance": 0.2818432659919689
+        },
+        {
+          "filename": "Bos_taurus_1263.jpg",
+          "distance": 0.36439305980391645
+        },
+        {
+          "filename": "Bos_taurus_1270.jpg",
+          "distance": 0.37084920623118167
+        },
+        {
+          "filename": "Bos_taurus_1278.jpg",
+          "distance": 0.42341644453431526
+        },
+        {
+          "filename": "bubalus-bubalis_0639.jpg",
+          "distance": 0.43839531629733575
+        }
+      ],
+      "approved_match": {
+        "filename": "bubalus-bubalis_0645.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/bubalus-bubalis_0645.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.8990719531489834,
+        "pixel_agreement": 0.9613534432870371,
+        "query_foreground_pixels": 79428,
+        "approved_foreground_pixels": 81412,
+        "query_only_pixels": 3282,
+        "approved_only_pixels": 5266
+      }
+    },
+    {
+      "run": "20261023T014518_965982Z_95542b68",
+      "filename": "Camelus_bactrianus_0008.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Camelus_bactrianus_0008.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 64300,
+        "mask_ratio": 0.2907081886574074,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.5084450910931174,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Ursus_arctos_1177.jpg",
+          "distance": 0.29309722386176285
+        },
+        {
+          "filename": "Ursus_arctos_1167.jpg",
+          "distance": 0.34729081320360544
+        },
+        {
+          "filename": "bubalus-bubalis_0643.jpg",
+          "distance": 0.38274545450021313
+        },
+        {
+          "filename": "Camelus_bactrianus_0267.jpg",
+          "distance": 0.3926787370529622
+        },
+        {
+          "filename": "Camelus_bactrianus_0190.jpg",
+          "distance": 0.3967112840535112
+        }
+      ],
+      "approved_match": {
+        "filename": "Camelus_bactrianus_0008.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Camelus_bactrianus_0008.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.8590595914420404,
+        "pixel_agreement": 0.9525553385416666,
+        "query_foreground_pixels": 64300,
+        "approved_foreground_pixels": 74120,
+        "query_only_pixels": 337,
+        "approved_only_pixels": 10157
+      }
+    },
+    {
+      "run": "20261023T014542_632499Z_e8f7fc8d",
+      "filename": "Camelus_bactrianus_0057.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Camelus_bactrianus_0057.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 111290,
+        "mask_ratio": 0.5031557436342593,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.7049381777642647,
+        "init_border_ratio": 0.011487964989059081
+      },
+      "top5": [
+        {
+          "filename": "Camelus_bactrianus_0113.jpg",
+          "distance": 0.44543807043769523
+        },
+        {
+          "filename": "Ursus_arctos_1209.jpg",
+          "distance": 0.4830480642462344
+        },
+        {
+          "filename": "Ursus_arctos_1192.jpg",
+          "distance": 0.4845689545002807
+        },
+        {
+          "filename": "Ursus_arctos_1207.jpg",
+          "distance": 0.48501240689067243
+        },
+        {
+          "filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+          "distance": 0.4923644870681324
+        }
+      ],
+      "approved_match": {
+        "filename": "Camelus_bactrianus_0057.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Camelus_bactrianus_0057.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.4252416043605329,
+        "pixel_agreement": 0.7101417824074074,
+        "query_foreground_pixels": 111290,
+        "approved_foreground_pixels": 47690,
+        "query_only_pixels": 63856,
+        "approved_only_pixels": 256
+      }
+    },
+    {
+      "run": "20261023T014716_706322Z_da9a4488",
+      "filename": "Camelus_bactrianus_0057.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Camelus_bactrianus_0057.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "e621361fdaad7c8cc3ede0a01b1d00c47bb759e6f229c78203156c91cb066cde",
+          "keep_pixels": 5996,
+          "remove_pixels": 17622,
+          "seconds": 1.1400946040012059
+        },
+        {
+          "strokes_pixels_sha256": "bcd9ba7dc9e96199be7fd2ee269af13dc567f77fac6c0459c793070345b7eaa5",
+          "keep_pixels": 5996,
+          "remove_pixels": 26095,
+          "seconds": 1.0165785749995848
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 48792,
+        "mask_ratio": 0.22059461805555555,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 2,
+        "bbox_fill_ratio": 0.4387177988580677,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Camelus_bactrianus_0183.jpg",
+          "distance": 0.21769325956560176
+        },
+        {
+          "filename": "Camelus_dromedarius_0910.jpg",
+          "distance": 0.3231754393818989
+        },
+        {
+          "filename": "Camelus_bactrianus_0468.jpg",
+          "distance": 0.33789813169404437
+        },
+        {
+          "filename": "Camelus_bactrianus_0500.jpg",
+          "distance": 0.338116724905877
+        },
+        {
+          "filename": "Camelus_dromedarius_0459.jpg",
+          "distance": 0.3412893740951661
+        }
+      ],
+      "approved_match": {
+        "filename": "Camelus_bactrianus_0057.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Camelus_bactrianus_0057.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.9181693473031273,
+        "pixel_agreement": 0.9813910590277778,
+        "query_foreground_pixels": 48792,
+        "approved_foreground_pixels": 47690,
+        "query_only_pixels": 2609,
+        "approved_only_pixels": 1507
+      }
+    },
+    {
+      "run": "20261023T014828_155024Z_d21d8abb",
+      "filename": "Camelus_bactrianus_0448.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Camelus_bactrianus_0448.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [
+        {
+          "strokes_pixels_sha256": "b4cd8a260b4c8c52a18ecb228fe4337360645297577977062bfc9fe68cc961e5",
+          "keep_pixels": 3705,
+          "remove_pixels": 0,
+          "seconds": 1.6337299540027743
+        },
+        {
+          "strokes_pixels_sha256": "d7f530fd76b375a58015d1bf46a1f24729a5c0ab7e4c386d167d329d2f88fa43",
+          "keep_pixels": 4718,
+          "remove_pixels": 0,
+          "seconds": 1.6312380370000028
+        }
+      ],
+      "mask_statistics": {
+        "mask_pixels": 68074,
+        "mask_ratio": 0.3077709056712963,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 35,
+        "bbox_fill_ratio": 0.3649532509864471,
+        "init_border_ratio": 0.002735229759299781
+      },
+      "top5": [
+        {
+          "filename": "Camelus_bactrianus_0453.jpg",
+          "distance": 0.11566806865324314
+        },
+        {
+          "filename": "Camelus_dromedarius_0892.jpg",
+          "distance": 0.20218620553093544
+        },
+        {
+          "filename": "Camelus_bactrianus_0423.jpg",
+          "distance": 0.30201652984900285
+        },
+        {
+          "filename": "Camelus_bactrianus_0246.jpg",
+          "distance": 0.4026034173655111
+        },
+        {
+          "filename": "Camelus_bactrianus_0483.jpg",
+          "distance": 0.41648821637024136
+        }
+      ],
+      "approved_match": {
+        "filename": "Camelus_bactrianus_0448.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Camelus_bactrianus_0448.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.9658621875716579,
+        "pixel_agreement": 0.9892306857638888,
+        "query_foreground_pixels": 68074,
+        "approved_foreground_pixels": 69096,
+        "query_only_pixels": 680,
+        "approved_only_pixels": 1702
+      }
+    },
+    {
+      "run": "20261023T014901_329947Z_fdf91295",
+      "filename": "Canis_familiaris_0470.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Canis_familiaris_0470.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 65327,
+        "mask_ratio": 0.2953513816550926,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 1,
+        "bbox_fill_ratio": 0.41587038864309134,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "Felis_catus_bengal_1101.jpg",
+          "distance": 0.343291350842902
+        },
+        {
+          "filename": "Vulpes_vulpes_0290.jpg",
+          "distance": 0.3624357984109433
+        },
+        {
+          "filename": "Canis_lupus_familiaris_corgi_0950.jpg",
+          "distance": 0.36460986300751175
+        },
+        {
+          "filename": "Vulpes_vulpes_0119.jpg",
+          "distance": 0.36809755152743506
+        },
+        {
+          "filename": "Canis_familiaris_0311.jpg",
+          "distance": 0.3746598421976867
+        }
+      ],
+      "approved_match": {
+        "filename": "Canis_familiaris_0470.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Canis_familiaris_0470.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 1.0,
+        "pixel_agreement": 1.0,
+        "query_foreground_pixels": 65327,
+        "approved_foreground_pixels": 65327,
+        "query_only_pixels": 0,
+        "approved_only_pixels": 0
+      }
+    },
+    {
+      "run": "20261023T014920_315177Z_fdd15764",
+      "filename": "cervidae_0584.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/cervidae_0584.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 49223,
+        "mask_ratio": 0.22254322193287038,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 2,
+        "bbox_fill_ratio": 0.44357033432459225,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "ovis-aries_0019.jpg",
+          "distance": 0.4616784573487232
+        },
+        {
+          "filename": "cervidae_0631.jpg",
+          "distance": 0.4713499770930525
+        },
+        {
+          "filename": "Vulpes_vulpes_0140.jpg",
+          "distance": 0.5294854427329647
+        },
+        {
+          "filename": "Equus_caballus_1033.jpg",
+          "distance": 0.5352245023497626
+        },
+        {
+          "filename": "Equus_caballus_1023.jpg",
+          "distance": 0.5422283127502054
+        }
+      ],
+      "approved_match": {
+        "filename": "cervidae_0584.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/cervidae_0584.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.9151427026825495,
+        "pixel_agreement": 0.9794198495370371,
+        "query_foreground_pixels": 49223,
+        "approved_foreground_pixels": 53511,
+        "query_only_pixels": 132,
+        "approved_only_pixels": 4420
+      }
+    },
+    {
+      "run": "20261023T014921_914567Z_20abe342",
+      "filename": "cervidae_0584.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/cervidae_0584.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 49223,
+        "mask_ratio": 0.22254322193287038,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 2,
+        "bbox_fill_ratio": 0.44357033432459225,
+        "init_border_ratio": 0.0
+      },
+      "top5": [
+        {
+          "filename": "ovis-aries_0019.jpg",
+          "distance": 0.4616784573487232
+        },
+        {
+          "filename": "cervidae_0631.jpg",
+          "distance": 0.4713499770930525
+        },
+        {
+          "filename": "Vulpes_vulpes_0140.jpg",
+          "distance": 0.5294854427329647
+        },
+        {
+          "filename": "Equus_caballus_1033.jpg",
+          "distance": 0.5352245023497626
+        },
+        {
+          "filename": "Equus_caballus_1023.jpg",
+          "distance": 0.5422283127502054
+        }
+      ],
+      "approved_match": {
+        "filename": "cervidae_0584.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/cervidae_0584.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.9151427026825495,
+        "pixel_agreement": 0.9794198495370371,
+        "query_foreground_pixels": 49223,
+        "approved_foreground_pixels": 53511,
+        "query_only_pixels": 132,
+        "approved_only_pixels": 4420
+      }
+    },
+    {
+      "run": "20261023T014953_653022Z_e870cbcc",
+      "filename": "Canis_familiaris_0355.jpg",
+      "source_path": "/Users/trithuan/Desktop/CSDLDPT/BTL/data/cropped_images_576x384/Canis_familiaris_0355.jpg",
+      "method": "existing_grabcut_rectangle_morphology",
+      "initial_bbox": [
+        10,
+        10,
+        556,
+        364
+      ],
+      "edits": [],
+      "mask_statistics": {
+        "mask_pixels": 45942,
+        "mask_ratio": 0.2077094184027778,
+        "total_pixels": 221184,
+        "suspicious": "no",
+        "review_flags": "",
+        "component_count": 4,
+        "bbox_fill_ratio": 0.2763212500676639,
+        "init_border_ratio": 0.004558716265499635
+      },
+      "top5": [
+        {
+          "filename": "cervidae_0580.jpg",
+          "distance": 0.3241501520539458
+        },
+        {
+          "filename": "Camelus_dromedarius_0261.jpg",
+          "distance": 0.3792523059570766
+        },
+        {
+          "filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+          "distance": 0.4063579304742525
+        },
+        {
+          "filename": "cervidae_0571.jpg",
+          "distance": 0.41907493198733237
+        },
+        {
+          "filename": "Camelus_dromedarius_0254.jpg",
+          "distance": 0.4200658003680867
+        }
+      ],
+      "approved_match": {
+        "filename": "Canis_familiaris_0355.jpg",
+        "mask_path": "outputs/segmentation/grabcut/masks/Canis_familiaris_0355.jpg.png",
+        "sha256_same_bytes": true,
+        "agreement_iou": 0.6093205574912892,
+        "pixel_agreement": 0.8905029296875,
+        "query_foreground_pixels": 45942,
+        "approved_foreground_pixels": 53823,
+        "query_only_pixels": 8169,
+        "approved_only_pixels": 16050
+      }
+    }
+  ]
+}

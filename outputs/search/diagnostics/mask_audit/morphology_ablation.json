@@ -1,0 +1,499 @@
+{
+  "note": "Same default bbox and RNG. IoU is agreement with approved mask, not ground-truth accuracy. Frozen normalizer, original B400.",
+  "rows": [
+    {
+      "run": "20261023T014542_632499Z_e8f7fc8d",
+      "filename": "Camelus_bactrianus_0057.jpg",
+      "raw_pixels": 111670,
+      "morph_pixels": 111290,
+      "removed_by_morph": 510,
+      "added_by_morph": 130,
+      "saved_morph_identical": true,
+      "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "variants": {
+        "raw": {
+          "mask_pixels": 111670,
+          "top5": [
+            {
+              "filename": "Camelus_bactrianus_0113.jpg",
+              "distance": 0.44230307868267094
+            },
+            {
+              "filename": "Ursus_arctos_1209.jpg",
+              "distance": 0.48704494742086285
+            },
+            {
+              "filename": "Ursus_arctos_1205.jpg",
+              "distance": 0.49263703367036055
+            },
+            {
+              "filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+              "distance": 0.4975265197667079
+            },
+            {
+              "filename": "Ursus_arctos_1192.jpg",
+              "distance": 0.5014796618854379
+            }
+          ],
+          "source_component_count": 1,
+          "valid_dimensions": 400,
+          "agreement_iou": 0.4241795953385286,
+          "vector_squared_distance_to_samehash_approved": 0.9170595160228951,
+          "prepare_geometry": {
+            "source_bbox": [
+              10,
+              42,
+              518,
+              313
+            ],
+            "scale": 0.555984555984556,
+            "resized": [
+              288,
+              174
+            ],
+            "offset": [
+              0,
+              9
+            ],
+            "nearest_rgb_fallback_pixels": 95,
+            "source_component_count": 1
+          },
+          "component_areas": [
+            111670
+          ]
+        },
+        "morph": {
+          "mask_pixels": 111290,
+          "top5": [
+            {
+              "filename": "Camelus_bactrianus_0113.jpg",
+              "distance": 0.44543807043769523
+            },
+            {
+              "filename": "Ursus_arctos_1209.jpg",
+              "distance": 0.4830480642462344
+            },
+            {
+              "filename": "Ursus_arctos_1192.jpg",
+              "distance": 0.4845689545002807
+            },
+            {
+              "filename": "Ursus_arctos_1207.jpg",
+              "distance": 0.48501240689067243
+            },
+            {
+              "filename": "Hydrochoerus_hydrochaeris_1131.jpg",
+              "distance": 0.4923644870681324
+            }
+          ],
+          "source_component_count": 1,
+          "valid_dimensions": 400,
+          "agreement_iou": 0.4252416043605329,
+          "vector_squared_distance_to_samehash_approved": 0.8988326934777167,
+          "prepare_geometry": {
+            "source_bbox": [
+              10,
+              42,
+              506,
+              312
+            ],
+            "scale": 0.5691699604743083,
+            "resized": [
+              288,
+              178
+            ],
+            "offset": [
+              0,
+              7
+            ],
+            "nearest_rgb_fallback_pixels": 126,
+            "source_component_count": 1
+          },
+          "component_areas": [
+            111290
+          ]
+        }
+      },
+      "raw_morph_vector_squared_distance": 0.010564728289733993
+    },
+    {
+      "run": "20261023T014953_653022Z_e870cbcc",
+      "filename": "Canis_familiaris_0355.jpg",
+      "raw_pixels": 46613,
+      "morph_pixels": 45942,
+      "removed_by_morph": 896,
+      "added_by_morph": 225,
+      "saved_morph_identical": true,
+      "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "variants": {
+        "raw": {
+          "mask_pixels": 46613,
+          "top5": [
+            {
+              "filename": "cervidae_0580.jpg",
+              "distance": 0.31124430823977434
+            },
+            {
+              "filename": "Canis_lupus_familiaris_phu_quoc_dog_0936.jpg",
+              "distance": 0.35646493892389547
+            },
+            {
+              "filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+              "distance": 0.3951587667951353
+            },
+            {
+              "filename": "cervidae_0614.jpg",
+              "distance": 0.43125143187656456
+            },
+            {
+              "filename": "Felis_catus_persian_1109.jpg",
+              "distance": 0.43254719341148656
+            }
+          ],
+          "source_component_count": 33,
+          "valid_dimensions": 398,
+          "agreement_iou": 0.6116691806540646,
+          "vector_squared_distance_to_samehash_approved": 0.5878336343778545,
+          "prepare_geometry": {
+            "source_bbox": [
+              10,
+              16,
+              556,
+              357
+            ],
+            "scale": 0.5179856115107914,
+            "resized": [
+              288,
+              185
+            ],
+            "offset": [
+              0,
+              3
+            ],
+            "nearest_rgb_fallback_pixels": 187,
+            "source_component_count": 33
+          },
+          "component_areas": [
+            35148,
+            10158,
+            696,
+            421,
+            74,
+            31,
+            19,
+            7,
+            7,
+            6,
+            4,
+            4,
+            4,
+            4,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "morph": {
+          "mask_pixels": 45942,
+          "top5": [
+            {
+              "filename": "cervidae_0580.jpg",
+              "distance": 0.3241501520539458
+            },
+            {
+              "filename": "Camelus_dromedarius_0261.jpg",
+              "distance": 0.3792523059570766
+            },
+            {
+              "filename": "Canis_lupus_familiaris_golden_retriever_0971.jpg",
+              "distance": 0.4063579304742525
+            },
+            {
+              "filename": "cervidae_0571.jpg",
+              "distance": 0.41907493198733237
+            },
+            {
+              "filename": "Camelus_dromedarius_0254.jpg",
+              "distance": 0.4200658003680867
+            }
+          ],
+          "source_component_count": 4,
+          "valid_dimensions": 380,
+          "agreement_iou": 0.6093205574912892,
+          "vector_squared_distance_to_samehash_approved": 0.462111938287448,
+          "prepare_geometry": {
+            "source_bbox": [
+              10,
+              16,
+              471,
+              353
+            ],
+            "scale": 0.5439093484419264,
+            "resized": [
+              256,
+              192
+            ],
+            "offset": [
+              16,
+              0
+            ],
+            "nearest_rgb_fallback_pixels": 111,
+            "source_component_count": 4
+          },
+          "component_areas": [
+            34759,
+            10148,
+            655,
+            380
+          ]
+        }
+      },
+      "raw_morph_vector_squared_distance": 0.23226931284750496
+    },
+    {
+      "run": "20261023T014518_965982Z_95542b68",
+      "filename": "Camelus_bactrianus_0008.jpg",
+      "raw_pixels": 64439,
+      "morph_pixels": 64300,
+      "removed_by_morph": 237,
+      "added_by_morph": 98,
+      "saved_morph_identical": true,
+      "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "variants": {
+        "raw": {
+          "mask_pixels": 64439,
+          "top5": [
+            {
+              "filename": "Camelus_bactrianus_0190.jpg",
+              "distance": 0.3360291974950974
+            },
+            {
+              "filename": "Camelus_bactrianus_0468.jpg",
+              "distance": 0.381050237467246
+            },
+            {
+              "filename": "Camelus_bactrianus_0273.jpg",
+              "distance": 0.3954668619991396
+            },
+            {
+              "filename": "Camelus_bactrianus_0211.jpg",
+              "distance": 0.39557400143348914
+            },
+            {
+              "filename": "Equus_asinus_0046.jpg",
+              "distance": 0.4014027179615523
+            }
+          ],
+          "source_component_count": 3,
+          "valid_dimensions": 388,
+          "agreement_iou": 0.8628529174509276,
+          "vector_squared_distance_to_samehash_approved": 0.5143209551515153,
+          "prepare_geometry": {
+            "source_bbox": [
+              80,
+              31,
+              416,
+              343
+            ],
+            "scale": 0.5597667638483965,
+            "resized": [
+              233,
+              192
+            ],
+            "offset": [
+              27,
+              0
+            ],
+            "nearest_rgb_fallback_pixels": 86,
+            "source_component_count": 3
+          },
+          "component_areas": [
+            64436,
+            2,
+            1
+          ]
+        },
+        "morph": {
+          "mask_pixels": 64300,
+          "top5": [
+            {
+              "filename": "Ursus_arctos_1177.jpg",
+              "distance": 0.29309722386176285
+            },
+            {
+              "filename": "Ursus_arctos_1167.jpg",
+              "distance": 0.34729081320360544
+            },
+            {
+              "filename": "bubalus-bubalis_0643.jpg",
+              "distance": 0.38274545450021313
+            },
+            {
+              "filename": "Camelus_bactrianus_0267.jpg",
+              "distance": 0.3926787370529622
+            },
+            {
+              "filename": "Camelus_bactrianus_0190.jpg",
+              "distance": 0.3967112840535112
+            }
+          ],
+          "source_component_count": 1,
+          "valid_dimensions": 396,
+          "agreement_iou": 0.8590595914420404,
+          "vector_squared_distance_to_samehash_approved": 0.7058128946421756,
+          "prepare_geometry": {
+            "source_bbox": [
+              80,
+              31,
+              416,
+              304
+            ],
+            "scale": 0.631578947368421,
+            "resized": [
+              263,
+              192
+            ],
+            "offset": [
+              12,
+              0
+            ],
+            "nearest_rgb_fallback_pixels": 78,
+            "source_component_count": 1
+          },
+          "component_areas": [
+            64300
+          ]
+        }
+      },
+      "raw_morph_vector_squared_distance": 0.22394876118741985
+    },
+    {
+      "run": "20261023T014055_354991Z_9fb2c575",
+      "filename": "Bos_taurus_001.jpg",
+      "raw_pixels": 57310,
+      "morph_pixels": 57215,
+      "removed_by_morph": 139,
+      "added_by_morph": 44,
+      "saved_morph_identical": true,
+      "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+      "variants": {
+        "raw": {
+          "mask_pixels": 57310,
+          "top5": [
+            {
+              "filename": "Equus_caballus_1031.jpg",
+              "distance": 0.37868077362262503
+            },
+            {
+              "filename": "bubalus-bubalis_0634.jpg",
+              "distance": 0.4177412510463058
+            },
+            {
+              "filename": "equus-quagga_0783.jpg",
+              "distance": 0.4300642987128215
+            },
+            {
+              "filename": "Hydrochoerus_hydrochaeris_1127.jpg",
+              "distance": 0.4566630347486318
+            },
+            {
+              "filename": "Hydrochoerus_hydrochaeris_1135.jpg",
+              "distance": 0.4679464172020824
+            }
+          ],
+          "source_component_count": 2,
+          "valid_dimensions": 384,
+          "prepare_geometry": {
+            "source_bbox": [
+              61,
+              54,
+              431,
+              281
+            ],
+            "scale": 0.6682134570765661,
+            "resized": [
+              288,
+              188
+            ],
+            "offset": [
+              0,
+              2
+            ],
+            "nearest_rgb_fallback_pixels": 61,
+            "source_component_count": 2
+          },
+          "component_areas": [
+            57309,
+            1
+          ]
+        },
+        "morph": {
+          "mask_pixels": 57215,
+          "top5": [
+            {
+              "filename": "Panthera_tigris_0377.jpg",
+              "distance": 0.3887282930081289
+            },
+            {
+              "filename": "Hydrochoerus_hydrochaeris_1127.jpg",
+              "distance": 0.4127792418354576
+            },
+            {
+              "filename": "Panthera_tigris_0503.jpg",
+              "distance": 0.45909801356902236
+            },
+            {
+              "filename": "Hydrochoerus_hydrochaeris_1119.jpg",
+              "distance": 0.463893215706664
+            },
+            {
+              "filename": "Ursus_arctos_1206.jpg",
+              "distance": 0.47983703671940986
+            }
+          ],
+          "source_component_count": 1,
+          "valid_dimensions": 400,
+          "prepare_geometry": {
+            "source_bbox": [
+              62,
+              54,
+              429,
+              206
+            ],
+            "scale": 0.6713286713286714,
+            "resized": [
+              288,
+              138
+            ],
+            "offset": [
+              0,
+              27
+            ],
+            "nearest_rgb_fallback_pixels": 22,
+            "source_component_count": 1
+          },
+          "component_areas": [
+            57215
+          ]
+        }
+      },
+      "raw_morph_vector_squared_distance": 0.28717877848767104
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+﻿query_id,purpose,group,status,returned,judged_results,visual_p_at_5,same_label_at_5,metric_status,elapsed_seconds,error
+database_donkey,functional_check,database_loaded_mask,success,5,0,,,excluded_functional_check,0.9609856319984829,
+duplicate_hash,functional_check,hash_deduplication,success,5,0,,,excluded_functional_check,1.287116628998774,
+resized_864x576,functional_check,resized_functional_derivative,success,5,0,,,excluded_functional_check,1.4788858690008055,
+grabcut_bbox,functional_check,grabcut_pipeline,success,5,0,,,excluded_functional_check,6.873750807000761,

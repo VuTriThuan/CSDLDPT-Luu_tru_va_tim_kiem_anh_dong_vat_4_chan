@@ -4,7 +4,10 @@ Dự án gồm công cụ chuẩn bị ảnh, tạo và duyệt mask, cùng báo
 và phân tích dữ liệu để chọn bộ thuộc tính tìm kiếm. Yêu cầu 3 đã triển khai
 B400 400 chiều, chuẩn hóa tái sử dụng và CSDL SQLite. Kết quả thực tế, kiểm thử
 và các quy ước phép đo nằm trong [báo cáo yêu cầu 3](docs/reports/b400_implementation.md).
-Chức năng tìm kiếm yêu cầu 4 chưa triển khai.
+Yêu cầu 4 đã có tìm kiếm chính xác top 5, CLI, giao diện Tkinter sửa mask và
+công cụ chấm theo lô; xem [báo cáo tìm kiếm](docs/reports/search_implementation.md).
+Đã kiểm tra thêm các lượt tìm kiếm thực tế ngày 23/10, sửa thao tác bbox/mask và
+thêm chẩn đoán từng lượt; xem [kiểm tra chất lượng](docs/reports/search_quality_audit.md).
 
 ## Đọc tài liệu
 
@@ -13,6 +16,8 @@ Chức năng tìm kiếm yêu cầu 4 chưa triển khai.
 | [So sánh ảnh động vật](docs/reports/animal_comparison.md) | Yêu cầu 1: giống/khác bằng 104 ảnh đại diện và các cặp minh họa |
 | [Thiết kế thuộc tính tìm kiếm](docs/reports/search_feature_design.md) | Yêu cầu 2: phân tích tự động 812 ảnh, kết quả đo thực tế và thiết kế B400 |
 | [Triển khai B400 và CSDL](docs/reports/b400_implementation.md) | Yêu cầu 3: công thức, chuẩn hóa, SQLite, kết quả và tái lập |
+| [Tìm kiếm top 5](docs/reports/search_implementation.md) | Yêu cầu 4: kiến trúc, CLI/GUI, trung gian thực tế, công cụ đánh giá và kiểm thử |
+| [Kiểm tra chất lượng mask và tìm kiếm](docs/reports/search_quality_audit.md) | Phân tích lượt thật, giới hạn B400, các sửa lỗi thao tác và lệnh diagnose |
 | [Hướng dẫn công cụ ảnh](docs/guides/image_tools.md) | Cài môi trường, cắt ảnh, duyệt/lật/loại ảnh và kiểm thử |
 | [Hướng dẫn GrabCut](docs/guides/grabcut.md) | Tạo mask, duyệt overlay, chỉnh mask và đồng bộ |
 | [Hướng dẫn tạo lại mask](docs/guides/mask_regeneration.md) | Tạo mask U²-Net từ hàng đợi và kiểm tra kết quả lịch sử |
@@ -51,8 +56,9 @@ nhưng khác họa tiết; ảnh và số đo cụ thể nằm trong báo cáo.
 **B400 = màu tiền cảnh 48 + kết cấu 100 + hình dạng 124 + bố cục màu 128**
 được triển khai riêng tại `tools/features/`; vector thô, chuẩn hóa và SQLite
 ở `outputs/features/b400_v1/`. NPZ 176 chiều yêu cầu 2 giữ nguyên.
-Yêu cầu 1 giữ 104 ảnh đại diện để mô tả giống/khác. Chưa đánh giá chất lượng
-truy hồi hoặc triển khai tìm kiếm yêu cầu 4.
+Yêu cầu 1 giữ 104 ảnh đại diện để mô tả giống/khác. Đã triển khai tìm kiếm
+yêu cầu 4; chưa có truy vấn độc lập và chấm mức phù hợp thị giác để kết luận
+chất lượng truy hồi.
 
 Chạy lại tại root dự án bằng môi trường `.venv/` nêu bên dưới:
 
@@ -119,17 +125,63 @@ rõ, kèm validity 400 phần tử và metadata ngoài vector. Thành công trí
 không có nghĩa mọi phép đo đều hợp lệ. Xem [báo cáo yêu cầu 3](docs/reports/b400_implementation.md)
 và [danh mục đầu ra](outputs/features/b400_v1/README.md).
 
+## Tìm kiếm top 5 — yêu cầu 4
+
+Đọc một lần vector chuẩn hóa B400 từ SQLite của run hoàn tất trong summary;
+không fit lại scaler. Mỗi truy vấn trích đủ hai phương án RGB/mask gốc và lật
+ngang, dùng khoảng cách bình phương nhỏ hơn để xếp hạng. Nhãn chỉ dùng hiển
+thị/đánh giá. Cả 812 tệp được xếp hạng riêng, kể cả hai tệp cùng SHA-256;
+mặc định loại mọi tệp trùng hash ảnh truy vấn.
+Kết quả và ảnh/mask truy vấn chỉ ghi vào `outputs/search/`.
+
+```sh
+.venv/bin/python -B tools/search/cli.py status
+.venv/bin/python -B tools/search/cli.py query \
+  --image data/cropped_images_576x384/Equus_asinus_0587.jpg \
+  --mask outputs/segmentation/grabcut/masks/Equus_asinus_0587.jpg.png
+.venv/bin/python -B tools/search/cli.py gui
+# Kiểm tra chức năng theo lô bằng ảnh CSDL/ảnh dẫn xuất, không đánh giá truy hồi:
+.venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/functional_queries.csv
+.venv/bin/python -B -m unittest discover -s tests/search -v
+```
+
+Ảnh mới có thể dùng `query --image /path/new.jpg --bbox X Y WIDTH HEIGHT` hoặc
+nạp mask PNG 0/255 qua CLI `--mask`. GUI có nút **Chọn ảnh khác** để bắt đầu lượt mới;
+giao diện tự tạo mask khi chọn ảnh, cho tô giữ/loại, hoàn tác, xem
+mask/overlay, top 5, đóng góp bốn nhóm, vector theo khối, validity và xuất toàn
+bộ lượt truy vấn. Tích **Hiện cả ảnh trùng truy vấn** để xem các bản trùng của
+chính ảnh đang tìm. Tác vụ nặng chạy trên một worker, widget cập nhật ở luồng Tk.
+Nếu dùng CLI `--include-self` với `equus-quagga_0663.jpg`, hai tệp trùng bytes
+`0663` và `0667` đều có thể hiện trong top 5; mặc định cả hai bị loại khi ảnh
+truy vấn có cùng SHA-256.
+
+Kết quả thực tế ngày 22/10/2026: nạp **812 tệp**, bốn
+truy vấn kiểm tra theo lô thành công, **110 kiểm thử đạt** (35 tìm kiếm + 75 hồi
+quy), và kiểm tra tự động trên cửa sổ Tkinter thật đạt. Chưa duyệt giao diện thủ
+công. SHA-256 của **6.118 tệp được bảo vệ** được đối chiếu; dữ liệu và đầu ra yêu
+cầu 1–3 không thay đổi. Không thêm phụ thuộc.
+
+Để đánh giá độc lập, sao chép mẫu CSV ở
+[`tools/search/query_manifest_template.csv`](tools/search/query_manifest_template.csv),
+điền ảnh mới, mask (nếu có), nhãn/group và `purpose=independent`; chạy `batch`,
+chấm `visual_relevant` bằng 0/1 trong `judgments.csv`, rồi chạy `score` theo
+[hướng dẫn và định nghĩa P@5](docs/reports/search_implementation.md).
+P@5 thị giác đang để trống vì chưa có dữ liệu/chấm độc lập; cùng nhãn là phép
+đối chiếu riêng. Bằng chứng: [`outputs/search/`](outputs/search/README.md).
+
 ## Cấu trúc hiện tại
 
 | Vị trí | Vai trò |
 |---|---|
-| [docs/reports/](docs/reports/) | Báo cáo yêu cầu 1–3 |
+| [docs/reports/](docs/reports/) | Báo cáo yêu cầu 1–4 |
 | [docs/guides/](docs/guides/) | Ba hướng dẫn sử dụng |
 | [tools/image_processing/](tools/image_processing/) | Cắt ảnh, xem trước đổi tên, duyệt ảnh |
 | [tools/segmentation/](tools/segmentation/) | Tạo, duyệt, chỉnh và đồng bộ mask/overlay |
 | [tools/validation/](tools/validation/) | Kiểm kê ảnh và xác minh kết quả |
 | [tools/features/](tools/features/) | B400, kiểm tra đầu vào, chuẩn hóa, SQLite và CLI yêu cầu 3 |
+| [tools/search/](tools/search/) | Đọc run B400 cố định, truy vấn/GrabCut, top 5, CLI/Tkinter và đánh giá theo lô |
 | [outputs/features/b400_v1/](outputs/features/b400_v1/) | CSDL thực tế, scaler, vector và báo cáo kiểm tra yêu cầu 3 |
+| [outputs/search/](outputs/search/) | Lượt truy vấn, ảnh/mask riêng, vector gốc/lật, bảng chấm và bằng chứng kiểm thử |
 | [tests/](tests/) | Kiểm thử công cụ ảnh, chuyển mã, validation và B400/SQLite |
 | [data/source_images/](data/source_images/) | Ảnh nguồn |
 | [data/cropped_images_576x384/](data/cropped_images_576x384/) | Ảnh cắt đang dùng |

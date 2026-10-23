@@ -1,0 +1,163 @@
+{
+  "overall": {
+    "queries": 4,
+    "independent_queries": 0,
+    "functional_queries": 4,
+    "unverified_queries": 0,
+    "errors": 0,
+    "fully_judged_independent_queries": 0,
+    "visual_p_at_5": null,
+    "labelled_independent_queries": 0,
+    "same_label_at_5": null,
+    "mean_elapsed_seconds": 2.650184734249706
+  },
+  "by_group": {
+    "database_loaded_mask": {
+      "queries": 1,
+      "independent_queries": 0,
+      "functional_queries": 1,
+      "unverified_queries": 0,
+      "errors": 0,
+      "fully_judged_independent_queries": 0,
+      "visual_p_at_5": null,
+      "labelled_independent_queries": 0,
+      "same_label_at_5": null,
+      "mean_elapsed_seconds": 0.9609856319984829
+    },
+    "grabcut_pipeline": {
+      "queries": 1,
+      "independent_queries": 0,
+      "functional_queries": 1,
+      "unverified_queries": 0,
+      "errors": 0,
+      "fully_judged_independent_queries": 0,
+      "visual_p_at_5": null,
+      "labelled_independent_queries": 0,
+      "same_label_at_5": null,
+      "mean_elapsed_seconds": 6.873750807000761
+    },
+    "hash_deduplication": {
+      "queries": 1,
+      "independent_queries": 0,
+      "functional_queries": 1,
+      "unverified_queries": 0,
+      "errors": 0,
+      "fully_judged_independent_queries": 0,
+      "visual_p_at_5": null,
+      "labelled_independent_queries": 0,
+      "same_label_at_5": null,
+      "mean_elapsed_seconds": 1.287116628998774
+    },
+    "resized_functional_derivative": {
+      "queries": 1,
+      "independent_queries": 0,
+      "functional_queries": 1,
+      "unverified_queries": 0,
+      "errors": 0,
+      "fully_judged_independent_queries": 0,
+      "visual_p_at_5": null,
+      "labelled_independent_queries": 0,
+      "same_label_at_5": null,
+      "mean_elapsed_seconds": 1.4788858690008055
+    }
+  },
+  "queries": [
+    {
+      "query_id": "database_donkey",
+      "group": "database_loaded_mask",
+      "query_label": "equus_asinus",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154444_940025Z_b01edc02/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.025044789999810746,
+        "mask_seconds": 0.0,
+        "mask_load_seconds": 0.004199245002382668,
+        "feature_seconds": 0.6667593980018864,
+        "search_seconds": 0.007898510000813985,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 0.9609856319984829,
+      "visual_p_at_5": null,
+      "same_label_at_5": null,
+      "judged_results": 0,
+      "metric_status": "excluded_functional_check"
+    },
+    {
+      "query_id": "duplicate_hash",
+      "group": "hash_deduplication",
+      "query_label": "equus_quagga",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154446_136871Z_8a2491fd/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.00911335099954158,
+        "mask_seconds": 0.0,
+        "mask_load_seconds": 0.003950214002543362,
+        "feature_seconds": 0.9035007919992495,
+        "search_seconds": 0.022955444997933228,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 1.287116628998774,
+      "visual_p_at_5": null,
+      "same_label_at_5": null,
+      "judged_results": 0,
+      "metric_status": "excluded_functional_check"
+    },
+    {
+      "query_id": "resized_864x576",
+      "group": "resized_functional_derivative",
+      "query_label": "equus_asinus",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154447_476561Z_df3b031b/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.037754442000732524,
+        "mask_seconds": 0.0,
+        "mask_load_seconds": 0.017332778999843867,
+        "feature_seconds": 0.923358158001065,
+        "search_seconds": 0.010777964002045337,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 1.4788858690008055,
+      "visual_p_at_5": null,
+      "same_label_at_5": null,
+      "judged_results": 0,
+      "metric_status": "excluded_functional_check"
+    },
+    {
+      "query_id": "grabcut_bbox",
+      "group": "grabcut_pipeline",
+      "query_label": "equus_asinus",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154454_613571Z_b5f6b507/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.01153168200107757,
+        "mask_seconds": 6.124824485003046,
+        "mask_load_seconds": 0.0,
+        "feature_seconds": 0.505835064999701,
+        "search_seconds": 0.00796527200145647,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 6.873750807000761,
+      "visual_p_at_5": null,
+      "same_label_at_5": null,
+      "judged_results": 0,
+      "metric_status": "excluded_functional_check"
+    }
+  ],
+  "definitions": {
+    "visual_p_at_5": "sum of 5 manually judged binary visual relevance values / 5; all 5 required",
+    "same_label_at_5": "metadata label agreement / 5; separate from visual relevance",
+    "overall": "macro mean of eligible independent query scores; missing scores excluded, never zero-filled"
+  }
+}

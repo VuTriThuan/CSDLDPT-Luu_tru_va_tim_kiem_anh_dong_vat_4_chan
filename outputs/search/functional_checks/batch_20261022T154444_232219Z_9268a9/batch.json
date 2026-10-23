@@ -1,0 +1,94 @@
+{
+  "manifest": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_queries.csv",
+  "index": {
+    "run_id": "2c3cf6b3827ef7ffd71c7d5d6d6c4b9da9c2e4622f06eb2bf2e6e1000f923804",
+    "feature_set_id": "35c929107f151144f09ce058e6859c808bd14f21acd25a28c7842f3b46792338",
+    "normalizer_id": "fe02f456dfcedeeeff57f56d1bc610127c5ecb28cb364c7268383c572058e6e4",
+    "database": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/features/b400_v1/features.sqlite3",
+    "candidate_files": 812,
+    "candidate_unique_contents": 810,
+    "dimensions": 400,
+    "dtype": "<f4",
+    "load_seconds": 3.538513141000294
+  },
+  "queries": [
+    {
+      "query_id": "database_donkey",
+      "group": "database_loaded_mask",
+      "query_label": "equus_asinus",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154444_940025Z_b01edc02/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.025044789999810746,
+        "mask_seconds": 0.0,
+        "mask_load_seconds": 0.004199245002382668,
+        "feature_seconds": 0.6667593980018864,
+        "search_seconds": 0.007898510000813985,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 0.9609856319984829
+    },
+    {
+      "query_id": "duplicate_hash",
+      "group": "hash_deduplication",
+      "query_label": "equus_quagga",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154446_136871Z_8a2491fd/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.00911335099954158,
+        "mask_seconds": 0.0,
+        "mask_load_seconds": 0.003950214002543362,
+        "feature_seconds": 0.9035007919992495,
+        "search_seconds": 0.022955444997933228,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 1.287116628998774
+    },
+    {
+      "query_id": "resized_864x576",
+      "group": "resized_functional_derivative",
+      "query_label": "equus_asinus",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154447_476561Z_df3b031b/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.037754442000732524,
+        "mask_seconds": 0.0,
+        "mask_load_seconds": 0.017332778999843867,
+        "feature_seconds": 0.923358158001065,
+        "search_seconds": 0.010777964002045337,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 1.4788858690008055
+    },
+    {
+      "query_id": "grabcut_bbox",
+      "group": "grabcut_pipeline",
+      "query_label": "equus_asinus",
+      "purpose": "functional_check",
+      "status": "success",
+      "error": "",
+      "result_json": "/Users/trithuan/Desktop/CSDLDPT/BTL/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/queries/20261022T154454_613571Z_b5f6b507/result.json",
+      "returned": 5,
+      "timings": {
+        "image_load_seconds": 0.01153168200107757,
+        "mask_seconds": 6.124824485003046,
+        "mask_load_seconds": 0.0,
+        "feature_seconds": 0.505835064999701,
+        "search_seconds": 0.00796527200145647,
+        "index_load_seconds": 3.538513141000294
+      },
+      "elapsed_seconds": 6.873750807000761
+    }
+  ],
+  "purpose_note": "Only purpose=independent enters retrieval metrics; corpus hash queries are always functional_check.",
+  "visual_note": "Blank human relevance is unjudged, never inferred from labels."
+}

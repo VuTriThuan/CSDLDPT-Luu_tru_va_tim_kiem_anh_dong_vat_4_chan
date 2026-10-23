@@ -1,1 +1,0 @@
-"""BTL tests validation package."""

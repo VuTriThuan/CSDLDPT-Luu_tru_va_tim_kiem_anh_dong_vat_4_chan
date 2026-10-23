@@ -1,5 +1,7 @@
 # Kiểm tra chất lượng tìm kiếm và mask — 23/10/2026
 
+> Phạm vi nhánh tinh gọn: đã gỡ dữ liệu thử, bản sao và log trung gian. Các số kiểm thử/artifact là kết quả lịch sử trước khi dọn; giữ kết quả phân tích cuối và tám lượt minh họa. Liên kết tới chứng cứ đã gỡ trỏ về commit gốc trên GitHub, không phải tệp trong checkout này.
+
 Mục tiêu người dùng đã xác nhận: ưu tiên **dáng, màu và họa tiết**, cho phép kết
 quả khác loại động vật. Vì vậy, khác nhãn không được tính là truy hồi sai. Bài
 kiểm tra này dùng các lượt thực tế đã lưu trong `outputs/search/`, B400 400 chiều
@@ -134,8 +136,8 @@ Mã: [`diagnostics.py`](../../tools/search/diagnostics.py),
 
 Kiểm tra tại thời điểm audit: **48 kiểm thử tìm kiếm/chẩn đoán**, **30 hồi quy B400**,
 **17 nhóm kiểm tra trên cửa sổ Tk thật**. Kiểm tra sau thay đổi chính sách tệp
-trùng: **49 kiểm thử tìm kiếm/chẩn đoán** và **16 nhóm Tk**. Các log nằm trong
-[`verification/`](../../outputs/search/verification/); kiểm tra bảo toàn nguồn
+trùng: **49 kiểm thử tìm kiếm/chẩn đoán** và **16 nhóm Tk**. Các bản tổng kết cuối nằm trong
+[`verification/`](../../outputs/search/verification/); log chi tiết đã được gỡ ở nhánh tinh gọn; kiểm tra bảo toàn nguồn
 tiếp tục đối chiếu 6.118 tệp từ manifest trước triển khai. Không công bố P@5
 hoặc hiệu quả truy hồi khi chưa có chấm phù hợp thị giác.
 

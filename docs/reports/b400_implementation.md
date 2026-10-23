@@ -305,11 +305,11 @@ Kiểm tra độc lập S2e/S3 từ từng mask nguồn và so 351 chiều raw k
 toàn bộ bộ cũ; hash mọi tệp được bảo vệ (ảnh/mask/manifest/nhãn và đầu ra yêu
 cầu 2) không đổi, chi tiết trong delivery_checks.json.
 
-Bộ **176 chiều yêu cầu 2 giữ nguyên**, [verifier đạt](../../outputs/features/b400_v1/requirement2_verification.log).
+Bộ **176 chiều yêu cầu 2 giữ nguyên**, [verifier đạt](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/features/b400_v1/requirement2_verification.log).
 Tổng **75 kiểm thử đạt**: 30 B400/SQLite + 21 validation + 24 xử lý ảnh.
 <!-- actual-results:end -->
 
-[30 kiểm thử B400/SQLite](../../outputs/features/b400_v1/tests.log) kiểm tra thứ tự/chiều,
+[30 kiểm thử B400/SQLite](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/features/b400_v1/tests.log) kiểm tra thứ tự/chiều,
 màu đơn sắc, histogram hue vòng, độc lập nền khi resize, LBP hỗ trợ nội suy,
 GLCM cặp tiền cảnh và phép tính biết trước, Gabor trên ảnh hằng/sọc, hình học
 hình chữ nhật, giữ phần rời/lỗ, mask không hợp lệ, vùng thiếu hỗ trợ, scaler
@@ -320,8 +320,8 @@ trục hình chữ nhật/vuông/tam giác, hòa đường kính, hình suy bi�
 kính với vét cạn độc lập, chạy lại sau lỗi một phần và giữ đầu ra cũ khi
 rebuild hoặc hoán đổi thư mục thất bại.
 
-Hồi quy đã chạy: [21 kiểm thử validation](../../outputs/features/b400_v1/regression_validation.log)
-và [24 kiểm thử xử lý ảnh](../../outputs/features/b400_v1/regression_image_processing.log).
+Hồi quy đã chạy: [21 kiểm thử validation](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/features/b400_v1/regression_validation.log)
+và [24 kiểm thử xử lý ảnh](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/features/b400_v1/regression_image_processing.log).
 Verifier của yêu cầu 3 đọc lại **mọi** vector từ SQLite, so sánh float32 chính
 xác với raw/normalized/validity NPZ, tên/hash nguồn/mask và metadata. Kiểm tra
 integrity/foreign keys, tái hiện chuẩn hóa bằng scaler lưu, đối chiếu lại hiện

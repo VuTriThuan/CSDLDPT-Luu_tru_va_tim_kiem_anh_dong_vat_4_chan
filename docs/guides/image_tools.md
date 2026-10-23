@@ -3,7 +3,7 @@
 Nhật ký hiện hành vẫn tên `_cat_tu_dong.json`. Bộ đọc nhận cả đường dẫn nguồn cũ
 trong nhật ký; quyết định lật/loại được giữ nguyên. Với thư mục mặc định, D chuyển
 ảnh vào `data/rejected_crops/`; với thư mục tùy chọn khác, dùng hậu tố `-da-xoa` như trước.
-Xem [báo cáo chuyển dữ liệu](../data_migration.md) về chuyển đổi state và các khác biệt sẵn có.
+Các nhật ký xử lý hiện hành vẫn được giữ cùng dữ liệu; hồ sơ chuyển thư mục cũ đã được gỡ khỏi nhánh tinh gọn.
 
 ## 1. Đặt file và cài thư viện trên macOS hoặc Windows
 

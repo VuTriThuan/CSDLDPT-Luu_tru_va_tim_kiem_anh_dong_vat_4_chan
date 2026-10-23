@@ -6,7 +6,7 @@ Các số liệu lịch sử bên dưới được giữ nguyên và không xác
 Dùng `.venv-image-tools/bin/python` với `requirements_image_tools.txt` ở root;
 bộ chỉnh/xác minh dùng `.venv/bin/python`. Xem [môi trường Python](../python_environments.md).
 Đích cho lần tạo mới là `outputs/segmentation/mask_regeneration/`, tách khỏi GrabCut.
-Xem [báo cáo chuyển kết quả](../results_migration.md).
+Hồ sơ chuyển thư mục cũ đã được gỡ khỏi nhánh tinh gọn; dùng các đường dẫn hiện hành trong hướng dẫn này.
 
 Chương trình `regenerate_masks.py` lấy danh sách ảnh phủ PNG trong
 `outputs/segmentation/grabcut/overlays/needs_revision/`, ghép tên với manifest cũ và chạy U²-Net trên

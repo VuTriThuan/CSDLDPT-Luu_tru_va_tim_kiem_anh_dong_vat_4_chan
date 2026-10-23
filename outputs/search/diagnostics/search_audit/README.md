@@ -2,13 +2,9 @@
 
 Phạm vi: tính toán vector, scaler đã đóng băng, bình phương khoảng cách L2, xử lý gốc/lật, và độ nhạy với mask. Không dùng nhãn để quyết định mức liên quan hay công bố độ chính xác. Các tệp yêu cầu 1–3 được đọc nguyên trạng.
 
-Chạy lại từ root repo:
+Bằng chứng cuối: [evidence_20261023T133817_524683Z_002c30.json](evidence_20261023T133817_524683Z_002c30.json).
 
-```sh
-.venv/bin/python -B outputs/search/diagnostics/search_audit/audit.py
-```
-
-Bằng chứng hiện hành: [evidence_20261023T133817_524683Z_002c30.json](evidence_20261023T133817_524683Z_002c30.json). `evidence.json` là hồ sơ ban đầu, được giữ nguyên. Lần chạy mới ghi tên UTC/UUID riêng, không sửa result.json hoặc ghi đè bằng chứng trước. Mỗi tệp result.json dưới outputs/search được tính một artifact, gồm bản xuất/bản sao; không phải số truy vấn độc lập. Lần chạy lại sau khi thêm artifact sẽ có số lượng khác.
+Đây là kết quả lịch sử trước khi dọn: đã giữ nguyên JSON cuối, gỡ script audit cùng bằng chứng trung gian và các batch/bản sao dùng thử. Số 62 artifact không phải số lượt hiện còn. Một số đường dẫn trong JSON dẫn tới artifact đã gỡ; không sửa bản ghi lịch sử để làm như chúng vẫn tồn tại.
 
 ## Những gì đã xác minh
 

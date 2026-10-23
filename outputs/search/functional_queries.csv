@@ -1,5 +1,0 @@
-query_id,image,mask,label,group,purpose,x,y,width,height
-database_donkey,../../data/cropped_images_576x384/Equus_asinus_0587.jpg,../../outputs/segmentation/grabcut/masks/Equus_asinus_0587.jpg.png,equus_asinus,database_loaded_mask,functional_check,,,,
-duplicate_hash,../../data/cropped_images_576x384/equus-quagga_0663.jpg,../../outputs/segmentation/grabcut/masks/equus-quagga_0663.jpg.png,equus_quagga,hash_deduplication,functional_check,,,,
-resized_864x576,functional_inputs/donkey_864x576.png,functional_inputs/donkey_mask_864x576.png,equus_asinus,resized_functional_derivative,functional_check,,,,
-grabcut_bbox,../../data/cropped_images_576x384/Equus_asinus_0587.jpg,,equus_asinus,grabcut_pipeline,functional_check,10,10,556,364

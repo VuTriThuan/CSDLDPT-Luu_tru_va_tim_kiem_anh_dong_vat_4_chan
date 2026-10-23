@@ -22,15 +22,7 @@ thêm chẩn đoán từng lượt; xem [kiểm tra chất lượng](docs/report
 | [Hướng dẫn GrabCut](docs/guides/grabcut.md) | Tạo mask, duyệt overlay, chỉnh mask và đồng bộ |
 | [Hướng dẫn tạo lại mask](docs/guides/mask_regeneration.md) | Tạo mask U²-Net từ hàng đợi và kiểm tra kết quả lịch sử |
 
-Báo cáo yêu cầu 2 dùng đầu ra mới trong `outputs/inventory/`. Một số kết quả hoặc
-tệp trung gian được mô tả trong tài liệu lịch sử hiện không còn trên cây; xem
-[báo cáo kiểm tra tài liệu](docs/documentation_migration.md) để biết phạm vi kiểm tra.
-
-Đã xác minh sau sắp xếp: **38 kiểm thử đạt**, luồng xử lý trên dữ liệu riêng và
-ba giao diện Tkinter đạt trên macOS Intel/Python 3.10.11. Ảnh, mask, overlay,
-quicklook, manifest và lịch sử khớp SHA-256 bước 1. Cây bàn giao, lệnh chạy,
-sao lưu/khôi phục và các giới hạn nằm trong
-[migration_verification.md](docs/migration_verification.md).
+Báo cáo yêu cầu 2 dùng đầu ra hiện hành trong `outputs/inventory/`. Nhánh tinh gọn giữ dữ liệu hiện hành, mã xử lý, báo cáo và bằng chứng cuối. Bản sao lưu, hồ sơ di chuyển, dữ liệu thử và các kết quả trung gian đã được gỡ; các số liệu kiểm thử ghi trong báo cáo là lịch sử trước khi dọn.
 
 ## Phân tích dữ liệu yêu cầu 2
 
@@ -65,7 +57,6 @@ Chạy lại tại root dự án bằng môi trường `.venv/` nêu bên dướ
 ```sh
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/audit_images.py
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/validation/verify_image_analysis.py
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest tests.validation.test_audit_images -v
 ```
 
 Lệnh đầu ghi lại JSON/CSV/NPZ hiện hành; lệnh sau đối chiếu tên, số lượng, nhãn,
@@ -139,8 +130,10 @@ Kết quả và ảnh/mask truy vấn chỉ ghi vào `outputs/search/`.
   --image data/cropped_images_576x384/Equus_asinus_0587.jpg \
   --mask outputs/segmentation/grabcut/masks/Equus_asinus_0587.jpg.png
 .venv/bin/python -B tools/search/cli.py gui
-# Kiểm tra chức năng theo lô bằng ảnh CSDL/ảnh dẫn xuất, không đánh giá truy hồi:
-.venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/functional_queries.csv
+# Tạo manifest mới, điền các ảnh thật trước khi chạy batch:
+cp tools/search/query_manifest_template.csv outputs/search/new_queries.csv
+# Sau khi điền CSV:
+.venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/new_queries.csv
 ```
 
 Ảnh mới có thể dùng `query --image /path/new.jpg --bbox X Y WIDTH HEIGHT` hoặc
@@ -174,15 +167,15 @@ phân tích riêng/bỏ lần lượt bốn nhóm trên cùng vector ngựa, bò
 **62/62 artifact** (gồm bản sao kiểm chứng, 50 artifact trước khi tạo bản sao).
 Xem [kết quả, mask, thứ hạng và giới hạn kết luận](outputs/search/diagnostics/group_analysis/20261023T133848_225643Z_20473d/README.md).
 
-Sau khi clone, tạo `.venv/` tại vị trí mới theo phần Python bên dưới, rồi chấm
-batch đã lưu mà không cần đường dẫn máy cũ hoặc chạy lại extract:
+Sau khi clone, tạo `.venv/` tại vị trí mới theo phần Python bên dưới. Với một batch mới đã tạo, thay `batch_ID` bằng thư mục batch thực tế rồi chấm:
 
 ```sh
+SEARCH_BATCH_DIR=outputs/search/batch_ID
 .venv/bin/python -B tools/search/cli.py score \
-  --batch outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/batch.json \
-  --judgments outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/judgments.csv \
-  --output-dir outputs/search/scored_after_clone
-.venv/bin/python -B outputs/search/diagnostics/search_audit/audit.py
+  --batch "$SEARCH_BATCH_DIR/batch.json" \
+  --judgments "$SEARCH_BATCH_DIR/judgments.csv" \
+  --output-dir outputs/search/scored
+# Tái lập phân tích từ ba lượt ngựa/bò/chó được giữ:
 .venv/bin/python -B -m tools.search.group_analysis
 ```
 
@@ -211,10 +204,6 @@ Chi tiết kiểm tra đường dẫn/ID và cách đọc ảnh lịch sử nằ
 | [data/rejected_crops/](data/rejected_crops/) | Ảnh cắt đã loại khi duyệt |
 | [outputs/inventory/](outputs/inventory/) | Trạng thái từng tệp, thống kê và đặc trưng toàn khung của yêu cầu 2; xem ghi chú hồ sơ cũ |
 | [outputs/segmentation/grabcut/](outputs/segmentation/grabcut/) | Mask, overlay, manifest, nhật ký và lịch sử chỉnh sửa |
-| [bo_tool_anh_576x384/](bo_tool_anh_576x384/) | Requirements và cache lịch sử; không còn môi trường đang dùng |
-| [outputs/backups/](outputs/backups/) | Toàn bộ bản sao lưu; tệp lớn chia phần, kèm hướng dẫn ghép lại |
-
-**Bản sao lưu:** toàn bộ dữ liệu của 3.469 tệp gốc đã có trong `outputs/backups/` trên nhánh `main`. Trong đó 5 tệp lớn được chia thành 125 phần, mỗi phần tối đa 48 MiB. Sau khi clone hoặc tải ZIP, ghép các phần bằng lệnh `cat` và kiểm tra SHA-256 theo hướng dẫn. Xem [hướng dẫn đầy đủ](outputs/backups/README.md).
 
 Ba thư mục ảnh đã dùng tên mới như bảng trên; tên và nội dung từng ảnh giữ nguyên.
 Kết quả GrabCut nằm ở `outputs/segmentation/grabcut/`; cấu hình chạy nằm trong bộ kết quả,
@@ -279,20 +268,13 @@ từng hướng dẫn. `--resume` kiểm tra cấu hình, hash mã và phiên b�
 kết quả cũ có thể bị từ chối nếu các giá trị đã khác. Không sửa config để ép tiếp tục.
 Hiện bộ GrabCut lịch sử bị từ chối resume đúng quy tắc; lần xử lý mới dùng một
 `--output-dir` mới. Overlay thật đang ở thư mục phẳng: phân loại rồi đồng bộ trước
-khi mở hàng đợi `needs_revision/` để chỉnh hoặc tạo lại mask. Hai thư mục cũ ở
-root còn 17 tệp lịch sử cần giữ nên được giữ nguyên, không có venv trong đó.
+khi mở hàng đợi `needs_revision/` để chỉnh hoặc tạo lại mask.
 
-## Hồ sơ kiểm thử và tiến độ sắp xếp
+## Phạm vi bản tinh gọn
 
-Bộ mã `tests/` đã được gỡ khỏi nhánh này. Số liệu kiểm thử dưới đây là kết quả lịch sử; các log và báo cáo đã lưu trong `outputs/` vẫn được giữ, nhưng không thể chạy lại các bộ unit test hoặc script xác minh đã gỡ từ checkout hiện tại.
+- Giữ nguyên mã trong `tools/`, ba thư mục ảnh, kiểm kê yêu cầu 2, mask/manifest và B400 hiện hành.
+- Giữ tám lượt truy vấn dùng trong báo cáo, phân tích bốn nhóm cuối, so sánh mask và các bản tổng kết kiểm chứng cuối trong [outputs/search/](outputs/search/README.md).
+- Đã gỡ `tests/`, bản sao lưu lớn, hồ sơ di chuyển cũ, batch kiểm tra chức năng/di chuyển, bản xuất trùng và các log/kết quả trung gian.
+- Các kết quả 62/62 artifact hoặc số kiểm thử đạt là số đo trước khi dọn, không phải số artifact hiện còn. Một số liên kết chứng cứ lịch sử trỏ về commit gốc trên GitHub.
 
-- [Kế hoạch sắp xếp và quy trình khôi phục](docs/migration_plan.md).
-- [Bước chuyển mã nguồn và kết quả kiểm thử](docs/source_migration.md).
-- [Bước chuyển tài liệu và kiểm tra liên kết](docs/documentation_migration.md).
-
-Hiện đã chuyển mã nguồn, tài liệu, ba thư mục ảnh và kết quả GrabCut.
-Xem [bước chuyển kết quả, toàn vẹn và resume](docs/results_migration.md).
-Xem [bước chuyển dữ liệu và kiểm tra trạng thái](docs/data_migration.md).
-
-Đã chuẩn hóa môi trường Python; xem [kiểm tra môi trường và sao lưu](docs/python_environments.md).
-Đã kiểm tra bàn giao toàn dự án; xem [kết quả xác minh cuối](docs/migration_verification.md).
+Hướng dẫn cài đặt hiện hành ở [môi trường Python](docs/python_environments.md). Dùng các lệnh xử lý và đánh giá trong phần tương ứng để tạo kết quả mới.

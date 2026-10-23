@@ -1,5 +1,7 @@
 # Kế hoạch chuẩn bị sắp xếp dự án BTL
 
+> Lưu ý cập nhật 23/10/2026: thư mục `tests/` đã được gỡ khỏi nhánh hiện tại. Các đường dẫn và lệnh kiểm thử bên dưới là bản ghi lịch sử tại thời điểm tài liệu được viết; log kết quả vẫn được giữ.
+
 ## Xác minh và bàn giao cuối — 17/10/2026
 
 Đã chạy 38 kiểm thử hiện có, luồng một ảnh thử riêng và ba cửa sổ Tkinter;

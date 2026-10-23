@@ -1,5 +1,7 @@
 # Báo cáo chuyển mã nguồn BTL
 
+> Lưu ý cập nhật 23/10/2026: thư mục `tests/` đã được gỡ khỏi nhánh hiện tại. Các đường dẫn và lệnh kiểm thử bên dưới là bản ghi lịch sử tại thời điểm tài liệu được viết; log kết quả vẫn được giữ.
+
 > Ghi nhận sau bước chuyển dữ liệu: các đường dẫn dữ liệu trong báo cáo giai đoạn này
 > mô tả mốc trước khi đổi tên. Vị trí hiện tại và chuyển đổi state được ghi trong
 > [data_migration.md](data_migration.md); các phụ lục kiểm kê lịch sử giữ nguyên.

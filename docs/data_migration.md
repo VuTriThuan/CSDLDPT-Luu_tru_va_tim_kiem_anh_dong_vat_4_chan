@@ -1,5 +1,7 @@
 # Báo cáo đổi tên thư mục dữ liệu
 
+> Lưu ý cập nhật 23/10/2026: thư mục `tests/` đã được gỡ khỏi nhánh hiện tại. Các đường dẫn và lệnh kiểm thử bên dưới là bản ghi lịch sử tại thời điểm tài liệu được viết; log kết quả vẫn được giữ.
+
 Ngày thực hiện: **17/10/2026, UTC+07:00**. Chỉ đổi tên ba thư mục ảnh và cập nhật
 đường dẫn cần thiết. Không đổi tên từng ảnh, không cắt/lật/ghi lại ảnh của bộ thật,
 không chuyển bộ kết quả phân đoạn hoặc hai môi trường Python.

@@ -326,7 +326,7 @@ tổng hợp có đáp án biết trước, relevance chưa chấm và dữ li�
 Kiểm thử tạo scaler trên fixture tổng hợp trong thư mục tạm, không dùng chúng
 làm kết quả đánh giá truy hồi và không thay scaler thật. Mọi truy vấn thực tế
 dùng scaler đã lưu. Các log nằm trong
-[`verification/`](../../outputs/search/verification/).
+[`verification/`](../../outputs/search/verification/). Bộ mã `tests/` và các script xác minh trong đó đã được gỡ khỏi nhánh hiện tại; số lần đạt và log dưới đây chỉ phản ánh các lần chạy trước đó, không còn tái chạy được từ checkout này.
 
 Đã mở **cửa sổ Tkinter thật** và chạy tự động 16 nhóm kiểm tra: nạp SQLite qua
 worker, chọn ảnh tự dùng mask CSDL cùng hash hoặc tạo GrabCut với bbox tự động,
@@ -336,7 +336,7 @@ lỗi worker, tùy chọn hiện ảnh tự khớp và đổi ảnh truy vấn. 
 [`gui_smoke.json`](../../outputs/search/verification/gui_smoke.json).
 Chưa duyệt GUI thủ công hoặc kiểm tra ảnh chụp cửa sổ; không tuyên bố đã làm.
 
-[`verify_real_run.py`](../../tests/search/verify_real_run.py) đọc lại các lượt
+Script `verify_real_run.py` (đã gỡ khỏi nhánh hiện tại) từng đọc lại các lượt
 thật, trích hai hướng bằng scaler cố định để đối chiếu raw/normalized/validity,
 preview/quality; tính lại khoảng cách bằng vòng lặp scalar độc lập với hàm rank,
 đối chiếu thứ tự/hướng/chính sách trùng hash/tự khớp, đóng góp và hash bản sao ảnh kết quả.
@@ -390,13 +390,6 @@ BATCH=outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9
   --batch "$BATCH/batch.json" --judgments "$BATCH/judgments.csv" \
   --output-dir outputs/search/scored
 
-# Unit/hồi quy và kiểm chứng chỉ đọc nguồn.
-.venv/bin/python -B -m unittest discover -s tests/search -v
-.venv/bin/python -B -m unittest discover -s tests/features -v
-.venv/bin/python -B -m unittest discover -s tests/validation -v
-.venv-image-tools/bin/python -B -m unittest discover -s tests/image_processing -v
-.venv/bin/python -B tests/search/gui_smoke.py
-.venv/bin/python -B tests/search/verify_real_run.py
 ```
 
 CLI cũng hỗ trợ `python -B -m tools.search.cli`; mã thoát 0=hoàn tất,

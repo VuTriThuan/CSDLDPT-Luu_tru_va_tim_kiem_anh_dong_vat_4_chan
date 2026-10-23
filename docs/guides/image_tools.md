@@ -29,8 +29,6 @@ BTL/
   requirements.txt
   requirements_image_tools.txt
   .python-version          # 3.10.11
-  tests/image_processing/
-    test_compatibility.py
   data/
     source_images/
     cropped_images_576x384/
@@ -226,14 +224,4 @@ thật trên một bản sao ảnh, xác nhận kết quả 576 × 384 và chạ
 và gọi cài đặt trước khi tải các thư viện xử lý ảnh.
 Chưa chạy trực tiếp cài đặt, khóa hoặc giao diện trên máy Windows thật.
 Cắt thử 30 ảnh trên máy Windows trước khi xử lý cả bộ dữ liệu.
-Để chạy bộ kiểm tra, đứng tại thư mục gốc BTL. Trên Mac:
-
-```text
-.venv-image-tools/bin/python -B -m unittest discover -s tests/image_processing -v
-```
-
-Trên Windows (PowerShell):
-
-```powershell
-.\.venv-image-tools\Scripts\python.exe -m unittest discover -s tests/image_processing -v
-```
+Bộ mã kiểm thử trong `tests/` đã được gỡ khỏi nhánh hiện tại; các nhận xét trên ghi lại lần kiểm tra trước khi gỡ, không còn lệnh chạy lại bộ kiểm thử đó trong checkout này.

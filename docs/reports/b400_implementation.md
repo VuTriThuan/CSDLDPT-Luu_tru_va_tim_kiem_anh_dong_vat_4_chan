@@ -329,12 +329,13 @@ trạng nguồn. Không dùng verifier GrabCut lịch sử để ghi lên bộ p
 
 ## Lệnh tái lập trên Mac Intel
 
+Bộ `tests/` đã được gỡ ở nhánh hiện tại. Kết quả kiểm thử ghi trong báo cáo là lịch sử; các lệnh CLI dưới đây vẫn có thể dùng để kiểm tra đầu vào và CSDL, nhưng không thay thế các unit test đã gỡ.
+
 Chạy ở root dự án bằng hai môi trường Python 3.10.11 hiện hành. Không cần pip
 install bổ sung hoặc nâng cấp NumPy. Khi dựng máy mới dùng requirements đã ghim
 trong README. SQLite đi kèm Python; cần hệ tệp cục bộ hỗ trợ khóa `fcntl`.
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/features -v
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py validate
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract --rebuild
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py verify

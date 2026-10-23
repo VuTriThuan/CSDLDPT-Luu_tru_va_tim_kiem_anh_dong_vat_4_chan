@@ -1,5 +1,7 @@
 # Xác minh và bàn giao sau sắp xếp — 17/10/2026
 
+> Lưu ý cập nhật 23/10/2026: thư mục `tests/` đã được gỡ khỏi nhánh hiện tại. Các đường dẫn và lệnh kiểm thử bên dưới là bản ghi lịch sử tại thời điểm tài liệu được viết; log kết quả vẫn được giữ.
+
 **Đạt các kiểm tra kỹ thuật trong phạm vi dưới đây.** 38 kiểm thử hiện có đạt;
 luồng một ảnh thử đi qua cắt, đổi tên, duyệt, tạo mask, chỉnh/lưu, đồng bộ và
 resume. Ba cửa sổ Tkinter đã được kiểm tra trên bản sao thử riêng. Không chạy

@@ -104,7 +104,6 @@ trích xuất, fit chuẩn hóa trên tập phát triển và nhập/cập nhậ
 `verify` đọc lại CSDL, đối chiếu tên/hash/vector/NPZ và tái hiện chuẩn hóa.
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/features -v
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py validate
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py extract --rebuild
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B tools/features/cli.py verify
@@ -142,7 +141,6 @@ Kết quả và ảnh/mask truy vấn chỉ ghi vào `outputs/search/`.
 .venv/bin/python -B tools/search/cli.py gui
 # Kiểm tra chức năng theo lô bằng ảnh CSDL/ảnh dẫn xuất, không đánh giá truy hồi:
 .venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/functional_queries.csv
-.venv/bin/python -B -m unittest discover -s tests/search -v
 ```
 
 Ảnh mới có thể dùng `query --image /path/new.jpg --bbox X Y WIDTH HEIGHT` hoặc
@@ -207,8 +205,7 @@ Chi tiết kiểm tra đường dẫn/ID và cách đọc ảnh lịch sử nằ
 | [tools/features/](tools/features/) | B400, kiểm tra đầu vào, chuẩn hóa, SQLite và CLI yêu cầu 3 |
 | [tools/search/](tools/search/) | Đọc run B400 cố định, truy vấn/GrabCut, top 5, CLI/Tkinter và đánh giá theo lô |
 | [outputs/features/b400_v1/](outputs/features/b400_v1/) | CSDL thực tế, scaler, vector và báo cáo kiểm tra yêu cầu 3 |
-| [outputs/search/](outputs/search/) | Lượt truy vấn, ảnh/mask riêng, vector gốc/lật, bảng chấm và bằng chứng kiểm thử |
-| [tests/](tests/) | Kiểm thử công cụ ảnh, chuyển mã, validation và B400/SQLite |
+| [outputs/search/](outputs/search/) | Lượt truy vấn, ảnh/mask riêng, vector gốc/lật, bảng chấm và bằng chứng kiểm thử lịch sử |
 | [data/source_images/](data/source_images/) | Ảnh nguồn |
 | [data/cropped_images_576x384/](data/cropped_images_576x384/) | Ảnh cắt đang dùng |
 | [data/rejected_crops/](data/rejected_crops/) | Ảnh cắt đã loại khi duyệt |
@@ -285,14 +282,9 @@ Hiện bộ GrabCut lịch sử bị từ chối resume đúng quy tắc; lần 
 khi mở hàng đợi `needs_revision/` để chỉnh hoặc tạo lại mask. Hai thư mục cũ ở
 root còn 17 tệp lịch sử cần giữ nên được giữ nguyên, không có venv trong đó.
 
-## Kiểm thử và tiến độ sắp xếp
+## Hồ sơ kiểm thử và tiến độ sắp xếp
 
-Chạy từ root bằng đúng môi trường của từng nhóm:
-
-```sh
-PYTHONDONTWRITEBYTECODE=1 .venv-image-tools/bin/python -B -m unittest discover -s tests/image_processing -v
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m unittest discover -s tests/validation -v
-```
+Bộ mã `tests/` đã được gỡ khỏi nhánh này. Số liệu kiểm thử dưới đây là kết quả lịch sử; các log và báo cáo đã lưu trong `outputs/` vẫn được giữ, nhưng không thể chạy lại các bộ unit test hoặc script xác minh đã gỡ từ checkout hiện tại.
 
 - [Kế hoạch sắp xếp và quy trình khôi phục](docs/migration_plan.md).
 - [Bước chuyển mã nguồn và kết quả kiểm thử](docs/source_migration.md).

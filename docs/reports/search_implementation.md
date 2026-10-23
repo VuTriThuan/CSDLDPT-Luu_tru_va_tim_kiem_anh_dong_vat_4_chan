@@ -378,10 +378,6 @@ Chạy từ root repo, dùng `.venv/` hiện có; không chạy extract/rebuild 
 .venv/bin/python -B tools/search/cli.py query --image /path/new.jpg --bbox 10 10 500 300
 .venv/bin/python -B tools/search/cli.py gui
 
-# Batch kiểm tra chức năng hiện có.
-# Sau khi điền manifest bằng các ảnh truy vấn thực tế:
-.venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/new_queries.csv
-
 # Batch ảnh độc lập: sao chép header, bổ sung các dòng dữ liệu thật trước khi chạy.
 cp tools/search/query_manifest_template.csv outputs/search/new_queries.csv
 .venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/new_queries.csv

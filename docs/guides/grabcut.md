@@ -5,7 +5,7 @@ Mã nguồn ở `tools/segmentation/` và `tools/validation/`; ảnh ở
 Chạy từ root BTL bằng `.venv/bin/python`. Bộ lịch sử vẫn đọc được, nhưng **không
 resume bằng mã hiện tại** vì hash mã, đường dẫn nguồn và phiên bản thư viện đã
 khác. Giữ nguyên `run_config.json`; không sửa hash hoặc bỏ kiểm tra toàn vẹn.
-Xem [báo cáo chuyển kết quả](../results_migration.md).
+Hồ sơ chuyển thư mục cũ đã được gỡ khỏi nhánh tinh gọn; dùng các đường dẫn hiện hành trong hướng dẫn này.
 
 Để bắt đầu an toàn, chọn một thư mục mới chưa tồn tại. Ví dụ dưới chỉ là hướng dẫn,
 chưa được chạy trên bộ ảnh thật trong lần chuyển này:
@@ -228,8 +228,7 @@ chỉnh mask và đồng bộ sử dụng kết quả trong `outputs/segmentatio
 ```
 
 Script xác minh lịch sử có ghi `verification.json` và yêu cầu trạng thái lúc tạo mask (`chua_duyet`);
-không dùng nó để ghi đè bằng chứng xác minh của bộ đã chỉnh/duyệt. Kết quả kiểm tra chỉ đọc
-hiện tại nằm trong `docs/results_migration_audit/`. Script này dành cho lần chạy toàn bộ mặc định ở 576 × 384, đối chiếu ảnh nguồn
+không dùng nó để ghi đè bằng chứng xác minh của bộ đã chỉnh/duyệt. Hồ sơ kiểm tra chỉ đọc của lần chuyển thư mục trước đây đã được gỡ cùng tài liệu di chuyển. Script này dành cho lần chạy toàn bộ mặc định ở 576 × 384, đối chiếu ảnh nguồn
 với `outputs/segmentation/grabcut/provenance/source_before.json` đã ghi trước lần chạy. Không có ground truth mask,
 không tính IoU, độ chính xác phân đoạn hoặc độ chính xác truy hồi từ các tệp này.
 

@@ -1,9 +1,0 @@
-{
-  "verified": true,
-  "image_processing_tests": 23,
-  "validation_tests": 7,
-  "total_tests_passed": 30,
-  "model_inference_on_one_temporary_copy": true,
-  "real_dataset_processing": false,
-  "tests_run_before_directory_rename": true
-}

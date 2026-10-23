@@ -1,5 +1,7 @@
 # Phân tích bốn nhóm B400 — 23/10/2026
 
+> Sau khi dọn, giữ nguyên toàn bộ kết quả cuối và ba lượt nguồn ngựa/bò/chó. Số lượt đủ điều kiện trong bảng là kiểm kê trước khi dọn; checkout tinh gọn không còn các lượt trung gian. Các giá trị phân tích đã lưu không được tính lại hoặc chỉnh sửa.
+
 Chạy trên Mac Intel/Python 3.10.11 trong `.venv/`. Đây là phân tích các vector đã lưu, không đổi thuật toán mặc định, không trích xuất lại, fit scaler, chuẩn hóa lại nhóm hoặc sửa SQLite.
 
 ## Chọn mẫu trước khi xem kết quả

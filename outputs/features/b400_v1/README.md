@@ -26,8 +26,7 @@ chưa làm chuẩn hóa xoay/trục chính dài 192. Chưa đánh giá chất l�
 | `extraction_records.json`, `status.csv` | Mọi tên tệp, trạng thái/lý do, metadata occupancy/trục |
 | `summary.json`, `verification.json` | Kết quả chạy và đọc lại mọi vector SQLite, integrity/FK, kiểm scaler |
 | `delivery_checks.json` | Kiểm độc lập S2e/S3, so 351 chiều giữ nguyên, hash tệp được bảo vệ và liên kết |
-| `extraction.log`, `tests.log`, `regression_*.log` | Trích xuất và 75 kiểm thử đạt |
-| `requirement2_verification.log` | Đối chiếu bộ toàn khung 176 chiều giữ nguyên |
+| `extraction.log` | Nhật ký trích xuất bộ B400 hiện hành |
 
 552 vector có quy ước thiếu ô màu/profile, phân biệt bằng validity;
 260 vector có mọi phép đo hợp lệ. Nhãn/tên chỉ là metadata.
@@ -48,3 +47,5 @@ trong một transaction để tránh lỗi khóa ngoại hoặc trộn scaler. �
 hợp lệ tạo run riêng nếu cùng công thức. `validate` ghi lại audit, nên sau khi
 đổi nguồn cần extract trước verify. Chi tiết tại
 [báo cáo triển khai](../../../docs/reports/b400_implementation.md).
+
+Nhánh tinh gọn đã gỡ log unit test/hồi quy và mã `tests/`. Các số kiểm thử trong báo cáo là lịch sử; `summary.json`, `verification.json`, `delivery_checks.json`, NPZ, SQLite và metadata hiện hành vẫn được giữ nguyên.

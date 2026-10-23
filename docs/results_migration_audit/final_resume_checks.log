@@ -1,8 +1,0 @@
-test_source_mask_overlay_hash_guards_and_unsafe_paths (tests.validation.test_results_migration.ResultsMigrationTests) ... ok
-test_processing_functions_and_history_protocol_are_unchanged (tests.validation.test_source_migration.SourceMigrationTests) ... ok
-test_resume_retains_classified_paths_and_review_decision (tests.validation.test_results_migration.ResultsMigrationTests) ... ok
-
-----------------------------------------------------------------------
-Ran 3 tests in 1.606s
-
-OK

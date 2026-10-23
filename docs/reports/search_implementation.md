@@ -1,5 +1,7 @@
 # Yêu cầu 4 — Tìm 5 tệp ảnh tương đồng bằng B400 hiện hành
 
+> Phạm vi nhánh tinh gọn: đã gỡ dữ liệu thử, bản sao và log trung gian. Các số kiểm thử/artifact là kết quả lịch sử trước khi dọn; giữ kết quả phân tích cuối và tám lượt minh họa. Liên kết tới chứng cứ đã gỡ trỏ về commit gốc trên GitHub, không phải tệp trong checkout này.
+
 Xem thêm [kiểm tra chất lượng ngày 23/10](search_quality_audit.md) cho phân tích
 các lượt người dùng, các sửa lỗi bbox/mask và công cụ `diagnose`.
 
@@ -140,9 +142,7 @@ tra tổng bốn phần bằng khoảng cách tổng trong sai số số học.
 
 ## Trung gian và kết quả chạy thực tế
 
-Các artifact ngày 22/10 bên dưới được tạo theo quy tắc cũ: mỗi SHA-256 chỉ
-hiển thị một tệp. Chúng được giữ nguyên để đối chiếu lịch sử; lượt tìm mới
-hiển thị từng tệp theo quy tắc hiện tại.
+Các ví dụ ngày 22/10 bên dưới được tạo theo quy tắc cũ: mỗi SHA-256 chỉ hiển thị một tệp. Dữ liệu thử đầy đủ được tham chiếu tại commit gốc; ảnh minh họa được giữ trong tài liệu. Lượt tìm mới hiển thị từng tệp theo quy tắc hiện tại.
 
 Kiểm tra lượt mới với `equus-quagga_0663.jpg` và tùy chọn `--include-self`:
 [kết quả đã lưu](../../outputs/search/20261023T022920_325538Z_bb862978/result.json)
@@ -153,7 +153,7 @@ truy vấn đều bị loại theo quy tắc tự khớp.
 
 Ví dụ dùng `Equus_asinus_0587.jpg` và mask đã duyệt, loại tự khớp. Đây là kiểm
 tra chức năng bằng ảnh CSDL, không phải kết quả đánh giá độc lập. Thư mục:
-[`20261022T153956_195301Z_7ea40f22`](../../outputs/search/functional_checks/20261022T153956_195301Z_7ea40f22/).
+[`20261022T153956_195301Z_7ea40f22`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/search/functional_checks/20261022T153956_195301Z_7ea40f22).
 
 | Trung gian | Giá trị thật |
 |---|---|
@@ -179,11 +179,11 @@ tra chức năng bằng ảnh CSDL, không phải kết quả đánh giá độc
 **0,3984237578057769**. Các kết quả khác nhãn vẫn được trả bình thường.
 Chưa có người chấm mức tương đồng thị giác cho những kết quả này.
 
-![Top 5 thực tế](../../outputs/search/functional_checks/20261022T153956_195301Z_7ea40f22/top5.png)
+![Top 5 thực tế](assets/search_top5_donkey.png)
 
 Lần chạy theo lô có manifest
-[`functional_queries.csv`](../../outputs/search/functional_queries.csv), thư mục
-[`batch_20261022T154444_232219Z_9268a9`](../../outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/).
+[`functional_queries.csv`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/search/functional_queries.csv), thư mục
+[`batch_20261022T154444_232219Z_9268a9`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9).
 Các thời gian dưới là đo một lần trên CPU, không phải benchmark hiệu năng.
 Nạp mask đo riêng, không được gọi là thời gian tạo mask.
 
@@ -278,8 +278,9 @@ nhất quán nội bộ, không phải xác thực chống sửa đồng thời 
 Sao chép toàn bộ một batch rồi chấm tại đích (đích xuất phải trong outputs/search):
 
 ```sh
-cp -R outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9 \
-  outputs/search/my_batch_copy
+# Thay batch_ID bằng một batch thực tế vừa tạo.
+SEARCH_BATCH_DIR=outputs/search/batch_ID
+cp -R "$SEARCH_BATCH_DIR" outputs/search/my_batch_copy
 .venv/bin/python -B tools/search/cli.py score \
   --batch outputs/search/my_batch_copy/batch.json \
   --judgments outputs/search/my_batch_copy/judgments.csv \
@@ -325,8 +326,8 @@ tổng hợp có đáp án biết trước, relevance chưa chấm và dữ li�
 
 Kiểm thử tạo scaler trên fixture tổng hợp trong thư mục tạm, không dùng chúng
 làm kết quả đánh giá truy hồi và không thay scaler thật. Mọi truy vấn thực tế
-dùng scaler đã lưu. Các log nằm trong
-[`verification/`](../../outputs/search/verification/).
+dùng scaler đã lưu. Các bản tổng kết cuối được giữ trong
+[`verification/`](../../outputs/search/verification/). Bộ mã `tests/` và các script xác minh trong đó đã được gỡ khỏi nhánh hiện tại; số lần đạt dưới đây chỉ phản ánh các lần chạy trước đó; log chi tiết và các script đã gỡ không còn trong checkout này.
 
 Đã mở **cửa sổ Tkinter thật** và chạy tự động 16 nhóm kiểm tra: nạp SQLite qua
 worker, chọn ảnh tự dùng mask CSDL cùng hash hoặc tạo GrabCut với bbox tự động,
@@ -336,7 +337,7 @@ lỗi worker, tùy chọn hiện ảnh tự khớp và đổi ảnh truy vấn. 
 [`gui_smoke.json`](../../outputs/search/verification/gui_smoke.json).
 Chưa duyệt GUI thủ công hoặc kiểm tra ảnh chụp cửa sổ; không tuyên bố đã làm.
 
-[`verify_real_run.py`](../../tests/search/verify_real_run.py) đọc lại các lượt
+Script `verify_real_run.py` (đã gỡ khỏi nhánh hiện tại) từng đọc lại các lượt
 thật, trích hai hướng bằng scaler cố định để đối chiếu raw/normalized/validity,
 preview/quality; tính lại khoảng cách bằng vòng lặp scalar độc lập với hàm rank,
 đối chiếu thứ tự/hướng/chính sách trùng hash/tự khớp, đóng góp và hash bản sao ảnh kết quả.
@@ -347,7 +348,7 @@ SHA-256 được ghi trước khi triển khai cho **6.118 tệp** trong `data/`
 `outputs/inventory/`, `outputs/segmentation/`, `outputs/features/b400_v1/`, mọi
 tài liệu cũ và mã B400/phân đoạn. Sau chạy đối chiếu từng tệp: không sửa/xóa,
 không thêm ngoài dự kiến; chỉ thêm báo cáo yêu cầu 4 trong vùng docs. Bằng chứng
-[`protected_before.json`](../../outputs/search/verification/protected_before.json)
+[`protected_before.json`](https://github.com/VuTriThuan/CSDLDPT-Luu_tru_va_tim_kiem_anh_dong_vat_4_chan/blob/fa4b154a7b58c8b2bb6c519388fa60d1dd9c295a/outputs/search/verification/protected_before.json)
 và [`delivery_checks.json`](../../outputs/search/verification/delivery_checks.json).
 Không chạy verifier yêu cầu 3 vì lệnh đó ghi `verification.json` trong B400.
 
@@ -377,26 +378,17 @@ Chạy từ root repo, dùng `.venv/` hiện có; không chạy extract/rebuild 
 .venv/bin/python -B tools/search/cli.py query --image /path/new.jpg --bbox 10 10 500 300
 .venv/bin/python -B tools/search/cli.py gui
 
-# Batch kiểm tra chức năng hiện có.
-.venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/functional_queries.csv
-
 # Batch ảnh độc lập: sao chép header, bổ sung các dòng dữ liệu thật trước khi chạy.
 cp tools/search/query_manifest_template.csv outputs/search/new_queries.csv
 .venv/bin/python -B tools/search/cli.py batch --manifest outputs/search/new_queries.csv
 
 # Sau khi người chấm điền relevance 0/1: thay BATCH bằng thư mục batch vừa in ra.
-BATCH=outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9
+# Thay batch_ID bằng thư mục batch thực tế vừa tạo.
+BATCH=outputs/search/batch_ID
 .venv/bin/python -B tools/search/cli.py score \
   --batch "$BATCH/batch.json" --judgments "$BATCH/judgments.csv" \
   --output-dir outputs/search/scored
 
-# Unit/hồi quy và kiểm chứng chỉ đọc nguồn.
-.venv/bin/python -B -m unittest discover -s tests/search -v
-.venv/bin/python -B -m unittest discover -s tests/features -v
-.venv/bin/python -B -m unittest discover -s tests/validation -v
-.venv-image-tools/bin/python -B -m unittest discover -s tests/image_processing -v
-.venv/bin/python -B tests/search/gui_smoke.py
-.venv/bin/python -B tests/search/verify_real_run.py
 ```
 
 CLI cũng hỗ trợ `python -B -m tools.search.cli`; mã thoát 0=hoàn tất,

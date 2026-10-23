@@ -1,6 +1,0 @@
-# Python 3.10–3.13; macOS 13+ (Intel/Apple Silicon), Windows 10/11 x64.
-# Tạo môi trường ảo riêng trên mỗi máy, cài bằng --only-binary=:all:.
-numpy==2.2.6
-Pillow==11.3.0
-onnxruntime==1.23.2
-certifi>=2024.2.2

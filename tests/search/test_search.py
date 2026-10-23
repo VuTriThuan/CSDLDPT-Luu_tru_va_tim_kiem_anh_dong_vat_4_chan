@@ -4,6 +4,7 @@ import io
 import json
 from pathlib import Path
 import sqlite3
+import shutil
 import tempfile
 import unittest
 from unittest import mock
@@ -232,6 +233,15 @@ class DatabaseTests(unittest.TestCase):
         self.assertEqual(report['queries'][1]['same_label_at_5'], 0.)
         self.assertIsNone(report['overall']['visual_p_at_5'])
         self.assertTrue(all(r['visual_relevant'] == '' for r in evaluation.read_csv(folder/'judgments.csv')))
+        batch = json.loads((folder/'batch.json').read_text())
+        self.assertEqual(batch['artifact_paths_version'], 2)
+        self.assertFalse(Path(batch['queries'][0]['result_json']).is_absolute())
+        for row in evaluation.read_csv(folder/'judgments.csv'):
+            self.assertFalse(Path(row['result_image']).is_absolute())
+        moved = folder.parent/'moved_batch'
+        shutil.move(str(folder), moved)
+        rescored = evaluation.score_batch(moved/'batch.json', moved/'judgments.csv', moved/'rescored', self.root)
+        self.assertEqual(report['overall'], rescored['overall'])
 
     def test_export_rejects_recursive_overlap(self):
         source = self.root/'outputs/search/query'; source.mkdir(parents=True)
@@ -336,17 +346,22 @@ class EvaluationTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.queries, self.rows = [], []
         for qid, group, ratings in [('a', 'g1', [1, 1, 1, 0, 0]), ('b', 'g1', [1, 0, 0, 0, 0]), ('c', 'g2', [1, 1, 1, 1, 1])]:
-            hits = [dict(rank=i+1, filename=f'{i}.jpg', sha256=str(i), label='known' if i < 2 else 'other') for i in range(5)]
-            result = self.root/f'{qid}.json'; write_json(result, dict(results=hits))
+            hits = [dict(rank=i+1, filename=f'{i}.jpg', sha256=str(i), label='known' if i < 2 else 'other',
+                         artifact_image=f'results/{i+1}.jpg', distance=float(i), orientation='original') for i in range(5)]
+            result = self.root/'queries'/qid/'result.json'; result.parent.mkdir(parents=True)
+            write_json(result, dict(query_id=qid, results=hits, index=dict(run_id='r', feature_set_id='f', normalizer_id='n')))
             self.queries.append(dict(query_id=qid, group=group, query_label='known', purpose='independent',
-                                     status='success', result_json=str(result), returned=5, elapsed_seconds=2.))
+                                     status='success', result_json=result.relative_to(self.root).as_posix(), returned=5, elapsed_seconds=2.))
             for h, rating in zip(hits, ratings):
                 self.rows.append(dict(query_id=qid, purpose='independent', group=group, query_label='known',
-                                      result_label=h['label'], visual_relevant=rating, **{k: h[k] for k in ['rank', 'filename', 'sha256']}))
+                                      result_label=h['label'], visual_relevant=rating,
+                                      result_image=f'queries/{qid}/'+h['artifact_image'], query_image=f'queries/{qid}/query_rgb.png',
+                                      query_mask=f'queries/{qid}/mask.png', distance=h['distance'], orientation=h['orientation'],
+                                      same_label=int(h['label']=='known'), **{k: h[k] for k in ['rank', 'filename', 'sha256']}))
 
     def score(self):
         batch = self.root/'batch.json'; judgments = self.root/'judgments.csv'
-        write_json(batch, dict(queries=self.queries)); evaluation.write_csv(judgments, self.rows, evaluation.FIELDS)
+        write_json(batch, dict(queries=self.queries, index=dict(run_id='r', feature_set_id='f', normalizer_id='n'))); evaluation.write_csv(judgments, self.rows, evaluation.FIELDS)
         return evaluation.score_batch(batch, judgments, self.root/'outputs/search/scored', self.root)
 
     def test_known_p5_per_query_group_overall_separate_label_agreement(self):
@@ -365,7 +380,7 @@ class EvaluationTests(unittest.TestCase):
 
     def test_partial_judgments_and_short_top5_have_no_p5(self):
         self.rows[0]['visual_relevant'] = ''
-        path = Path(self.queries[1]['result_json']); result = json.loads(path.read_text()); result['results'].pop()
+        path = self.root/self.queries[1]['result_json']; result = json.loads(path.read_text()); result['results'].pop()
         write_json(path, result); self.rows = [r for r in self.rows if not (r['query_id'] == 'b' and r['rank'] == 5)]
         self.queries[1]['returned'] = 4
         result = self.score()
@@ -391,6 +406,76 @@ class EvaluationTests(unittest.TestCase):
         for rows in cases:
             self.rows = rows
             with self.assertRaises(ValueError): self.score()
+
+    def test_copied_legacy_absolute_batch_maps_locally_without_old_root(self):
+        self.score()
+        batch = json.loads((self.root/'batch.json').read_text())
+        old = Path('/nonexistent/old-clone/outputs/search/functional_checks/batch_historical')
+        for query in batch['queries']:
+            relative = query['result_json']
+            local = self.root/relative
+            result = json.loads(local.read_text())
+            result['output_directory'] = str((old/relative).parent)
+            write_json(local, result)
+            query['result_json'] = str(old/relative)
+        write_json(self.root/'batch.json', batch)
+        rows = evaluation.read_csv(self.root/'judgments.csv')
+        for row in rows:
+            for key in ('query_image', 'query_mask', 'result_image'):
+                row[key] = str(old/row[key])
+        evaluation.write_csv(self.root/'judgments.csv', rows, evaluation.FIELDS)
+        moved = self.root/'outputs/search/copied_legacy'
+        moved.mkdir(parents=True)
+        shutil.copytree(self.root/'queries', moved/'queries')
+        for name in ('batch.json', 'judgments.csv'):
+            shutil.copy2(self.root/name, moved/name)
+        before = {p: p.read_bytes() for p in moved.rglob('*') if p.is_file()}
+        report = evaluation.score_batch(moved/'batch.json', moved/'judgments.csv', moved/'scored', self.root)
+        self.assertAlmostEqual(report['overall']['visual_p_at_5'], .6)
+        self.assertTrue(all(p.read_bytes() == value for p, value in before.items()))
+        path = moved/'queries/a/result.json'
+        result = json.loads(path.read_text()); result['output_directory'] = '/wrong'
+        write_json(path, result)
+        with self.assertRaisesRegex(ValueError, 'original directory mismatch'):
+            evaluation.score_batch(moved/'batch.json', moved/'judgments.csv', moved/'failed', self.root)
+
+    def test_escape_missing_query_and_index_metadata_are_rejected(self):
+        self.score()
+        batch = json.loads((self.root/'batch.json').read_text())
+        query = batch['queries'][0]
+        for unsafe in ('../queries/a/result.json', '/arbitrary/outside/result.json', 'outside.json'):
+            with self.subTest(path=unsafe), self.assertRaises(ValueError):
+                evaluation.resolve_result(self.root/'batch.json', batch, dict(query, result_json=unsafe))
+        path = self.root/query['result_json']; original = path.read_bytes()
+        path.unlink()
+        with self.assertRaisesRegex(ValueError, 'Missing artifact'):
+            evaluation.resolve_result(self.root/'batch.json', batch, query)
+        path.symlink_to(self.root/'queries/b/result.json')
+        with self.assertRaisesRegex(ValueError, 'Symlink'):
+            evaluation.resolve_result(self.root/'batch.json', batch, query)
+        path.unlink(); path.write_bytes(original)
+        for field, value in (('query_id', 'b'), ('index', dict(run_id='changed'))):
+            result = json.loads(original); result[field] = value; write_json(path, result)
+            with self.assertRaisesRegex(ValueError, 'mismatch'):
+                evaluation.resolve_result(self.root/'batch.json', batch, query)
+        path.write_bytes(original)
+        modern = dict(batch, artifact_paths_version=2)
+        checked = dict(query, artifact_query_id='a', result_sha256=evaluation.digest(original))
+        evaluation.resolve_result(self.root/'batch.json', modern, checked)
+        with self.assertRaisesRegex(ValueError, 'binding'):
+            evaluation.resolve_result(self.root/'batch.json', modern, dict(checked, artifact_query_id=None))
+        with self.assertRaisesRegex(ValueError, 'checksum'):
+            evaluation.resolve_result(self.root/'batch.json', modern, dict(checked, result_sha256=None))
+        result = json.loads(original); result['results'][0]['distance'] += .1; write_json(path, result)
+        with self.assertRaisesRegex(ValueError, 'checksum mismatch'):
+            evaluation.resolve_result(self.root/'batch.json', modern, checked)
+
+    def test_sheet_paths_distance_orientation_and_labels_are_immutable(self):
+        original = copy.deepcopy(self.rows)
+        for field in ('result_image', 'query_image', 'query_mask', 'distance', 'orientation', 'same_label'):
+            self.rows = copy.deepcopy(original); self.rows[0][field] = '/outside/changed'
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'metadata changed'):
+                self.score()
 
 
 if __name__ == '__main__':

@@ -8,14 +8,14 @@ Chạy lại từ root repo:
 .venv/bin/python -B outputs/search/diagnostics/search_audit/audit.py
 ```
 
-Chi tiết từng phép đo nằm trong `evidence.json`.
+Bằng chứng hiện hành: [evidence_20261023T133817_524683Z_002c30.json](evidence_20261023T133817_524683Z_002c30.json). `evidence.json` là hồ sơ ban đầu, được giữ nguyên. Lần chạy mới ghi tên UTC/UUID riêng, không sửa result.json hoặc ghi đè bằng chứng trước. Mỗi tệp result.json dưới outputs/search được tính một artifact, gồm bản xuất/bản sao; không phải số truy vấn độc lập. Lần chạy lại sau khi thêm artifact sẽ có số lượng khác.
 
 ## Những gì đã xác minh
 
-- 22/22 lượt truy vấn ngày 23/10/2026 tái tạo chính xác tên kết quả, khoảng cách và lựa chọn gốc/lật từ SQLite cùng `vectors.npz` đã lưu.
-- 44/44 vector gốc/lật tái tạo chính xác khi biến đổi lại raw vector bằng scaler frozen. Với 4 ca kiểm tra sâu, trích xuất lại từ `query_rgb.png` và `mask.png` cũng khớp chính xác vector gốc đã lưu.
+- **62 kiểm tra / 62 khớp / 0 không khớp** trong lần cuối; trong đó có 12 artifact của batch mới và các bản sao kiểm chứng. Lần chạy trước khi tạo các batch này: **50/50 khớp**. Script tự đếm, không gắn cứng 22. `summary`, `queries[].result_json`, `options`, `reasons`, `saved_results` và `computed_results` giữ đủ bằng chứng mỗi lượt. Sai chính sách chưa biết được báo lỗi, không suy mặc định. Có sai khác thì script trả mã thoát 1, giữ kết quả lịch sử nguyên trạng.
+- **124/124 vector** gốc/lật tái tạo chính xác khi biến đổi lại raw vector bằng scaler frozen. Với 4 ca kiểm tra sâu, trích xuất lại từ `query_rgb.png` và `mask.png` cũng khớp chính xác vector gốc đã lưu.
 - 812 vector trong SQLite có norm mỗi nhóm gần 0.5; đây là trọng số năng lượng 25% cho màu, texture, hình dạng và bố cục theo cấu hình đã đóng băng.
-- `tools/search/index.py:58` tính đúng tổng bình phương sai khác, lấy min(gốc,lật) cho từng ứng viên, loại self match theo SHA-256, và gộp trùng sau khi xếp hạng.
+- Tái tạo dùng [parser chung](../../../../tools/search/policies.py) với diagnostics.py: đọc self_match và duplicates của **từng result.json**. Mặc định giữ từng tệp; chỉ gộp hash nếu lượt lịch sử ghi chính sách đó. Regression fixture có hai tệp cùng hash/vector: include-self giữ cả hai ở đầu, D=0; mặc định loại cả hai; gộp lịch sử giữ đúng một đại diện. Lượt thật `20261023T022920_325538Z_bb862978` giữ 0663/0667 ở hạng 1/2, cả hai D=0 và đã khớp.
 - `tools/features/b400.py:395` áp dụng đúng chuẩn hóa histogram căn bậc hai, zscore liên tục, missing=0, L2 từng subblock và nhóm. Không thấy lỗi refit scaler hoặc thêm trọng số ở bước tìm kiếm.
 
 ## Bằng chứng mask thay đổi kết quả
@@ -42,3 +42,7 @@ Với Camelus_0057, tỉ lệ foreground đổi từ 50.3% xuống 22.1%, vector
 ## Hướng xử lý trong phạm vi hiện tại
 
 Ưu tiên sửa vùng foreground trước khi tìm kiếm; xem overlay cả con vật và nền, chọn bbox sát nhưng đủ tai/chân/đuôi, rồi dùng nét giữ/loại nếu cần. Các ví dụ lấy từ corpus nên cho phép nạp lại đúng mask đã dùng khi tạo index để tránh so sánh hai lần phân đoạn khác nhau ngoài ý muốn. Trạng thái mask và đóng góp nhóm nên hiển thị rõ trong kết quả. Nếu muốn thay đổi cân bằng dáng/màu/họa tiết, cần coi đó là một chế độ truy hồi khác có đánh giá thị giác riêng; bằng chứng ở đây không chứng minh bộ trọng số mới tốt hơn.
+
+## Phân tích từng nhóm trên cùng vector
+
+[Xem thí nghiệm 9 cấu hình](../group_analysis/20261023T133848_225643Z_20473d/README.md): chọn ngựa/bò/chó sớm nhất theo quy tắc trước khi xem kết quả, 135 dòng Top 5, khoảng cách, thay đổi thứ hạng và mask. Không suy cải thiện phù hợp thị giác từ việc thay đổi thứ hạng.

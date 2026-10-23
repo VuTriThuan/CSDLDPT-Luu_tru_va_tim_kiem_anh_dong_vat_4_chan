@@ -27,3 +27,12 @@ Kiểm tra bổ sung 23/10: [phân tích nguyên nhân](../../docs/reports/searc
 Kiểm thử sau sửa: [48 tìm kiếm/chẩn đoán](verification/tests_search_quality_audit.log),
 [30 B400](verification/regression_features_quality_audit.log). Các thí nghiệm này
 giải thích độ nhạy của pipeline, không thay thế chấm tương đồng thị giác.
+
+
+Bổ sung hoàn thiện kiểm thử/đánh giá yêu cầu 4 ngày 23/10:
+
+- [Audit chính sách từng lượt](diagnostics/search_audit/README.md): 50/50 artifact trước thí nghiệm mới, 62/62 ở lần cuối tính cả batch/bản sao, 0 không khớp. Bằng chứng cũ giữ nguyên.
+- [Thí nghiệm bốn nhóm](diagnostics/group_analysis/20261023T133848_225643Z_20473d/README.md): 9 cấu hình trên cùng vector ngựa/bò/chó, 135 dòng Top 5, hạng/delta của hợp ứng viên, 12 cặp quan sát thị giác thăm dò, mask và ảnh đối chiếu. Không có kết luận cải thiện relevance.
+- [Kiểm chứng batch di chuyển](verification/completion_checks.json): batch cũ và mới đều chấm tại bản sao, khớp tổng hợp, nguồn và hồ sơ sao chép nguyên bytes.
+- [58 kiểm thử tìm kiếm/phân tích](verification/tests_search_completion.log), [30 hồi quy B400](verification/regression_features_completion.log), [SHA-256 trước sửa](verification/completion_before.json): 5.989 tệp bảo vệ không thay đổi.
+- [Cách chấm sau clone](../../docs/reports/search_implementation.md#chấm-batch-sau-khi-clone-hoặc-di-chuyển): giữ toàn bộ batch, chỉ sửa relevance/notes; không cần đường dẫn máy cũ hoặc extract lại.

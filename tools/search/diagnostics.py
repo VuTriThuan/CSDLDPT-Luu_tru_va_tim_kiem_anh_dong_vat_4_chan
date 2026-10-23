@@ -14,6 +14,7 @@ from PIL import Image
 from tools.features import b400
 from tools.features.inputs import safe_path
 from tools.search.query import digest, load_image, load_mask, output_base, write_json
+from tools.search.policies import search_options
 
 
 def _json(path):
@@ -41,24 +42,6 @@ def _vectors(directory):
                     values = values.astype(bool)
                 result[variant][name] = values.copy()
     return result
-
-
-def _exclude_self(result):
-    policy = result.get('policies', {}).get('self_match')
-    if policy == 'exclude all identical input-byte SHA-256':
-        return True
-    if policy == 'include self matches':
-        return False
-    raise ValueError('Saved query has an unknown self-match policy')
-
-
-def _deduplicate(result):
-    policy = result.get('policies', {}).get('duplicates')
-    if policy == 'one representative per SHA-256; lowest distance then lexical tie':
-        return True
-    if policy == 'all eligible files ranked independently, including identical SHA-256':
-        return False
-    raise ValueError('Saved query has an unknown duplicate policy')
 
 
 def _brief(hit):
@@ -191,7 +174,8 @@ def diagnose(index, query_directory, destination=None):
             max_absolute_difference=float(np.abs(reproduced.astype(float)-arrays['normalized']).max()),
             valid_dimensions=int(arrays['validity'].sum()),
             saved_vector_norm=float(np.linalg.norm(arrays['normalized'].astype(float))))
-    exclude_self, deduplicate = _exclude_self(result), _deduplicate(result)
+    options = search_options(result)
+    exclude_self, deduplicate = options['exclude_self'], options['deduplicate']
     ranked = index.search(vectors['original']['normalized'], vectors['flipped']['normalized'], source.sha256,
                           exclude_self, deduplicate=deduplicate)
     checks = []

@@ -1,5 +1,7 @@
 """Read-only retrieval audit. Write evidence only beside this script."""
 import json
+from datetime import datetime, timezone
+import uuid
 from pathlib import Path
 import sys
 
@@ -11,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 from tools.features import b400
 from tools.search.index import SearchIndex
+from tools.search.replay import replay_ranking
 
 
 def parts(a, b, groups=b400.GROUPS):
@@ -35,20 +38,23 @@ def main():
                                                max(sum(r['validity'][s:e]) for r in idx.records)]
                                            for n, s, e in b400.BLOCKS},
                   queries=[], perturbations=[])
-    for path in sorted((ROOT/'outputs/search').glob('20261023*/result.json')):
+    # Snapshot the input list before writing; exports count as separate artifacts.
+    for path in sorted((ROOT/'outputs/search').rglob('result.json')):
         result = json.loads(path.read_text())
         saved = np.load(path.parent/'vectors.npz')
         q = result['query']
-        recalculated = idx.search(saved['original_normalized'], saved['flipped_normalized'], q['source_sha256'])
-        reference = [(r['filename'], r['distance'], r['orientation']) for r in result['results']]
-        computed = [(r['filename'], r['distance'], r['orientation']) for r in recalculated['results']]
+        try:
+            replay = replay_ranking(idx, result, saved['original_normalized'], saved['flipped_normalized'])
+        except (ValueError, KeyError) as exc:
+            replay = dict(ranking_reproduces_exactly=False, reasons=[dict(error=f'{type(exc).__name__}: {exc}')])
         top = result['results'][0]
         candidate_index = next(i for i, r in enumerate(idx.records) if r['filename'] == top['filename'])
         original = saved['original_normalized']
         selected = saved[top['orientation']+'_normalized']
         same = [i for i, r in enumerate(idx.records) if r['sha256'] == q['source_sha256']]
         item = dict(query_id=result['query_id'], source_path=q['source_path'],
-                    ranking_reproduces_exactly=reference == computed,
+                    result_json=path.relative_to(ROOT).as_posix(),
+                    **replay,
                     frozen_transform_reproduces_saved_vectors={
                         n: bool(np.array_equal(b400.transform(saved[n+'_raw'], saved[n+'_validity'], idx.normalizer),
                                              saved[n+'_normalized'])) for n in ['original', 'flipped']},
@@ -87,12 +93,16 @@ def main():
                 s3_bits_changed=int(np.count_nonzero(r[160:208] != raw[160:208])),
                 s2e_before=float(raw[159]), s2e_after=float(r[159])))
         output['perturbations'].append(item)
-    target = Path(__file__).with_name('evidence.json')
+    output['summary'] = dict(checked=len(output['queries']),
+        matched=sum(q['ranking_reproduces_exactly'] for q in output['queries']),
+        mismatched=sum(not q['ranking_reproduces_exactly'] for q in output['queries']),
+        scope='All result.json files under outputs/search, including separate exported/copied artifacts')
+    target = Path(__file__).with_name('evidence_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')+'_'+uuid.uuid4().hex[:6]+'.json')
     target.write_text(json.dumps(output, indent=2, ensure_ascii=False)+'\n')
-    print(json.dumps(dict(output=str(target), queries=len(output['queries']),
-                          exact_ranking=sum(q['ranking_reproduces_exactly'] for q in output['queries']),
+    print(json.dumps(dict(output=str(target), **output['summary'],
                           sensitivity_cases=len(output['perturbations']))))
+    return int(output['summary']['mismatched'] > 0)
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

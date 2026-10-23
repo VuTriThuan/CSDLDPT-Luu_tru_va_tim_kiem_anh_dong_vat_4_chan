@@ -6,7 +6,8 @@ import time
 import uuid
 
 from tools.search.index import read_json
-from tools.search.query import load_image, load_mask, create_mask, refine, retrieve, output_base, write_json
+from tools.search.query import load_image, load_mask, create_mask, refine, retrieve, output_base, write_json, digest
+from tools.features.inputs import safe_path
 from tools.project_paths import PROJECT_ROOT
 
 FIELDS = ['query_id', 'purpose', 'group', 'query_label', 'rank', 'filename', 'sha256',
@@ -71,20 +72,24 @@ def run_batch(index, manifest, destination=None):
                 strokes = None
             result = retrieve(index, query, mask, info, folder/'queries', strokes=strokes)
             query_folder = Path(result['output_directory'])
-            record.update(status='success', result_json=str(query_folder/'result.json'),
+            record.update(status='success', result_json=(query_folder/'result.json').relative_to(folder).as_posix(),
+                          artifact_query_id=result['query_id'],
+                          result_sha256=digest((query_folder/'result.json').read_bytes()),
                           returned=result['returned'], timings=result['timings'])
             for hit in result['results']:
                 judging.append(dict(query_id=record['query_id'], purpose=record['purpose'], group=record['group'],
                     query_label=record['query_label'], rank=hit['rank'], filename=hit['filename'], sha256=hit['sha256'],
-                    result_image=str(query_folder/hit['artifact_image']), query_image=str(query_folder/'query_rgb.png'),
-                    query_mask=str(query_folder/'mask.png'), result_label=hit['label'], distance=hit['distance'],
+                    result_image=(query_folder/hit['artifact_image']).relative_to(folder).as_posix(),
+                    query_image=(query_folder/'query_rgb.png').relative_to(folder).as_posix(),
+                    query_mask=(query_folder/'mask.png').relative_to(folder).as_posix(),
+                    result_label=hit['label'], distance=hit['distance'],
                     orientation=hit['orientation'], same_label=int(hit['label'] == record['query_label']) if record['query_label'] else '',
                     visual_relevant='', notes=''))
         except Exception as exc:
             record['error'] = f'{type(exc).__name__}: {exc}'
         record['elapsed_seconds'] = time.perf_counter()-start
         records.append(record)
-    report = dict(manifest=str(manifest), index=index.describe(), queries=records,
+    report = dict(artifact_paths_version=2, manifest=str(manifest), index=index.describe(), queries=records,
                   purpose_note='Only purpose=independent enters retrieval metrics; corpus hash queries are always functional_check.',
                   visual_note='Blank human relevance is unjudged, never inferred from labels.')
     write_json(folder/'batch.json', report)
@@ -109,9 +114,61 @@ def summarize(queries):
                 mean_elapsed_seconds=sum(r['elapsed_seconds'] for r in queries)/len(queries) if queries else None)
 
 
+def resolve_result(batch_path, batch, query):
+    """Resolve only canonical artifacts inside this batch, never open old roots.
+
+    Legacy absolute paths are evidence of the old location, not file access
+    authority. Map only .../outputs/search/.../batch_*/queries/ID/result.json,
+    then cross-check the local result's ID, original directory and index IDs.
+    """
+    folder = Path(batch_path).resolve().parent
+    stored = Path(query['result_json'])
+    if '..' in stored.parts:
+        raise ValueError(f'Unsafe batch artifact path: {stored}')
+    legacy = stored.is_absolute()
+    if legacy:
+        parts = stored.parts
+        if (batch.get('artifact_paths_version') == 2 or len(parts) < 7
+                or parts[-3] != 'queries' or parts[-1] != 'result.json'
+                or not parts[-4].startswith('batch_')
+                or not any(parts[i:i+2] == ('outputs', 'search') for i in range(len(parts)-4))):
+            raise ValueError(f'Cannot safely map legacy batch artifact: {stored}')
+        relative = Path(*parts[-3:])
+    else:
+        relative = stored
+    if len(relative.parts) != 3 or relative.parts[0] != 'queries' or relative.name != 'result.json':
+        raise ValueError(f'Artifact must be queries/QUERY_ID/result.json inside batch: {stored}')
+    local = safe_path(folder, relative)
+    if not local.is_file():
+        raise ValueError(f'Missing artifact inside opened batch: {relative}; original absolute path is never opened')
+    result = read_json(local)
+    artifact_id = relative.parts[1]
+    if batch.get('artifact_paths_version') == 2 and not query.get('artifact_query_id'):
+        raise ValueError(f'Missing artifact query_id binding: {relative}')
+    if result.get('query_id') != artifact_id or query.get('artifact_query_id', artifact_id) != artifact_id:
+        raise ValueError(f'Artifact query_id mismatch: {query["query_id"]}, {relative}')
+    if legacy and result.get('output_directory') != str(stored.parent):
+        raise ValueError(f'Legacy artifact original directory mismatch: {relative}')
+    for key in ('run_id', 'feature_set_id', 'normalizer_id'):
+        if result.get('index', {}).get(key) != batch.get('index', {}).get(key) or key not in result.get('index', {}):
+            raise ValueError(f'Artifact index metadata mismatch: {key}, {relative}')
+    if query.get('returned') != len(result['results']):
+        raise ValueError(f'Artifact returned metadata mismatch: {relative}')
+    if [h['rank'] for h in result['results']] != list(range(1, len(result['results'])+1)):
+        raise ValueError(f'Artifact rank metadata mismatch: {relative}')
+    if batch.get('artifact_paths_version') == 2 and not query.get('result_sha256'):
+        raise ValueError(f'Missing result checksum: {relative}')
+    if query.get('result_sha256') and digest(local.read_bytes()) != query['result_sha256']:
+        raise ValueError(f'Artifact checksum mismatch: {relative}')
+    return local, result
+
+
 def score_batch(batch_path, judgments_path, destination, project_root=PROJECT_ROOT):
     """Only visual_relevant (0/1/blank) and notes may be changed in the sheet."""
     batch = read_json(batch_path)
+    ids = [q['query_id'] for q in batch['queries']]
+    if not all(ids) or len(ids) != len(set(ids)):
+        raise ValueError('Batch requires unique nonempty query_id values')
     rows = read_csv(judgments_path)
     keyed = {}
     for row in rows:
@@ -123,11 +180,15 @@ def score_batch(batch_path, judgments_path, destination, project_root=PROJECT_RO
         keyed[key] = row
     expected = set()
     reports = []
+    artifacts = set()
     for query in batch['queries']:
         record = dict(query, visual_p_at_5=None, same_label_at_5=None, judged_results=0,
                       metric_status='query_failed' if query['status'] != 'success' else 'incomplete_top5_or_judgments')
         if query['status'] == 'success':
-            result = read_json(query['result_json'])
+            artifact, result = resolve_result(batch_path, batch, query)
+            if artifact in artifacts:
+                raise ValueError(f'Duplicate batch artifact: {artifact}')
+            artifacts.add(artifact)
             hits = result['results']
             relevant = []
             for hit in hits:
@@ -139,6 +200,17 @@ def score_batch(batch_path, judgments_path, destination, project_root=PROJECT_RO
                 for field, value in [('sha256', hit['sha256']), ('filename', hit['filename']),
                                      ('purpose', query['purpose']), ('group', query['group']),
                                      ('query_label', query['query_label']), ('result_label', hit['label'])]:
+                    if row[field] != value:
+                        raise ValueError(f'Judgment identity/metadata changed: {key}, {field}')
+                # Never open paths from the judging sheet. Check immutable fields
+                # against the saved artifact (legacy paths remain literal evidence).
+                stored_folder = Path(query['result_json']).parent
+                for field, value in (
+                    ('result_image', str(stored_folder/hit['artifact_image'])),
+                    ('query_image', str(stored_folder/'query_rgb.png')),
+                    ('query_mask', str(stored_folder/'mask.png')),
+                    ('distance', str(hit['distance'])), ('orientation', hit['orientation']),
+                    ('same_label', str(int(hit['label'] == query['query_label'])) if query['query_label'] else '')):
                     if row[field] != value:
                         raise ValueError(f'Judgment identity/metadata changed: {key}, {field}')
                 value = row['visual_relevant'].strip()

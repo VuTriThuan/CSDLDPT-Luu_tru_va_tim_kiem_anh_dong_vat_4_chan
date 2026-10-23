@@ -252,6 +252,66 @@ group và toàn bộ dùng trung bình macro các query đủ điều kiện, gh
 số query độc lập/chức năng/chưa xác nhận/lỗi và thời gian. Nhóm chưa có query
 đủ điều kiện vẫn có dòng với metric để trống.
 
+### Chấm batch sau khi clone hoặc di chuyển
+
+Batch mới có `artifact_paths_version=2`. `result_json` và ba cột đường dẫn ảnh
+trong `judgments.csv` được lưu tương đối từ thư mục chứa `batch.json`, theo dạng
+`queries/ARTIFACT_QUERY_ID/result.json`. `query_id` ở batch là ID do manifest đặt
+(ví dụ `database_donkey`); `artifact_query_id` là ID thời gian/UUID của lượt tìm.
+Hai ID được liên kết rõ bằng bản ghi batch, không ép chúng phải cùng chuỗi.
+Bản ghi mới còn lưu SHA-256 của result.json để phát hiện nội dung bị sửa.
+
+Khi chấm, `resolve_result` chỉ mở artifact trong chính batch đang mở, xác minh
+ID thư mục/result/binding, ID run/feature/scaler, số kết quả, thứ tự rank và
+checksum nếu có. Chặn `..`, sai cấu trúc và symlink/đường dẫn thoát phạm vi.
+Không mở đường dẫn từ CSV. Ngoài identity/nhãn, các cột ảnh, khoảng cách, hướng
+và same_label đều được kiểm tra; chỉ relevance và notes được phép chỉnh.
+
+Với batch lịch sử, chỉ ánh xạ đuôi
+`.../outputs/search/.../batch_*/queries/ID/result.json` sang `queries/ID/result.json`
+cục bộ. Artifact cục bộ phải có query_id=ID, output_directory đúng thư mục gốc
+được ghi trong đường dẫn cũ và các ID index khớp batch. Thiếu hoặc không xác định
+chắc được artifact thì lỗi rõ; **không mở đường dẫn tuyệt đối gốc**, kể cả khi
+nó còn tồn tại. Hồ sơ lịch sử không có checksum mới nên phép kiểm tra là tính
+nhất quán nội bộ, không phải xác thực chống sửa đồng thời mọi tệp.
+
+Sao chép toàn bộ một batch rồi chấm tại đích (đích xuất phải trong outputs/search):
+
+```sh
+cp -R outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9 \
+  outputs/search/my_batch_copy
+.venv/bin/python -B tools/search/cli.py score \
+  --batch outputs/search/my_batch_copy/batch.json \
+  --judgments outputs/search/my_batch_copy/judgments.csv \
+  --output-dir outputs/search/my_batch_copy/scored
+```
+
+Không sửa đường dẫn trong bảng chấm lịch sử. Khi xem ảnh lịch sử sau khi chuyển,
+dùng thư mục cục bộ `queries/ID/query_rgb.png`, `mask.png`, `results/1.jpg`…;
+đường dẫn tuyệt đối trong CSV được giữ như bằng chứng nguồn cũ. Batch mới mở
+ảnh theo đường dẫn tương đối tính từ batch. `score` chỉ cần artifact batch,
+không cần nạp SQLite, ảnh Downloads cũ hoặc trích xuất lại B400. Tạo `.venv/`
+tại clone mới theo README; không sao chép venv từ máy khác.
+
+Kiểm chứng thực tế: [hai bản sao batch](../../outputs/search/verification/completion_checks.json)
+đều có 4/4 truy vấn chức năng, chấm lại khớp toàn bộ tổng hợp gốc, file nguồn
+và file sao chép giữ nguyên bytes. P@5 thị giác vẫn null vì chưa có chấm độc lập.
+58 kiểm thử tìm kiếm/phân tích và 30 hồi quy B400 đạt trong `.venv/` Mac Intel;
+bao gồm hồi quy include-self/trùng hash, gộp hash cũ, di chuyển, thoát phạm vi,
+symlink, artifact thiếu và metadata/checksum bị sửa.
+
+### Phân tích từng nhóm và bỏ từng nhóm
+
+Lệnh `.venv/bin/python -B -m tools.search.group_analysis` dùng cùng hai vector
+query và 812 vector corpus đã lưu cho full + bốn nhóm riêng + bốn ca bỏ nhóm.
+Không đổi scaler, không nhân trọng số lần hai hoặc chuẩn hóa lại đoạn vector.
+Định nghĩa D_S, quy tắc chọn sớm nhất mỗi họ ngựa/bò/chó, Top 5, khoảng cách,
+hạng ứng viên tham chiếu và mask được ghi trong
+[báo cáo thí nghiệm](../../outputs/search/diagnostics/group_analysis/20261023T133848_225643Z_20473d/README.md).
+Có 135 dòng Top 5 và 12 cặp được quan sát trực tiếp bởi trợ lý, ghi riêng với
+relevance nhị phân còn trống. Thay đổi thứ hạng không chứng minh cải thiện
+phù hợp thị giác; chưa có chấm đầy đủ và tập độc lập để kết luận điều đó.
+
 ## Kiểm thử, kiểm chứng thực tế và giới hạn
 
 **110 kiểm thử đạt:** 35 tìm kiếm mới + 30 B400/SQLite + 21 validation + 24 công

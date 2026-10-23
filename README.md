@@ -169,6 +169,32 @@ chấm `visual_relevant` bằng 0/1 trong `judgments.csv`, rồi chạy `score` 
 P@5 thị giác đang để trống vì chưa có dữ liệu/chấm độc lập; cùng nhãn là phép
 đối chiếu riêng. Bằng chứng: [`outputs/search/`](outputs/search/README.md).
 
+Đã hoàn thiện kiểm chứng yêu cầu 4 ngày 23/10: audit đọc đúng chính sách từng
+lượt; batch mới lưu artifact tương đối và chấm được sau khi di chuyển; đã chạy
+phân tích riêng/bỏ lần lượt bốn nhóm trên cùng vector ngựa, bò, chó.
+**58 kiểm thử tìm kiếm/phân tích + 30 hồi quy B400 đạt**; audit cuối kiểm tra
+**62/62 artifact** (gồm bản sao kiểm chứng, 50 artifact trước khi tạo bản sao).
+Xem [kết quả, mask, thứ hạng và giới hạn kết luận](outputs/search/diagnostics/group_analysis/20261023T133848_225643Z_20473d/README.md).
+
+Sau khi clone, tạo `.venv/` tại vị trí mới theo phần Python bên dưới, rồi chấm
+batch đã lưu mà không cần đường dẫn máy cũ hoặc chạy lại extract:
+
+```sh
+.venv/bin/python -B tools/search/cli.py score \
+  --batch outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/batch.json \
+  --judgments outputs/search/functional_checks/batch_20261022T154444_232219Z_9268a9/judgments.csv \
+  --output-dir outputs/search/scored_after_clone
+.venv/bin/python -B outputs/search/diagnostics/search_audit/audit.py
+.venv/bin/python -B -m tools.search.group_analysis
+```
+
+Khi chuyển một batch, sao chép **toàn bộ thư mục** gồm `batch.json`,
+`judgments.csv` và `queries/`; chỉ sửa `visual_relevant`/`notes` trong bảng chấm.
+Các đường dẫn ảnh của batch mới tính từ thư mục chứa `batch.json`. Batch lịch sử
+được ánh xạ sang artifact trong chính batch đang mở, không sửa hồ sơ cũ.
+Chi tiết kiểm tra đường dẫn/ID và cách đọc ảnh lịch sử nằm trong
+[hướng dẫn chấm](docs/reports/search_implementation.md#chấm-batch-sau-khi-clone-hoặc-di-chuyển).
+
 ## Cấu trúc hiện tại
 
 | Vị trí | Vai trò |

@@ -1,0 +1,12 @@
+{
+  "queries": 4,
+  "independent_queries": 0,
+  "functional_queries": 4,
+  "unverified_queries": 0,
+  "errors": 0,
+  "fully_judged_independent_queries": 0,
+  "visual_p_at_5": null,
+  "labelled_independent_queries": 0,
+  "same_label_at_5": null,
+  "mean_elapsed_seconds": 2.650184734249706
+}

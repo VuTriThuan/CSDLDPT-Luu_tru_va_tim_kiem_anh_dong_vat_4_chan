@@ -1,0 +1,5 @@
+﻿group,queries,independent_queries,functional_queries,unverified_queries,errors,fully_judged_independent_queries,visual_p_at_5,labelled_independent_queries,same_label_at_5,mean_elapsed_seconds
+database_loaded_mask,1,0,1,0,0,0,,0,,1.2323344569995243
+grabcut_pipeline,1,0,1,0,0,0,,0,,10.592069419999461
+hash_deduplication,1,0,1,0,0,0,,0,,1.1493388710005092
+resized_functional_derivative,1,0,1,0,0,0,,0,,1.4692064369992295

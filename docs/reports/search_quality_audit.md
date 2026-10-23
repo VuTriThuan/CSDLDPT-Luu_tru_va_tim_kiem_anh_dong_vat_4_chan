@@ -7,9 +7,16 @@ và scaler/SQLite hiện hành; không fit hoặc thay đặc trưng yêu cầu 
 
 ## Kết luận từ dữ liệu thực tế
 
-Chưa phát hiện lỗi tính khoảng cách/xếp hạng. Tái tạo chính xác **22/22 danh
-sách kết quả** (tên ảnh, khoảng cách, hướng thắng); chuẩn hóa lại raw/validity
-với scaler cố định khớp **44/44 vector** gốc/lật. Bốn trường hợp trích xuất lại
+Audit công cụ đã được sửa để đọc self_match và duplicates của từng lượt,
+dùng chung parser với `diagnose`; bản trước gọi chính sách mặc định nên không
+đủ để kiểm chứng include-self hoặc gộp hash lịch sử. Lần kiểm tra bổ sung tái
+tạo chính xác **50/50 artifact hiện có trước khi tạo batch kiểm chứng**; lần
+cuối **62/62**, gồm 12 artifact trong các batch mới/bản sao, **0 không khớp**.
+Chuẩn hóa raw/validity với scaler cố định khớp **124/124 vector** ở lần cuối.
+Số lượt được tính động và ghi cả đường dẫn artifact, không coi bản xuất là
+truy vấn độc lập. [Bằng chứng đầy đủ](../../outputs/search/diagnostics/search_audit/evidence_20261023T133817_524683Z_002c30.json)
+giữ chính sách, kết quả đã lưu/tái tạo và lý do từng sai khác nếu có.
+Bốn trường hợp trích xuất lại
 từ RGB và mask cũng khớp vector đã lưu. Hai nguyên nhân đã đo được là mask
 đo sai vùng chủ thể và độ nhạy/giới hạn của biểu diễn B400.
 
@@ -35,7 +42,7 @@ kết quả phù hợp thị giác hơn.
 
 Ảnh bò ngoài CSDL `Bos_taurus_001.jpg` bị mất chân dưới trong cỏ. Không có
 hash trùng nên không tính agreement với mask CSDL cho ảnh này.
-Trong 22 lượt phân tích, **21 lượt dùng bbox mặc định gần toàn khung**, một
+Trong 22 lượt phân tích ban đầu, **21 lượt dùng bbox mặc định gần toàn khung**, một
 lượt nạp mask; không lượt nào ghi nhận bbox do người dùng chọn. GUI cũ cho
 bấm “Tạo mask từ bbox” khi chưa kéo bbox nên hành vi này không rõ ràng.
 
@@ -161,3 +168,36 @@ và nền trong khoảng giữa các chân. Với ảnh đã có nguyên bytes t
 có thể dùng nút mask CSDL để tránh một lần phân đoạn tự động khác trước khi
 so sánh. Sử dụng kết quả đóng góp bốn nhóm để giải thích vì sao hai ảnh gần
 nhau trong B400, rồi chấm trực tiếp mức giống dáng/màu/họa tiết.
+
+
+## Bổ sung phân tích bốn nhóm và tính di chuyển của batch
+
+Đã chạy full, riêng màu/kết cấu/hình dạng/bố cục và bỏ lần lượt mỗi nhóm trên
+**cùng các vector chuẩn hóa gốc/lật đã lưu**, dùng truy vấn sớm nhất mỗi họ
+ngựa/bò/chó, không lọc theo chất lượng mask hoặc kết quả. Khoảng cách từng ca
+là min hai tổng bình phương trên tập chiều đang giữ, không thêm weights hoặc
+chuẩn hóa lại. Chọn lại hướng cho từng ứng viên/cấu hình; khoảng cách giữa
+các cấu hình có thang khác nhau, không được xem là xác suất hay chất lượng.
+
+[Báo cáo và ảnh đối chiếu](../../outputs/search/diagnostics/group_analysis/20261023T133848_225643Z_20473d/README.md)
+ghi 135 dòng Top 5, hạng của hợp ứng viên Top 5 và 12 cặp có quan sát thị giác
+thăm dò bởi trợ lý. Bỏ shape làm overlap Top 5 so với full còn 0/5 ngựa,
+0/5 bò, 1/5 chó. Riêng shape đưa Bos_taurus_1261 từ hạng 117 lên 1, nhưng
+màu khoang khác query bò nâu; doberman_0956 từ hạng 100 lên 1 ở query chó
+kem lông dài dù màu/lông rất khác. Đây là tác động lên thứ hạng. Các nhận xét
+thuộc tính không thay thế chấm relevance nhị phân đầy đủ hoặc đánh giá độc lập,
+nên chưa kết luận nhóm nào cải thiện phù hợp thị giác.
+
+Ca ngựa được giữ dù mask chiếm 73,51% ảnh và chứa nhiều nền. Ca bò mất phần
+chân dưới trong cỏ; chó có 11 thành phần mask. Ba ca không có hash ảnh trùng
+corpus nên không tạo ground truth hay IoU giả. Giữ nguyên ảnh/mask/vector và
+chính sách lịch sử của từng query, không đổi tìm kiếm mặc định.
+
+Công cụ score đã chuyển sang đường dẫn tương đối trong batch mới và chỉ ánh
+xạ đường dẫn tuyệt đối lịch sử khi artifact tương ứng hiện diện ngay trong
+batch đang mở, có ID/metadata khớp. Đã chấm lại bản sao đầy đủ của cả batch
+lịch sử và batch mới ở vị trí khác, kết quả tổng hợp khớp; hồ sơ cũ giữ bytes.
+[Hướng dẫn clone/chấm](search_implementation.md#chấm-batch-sau-khi-clone-hoặc-di-chuyển),
+[kiểm chứng hai batch và 5.989 tệp được bảo vệ](../../outputs/search/verification/completion_checks.json).
+58 kiểm thử tìm kiếm/phân tích và 30 hồi quy B400 đều đạt; không chạy extract
+--rebuild, không sửa B400, scaler, SQLite, 812 ảnh hoặc mask trong kho.
